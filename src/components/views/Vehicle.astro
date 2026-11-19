@@ -158,6 +158,7 @@ function leadSentence(text: string) {
         {data.diy.status === 'needs-tool' && (
           <p class="detail">Not the full job. Cutting and programming are separate.</p>
         )}
+        {data.diy.bottomLine && <p class="detail">{data.diy.bottomLine}</p>}
         {data.diy.heroNotice && <p class="detail">{data.diy.heroNotice}</p>}
       </article>
       {

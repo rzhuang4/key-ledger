@@ -25,6 +25,7 @@ reviewed: "2026-11-19"
 diy:
   status: "yes"
   heroAnswer: "Genuine Toyota remote: yes, per service pages. Aftermarket: not confirmed."
+  bottomLine: "Bottom line: the $24.95 aftermarket remote is not confirmed to self-program. The confirmed route is a genuine Toyota remote. One dealer lists that part at $76.77, MSRP $107.30, part only, with programming not included."
   heroNotice: "Push-button smart key, or no ignition key cylinder? This page does not apply. Sellers list this remote for 2007-2018. The same on-board switch section was opened on 2012 and 2013 service pages. 2014 and later were not opened."
   priceCaution: "The $24.95 remote is aftermarket. Car and Truck Remotes says on-board programming is no. NorthCoast Keyless says a locksmith must program its remote. Toyota service pages publish an on-board switch sequence for the door-control transmitter. No owner reports found yet of an aftermarket remote registering this way. On a Toyota Tundra Forum thread about a 2009, one owner reported the door sequence failed after many tries and that Techstream then registered the fobs."
   priceCautionSourceIds:
@@ -266,20 +267,23 @@ priceRanges:
     checkedAt: "2026-11-19"
     stock: out-of-stock
   - channel: dealer
-    status: unverified
-    note: "ToyotaPartsNow lists 89742-AE011 as a door-control transmitter that
-      replaces 89742-AE010 and fits 2007-2017 Tundra. That page did not show a
-      price. Lakeland Toyota's parts page for the same number, on a 2011 Tundra,
-      showed a sale price and an MSRP but did not say whether the part was in
-      stock, so the amount is not used. Seller compare-at prices are not a
-      dealer price. No dealer installed price was found."
+    status: verified
+    lowUsd: 76.77
+    highUsd: 76.77
+    note: "Lakeland Toyota, one dealer, 2925 Mall Hill Drive, Lakeland, Florida.
+      Genuine new OEM door-control transmitter 89742-AE011 for a 2011 Tundra.
+      The page says this number replaces 89742-AE010. Your price USD 76.77.
+      MSRP USD 107.30. The listing is the part only. It does not include
+      programming. Stock not listed. Checked 2026-11-19. ToyotaPartsNow lists
+      the same part and did not show a price."
+    heroNote: "Genuine new OEM part only. MSRP $107.30. Programming is not included."
     currency: USD
-    retailer: none
+    retailer: Lakeland Toyota
     checkedAt: "2026-11-19"
-    stock: unknown
+    stock: not-listed
     sourceIds:
-      - toyota-parts-ae011
       - lakeland-ae011
+      - toyota-parts-ae011
   - channel: locksmith
     status: unverified
     note: "No locksmith price page posted a dollar amount for programming this
@@ -307,8 +311,8 @@ unverified:
     pages opened were a 2007 4.7L 4WD, a 2009 4.7L 4WD, and a 2011 5.7L 4WD."
   - "2014 and later registration. Those manuals were not opened. A 2012 Limited
     5.7L 4WD page and a 2013 SR5 4.6L RWD page still print the switch sequence."
-  - "A dealer parts price for 89742-AE010 or 89742-AE011, and any locksmith's
-    posted price for this remote."
+  - "Any locksmith's posted price for programming this remote. The Lakeland
+    Toyota price is the part only."
   - "Which 2007-2011 trucks were built without keyless entry."
 troubleshooting:
   - id: no-mode-answer
@@ -425,12 +429,12 @@ sources:
     url: "https://parts.lakelandtoyota.com/p/TOYOTA_2011_TUNDRA-Base-Crew-Cab-Pickup-Fleetside/Keyless-Entry-Transmitter/10811540/89742AE011.html"
     publisher: "Toyota Parts Overstock, Lakeland Toyota, Lakeland, Florida"
     accessed: "2026-11-19"
-    note: "OEM part 89742AE011, supersedes 89742AE010, listed for Tundra and
-      described as a remote to lock and unlock the vehicle, excluding keyless
-      ignition. The page shows a sale price and an MSRP. It does not say
-      whether the part is in stock. The address on the page is 2925 Mall Hill
-      Drive, Lakeland, FL 33810. The amount is not used because stock was not
-      stated."
+    note: "OEM part 89742AE011, supersedes 89742AE010, listed for a 2011 Tundra
+      and described as a remote to lock and unlock the vehicle, excluding
+      keyless ignition. Your price 76.77. MSRP 107.30. Discount shown as 30.53,
+      28 percent. The page does not say whether the part is in stock. Address
+      on the page: 2925 Mall Hill Drive, Lakeland, FL 33810. Part only; no
+      programming is mentioned."
   - id: toyota-parts-ae011
     title: "Toyota Tundra key fob parts list, including 89742-AE011"
     url: "https://www.toyotapartsnow.com/parts-select/toyota-tundra-key-fob"

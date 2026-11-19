@@ -270,8 +270,8 @@ export function validateVehicle(data, fileName) {
       if (typeof row.checkedAt !== 'string' || !dateRe.test(row.checkedAt)) {
         fail(`${where}.checkedAt must be YYYY-MM-DD`);
       }
-      if (!['in-stock', 'out-of-stock', 'unknown', 'service'].includes(row.stock)) {
-        fail(`${where}.stock must be in-stock, out-of-stock, unknown, or service`);
+      if (!['in-stock', 'out-of-stock', 'unknown', 'service', 'not-listed'].includes(row.stock)) {
+        fail(`${where}.stock must be in-stock, out-of-stock, unknown, service, or not-listed`);
       }
       if (row.stock === 'service' && row.channel === 'online-diy') {
         fail(`${where} online hardware cannot use stock service`);

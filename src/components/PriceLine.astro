@@ -25,6 +25,7 @@ const stock =
   row.stock === 'in-stock' ? copy.stockIn :
   row.stock === 'out-of-stock' ? copy.stockOut :
   row.stock === 'service' ? copy.stockService :
+  row.stock === 'not-listed' ? copy.stockNotListed :
   copy.stockUnknown;
 const retailer = !row.retailer || row.retailer === 'none' ? copy.noRetailer : row.retailer;
 const showUsd = row.status === 'verified' && row.currency === 'USD' && row.stock !== 'service';
