@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /key-ledger/
+
+Sitemap: https://rzhuang4.github.io/key-ledger/sitemap-index.xml
