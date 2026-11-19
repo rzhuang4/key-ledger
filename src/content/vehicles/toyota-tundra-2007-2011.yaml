@@ -24,9 +24,9 @@ scope: "This page is the 2007-2011 Toyota Tundra with a metal ignition key and
 reviewed: "2026-11-19"
 diy:
   status: "yes"
-  heroAnswer: "Yes, per Toyota service pages; some sellers say a locksmith is needed"
+  heroAnswer: "Genuine Toyota remote: yes, per service pages. Aftermarket: not confirmed."
   heroNotice: "Push-button smart key, or no ignition key cylinder? This page does not apply. Sellers list this remote for 2007-2018. The same on-board switch section was opened on 2012 and 2013 service pages. 2014 and later were not opened."
-  priceCaution: "Car and Truck Remotes says on-board programming is no. NorthCoast Keyless says a locksmith must program the remote. Toyota service pages for 2007, 2009, 2011, 2012, and 2013 publish an on-board switch sequence. Not confirmed that these aftermarket or lightly used remotes accept that sequence. On a Toyota Tundra Forum thread about a 2009, one owner reported the door sequence failed after many tries and that Techstream then registered the fobs. No report on that thread confirmed an aftermarket GQ43VT20T registering with the switch sequence alone."
+  priceCaution: "The $24.95 remote is aftermarket. Car and Truck Remotes says on-board programming is no. NorthCoast Keyless says a locksmith must program its remote. Toyota service pages publish an on-board switch sequence for the door-control transmitter. No owner reports found yet of an aftermarket remote registering this way. On a Toyota Tundra Forum thread about a 2009, one owner reported the door sequence failed after many tries and that Techstream then registered the fobs."
   priceCautionSourceIds:
     - ctr-gq43
     - nck-gq43
@@ -206,7 +206,7 @@ priceRanges:
       The shop currency is USD. The listing says the price is one remote, that
       the seller does not cut or program it, and that it fits a 2007-2018 Tundra
       with a turn-the-key ignition. That year span is wider than this page."
-    heroNote: "Remote only. The seller says on-board programming is no. Toyota's service pages publish a switch sequence. Not confirmed for this aftermarket remote."
+    heroNote: "Aftermarket remote only. No owner reports found yet of an aftermarket remote registering with only the switch sequence. The seller says on-board programming is no."
     variantId: gq43vt20t-3-button
     sourceIds:
       - ctr-gq43
@@ -268,20 +268,23 @@ priceRanges:
   - channel: dealer
     status: unverified
     note: "ToyotaPartsNow lists 89742-AE011 as a door-control transmitter that
-      replaces 89742-AE010 and fits 2007-2017 Tundra. The page opened on
-      November 19, 2026 did not show a price for that part. Seller compare-at
-      prices are not a dealer price. No dealer installed price was found."
+      replaces 89742-AE010 and fits 2007-2017 Tundra. That page did not show a
+      price. Lakeland Toyota's parts page for the same number, on a 2011 Tundra,
+      showed a sale price and an MSRP but did not say whether the part was in
+      stock, so the amount is not used. Seller compare-at prices are not a
+      dealer price. No dealer installed price was found."
     currency: USD
     retailer: none
     checkedAt: "2026-11-19"
     stock: unknown
     sourceIds:
       - toyota-parts-ae011
+      - lakeland-ae011
   - channel: locksmith
     status: unverified
-    note: "No locksmith posted a dollar amount for programming this Tundra remote.
-      Car and Truck Remotes says a locksmith must program the remote it sells,
-      and that those fees are extra, without stating the fee."
+    note: "No locksmith price page posted a dollar amount for programming this
+      Tundra remote. Car and Truck Remotes says a locksmith must program the
+      remote it sells, and that those fees are extra, without stating the fee."
     currency: USD
     retailer: none
     checkedAt: "2026-11-19"
@@ -417,6 +420,17 @@ sources:
       that Techstream then registered the fobs. Another reply said Techstream
       worked and that not every fob works as claimed. The thread does not show
       an aftermarket GQ43VT20T registering by the switch sequence alone."
+  - id: lakeland-ae011
+    title: "2011 Toyota Tundra keyless entry transmitter 89742-AE011"
+    url: "https://parts.lakelandtoyota.com/p/TOYOTA_2011_TUNDRA-Base-Crew-Cab-Pickup-Fleetside/Keyless-Entry-Transmitter/10811540/89742AE011.html"
+    publisher: "Toyota Parts Overstock, Lakeland Toyota, Lakeland, Florida"
+    accessed: "2026-11-19"
+    note: "OEM part 89742AE011, supersedes 89742AE010, listed for Tundra and
+      described as a remote to lock and unlock the vehicle, excluding keyless
+      ignition. The page shows a sale price and an MSRP. It does not say
+      whether the part is in stock. The address on the page is 2925 Mall Hill
+      Drive, Lakeland, FL 33810. The amount is not used because stock was not
+      stated."
   - id: toyota-parts-ae011
     title: "Toyota Tundra key fob parts list, including 89742-AE011"
     url: "https://www.toyotapartsnow.com/parts-select/toyota-tundra-key-fob"
