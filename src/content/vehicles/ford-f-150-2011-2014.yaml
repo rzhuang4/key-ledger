@@ -25,6 +25,8 @@ scope: "2011-2014 Ford F-150 trucks that use a bladed integrated keyhead
 reviewed: "2026-11-19"
 diy:
   status: "yes"
+  heroAnswer: "Yes, if the remote is built into the key head"
+  heroNotice: "Separate remote? This page does not apply."
   summary: "On-board programming is published for an integrated keyhead
     transmitter when two coded keys already work. Without those two keys, both
     the 2013 guide transcription and Ford's how-to page send you to a dealer."
@@ -301,9 +303,8 @@ sources:
     publisher: Ford Motor Company, Motorcraft service content
     accessed: "2026-11-19"
     note: The model chart includes F-150 2011-2013. A note says only integrated
-      keyhead transmitters can be programmed manually. The spare-key column
-      points at a two-key method that also uses a diagnostic tool. No
-      separate-fob steps for the F-150 are printed, and 2014 is absent.
+      keyhead transmitters can be programmed manually. No separate-fob steps
+      for the F-150 are printed, and 2014 is absent.
 programmingFacts:
   onboardStatus: yes
   minimumWorkingKeys: 2

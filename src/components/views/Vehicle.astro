@@ -95,21 +95,41 @@ if (view.diy.steps.length) {
   });
 }
 const h1 = `${data.yearStart === data.yearEnd ? data.yearStart : `${data.yearStart}–${data.yearEnd}`} ${data.make} ${data.model}`;
-const programAnswer =
+const programAnswer = data.diy.heroAnswer ?? (
   data.diy.status === 'yes' ? 'Yes' :
   data.diy.status === 'needs-tool' ? 'Needs a tool' :
-  'Locksmith or dealer';
+  'Locksmith or dealer'
+);
 const inStockOffers = data.priceRanges
   .filter((row) => row.channel === 'online-diy' && row.status === 'verified' && row.stock === 'in-stock' && row.currency === 'USD' && row.lowUsd != null)
   .slice()
   .sort((a, b) => (a.lowUsd ?? 0) - (b.lowUsd ?? 0));
 const cheapest = inStockOffers[0];
-const shopFigure = data.priceRanges.find((row) =>
-  (row.channel === 'dealer' || row.channel === 'locksmith') && row.status === 'verified' && row.currency === 'USD' && row.lowUsd != null,
-);
+const yearSpan = (variant: (typeof data.variants)[number]) =>
+  variant.yearStart != null && variant.yearEnd != null
+    ? variant.yearStart === variant.yearEnd
+      ? String(variant.yearStart)
+      : `${variant.yearStart}–${variant.yearEnd}`
+    : null;
+const yearVariants = data.variants.filter((variant) => yearSpan(variant));
+const splitYears = yearVariants.length > 1;
+const fccOf = (variant: (typeof data.variants)[number]) =>
+  variant.fccIds.find((item) => item.role === 'oem')?.id ?? variant.fccIds[0]?.id ?? 'Unknown';
+const buttonLabel = (variant: (typeof data.variants)[number]) =>
+  variant.buttons?.count ? `${variant.buttons.count}-button` : '';
+const summaryPart = (variant: (typeof data.variants)[number]) =>
+  variant.oemPartNumbers.find((part) => part.summary)?.number;
+const hardwareFor = (variantId: string) =>
+  data.priceRanges
+    .filter((row) => row.variantId === variantId && row.channel === 'online-diy' && row.status === 'verified' && row.stock === 'in-stock' && row.currency === 'USD' && row.lowUsd != null)
+    .slice()
+    .sort((a, b) => (a.lowUsd ?? 0) - (b.lowUsd ?? 0))[0];
+const serviceFor = (variantId: string) =>
+  data.priceRanges.find((row) => row.variantId === variantId && row.stock === 'service' && row.status === 'verified' && row.lowUsd != null);
 const primary = data.variants[0];
-const buyFcc = primary.fccIds.find((item) => item.role === 'oem')?.id ?? primary.fccIds[0]?.id ?? 'Unknown';
-const buyPart = primary.oemPartNumbers[0]?.number ?? 'Unknown';
+const buyFcc = fccOf(primary);
+const buyPart = summaryPart(primary) ?? primary.oemPartNumbers[0]?.number ?? 'Unknown';
+const buyButtons = buttonLabel(primary);
 const stockWord = cheapest?.stock === 'in-stock' ? 'in stock' : cheapest?.stock === 'out-of-stock' ? 'out of stock' : 'stock unknown';
 function leadSentence(text: string) {
   const end = text.search(/[.!?](\s|$)/);
@@ -131,22 +151,59 @@ function leadSentence(text: string) {
     </nav>
     <p class="kicker">{data.make}</p>
     <h1>{h1}</h1>
-    <section class="tiles" aria-label="Short answers">
+    <section class:list={['tiles', { split: splitYears }]} aria-label="Short answers">
       <article class="tile">
         <p class="kicker">Program it yourself?</p>
         <strong>{programAnswer}</strong>
+        {data.diy.status === 'needs-tool' && (
+          <p class="detail">Not the full job. Cutting and programming are separate.</p>
+        )}
       </article>
-      <article class="tile">
-        <p class="kicker">Buy</p>
-        <strong>{buyFcc} · {buyPart}</strong>
-      </article>
-      <article class="tile">
-        <p class="kicker">Price</p>
-        <strong>
-          {cheapest ? `From $${cheapest.lowUsd?.toFixed(2)}` : 'Not verified'}
-        </strong>
-        {cheapest && <p class="muted">{cheapest.retailer}, {stockWord}</p>}
-      </article>
+      {
+        splitYears ? (
+          yearVariants.map((variant) => {
+            const hardware = hardwareFor(variant.id);
+            const service = serviceFor(variant.id);
+            const part = summaryPart(variant);
+            const buttons = buttonLabel(variant);
+            return (
+              <div class="year-pair">
+                <article class="tile">
+                  <p class="kicker">{yearSpan(variant)} · Buy</p>
+                  <strong>{fccOf(variant)}</strong>
+                  {(part || buttons || variant.fitment) && (
+                    <p class="detail">{[part, buttons, variant.fitment].filter(Boolean).join(' · ')}</p>
+                  )}
+                </article>
+                <article class="tile">
+                  <p class="kicker">{yearSpan(variant)} · Price</p>
+                  <strong>{hardware ? `From $${hardware.lowUsd?.toFixed(2)}` : 'Not verified'}</strong>
+                  {hardware && (
+                    <p class="detail">
+                      {hardware.retailer}
+                      {hardware.heroNote ? `. ${hardware.heroNote}` : ''}
+                    </p>
+                  )}
+                  {service?.heroNote && <p class="detail">{service.heroNote}</p>}
+                </article>
+              </div>
+            );
+          })
+        ) : (
+          <>
+            <article class="tile">
+              <p class="kicker">Buy</p>
+              <strong>{[buyFcc, buyPart, buyButtons].filter(Boolean).join(' · ')}</strong>
+            </article>
+            <article class="tile">
+              <p class="kicker">Price</p>
+              <strong>{cheapest ? `From $${cheapest.lowUsd?.toFixed(2)}` : 'Not verified'}</strong>
+              {cheapest && <p class="muted">{cheapest.retailer}, {stockWord}</p>}
+            </article>
+          </>
+        )
+      }
+      {data.diy.heroNotice && <p class="scope-line">{data.diy.heroNotice}</p>}
     </section>
 
     <section class="vehicle-block price-card">

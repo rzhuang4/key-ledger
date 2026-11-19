@@ -270,8 +270,17 @@ export function validateVehicle(data, fileName) {
       if (typeof row.checkedAt !== 'string' || !dateRe.test(row.checkedAt)) {
         fail(`${where}.checkedAt must be YYYY-MM-DD`);
       }
-      if (!['in-stock', 'out-of-stock', 'unknown'].includes(row.stock)) {
-        fail(`${where}.stock must be in-stock, out-of-stock, or unknown`);
+      if (!['in-stock', 'out-of-stock', 'unknown', 'service'].includes(row.stock)) {
+        fail(`${where}.stock must be in-stock, out-of-stock, unknown, or service`);
+      }
+      if (row.stock === 'service' && row.channel === 'online-diy') {
+        fail(`${where} online hardware cannot use stock service`);
+      }
+      if (row.variantId !== undefined) {
+        const ids = new Set((Array.isArray(data.variants) ? data.variants : []).map((variant) => variant?.id));
+        if (typeof row.variantId !== 'string' || !ids.has(row.variantId)) {
+          fail(`${where}.variantId does not match a variant`);
+        }
       }
       const hasNumber = row.lowUsd !== undefined || row.highUsd !== undefined;
       if (row.status === 'verified') {

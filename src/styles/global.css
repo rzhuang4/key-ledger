@@ -584,6 +584,33 @@ h4 { font-size: 1.05rem; margin: 1rem 0 0.3rem; }
   margin: 28px 0 40px;
 }
 
+.tiles.split { grid-template-columns: 1fr; }
+
+.year-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.scope-line {
+  margin: 0;
+  padding: 16px 18px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  font-weight: 650;
+}
+
+.tile .detail {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.price-fact.service > span::after { content: none; }
+.price-fact.service .pack { display: block; margin: 0 0 6px; color: var(--ink); font-size: 16px; }
+
 .tile {
   background: #fff;
   border-radius: 18px;
@@ -622,8 +649,12 @@ h4 { font-size: 1.05rem; margin: 1rem 0 0.3rem; }
   .feature p { white-space: normal; }
   main { padding-bottom: 48px; }
   .header-inner { display: block; padding: 12px 0 8px; }
-  .nav { flex-wrap: nowrap; overflow-x: auto; margin-top: 8px; }
-  .nav a { white-space: nowrap; }
+  .nav { flex-wrap: wrap; overflow: visible; margin-top: 4px; gap: 0; }
+  .nav a { white-space: nowrap; padding: 0.35rem 0.5rem; font-size: 15px; }
+  .tiles { gap: 10px; margin: 12px 0 20px; }
+  .scope-line { padding: 12px 14px; }
+  .tile { padding: 12px 14px; }
+  .tile strong { margin-top: 4px; font-size: 22px; }
   .callout { padding: 12px 14px; }
 }
 

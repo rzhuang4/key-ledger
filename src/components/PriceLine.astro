@@ -14,29 +14,40 @@ interface Props {
     stock?: string;
     lowUsd?: number;
     highUsd?: number;
+    note?: string | { text: string };
   };
 }
 const { locale, row, unverifiedLabel } = Astro.props;
+const noteText = typeof row.note === 'string' ? row.note : row.note?.text;
 const copy = features(locale);
 const info = localeInfo(locale);
 const stock =
   row.stock === 'in-stock' ? copy.stockIn :
   row.stock === 'out-of-stock' ? copy.stockOut :
+  row.stock === 'service' ? copy.stockService :
   copy.stockUnknown;
 const retailer = !row.retailer || row.retailer === 'none' ? copy.noRetailer : row.retailer;
-const showUsd = row.status === 'verified' && row.currency === 'USD';
+const showUsd = row.status === 'verified' && row.currency === 'USD' && row.stock !== 'service';
 ---
 
-<div class="price-fact">
-  <span>{retailer}</span>
+<div class:list={['price-fact', { service: row.stock === 'service' }]}>
   {
-    showUsd ? (
-      <span><span class="mono">USD</span> {formatRange(row.lowUsd, row.highUsd)}</span>
+    row.stock === 'service' && noteText ? (
+      <span class="pack">{noteText}</span>
     ) : (
-      <span class="chip unverified">{unverifiedLabel}</span>
+      <>
+        <span>{retailer}</span>
+        {
+          showUsd ? (
+            <span><span class="mono">USD</span> {formatRange(row.lowUsd, row.highUsd)}</span>
+          ) : (
+            <span class="chip unverified">{unverifiedLabel}</span>
+          )
+        }
+      </>
     )
   }
   <span>{stock}</span>
-  {row.checkedAt && <span class="muted">{copy.checkedOn.replace('{date}', formatReviewed(row.checkedAt, info.dateLocale))}</span>}
+  {row.stock !== 'service' && row.checkedAt && <span class="muted">{copy.checkedOn.replace('{date}', formatReviewed(row.checkedAt, info.dateLocale))}</span>}
   {retailer === 'Standard Auto Part' && showUsd && <span class="pack">{copy.sapPackNote}</span>}
 </div>

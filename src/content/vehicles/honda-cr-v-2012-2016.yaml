@@ -47,6 +47,9 @@ variants:
   - id: remote-head-2012-2013
     name: "3-button remote-head key"
     years: "Listed by sellers for 2012-2013, and by some for 2007-2013"
+    yearStart: 2012
+    yearEnd: 2013
+    fitment: "Fits 2007-2013"
     keyType: remote-head-key
     keyTypeNote: "Car Keys Express calls this a remote and key combo, also known as
       a remote-head key: an ignition key with a transponder plus Lock, Unlock,
@@ -68,17 +71,20 @@ variants:
           - toms-3btn
           - mk3-2012
     oemPartNumbers:
+      - number: "35111-SWA-306"
+        summary: true
+        note: "Tom's Key lists this as the part its 3-button aftermarket key replaces.
+          The listing covers CR-V 2007-2013 and other Honda models, not only
+          2012-2013."
+        sourceIds:
+          - toms-3btn
       - number: "35118-T0A-A00"
         note: "MK3 lists this as the OEM part for a 2012-2013 CR-V remote. The US
           sellers checked below print different numbers. Not confirmed on a
-          Honda parts fiche."
+          Honda parts fiche. The MK3 price is excluded, and this number is not
+          used in the year summary."
         sourceIds:
           - mk3-2012
-      - number: "35111-SWA-306"
-        note: "Tom's Key lists this as the part its 3-button aftermarket key replaces.
-          The listing also covers other Honda models, not only the CR-V."
-        sourceIds:
-          - toms-3btn
       - number: "HLIK-1T"
         note: "Car Keys Express lists HLIK-1T as a part number. That string is also the
           FCC model. Treat it as the seller's label, not as proof it is the
@@ -124,6 +130,8 @@ variants:
   - id: remote-head-2014-2016
     name: "4-button remote-head key"
     years: "2014-2016"
+    yearStart: 2014
+    yearEnd: 2016
     keyType: remote-head-key
     keyTypeNote: "Tom's Key and Keys4Less both sell a 4-button remote-head key for
       the 2014-2016 CR-V, with lock, unlock, panic, and a hatch or trunk
@@ -186,9 +194,11 @@ priceRanges:
     lowUsd: 54.95
     highUsd: 54.95
     note: "Tom's Key sells a 3-button remote-head key, fitment including CR-V
-      2007-2013, for $54.95. It was in stock on November 19, 2026. The key is
-      uncut unless you buy their photo-cut option. Programming uses their
-      separate programmer."
+      2007-2013, part 35111-SWA-306, for $54.95. It was in stock on November 19,
+      2026. The key is uncut unless you buy their photo-cut option. Programming
+      uses their separate programmer. This is not a total job cost."
+    heroNote: "Cutting and programming are extra."
+    variantId: remote-head-2012-2013
     sourceIds:
       - toms-3btn
     currency: USD
@@ -201,7 +211,9 @@ priceRanges:
     highUsd: 60.95
     note: "Tom's Key sells the 2014-2016 4-button key for $60.95. It was in stock on
       November 19, 2026. Programming is described as their programmer, not an
-      on-board sequence."
+      on-board sequence. This hardware price is not the in-store cut-and-program
+      price."
+    variantId: remote-head-2014-2016
     sourceIds:
       - toms-4btn
     currency: USD
@@ -214,6 +226,7 @@ priceRanges:
     highUsd: 88
     note: "Keys4Less lists an original remote-head key for the 2014-2016 CR-V at
       $88. It was out of stock on November 19, 2026."
+    variantId: remote-head-2014-2016
     sourceIds:
       - keys4less-2014
     currency: USD
@@ -225,6 +238,7 @@ priceRanges:
     note: "Car Keys Express showed a starting price on an earlier look the same day.
       A repeat request was blocked, and no currency code was read, so that
       number is not shown."
+    variantId: remote-head-2012-2013
     sourceIds:
       - cke-2012
     currency: USD
@@ -240,15 +254,18 @@ priceRanges:
     stock: unknown
   - channel: locksmith
     status: verified
-    note: "Puget Sound Locksmith lists $150 for a 2014-2016 CR-V 4-button key, FCC
-      MLBHLIK6-1T, parts 35118-T7S-A00 and 35118-T0A-A30. The shop says that
-      price includes cutting and programming at one of their service locations.
-      Mobile service is a separate choice. This is not a parts-only price and
-      not a Honda dealer price."
+    note: "Puget Sound Locksmith (Tacoma, WA / Greater Seattle), one shop's posted
+      price, 2014-2016 4-button, cutting + programming in-store, USD $150,
+      checked 2026-11-19. Other regions not verified. Not for 2012-2013. The
+      shop says the price includes cutting and programming at a service
+      location, and mobile service is separate. This is not a parts-only price
+      and not a Honda dealer price."
+    heroNote: "In-store cutting plus programming is $150 at one shop."
+    variantId: remote-head-2014-2016
     currency: USD
     retailer: Puget Sound Locksmith
     checkedAt: "2026-11-19"
-    stock: in-stock
+    stock: service
     lowUsd: 150
     highUsd: 150
     sourceIds:
@@ -280,7 +297,8 @@ unverified:
   - "Transponder chip identity in a Honda document. Seller labels disagree on
     the 2012-2013 key (Philips 46 versus PCF7961A) and Tom's Key says Philips 47
     for 2014-2016."
-  - "Dealer and locksmith installed prices."
+  - "A Honda dealer installed price, and locksmith prices outside the one
+    Tacoma-area shop listed for the 2014-2016 4-button key."
   - "MK3 listed the 2012-2013 remote at $38.75 and showed it out of stock. The
     page carries a UAE contact number, so that figure is not used as a US price.
     Currency and US shipping were not confirmed."

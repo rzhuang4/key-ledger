@@ -62,6 +62,8 @@ const vehicles = defineCollection({
       .optional(),
     diy: z.object({
       status: z.enum(['yes', 'no', 'needs-tool']),
+      heroAnswer: z.string().min(1).optional(),
+      heroNotice: z.string().min(1).optional(),
       summary: z.string().min(20),
       condition: z.string().min(1).optional(),
       safetyNote: z.string().min(20),
@@ -97,6 +99,9 @@ const vehicles = defineCollection({
           id: z.string().min(1),
           name: z.string().min(1),
           years: z.string().min(1),
+          yearStart: z.number().int().optional(),
+          yearEnd: z.number().int().optional(),
+          fitment: z.string().min(1).optional(),
           keyType: z.enum([
             'flip-key',
             'remote-head-key',
@@ -128,6 +133,7 @@ const vehicles = defineCollection({
               z.object({
                 number: z.string().min(1),
                 note: z.string().min(1).optional(),
+                summary: z.boolean().optional(),
                 sourceIds,
               }),
             )
@@ -169,7 +175,9 @@ const vehicles = defineCollection({
           currency: z.literal('USD'),
           retailer: z.string().min(1),
           checkedAt: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
-          stock: z.enum(['in-stock', 'out-of-stock', 'unknown']),
+          stock: z.enum(['in-stock', 'out-of-stock', 'unknown', 'service']),
+          variantId: z.string().min(1).optional(),
+          heroNote: z.string().min(1).optional(),
           lowUsd: z.number().nonnegative().optional(),
           highUsd: z.number().nonnegative().optional(),
           note: z.string().min(1),

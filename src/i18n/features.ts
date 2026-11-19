@@ -93,6 +93,7 @@ export type FeatureCopy = {
   stockIn: string;
   stockOut: string;
   stockUnknown: string;
+  stockService: string;
   checkedOn: string;
   noRetailer: string;
   kbbMeta: string;
@@ -192,6 +193,7 @@ const en: FeatureCopy = {
   stockIn: 'In stock',
   stockOut: 'Out of stock',
   stockUnknown: 'Stock unknown',
+  stockService: 'Posted price',
   checkedOn: 'Checked {date}',
   noRetailer: 'No sourced retailer',
   kbbMeta: 'Kelley Blue Book · USD · article July 14, 2025 · accessed November 19, 2026 · not a shop listing, so no stock status.',
