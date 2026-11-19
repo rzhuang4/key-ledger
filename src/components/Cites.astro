@@ -1,0 +1,23 @@
+---
+interface Source {
+  id: string;
+}
+interface Props {
+  ids: string[];
+  sources: Source[];
+}
+const { ids, sources } = Astro.props;
+---
+
+<span class="cites">
+  {
+    ids.map((id) => {
+      const n = sources.findIndex((source) => source.id === id) + 1;
+      return (
+        <a href={`#source-${id}`} title={`Source ${n}`}>
+          [{n > 0 ? n : '?'}]
+        </a>
+      );
+    })
+  }
+</span>

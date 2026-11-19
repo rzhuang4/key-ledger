@@ -1,0 +1,1804 @@
+# 2003–2006 Chevrolet Silverado 1500. Copy this file to add a page. Rules: README.md.
+make: Chevrolet
+makeSlug: chevrolet
+model: Silverado 1500
+modelSlug: silverado-1500
+yearStart: 2003
+yearEnd: 2006
+yearSlug: "2003-2006"
+market: US
+title: "2003-2006 Chevrolet Silverado 1500 key fob programming"
+description: "On-board steps for the 2003-2006 Silverado 1500 keyless remote,
+  with FCC ID LHJ011, part numbers, battery, and sourced prices."
+summary: "The keyless-entry remote on a 2003-2006 Chevrolet Silverado 1500 can
+  be programmed at the ignition, without a scan tool. An instruction sheet for
+  part 21997127 lists that truck and prints the button sequence. The remote is a
+  separate fob, not the metal ignition key."
+scope: "Light-duty Silverado 1500, 2003 through 2006, US market. The same
+  instruction sheet also names 2007 Silverado 1500 and several HD models. Those
+  trucks are outside this page. A truck that was not built with keyless entry
+  has nothing for this remote to talk to."
+reviewed: "2026-11-19"
+diy:
+  status: "yes"
+  summary: "Program every remote you want to keep in one session. The sheet says
+    transmitters already stored are erased when the first new transmitter is
+    accepted. This sequence programs the keyless remote only."
+  condition: "You need a compatible remote and the ignition key that turns the
+    lock cylinder. This does not cut a metal key."
+  safetyNote: "The instruction sheet says the first remote accepted in this
+    session erases remotes the truck already knows. A wrong sequence can wipe
+    working remotes or never enter program mode. If the doors do not lock and
+    unlock to confirm program mode, stop. A locksmith or dealer can finish the
+    job."
+  sourceIds:
+    - acdelco-sheet
+  notes:
+    - text: "The sheet's own heading is part number 21997127, and it includes
+        2003-2007 Chevrolet Silverado 1500 among the vehicles that can use the
+        printed sequence. It tells owners of a 2005-2006 Equinox, 2006 Torrent,
+        and 2002-2003 Vue to use a scan tool instead. Those exceptions are not
+        this truck."
+      sourceIds:
+        - acdelco-sheet
+  steps:
+    - text: "Close all the doors."
+      sourceIds:
+        - acdelco-sheet
+    - text: "Insert the ignition key into the ignition lock cylinder."
+      sourceIds:
+        - acdelco-sheet
+    - text: "Press and hold the door unlock switch."
+      sourceIds:
+        - acdelco-sheet
+    - text: "While holding that switch in the unlock position, cycle the ignition ON,
+        OFF, ON, OFF."
+      sourceIds:
+        - acdelco-sheet
+    - text: "Release the unlock switch. The doors lock and unlock once to confirm that
+        the truck is in program mode."
+      sourceIds:
+        - acdelco-sheet
+    - text: "On one remote, press and hold Lock and Unlock together until the doors
+        lock and unlock again. The instruction sheet and the opened GM service
+        procedures say that confirmation comes after about 15 seconds. North
+        Coast Keyless's programming page for this truck says the same hold can
+        take up to 30 seconds."
+      sourceIds:
+        - acdelco-sheet
+        - gm-2005-hybrid
+        - gm-2007-classic
+        - nck-2005-steps
+    - text: "Repeat the Lock-and-Unlock hold for each remote you want the truck to
+        keep, up to four, in the same session."
+      sourceIds:
+        - acdelco-sheet
+    - text: "Turn the ignition to RUN to leave programming mode, then test lock,
+        unlock, and panic on every remote."
+      sourceIds:
+        - acdelco-sheet
+variants:
+  - id: lhj011-3-button
+    name: "3-button keyless-entry remote"
+    years: "2003-2006"
+    keyType: separate-remote
+    keyTypeNote: "The procedure keeps the ignition key in the cylinder while you
+      press buttons on a separate transmitter. Car and Truck Remotes sells the
+      matching listing as a keyless-entry remote for turn-the-key trucks, with
+      Lock, Unlock, and Panic. It is not a flip key or a proximity fob."
+    keyTypeSourceIds:
+      - acdelco-sheet
+      - ctr-2005
+    fccIds:
+      - id: LHJ011
+        role: oem
+        note: "FCC grant to Continental Automotive Systems for a wireless car remote
+          transmitter at 315.0 MHz. Grant date February 7, 2002, as reproduced
+          by FCCID.io. The same ID is printed in the Car and Truck Remotes
+          listing."
+        sourceIds:
+          - fcc-lhj011
+          - ctr-2005
+      - id: 2AOKM-GV2
+        role: aftermarket-example
+        note: "Car and Truck Remotes says this ID, plus IC 24223-GV2 and model RT-G23B,
+          is what appears on the back of the aftermarket remote they sell. It is
+          not the OEM grant ID."
+        sourceIds:
+          - ctr-2005
+    oemPartNumbers:
+      - number: "21997127"
+        note: "Printed on the instruction sheet and listed by the seller as the current
+          part number."
+        sourceIds:
+          - acdelco-sheet
+          - ctr-2005
+      - number: "15186203"
+        note: "Seller-listed older number. Not printed on the instruction sheet."
+        sourceIds:
+          - ctr-2005
+      - number: "15186200"
+        note: "Seller-listed older number. Not printed on the instruction sheet."
+        sourceIds:
+          - ctr-2005
+      - number: "15186201"
+        note: "Seller-listed older number. Not printed on the instruction sheet."
+        sourceIds:
+          - ctr-2005
+      - number: "15132197"
+        note: "Seller-listed older number. Not printed on the instruction sheet."
+        sourceIds:
+          - ctr-2005
+      - number: "15132198"
+        note: "Seller-listed older number. Not printed on the instruction sheet."
+        sourceIds:
+          - ctr-2005
+      - number: "10377295"
+        note: "Seller-listed older number. Not printed on the instruction sheet."
+        sourceIds:
+          - ctr-2005
+      - number: "22730827"
+        note: "Seller-listed older number. Not printed on the instruction sheet. The
+          seller says the older numbers are interchangeable with 21997127."
+        sourceIds:
+          - ctr-2005
+    battery:
+      status: verified
+      type: CR2032
+      note: "Stated on the retailer listing. The FCC grant page does not name the
+        cell."
+      sourceIds:
+        - ctr-2005
+    frequency:
+      status: verified
+      text: "315 MHz"
+      note: "The grant lists 315.0–315.0 MHz under rule 15.231. The retailer listing
+        also says 315 MHz."
+      sourceIds:
+        - fcc-lhj011
+        - ctr-2005
+    buttons:
+      count: 3
+      sourceIds:
+        - ctr-2005
+priceRanges:
+  - channel: online-diy
+    status: verified
+    lowUsd: 29.95
+    highUsd: 29.95
+    note: "Checked November 19, 2026 from Shopify product JSON, not from the theme
+      label. The 2003, 2004, 2005, and 2006 Silverado handles each returned
+      available: true, price 2995 cents ($29.95), compare-at 10000 cents ($100).
+      The Sold out text on the page is a hidden theme label. The price is the
+      remote only. The listing says DIY instructions are included and does not
+      include cutting a metal ignition key."
+    sourceIds:
+      - ctr-2005
+    currency: USD
+    retailer: Car and Truck Remotes
+    checkedAt: "2026-11-19"
+    stock: in-stock
+  - channel: online-diy
+    status: verified
+    lowUsd: 24.94
+    highUsd: 24.94
+    note: Checked November 19, 2026. JSON-LD priceCurrency is USD, price 24.94,
+      availability OutOfStock. The WooCommerce store API also says currency_code
+      USD, 2494 cents, and is_in_stock false.
+    sourceIds:
+      - nck-product
+    currency: USD
+    retailer: NorthCoast Keyless
+    checkedAt: "2026-11-19"
+    stock: out-of-stock
+  - channel: online-diy
+    status: verified
+    lowUsd: 30
+    highUsd: 30
+    note: "Checked November 19, 2026. The shop currency is CAD, and the default
+      JSON-LD price is 37.00 CAD, which is not shown. With currency=USD the same
+      offer is 30.00 USD and InStock. One variant. The description says complete
+      remote keys and the SKU is SAP-Tahoe-Complete-(2). The page does not say
+      the price is for more than one remote."
+    sourceIds:
+      - sap-lhj011
+    currency: USD
+    retailer: Standard Auto Part
+    checkedAt: "2026-11-19"
+    stock: in-stock
+  - channel: dealer
+    status: unverified
+    note: "No published dealer quote for a 2003-2006 Silverado 1500 remote was
+      found. The retailer says the part saves money versus dealer prices and
+      does not print a dealer dollar amount."
+    currency: USD
+    retailer: none
+    checkedAt: "2026-11-19"
+    stock: unknown
+  - channel: locksmith
+    status: unverified
+    note: "No published locksmith price for programming this remote, or for cutting
+      the ignition key, was found."
+    currency: USD
+    retailer: none
+    checkedAt: "2026-11-19"
+    stock: unknown
+shopLinks:
+  - retailer: carandtruckremotes
+    url: "https://www.carandtruckremotes.com/products/2005-chevrolet-silverado-remo\
+      te-key-fob-aftermarket"
+    label: "2005 Silverado remote listing (LHJ011) at Car and Truck Remotes"
+  - retailer: amazon
+    url: "https://www.amazon.com/s?k=LHJ011+21997127+Silverado"
+    label: "Amazon search for LHJ011 and part 21997127"
+  - retailer: northcoastkeyless
+    url: https://northcoastkeyless.com/product/2003-2006-chevrolet-silverado-keyless-entry-remote-fob-fcc-id-lhj011-pn-21997127/
+    label: NorthCoast Keyless listing, FCC LHJ011, part 21997127
+  - retailer: standardautopart
+    url: https://www.standardautopart.com/products/car-keyless-entry-remote-for-escalade-avalanche-equinox-silverado-ssr-suburban-tahoe-sierra-yukon-h1-h2-torrent-vue-lhj011-complete-remote-2
+    label: Standard Auto Part listing, FCC LHJ011, part 21997127
+unverified:
+  - "A 2003-2006 gas-engine Silverado service-manual page was not opened. The GM
+    procedures cited here are Operation CHARM reprints of the 2005 Silverado
+    1500 hybrid manual and the 2007 Silverado Classic manual. They print the
+    same on-board sequence as the instruction sheet, including about 15 seconds,
+    and they do not print the three failure cases."
+  - "A dealer price and a locksmith price for this truck."
+  - "The battery size in a GM document. CR2032 is from the retailer listing."
+  - "Which cab, trim, and option codes included factory keyless entry. The sheet
+    names the Silverado 1500 years; it does not list RPO codes."
+sources:
+  - id: acdelco-sheet
+    title: "Instruction sheet, key fob programming, part 21997127"
+    url: "https://images-na.ssl-images-amazon.com/images/G/01/Automotive/OwnersManu\
+      al/ACDAO_Instruction_Sheet_Key_Fobs_025.pdf"
+    publisher: "Document titled as an instruction sheet for part 21997127, hosted on
+      Amazon's image servers"
+    accessed: "2026-11-19"
+    note: "Lists 2003-2007 Chevrolet Silverado 1500 among vehicles that can use the
+      printed on-board sequence, and names other GM trucks that need a scan
+      tool."
+  - id: fcc-lhj011
+    title: "FCC ID LHJ011 equipment authorization"
+    url: "https://fccid.io/LHJ011"
+    publisher: "FCCID.io reproduction of the FCC grant to Continental Automotive
+      Systems, Inc."
+    accessed: "2026-11-19"
+    note: "Grant date February 7, 2002. Equipment class Part 15 security/remote
+      control transmitter. Frequency 315.0 MHz. This page did not download the
+      grant PDF from fcc.gov."
+  - id: ctr-2005
+    title: "2005 Chevrolet Silverado remote key fob, part 21997127, FCC LHJ011"
+    url: "https://www.carandtruckremotes.com/products/2005-chevrolet-silverado-remo\
+      te-key-fob-aftermarket"
+    publisher: "Car and Truck Remotes"
+    accessed: "2026-11-19"
+    note: "Aftermarket remote. Product JSON on November 19, 2026: available true,
+      $29.95, compare-at $100. The Sold out label is theme text, not stock."
+  - id: gm-2005-hybrid
+    title: 2005 Silverado 1500 hybrid service manual, keyless entry transmitter
+      programming
+    url: https://charm.li/Chevrolet/2005/Silverado%201500%202WD%20V8-5.3L%20Hybrid/Repair%20and%20Diagnosis/Testing%20and%20Inspection/Programming%20and%20Relearning/Remote%20Keyless%20Entry%20%28RKE%29%20-%20Transmitter/
+    publisher: Operation CHARM reprint of a GM service procedure for the 2005
+      Chevrolet Silverado 1500 2WD V8-5.3L Hybrid
+    accessed: "2026-11-19"
+    note: Method 1 says the doors lock and unlock about 15 seconds after Lock and
+      Unlock are held. This is the hybrid manual, not a gas-engine 2003-2006
+      page. It does not print the three failure cases.
+  - id: gm-2007-classic
+    title: 2007 Silverado Classic service manual, keyless entry transmitter
+      programming
+    url: https://charm.li/Chevrolet/2007/Silverado%20Classic%201500%204WD%20V8-4.8L/Repair%20and%20Diagnosis/Testing%20and%20Inspection/Programming%20and%20Relearning/Keyless%20Entry%20Transmitter%20Programming/
+    publisher: Operation CHARM reprint of a GM service procedure for the 2007
+      Chevrolet Silverado Classic 1500 4WD V8-4.8L
+    accessed: "2026-11-19"
+    note: Same on-board method and the same about-15-seconds confirmation. This is
+      the Classic, which is the previous body, not a 2007 new-body truck. It
+      does not print the three failure cases.
+  - id: nck-2005-steps
+    title: 2005 Chevrolet Silverado keyless-entry programming instructions
+    url: https://northcoastkeyless.com/2005-chevrolet-silverado-1500-2500-3500-keyless-entry-remote-programming-instructions/
+    publisher: NorthCoast Keyless
+    accessed: "2026-11-19"
+    note: Says the Lock and Unlock hold can take up to 30 seconds, and prints the
+      no-cycle and early-cycle cases. The page covers 1500, 2500, and 3500.
+  - id: nck-product
+    title: 2003-2007 Chevrolet Silverado 3-button remote, FCC LHJ011, part 21997127
+    url: https://northcoastkeyless.com/product/2003-2006-chevrolet-silverado-keyless-entry-remote-fob-fcc-id-lhj011-pn-21997127/
+    publisher: NorthCoast Keyless
+    accessed: "2026-11-19"
+    note: "JSON-LD on November 19, 2026: 24.94 USD, OutOfStock. Store API agrees:
+      USD, out of stock."
+  - id: sap-lhj011
+    title: LHJ011 remote, part 21997127, fitment includes 2003-2007 Silverado
+    url: https://www.standardautopart.com/products/car-keyless-entry-remote-for-escalade-avalanche-equinox-silverado-ssr-suburban-tahoe-sierra-yukon-h1-h2-torrent-vue-lhj011-complete-remote-2
+    publisher: Standard Auto Part
+    accessed: "2026-11-19"
+    note: Default JSON-LD is 37.00 CAD and is not shown. currency=USD JSON-LD is
+      30.00 USD, InStock, one variant. SKU SAP-Tahoe-Complete-(2) is not
+      explained as a multi-pack.
+  - id: keysolved-1999-2007
+    title: Chevrolet Silverado 1500 1999-2007 key reference
+    url: https://keysolved.com/vehicles/chevrolet/silverado-1500/1999-2007
+    publisher: Keysolved
+    accessed: "2026-11-19"
+    note: Lists plain steel key B102, no chip, GM Passlock, for 1999-2006 and 2007
+      Classic, and a separate LHJ011 remote for 2003-2006 and 2007 Classic.
+i18n:
+  zh-hant:
+    title: 2003-2006 Chevrolet Silverado 1500 鑰匙遙控器編程
+    description: 2003-2006 Silverado 1500 免鑰匙遙控器的車上步驟，含 FCC ID LHJ011、零件號、電池與有出處的價格。
+    summary: 2003-2006 Chevrolet Silverado 1500 的免鑰匙遙控器可以在點火開關處編程，不必用診斷機。零件 21997127
+      的說明書列出這輛貨車並列出按鍵順序。遙控器是分開的，不是金屬點火鑰匙。
+    scope: 輕型 Silverado 1500，2003 至 2006，美國市場。同一份說明書也列出 2007 Silverado 1500 和幾款
+      HD。那些車不在本頁。出廠沒有免鑰匙系統的貨車，沒有接收器可讓這只遙控器對上。
+    diy:
+      summary: 要保留的每只遙控器都要在同一次裡編程。說明書說，第一只新遙控器被接受時，先前存著的發射器會被清除。這個順序只編程免鑰匙遙控器。
+      condition: 需要一只相容的遙控器，以及能轉動鎖芯的點火鑰匙。這不會切削金屬鑰匙。
+      safetyNote: 說明書說，這一次裡第一只被接受的遙控器會清除貨車已經認得的遙控器。順序錯了可能清掉還能用的遙控器，或根本進不了編程模式。如果車門沒有上鎖再開鎖來確認編程模式，就停下來。鎖匠或經銷商可以把工作做完。
+      notes:
+        - text: 說明書自己的標題是零件號 21997127，並列出 2003-2007 Chevrolet Silverado 1500 可以使用印出的順序。它要
+            2005-2006 Equinox、2006 Torrent 和 2002-2003 Vue 的車主改用診斷機。那些例外不是這輛貨車。
+      steps:
+        - text: 關上所有車門。
+        - text: 把點火鑰匙插入點火鎖芯。
+        - text: 按住車門開鎖開關。
+        - text: 按住該開關在開鎖位置時，把點火開關依序轉到 ON、OFF、ON、OFF。
+        - text: 放開開鎖開關。車門會上鎖再開鎖一次，表示貨車已進入編程模式。
+        - text: 在一只遙控器上同時按住 Lock 和 Unlock，直到車門再上鎖再開鎖。說明書和這裡打開的 GM 維修程序都說，這個確認大約在 15
+            秒後出現。North Coast Keyless 給這輛貨車的編程頁說，同樣的按住可能要到 30 秒。
+        - text: 對每一只要保留的遙控器重複按住 Lock 和 Unlock，同一次最多四只。
+        - text: 把點火開關轉到 RUN 以離開編程模式，然後測試每只遙控器的上鎖、開鎖和 Panic。
+    variants:
+      - id: lhj011-3-button
+        name: 3 鍵免鑰匙遙控器
+        years: 2003-2006
+        keyTypeNote: 步驟進行時，點火鑰匙留在鎖芯裡，你按的是另一只發射器上的按鈕。Car and Truck Remotes
+          把對應商品賣成轉鑰匙點火貨車用的免鑰匙遙控器，按鈕是 Lock、Unlock 和 Panic。它不是摺疊鑰匙，也不是近接遙控器。
+        fccNotes:
+          - Continental Automotive Systems 的 FCC 認證，無線車用遙控發射器，315.0 MHz。認證日期
+            2002 年 2 月 7 日，由 FCCID.io 轉載。Car and Truck Remotes 的商品頁也印了同一個 ID。
+          - Car and Truck Remotes 說這個 ID，加上 IC 24223-GV2 和型號
+            RT-G23B，印在他們所售售後遙控器的背面。它不是原廠認證 ID。
+        partNotes:
+          - 印在說明書上，賣家把它列為目前的零件號。
+          - 賣家列出的舊零件號。說明書上沒有印這個號碼。
+          - 賣家列出的舊零件號。說明書上沒有印這個號碼。
+          - 賣家列出的舊零件號。說明書上沒有印這個號碼。
+          - 賣家列出的舊零件號。說明書上沒有印這個號碼。
+          - 賣家列出的舊零件號。說明書上沒有印這個號碼。
+          - 賣家列出的舊零件號。說明書上沒有印這個號碼。
+          - 賣家列出的舊零件號。說明書上沒有印這個號碼。賣家說舊號碼可與 21997127 互換。
+        batteryNote: 零售商商品頁寫的。FCC 認證頁沒有寫電池型號。
+        frequencyNote: 認證列出 315.0–315.0 MHz，規則 15.231。零售商商品頁也寫 315 MHz。
+    priceNotes:
+      - "2026-11-19 依 Shopify 商品 JSON 查閱，不是依主題上的標籤。2003、2004、2005、2006 的
+        Silverado 商品都回傳 available: true，價格 29.95 美元，比較價 100 美元。頁面上的 Sold out
+        是隱藏的主題文字。價格只含遙控器。商品頁說含自行編程說明，不含切削金屬點火鑰匙。"
+      - 2026-11-19 查閱。JSON-LD 的 priceCurrency 是 USD，價格 24.94，availability 是
+        OutOfStock。WooCommerce 商店 API 也是 currency_code USD、2494 分、is_in_stock
+        false。
+      - "2026-11-19 查閱。商店幣別是 CAD，預設 JSON-LD 價格是 37.00 CAD，不顯示。加上 currency=USD
+        後，同一筆報價是 30.00 USD，而且 InStock。只有一個規格。說明寫 complete remote keys，SKU 是
+        SAP-Tahoe-Complete-(2)。頁面沒有說這個價格是一只以上。"
+      - 沒有找到 2003-2006 Silverado 1500 遙控器的公開經銷商報價。零售商說這個零件比經銷商便宜，但沒有印出經銷商的美元金額。
+      - 沒有找到編程這只遙控器或切削點火鑰匙的公開鎖匠價格。
+    shopLabels:
+      - Car and Truck Remotes 的 2005 Silverado 遙控器（LHJ011）
+      - 在 Amazon 搜尋 LHJ011 與零件 21997127
+      - NorthCoast Keyless 商品頁，FCC LHJ011，零件 21997127
+      - Standard Auto Part 商品頁，FCC LHJ011，零件 21997127
+    unverified:
+      - 沒有打開 2003-2006 汽油引擎 Silverado 的維修手冊頁。這裡引用的 GM 程序是 Operation CHARM 轉載的
+        2005 Silverado 1500 hybrid 手冊和 2007 Silverado Classic
+        手冊。它們印出的車上順序和說明書相同，包含大約 15 秒，沒有印出那三個失敗情形。
+      - 這輛貨車的經銷商價格與鎖匠價格。
+      - GM 文件裡的電池尺寸。CR2032 來自零售商商品頁。
+      - 哪些駕駛室、等級和選配代碼出廠就有免鑰匙。說明書列出 Silverado 1500 的年份，沒有列出 RPO 代碼。
+    sources:
+      - id: acdelco-sheet
+        title: 鑰匙遙控器編程說明書，零件 21997127
+        publisher: 標題為零件 21997127 說明書的文件，放在 Amazon 的圖片伺服器上
+        note: 把 2003-2007 Chevrolet Silverado 1500 列在可以使用印出車上順序的車輛之中，並點名其他需要診斷機的 GM 貨車。
+      - id: fcc-lhj011
+        title: FCC ID LHJ011 設備認證
+        publisher: FCCID.io 轉載 Continental Automotive Systems, Inc. 的 FCC 認證
+        note: 認證日期 2002 年 2 月 7 日。設備等級為 Part 15 安全／遙控發射器。頻率 315.0 MHz。本頁沒有從 fcc.gov 下載認證
+          PDF。
+      - id: ctr-2005
+        title: 2005 Chevrolet Silverado 遙控鑰匙，零件 21997127，FCC LHJ011
+        publisher: Car and Truck Remotes
+        note: 售後遙控器。2026-11-19 的商品 JSON：available true、29.95 美元、比較價 100 美元。Sold out
+          是主題文字，不是庫存。
+      - id: gm-2005-hybrid
+        title: 2005 Silverado 1500 hybrid 維修手冊，免鑰匙發射器編程
+        publisher: Operation CHARM 轉載的 2005 Chevrolet Silverado 1500 2WD V8-5.3L Hybrid
+          GM 維修程序
+        note: 方法 1 說按住 Lock 和 Unlock 大約 15 秒後車門上鎖再開鎖。這是 hybrid 手冊，不是汽油引擎 2003-2006
+          的頁。沒有印出三個失敗情形。
+      - id: gm-2007-classic
+        title: 2007 Silverado Classic 維修手冊，免鑰匙發射器編程
+        publisher: Operation CHARM 轉載的 2007 Chevrolet Silverado Classic 1500 4WD V8-4.8L
+          GM 維修程序
+        note: 同樣的車上方法，同樣大約 15 秒的確認。這是 Classic，也就是前一代車身，不是 2007 新車身。沒有印出三個失敗情形。
+      - id: nck-2005-steps
+        title: 2005 Chevrolet Silverado 免鑰匙遙控器編程說明
+        publisher: NorthCoast Keyless
+        note: 說按住 Lock 和 Unlock 可能要到 30 秒，並印出完全不循環和過早循環兩種情形。該頁涵蓋 1500、2500 和 3500。
+      - id: nck-product
+        title: 2003-2007 Chevrolet Silverado 3 鍵遙控器，FCC LHJ011，零件 21997127
+        publisher: NorthCoast Keyless
+        note: 2026-11-19 的 JSON-LD：24.94 USD，OutOfStock。商店 API 一致：USD，缺貨。
+      - id: sap-lhj011
+        title: LHJ011 遙控器，零件 21997127，適用含 2003-2007 Silverado
+        publisher: Standard Auto Part
+        note: 預設 JSON-LD 是 37.00 CAD，不顯示。currency=USD 的 JSON-LD 是 30.00
+          USD、InStock、一個規格。SKU SAP-Tahoe-Complete-(2) 沒有被說明成多件組。
+      - id: keysolved-1999-2007
+        title: Chevrolet Silverado 1500 1999-2007 鑰匙資料
+        publisher: Keysolved
+        note: 把 1999-2006 和 2007 Classic 的點火鑰匙寫成無晶片鋼材 B102、GM Passlock，並把 LHJ011 遙控器列成
+          2003-2006 和 2007 Classic 的另一零件。
+    ignitionKeyNote: Keysolved 的 1999-2007 Silverado 1500 頁把點火鑰匙寫成無晶片的普通鋼材
+      B102，系統是車身控制模組裡的 GM Passlock，不是鑰匙裡的晶片。它說這涵蓋全部 1999-2006 貨車和 2007
+      Classic。同一頁把 FCC LHJ011 的 3 鍵免鑰匙遙控器列成 2003-2006 和 2007 Classic
+      的另一零件。這裡沒有加上切削齒片的步驟。
+    troubleshooting:
+      - id: no-cycle
+        title: 鎖完全沒有循環
+        text: North Coast Keyless 的 2005 Silverado
+          編程頁說，如果鎖完全不循環，可能是鑰匙轉得太快或太慢，免鑰匙系統有問題，或這輛貨車沒有免鑰匙系統。它要你問鎖匠或經銷商。這裡打開的 GM
+          維修頁說，放開開鎖開關時鎖應該會循環。它們沒有印出這個區分。
+      - id: early-cycle
+        title: 放開開鎖開關之前鎖就循環
+        text: 同一份 North Coast
+          頁說，放開開鎖按鈕之前就循環，表示貨車還沒進入編程模式，要從頭再來。如果放開之前鎖一直循環，該頁說免鑰匙系統有問題，必須由鎖匠或經銷商編程。這裡打開的
+          GM 維修頁沒有印出這個過早循環的測試。
+      - id: no-response
+        title: 遙控器沒有第二次回應
+        text: North Coast 說同時按住 Lock 和 Unlock，最多 30 秒，直到鎖再循環。這裡打開的 GM 維修頁說那個確認大約在 15
+          秒後。兩邊都沒有給一個單獨測試，用來處理鎖已經循環、確認進入編程模式之後，遙控器仍然沒有反應的情形。那個情形在這裡是未知。
+  zh-hans:
+    title: 2003-2006 Chevrolet Silverado 1500 钥匙遥控器编程
+    description: 2003-2006 Silverado 1500 免钥匙遥控器的车上步骤，含 FCC ID LHJ011、零件号、电池和有出处的价格。
+    summary: 2003-2006 Chevrolet Silverado 1500 的免钥匙遥控器可以在点火开关处编程，不必用诊断仪。零件 21997127
+      的说明书列出这辆货车并列出按键顺序。遥控器是分开的，不是金属点火钥匙。
+    scope: 轻型 Silverado 1500，2003 至 2006，美国市场。同一份说明书也列出 2007 Silverado 1500 和几款
+      HD。那些车不在本页。出厂没有免钥匙系统的货车，没有接收器可让这只遥控器对上。
+    diy:
+      summary: 要保留的每只遥控器都要在同一次里编程。说明书说，第一只新遥控器被接受时，先前存着的发射器会被清除。这个顺序只编程免钥匙遥控器。
+      condition: 需要一只相容的遥控器，以及能转动锁芯的点火钥匙。这不会切削金属钥匙。
+      safetyNote: 说明书说，这一次里第一只被接受的遥控器会清除货车已经认得的遥控器。顺序错了可能清掉还能用的遥控器，或根本进不了编程模式。如果车门没有上锁再开锁来确认编程模式，就停下来。锁匠或经销商可以把工作做完。
+      notes:
+        - text: 说明书自己的标题是零件号 21997127，并列出 2003-2007 Chevrolet Silverado 1500 可以使用印出的顺序。它要
+            2005-2006 Equinox、2006 Torrent 和 2002-2003 Vue 的车主改用诊断仪。那些例外不是这辆货车。
+      steps:
+        - text: 关上所有车门。
+        - text: 把点火钥匙插入点火锁芯。
+        - text: 按住车门开锁开关。
+        - text: 按住该开关在开锁位置时，把点火开关依次转到 ON、OFF、ON、OFF。
+        - text: 放开开锁开关。车门会上锁再开锁一次，表示货车已进入编程模式。
+        - text: 在一只遥控器上同时按住 Lock 和 Unlock，直到车门再上锁再开锁。说明书和这里打开的 GM 维修程序都说，这个确认大约在 15
+            秒后出现。North Coast Keyless 给这辆货车的编程页说，同样的按住可能要到 30 秒。
+        - text: 对每一只要保留的遥控器重复按住 Lock 和 Unlock，同一次最多四只。
+        - text: 把点火开关转到 RUN 以离开编程模式，然后测试每只遥控器的上锁、开锁和 Panic。
+    variants:
+      - id: lhj011-3-button
+        name: 3 键免钥匙遥控器
+        years: 2003-2006
+        keyTypeNote: 步骤进行时，点火钥匙留在锁芯里，你按的是另一只发射器上的按钮。Car and Truck Remotes
+          把对应商品卖成转钥匙点火货车用的免钥匙遥控器，按钮是 Lock、Unlock 和 Panic。它不是折叠钥匙，也不是近接遥控器。
+        fccNotes:
+          - Continental Automotive Systems 的 FCC 认证，无线车用遥控发射器，315.0 MHz。认证日期
+            2002 年 2 月 7 日，由 FCCID.io 转载。Car and Truck Remotes 的商品页也印了同一个 ID。
+          - Car and Truck Remotes 说这个 ID，加上 IC 24223-GV2 和型号
+            RT-G23B，印在他们所售售后遥控器的背面。它不是原厂认证 ID。
+        partNotes:
+          - 印在说明书上，卖家把它列为目前的零件号。
+          - 卖家列出的旧零件号。说明书上没有印这个号码。
+          - 卖家列出的旧零件号。说明书上没有印这个号码。
+          - 卖家列出的旧零件号。说明书上没有印这个号码。
+          - 卖家列出的旧零件号。说明书上没有印这个号码。
+          - 卖家列出的旧零件号。说明书上没有印这个号码。
+          - 卖家列出的旧零件号。说明书上没有印这个号码。
+          - 卖家列出的旧零件号。说明书上没有印这个号码。卖家说旧号码可与 21997127 互换。
+        batteryNote: 零售商商品页写的。FCC 认证页没有写电池型号。
+        frequencyNote: 认证列出 315.0–315.0 MHz，规则 15.231。零售商商品页也写 315 MHz。
+    priceNotes:
+      - "2026-11-19 依 Shopify 商品 JSON 查阅，不是依主题上的标签。2003、2004、2005、2006 的
+        Silverado 商品都回传 available: true，价格 29.95 美元，比较价 100 美元。页面上的 Sold out
+        是隐藏的主题文字。价格只含遥控器。商品页说含自行编程说明，不含切削金属点火钥匙。"
+      - 2026-11-19 查阅。JSON-LD 的 priceCurrency 是 USD，价格 24.94，availability 是
+        OutOfStock。WooCommerce 商店 API 也是 currency_code USD、2494 分、is_in_stock
+        false。
+      - "2026-11-19 查阅。商店币别是 CAD，默认 JSON-LD 价格是 37.00 CAD，不显示。加上 currency=USD
+        后，同一笔报价是 30.00 USD，而且 InStock。只有一个规格。说明写 complete remote keys，SKU 是
+        SAP-Tahoe-Complete-(2)。页面没有说这个价格是一只以上。"
+      - 没有找到 2003-2006 Silverado 1500 遥控器的公开经销商报价。零售商说这个零件比经销商便宜，但没有印出经销商的美元金额。
+      - 没有找到编程这只遥控器或切削点火钥匙的公开锁匠价格。
+    shopLabels:
+      - Car and Truck Remotes 的 2005 Silverado 遥控器（LHJ011）
+      - 在 Amazon 搜索 LHJ011 与零件 21997127
+      - NorthCoast Keyless 商品页，FCC LHJ011，零件 21997127
+      - Standard Auto Part 商品页，FCC LHJ011，零件 21997127
+    unverified:
+      - 没有打开 2003-2006 汽油引擎 Silverado 的维修手册页。这里引用的 GM 程序是 Operation CHARM 转载的
+        2005 Silverado 1500 hybrid 手册和 2007 Silverado Classic
+        手册。它们印出的车上顺序和说明书相同，包含大约 15 秒，没有印出那三个失败情形。
+      - 这辆货车的经销商价格与锁匠价格。
+      - GM 文件里的电池尺寸。CR2032 来自零售商商品页。
+      - 哪些驾驶室、等级和选配代码出厂就有免钥匙。说明书列出 Silverado 1500 的年份，没有列出 RPO 代码。
+    sources:
+      - id: acdelco-sheet
+        title: 钥匙遥控器编程说明书，零件 21997127
+        publisher: 标题为零件 21997127 说明书的文件，放在 Amazon 的图片服务器上
+        note: 把 2003-2007 Chevrolet Silverado 1500 列在可以使用印出车上顺序的车辆之中，并点名其他需要诊断仪的 GM 货车。
+      - id: fcc-lhj011
+        title: FCC ID LHJ011 设备认证
+        publisher: FCCID.io 转载 Continental Automotive Systems, Inc. 的 FCC 认证
+        note: 认证日期 2002 年 2 月 7 日。设备等级为 Part 15 安全／遥控发射器。频率 315.0 MHz。本页没有从 fcc.gov 下载认证
+          PDF。
+      - id: ctr-2005
+        title: 2005 Chevrolet Silverado 遥控钥匙，零件 21997127，FCC LHJ011
+        publisher: Car and Truck Remotes
+        note: 售后遥控器。2026-11-19 的商品 JSON：available true、29.95 美元、比较价 100 美元。Sold out
+          是主题文字，不是库存。
+      - id: gm-2005-hybrid
+        title: 2005 Silverado 1500 hybrid 维修手册，免钥匙发射器编程
+        publisher: Operation CHARM 转载的 2005 Chevrolet Silverado 1500 2WD V8-5.3L Hybrid
+          GM 维修程序
+        note: 方法 1 说按住 Lock 和 Unlock 大约 15 秒后车门上锁再开锁。这是 hybrid 手册，不是汽油引擎 2003-2006
+          的页。没有印出三个失败情形。
+      - id: gm-2007-classic
+        title: 2007 Silverado Classic 维修手册，免钥匙发射器编程
+        publisher: Operation CHARM 转载的 2007 Chevrolet Silverado Classic 1500 4WD V8-4.8L
+          GM 维修程序
+        note: 同样的车上方法，同样大约 15 秒的确认。这是 Classic，也就是前一代车身，不是 2007 新车身。没有印出三个失败情形。
+      - id: nck-2005-steps
+        title: 2005 Chevrolet Silverado 免钥匙遥控器编程说明
+        publisher: NorthCoast Keyless
+        note: 说按住 Lock 和 Unlock 可能要到 30 秒，并印出完全不循环和过早循环两种情形。该页涵盖 1500、2500 和 3500。
+      - id: nck-product
+        title: 2003-2007 Chevrolet Silverado 3 键遥控器，FCC LHJ011，零件 21997127
+        publisher: NorthCoast Keyless
+        note: 2026-11-19 的 JSON-LD：24.94 USD，OutOfStock。商店 API 一致：USD，缺货。
+      - id: sap-lhj011
+        title: LHJ011 遥控器，零件 21997127，适用含 2003-2007 Silverado
+        publisher: Standard Auto Part
+        note: 默认 JSON-LD 是 37.00 CAD，不显示。currency=USD 的 JSON-LD 是 30.00
+          USD、InStock、一个规格。SKU SAP-Tahoe-Complete-(2) 没有被说明成多件组。
+      - id: keysolved-1999-2007
+        title: Chevrolet Silverado 1500 1999-2007 钥匙资料
+        publisher: Keysolved
+        note: 把 1999-2006 和 2007 Classic 的点火钥匙写成无芯片钢材 B102、GM Passlock，并把 LHJ011 遥控器列成
+          2003-2006 和 2007 Classic 的另一零件。
+    ignitionKeyNote: Keysolved 的 1999-2007 Silverado 1500 页把点火钥匙写成无芯片的普通钢材
+      B102，系统是车身控制模块里的 GM Passlock，不是钥匙里的芯片。它说这涵盖全部 1999-2006 货车和 2007
+      Classic。同一页把 FCC LHJ011 的 3 键免钥匙遥控器列成 2003-2006 和 2007 Classic
+      的另一零件。这里没有加上切削齿片的步骤。
+    troubleshooting:
+      - id: no-cycle
+        title: 锁完全没有循环
+        text: North Coast Keyless 的 2005 Silverado
+          编程页说，如果锁完全不循环，可能是钥匙转得太快或太慢，免钥匙系统有问题，或这辆货车没有免钥匙系统。它要你问锁匠或经销商。这里打开的 GM
+          维修页说，放开开锁开关时锁应该会循环。它们没有印出这个区分。
+      - id: early-cycle
+        title: 放开开锁开关之前锁就循环
+        text: 同一份 North Coast
+          页说，放开开锁按钮之前就循环，表示货车还没进入编程模式，要从头再来。如果放开之前锁一直循环，该页说免钥匙系统有问题，必须由锁匠或经销商编程。这里打开的
+          GM 维修页没有印出这个过早循环的测试。
+      - id: no-response
+        title: 遥控器没有第二次回应
+        text: North Coast 说同时按住 Lock 和 Unlock，最多 30 秒，直到锁再循环。这里打开的 GM 维修页说那个确认大约在 15
+          秒后。两边都没有给一个单独测试，用来处理锁已经循环、确认进入编程模式之后，遥控器仍然没有反应的情形。那个情形在这里是未知。
+  ja:
+    title: 2003-2006 Chevrolet Silverado 1500 のキーフォブ登録
+    description: 2003-2006 Silverado 1500 のキーレスリモコンを車内で登録する手順。FCC ID LHJ011、部品番号、電池、出典のある価格。
+    summary: 2003-2006 Chevrolet Silverado 1500 のキーレスリモコンは、診断機なしでイグニッション側から登録できます。部品
+      21997127 の手順書がこのトラックを挙げ、ボタン順を載せています。リモコンは別体で、金属のイグニッションキーではありません。
+    scope: ライトデューティの Silverado 1500、2003 年から 2006 年、米国市場です。同じ手順書は 2007 年 Silverado
+      1500 と複数の HD
+      も挙げています。それらはこのページの外です。工場でキーレスが付いていないトラックには、このリモコンが話す受信機がありません。
+    diy:
+      summary: 残したいリモコンはすべて同じ回で登録します。手順書は、最初の新しい送信機が受け付けられた時点で、以前入っていた送信機は消えると書いています。この順番が登録するのはキーレスリモコンだけです。
+      condition: 互換リモコンと、ロックシリンダーを回すイグニッションキーが必要です。金属キーのカットはしません。
+      safetyNote: 手順書は、この回で最初に受け付けられたリモコンが、トラックが既に覚えているリモコンを消すと書いています。順番を誤ると、動くリモコンが消えるか、登録モードに入れないことがあります。ドアが施錠して解錠し、登録モードを示さないときは止めてください。鍵屋かディーラーが仕上げられます。
+      notes:
+        - text: 手順書の見出し自体が部品番号 21997127 で、印刷された順番を使える車に 2003-2007 Chevrolet Silverado 1500
+            を含めています。2005-2006 Equinox、2006 Torrent、2002-2003 Vue
+            の所有者には診断機を使うよう書いています。それらの例外はこのトラックではありません。
+      steps:
+        - text: すべてのドアを閉めます。
+        - text: イグニッションキーをイグニッションのロックシリンダーに差し込みます。
+        - text: ドアの解錠スイッチを押し続けます。
+        - text: そのスイッチを解錠位置で押したまま、イグニッションを ON、OFF、ON、OFF の順に回します。
+        - text: 解錠スイッチを放します。ドアが一度施錠して解錠すれば、トラックは登録モードです。
+        - text: リモコン 1 個で Lock と Unlock を同時に押し続け、ドアが再び施錠して解錠するまで待ちます。説明書と、ここで開いた GM
+            の修理手順は、その確認がおよそ 15 秒後だと書いています。North Coast Keyless
+            のこのトラック向けページは、同じ押し続けが最大 30 秒かかることがあると書いています。
+        - text: 残したいリモコンごとに Lock と Unlock の長押しを繰り返します。同じ回で最大 4 個です。
+        - text: イグニッションを RUN にして登録モードを抜け、各リモコンの施錠、解錠、Panic を試します。
+    variants:
+      - id: lhj011-3-button
+        name: 3 ボタンのキーレスリモコン
+        years: 2003-2006
+        keyTypeNote: 手順のあいだイグニッションキーはシリンダーに入ったままで、別の送信機のボタンを押します。Car and Truck Remotes
+          は対応商品を、キーを回して始動するトラック向けキーレスリモコンとして売り、ボタンは Lock、Unlock、Panic
+          です。フリップキーでも近接フォブでもありません。
+        fccNotes:
+          - Continental Automotive Systems への FCC 認証。車載ワイヤレスリモコン送信機、315.0
+            MHz。認証日は 2002 年 2 月 7 日で、FCCID.io が転載しています。Car and Truck Remotes
+            の掲載にも同じ ID が印刷されています。
+          - Car and Truck Remotes は、この ID に IC 24223-GV2 と型式 RT-G23B
+            を加え、同社が売る社外リモコンの背面に出ると書いています。純正の認証 ID ではありません。
+        partNotes:
+          - 手順書に印刷され、販売店は現行の部品番号として挙げています。
+          - 販売店が挙げた古い部品番号です。手順書には印刷されていません。
+          - 販売店が挙げた古い部品番号です。手順書には印刷されていません。
+          - 販売店が挙げた古い部品番号です。手順書には印刷されていません。
+          - 販売店が挙げた古い部品番号です。手順書には印刷されていません。
+          - 販売店が挙げた古い部品番号です。手順書には印刷されていません。
+          - 販売店が挙げた古い部品番号です。手順書には印刷されていません。
+          - 販売店が挙げた古い部品番号です。手順書には印刷されていません。販売店は古い番号が 21997127 と交換可能だとしています。
+        batteryNote: 販売ページに記載があります。FCC の認証ページは電池の種類を書いていません。
+        frequencyNote: 認証は規則 15.231 で 315.0–315.0 MHz と書いています。販売ページも 315 MHz としています。
+    priceNotes:
+      - "2026-11-19 にテーマの表示ではなく Shopify の商品 JSON で確認。2003、2004、2005、2006 の
+        Silverado はいずれも available: true、価格 29.95 ドル、比較価格 100 ドル。ページの Sold out
+        は隠れたテーマ文言です。価格はリモコンのみ。掲載は自分で登録する説明が付くとし、金属キーのカットは含みません。"
+      - 2026-11-19 に確認。JSON-LD は priceCurrency USD、価格 24.94、availability は
+        OutOfStock。WooCommerce の store API も currency_code USD、2494
+        セント、is_in_stock false。
+      - "2026-11-19 に確認。店の通貨は CAD で、既定の JSON-LD 価格 37.00 CAD
+        は表示しません。currency=USD では同じ offer が 30.00 USD、InStock。バリエーションは 1 件。説明は
+        complete remote keys、SKU は SAP-Tahoe-Complete-(2)。1 個より多いとは書いていません。"
+      - 2003-2006 Silverado 1500
+        のリモコンについて、公開されたディーラー見積は見つかりませんでした。販売店はディーラーより安いとしていますが、ディーラーのドル金額は印刷していません。
+      - このリモコンの登録やイグニッションキーのカットについて、公開された鍵屋の価格は見つかりませんでした。
+    shopLabels:
+      - Car and Truck Remotes の 2005 Silverado リモコン（LHJ011）
+      - Amazon で LHJ011 と部品 21997127 を検索
+      - NorthCoast Keyless の商品ページ、FCC LHJ011、部品 21997127
+      - Standard Auto Part の商品ページ、FCC LHJ011、部品 21997127
+    unverified:
+      - 2003-2006 年のガソリン車 Silverado のサービスマニュアルページは開いていません。ここで引く GM 手順は、Operation
+        CHARM が転載した 2005 Silverado 1500 ハイブリッドと 2007 Silverado Classic
+        のマニュアルです。説明書と同じ車上手順で、およそ 15 秒を含み、3 つの失敗例は載っていません。
+      - このトラックのディーラー価格と鍵屋の価格。
+      - GM の文書にある電池サイズ。CR2032 は販売ページの記載です。
+      - どのキャブ、グレード、オプションコードが工場でキーレス付きだったか。手順書は Silverado 1500 の年式を挙げるだけで、RPO
+        コードは書いていません。
+    sources:
+      - id: acdelco-sheet
+        title: キーフォブ登録の手順書、部品 21997127
+        publisher: 部品 21997127 の手順書と題された文書。Amazon の画像サーバーに置かれています
+        note: 2003-2007 Chevrolet Silverado 1500 を、印刷された車内手順が使える車に含めています。診断機が必要な他の GM
+          トラックも挙げています。
+      - id: fcc-lhj011
+        title: FCC ID LHJ011 の機器認証
+        publisher: FCCID.io による、Continental Automotive Systems, Inc. への FCC 認証の転載
+        note: 認証日 2002 年 2 月 7 日。機器等級は Part 15 のセキュリティ／リモコン送信機。周波数 315.0 MHz。このページは
+          fcc.gov から認証 PDF をダウンロードしていません。
+      - id: ctr-2005
+        title: 2005 Chevrolet Silverado のリモコン、部品 21997127、FCC LHJ011
+        publisher: Car and Truck Remotes
+        note: 社外リモコン。2026-11-19 の商品 JSON は available true、29.95 ドル、比較価格 100 ドル。Sold out
+          はテーマ文言で、在庫ではありません。
+      - id: gm-2005-hybrid
+        title: 2005 Silverado 1500 ハイブリッド整備書、キーレス送信機の登録
+        publisher: Operation CHARM による 2005 Chevrolet Silverado 1500 2WD V8-5.3L Hybrid
+          の GM 修理手順の転載
+        note: 方法 1 は Lock と Unlock を押しておよそ 15 秒後にドアが施錠・解錠するとしています。これはハイブリッドのマニュアルで、ガソリンの
+          2003-2006 のページではありません。3 つの失敗例はありません。
+      - id: gm-2007-classic
+        title: 2007 Silverado Classic 整備書、キーレス送信機の登録
+        publisher: Operation CHARM による 2007 Chevrolet Silverado Classic 1500 4WD V8-4.8L
+          の GM 修理手順の転載
+        note: 同じ車上方法で、確認もおよそ 15 秒です。これは Classic、つまり前の車体で、2007 年の新しい車体ではありません。3
+          つの失敗例はありません。
+      - id: nck-2005-steps
+        title: 2005 Chevrolet Silverado キーレスリモコンの登録手順
+        publisher: NorthCoast Keyless
+        note: Lock と Unlock の押し続けが最大 30 秒かかることがあるとし、まったく動かない場合と早すぎる場合を書いています。ページは
+          1500、2500、3500 を含みます。
+      - id: nck-product
+        title: 2003-2007 Chevrolet Silverado 3 ボタン、FCC LHJ011、部品 21997127
+        publisher: NorthCoast Keyless
+        note: 2026-11-19 の JSON-LD：24.94 USD、OutOfStock。ストア API も USD、在庫なし。
+      - id: sap-lhj011
+        title: LHJ011 リモコン、部品 21997127、適合に 2003-2007 Silverado
+        publisher: Standard Auto Part
+        note: 既定の JSON-LD は 37.00 CAD で表示しません。currency=USD の JSON-LD は 30.00
+          USD、InStock、バリエーション 1 件。SKU SAP-Tahoe-Complete-(2) は複数パックとは説明されていません。
+      - id: keysolved-1999-2007
+        title: Chevrolet Silverado 1500 1999-2007 のキー資料
+        publisher: Keysolved
+        note: 1999-2006 と 2007 Classic のイグニッションキーをチップなし鋼製 B102、GM Passlock とし、LHJ011
+          リモコンを 2003-2006 と 2007 Classic の別体としています。
+    ignitionKeyNote: Keysolved の 1999-2007 Silverado 1500 のページは、イグニッションキーをチップなしの鋼製
+      B102 とし、方式はキー内のトランスポンダではなくボディ制御モジュールの GM Passlock としています。1999-2006 の全トラックと
+      2007 Classic が対象だと書いています。同じページは、FCC LHJ011 の別体 3 ボタン・キーレスリモコンを 2003-2006 と
+      2007 Classic に挙げています。この歯のカット手順は加えていません。
+    troubleshooting:
+      - id: no-cycle
+        title: ロックがまったく動かない
+        text: North Coast Keyless の 2005 Silverado
+          のページは、ロックがまったく動かない場合、キーを回すのが速すぎるか遅すぎるか、キーレスに不具合があるか、キーレス非装着かもしれないと書いています。鍵屋かディーラーに確認するよう書いています。開いた
+          GM の修理ページは、アンロックを放したときにロックが動くはずだとだけ書いていて、この分け方は載っていません。
+      - id: early-cycle
+        title: アンロックを放す前にロックが動く
+        text: 同じ North Coast
+          のページは、アンロックを放す前に動いたらプログラミングモードに入っていないので最初からやり直す、と書いています。放す前に動き続けるなら、キーレスに不具合があり、鍵屋かディーラーが登録する必要があるとも書いています。開いた
+          GM の修理ページに、この早すぎる動作のテストはありません。
+      - id: no-response
+        title: リモコンから 2 回目の応答がない
+        text: North Coast は Lock と Unlock を最大 30 秒、ロックが再び動くまで押すと書いています。開いた GM
+          の修理ページは、その確認がおよそ 15
+          秒後だと書いています。どちらも、プログラミングモード確認のあとリモコンが無反応のままの場合の別テストは書いていません。その場合はここでは不明です。
+  ko:
+    title: 2003-2006 Chevrolet Silverado 1500 키 포브 프로그래밍
+    description: 2003-2006 Silverado 1500 키리스 리모컨의 차 안 절차. FCC ID LHJ011, 부품 번호,
+      배터리, 출처 있는 가격.
+    summary: 2003-2006 Chevrolet Silverado 1500 키리스 리모컨은 진단기 없이 점화 스위치에서 프로그래밍할 수
+      있습니다. 부품 21997127 설명서가 이 트럭을 적고 버튼 순서를 실었습니다. 리모컨은 분리형이며 금속 점화 키가 아닙니다.
+    scope: 라이트 듀티 Silverado 1500, 2003년부터 2006년, 미국 시장입니다. 같은 설명서는 2007 Silverado
+      1500과 여러 HD도 적습니다. 그 차들은 이 페이지 밖입니다. 공장에서 키리스가 없는 트럭에는 이 리모컨이 말할 수신기가
+      없습니다.
+    diy:
+      summary: 남길 리모컨은 모두 같은 차례에 프로그래밍합니다. 설명서는 첫 새 송신기가 받아들여지면 이전에 저장된 송신기가 지워진다고
+        합니다. 이 순서는 키리스 리모컨만 프로그래밍합니다.
+      condition: 호환 리모컨과 자물쇠 실린더를 돌리는 점화 키가 필요합니다. 금속 키를 깎지는 않습니다.
+      safetyNote: 설명서는 이번 차례에서 처음 받아들여진 리모컨이 트럭이 이미 아는 리모컨을 지운다고 합니다. 순서를 잘못하면 작동하는
+        리모컨이 지워지거나 프로그래밍 모드에 들어가지 못할 수 있습니다. 문이 잠겼다가 열리며 프로그래밍 모드를 확인하지 않으면
+        멈추세요. 열쇠 기술자나 딜러가 마칠 수 있습니다.
+      notes:
+        - text: 설명서 제목 자체가 부품 번호 21997127이고, 인쇄된 순서를 쓸 수 있는 차에 2003-2007 Chevrolet
+            Silverado 1500이 들어 있습니다. 2005-2006 Equinox, 2006 Torrent, 2002-2003
+            Vue 소유자에게는 진단기를 쓰라고 합니다. 그 예외는 이 트럭이 아닙니다.
+      steps:
+        - text: 모든 문을 닫습니다.
+        - text: 점화 키를 점화 잠금 실린더에 넣습니다.
+        - text: 도어 잠금 해제 스위치를 누르고 있습니다.
+        - text: 그 스위치를 잠금 해제 위치로 누른 채 점화를 ON, OFF, ON, OFF 순으로 돌립니다.
+        - text: 잠금 해제 스위치에서 손을 뗍니다. 문이 한 번 잠겼다가 열리면 트럭이 프로그래밍 모드입니다.
+        - text: 리모컨 하나에서 Lock과 Unlock을 함께 누르고, 문이 다시 잠겼다가 열릴 때까지 기다립니다. 설명서와 여기서 연 GM 정비
+            절차는 그 확인이 약 15초 뒤에 온다고 합니다. North Coast Keyless의 이 트럭 프로그래밍 페이지는 같은
+            누름이 최대 30초까지 걸릴 수 있다고 합니다.
+        - text: 남길 리모컨마다 Lock과 Unlock을 누르고 있는 동작을 반복합니다. 같은 차례에 최대 네 개입니다.
+        - text: 점화를 RUN으로 돌려 프로그래밍 모드를 나가고, 각 리모컨의 잠금, 잠금 해제, Panic을 시험합니다.
+    variants:
+      - id: lhj011-3-button
+        name: 버튼 3개 키리스 리모컨
+        years: 2003-2006
+        keyTypeNote: 절차 동안 점화 키는 실린더에 있고, 다른 송신기의 버튼을 누릅니다. Car and Truck Remotes는 해당
+          상품을 키를 돌려 시동하는 트럭용 키리스 리모컨으로 팔며 버튼은 Lock, Unlock, Panic입니다. 플립 키도 근접
+          포브도 아닙니다.
+        fccNotes:
+          - Continental Automotive Systems의 FCC 인증. 차량용 무선 리모컨 송신기, 315.0 MHz.
+            인증일은 2002년 2월 7일이고 FCCID.io가 옮겼습니다. Car and Truck Remotes 상품 페이지에도
+            같은 ID가 있습니다.
+          - Car and Truck Remotes는 이 ID와 IC 24223-GV2, 모델 RT-G23B가 자사가 파는 애프터마켓
+            리모컨 뒷면에 나온다고 합니다. 순정 인증 ID가 아닙니다.
+        partNotes:
+          - 설명서에 인쇄되어 있고, 판매자는 현재 부품 번호로 적습니다.
+          - 판매자가 적은 예전 부품 번호입니다. 설명서에는 인쇄되어 있지 않습니다.
+          - 판매자가 적은 예전 부품 번호입니다. 설명서에는 인쇄되어 있지 않습니다.
+          - 판매자가 적은 예전 부품 번호입니다. 설명서에는 인쇄되어 있지 않습니다.
+          - 판매자가 적은 예전 부품 번호입니다. 설명서에는 인쇄되어 있지 않습니다.
+          - 판매자가 적은 예전 부품 번호입니다. 설명서에는 인쇄되어 있지 않습니다.
+          - 판매자가 적은 예전 부품 번호입니다. 설명서에는 인쇄되어 있지 않습니다.
+          - 판매자가 적은 예전 부품 번호입니다. 설명서에는 인쇄되어 있지 않습니다. 판매자는 예전 번호가 21997127과 호환된다고
+            합니다.
+        batteryNote: 판매 페이지에 적혀 있습니다. FCC 인증 페이지는 배터리 종류를 적지 않습니다.
+        frequencyNote: 인증은 규칙 15.231에서 315.0–315.0 MHz라고 합니다. 판매 페이지도 315 MHz라고 합니다.
+    priceNotes:
+      - "2026-11-19에 테마 문구가 아니라 Shopify 상품 JSON으로 확인했습니다. 2003, 2004, 2005, 2006
+        Silverado 핸들이 모두 available: true, 가격 29.95달러, 비교가 100달러였습니다. 페이지의 Sold
+        out은 숨은 테마 문구입니다. 가격은 리모컨만입니다. 직접 프로그래밍 설명이 포함되고 금속 점화 키 절삭은 포함되지 않는다고
+        합니다."
+      - 2026-11-19에 확인. JSON-LD는 priceCurrency USD, 가격 24.94, availability
+        OutOfStock. WooCommerce 스토어 API도 currency_code USD, 2494센트, is_in_stock
+        false.
+      - "2026-11-19에 확인. 상점 통화는 CAD이고 기본 JSON-LD 가격 37.00 CAD는 표시하지 않습니다.
+        currency=USD이면 같은 오퍼가 30.00 USD, InStock입니다. 변형은 하나. 설명은 complete remote
+        keys, SKU는 SAP-Tahoe-Complete-(2). 한 개보다 많다고 쓰지 않습니다."
+      - 2003-2006 Silverado 1500 리모컨의 공개된 딜러 견적은 찾지 못했습니다. 판매자는 딜러보다 싸다고 하지만 딜러의
+        달러 금액은 적지 않습니다.
+      - 이 리모컨 프로그래밍이나 점화 키 절삭의 공개된 열쇠 기술자 가격은 찾지 못했습니다.
+    shopLabels:
+      - Car and Truck Remotes의 2005 Silverado 리모컨(LHJ011)
+      - Amazon에서 LHJ011과 부품 21997127 검색
+      - NorthCoast Keyless 상품 페이지, FCC LHJ011, 부품 21997127
+      - Standard Auto Part 상품 페이지, FCC LHJ011, 부품 21997127
+    unverified:
+      - 2003-2006 가솔린 Silverado 정비 매뉴얼 페이지는 열지 않았습니다. 여기서 인용한 GM 절차는 Operation
+        CHARM이 옮긴 2005 Silverado 1500 하이브리드 매뉴얼과 2007 Silverado Classic 매뉴얼입니다.
+        설명서와 같은 차 안 순서이고 약 15초를 포함하며, 세 가지 실패 경우는 적혀 있지 않습니다.
+      - 이 트럭의 딜러 가격과 열쇠 기술자 가격.
+      - GM 문서의 배터리 크기. CR2032는 판매 페이지에서 온 것입니다.
+      - 어떤 캡, 트림, 옵션 코드가 공장 키리스를 갖췄는지. 설명서는 Silverado 1500 연식만 적고 RPO 코드는 없습니다.
+    sources:
+      - id: acdelco-sheet
+        title: 키 포브 프로그래밍 설명서, 부품 21997127
+        publisher: 부품 21997127 설명서라는 제목의 문서. Amazon 이미지 서버에 있습니다
+        note: 2003-2007 Chevrolet Silverado 1500을 인쇄된 차 안 순서를 쓸 수 있는 차에 넣습니다. 진단기가 필요한
+          다른 GM 트럭도 적습니다.
+      - id: fcc-lhj011
+        title: FCC ID LHJ011 기기 인증
+        publisher: FCCID.io가 옮긴 Continental Automotive Systems, Inc.의 FCC 인증
+        note: 인증일 2002년 2월 7일. 기기 등급은 Part 15 보안/리모컨 송신기. 주파수 315.0 MHz. 이 페이지는
+          fcc.gov에서 인증 PDF를 받지 않았습니다.
+      - id: ctr-2005
+        title: 2005 Chevrolet Silverado 리모컨, 부품 21997127, FCC LHJ011
+        publisher: Car and Truck Remotes
+        note: "애프터마켓 리모컨. 2026-11-19 상품 JSON: available true, 29.95달러, 비교가 100달러. Sold
+          out은 테마 문구이며 재고가 아닙니다."
+      - id: gm-2005-hybrid
+        title: 2005 Silverado 1500 하이브리드 정비 매뉴얼, 키리스 송신기 프로그래밍
+        publisher: Operation CHARM이 옮긴 2005 Chevrolet Silverado 1500 2WD V8-5.3L Hybrid
+          GM 정비 절차
+        note: 방법 1은 Lock과 Unlock을 누른 뒤 약 15초 후 문이 잠겼다 열린다고 합니다. 이것은 하이브리드 매뉴얼이며 가솔린
+          2003-2006 페이지가 아닙니다. 세 가지 실패 경우는 없습니다.
+      - id: gm-2007-classic
+        title: 2007 Silverado Classic 정비 매뉴얼, 키리스 송신기 프로그래밍
+        publisher: Operation CHARM이 옮긴 2007 Chevrolet Silverado Classic 1500 4WD V8-4.8L
+          GM 정비 절차
+        note: 같은 차 안 방법이고 확인도 약 15초입니다. 이것은 Classic, 즉 이전 차체이며 2007년 새 차체가 아닙니다. 세 가지 실패
+          경우는 없습니다.
+      - id: nck-2005-steps
+        title: 2005 Chevrolet Silverado 키리스 리모컨 프로그래밍 설명
+        publisher: NorthCoast Keyless
+        note: Lock과 Unlock을 누르는 시간이 최대 30초일 수 있다고 하고, 전혀 순환하지 않는 경우와 너무 이른 경우를 적습니다.
+          페이지는 1500, 2500, 3500을 다룹니다.
+      - id: nck-product
+        title: 2003-2007 Chevrolet Silverado 3버튼, FCC LHJ011, 부품 21997127
+        publisher: NorthCoast Keyless
+        note: "2026-11-19 JSON-LD: 24.94 USD, OutOfStock. 스토어 API도 USD, 품절."
+      - id: sap-lhj011
+        title: LHJ011 리모컨, 부품 21997127, 적용에 2003-2007 Silverado 포함
+        publisher: Standard Auto Part
+        note: 기본 JSON-LD는 37.00 CAD라 표시하지 않습니다. currency=USD JSON-LD는 30.00 USD,
+          InStock, 변형 하나. SKU SAP-Tahoe-Complete-(2)는 여러 개 묶음으로 설명되지 않습니다.
+      - id: keysolved-1999-2007
+        title: Chevrolet Silverado 1500 1999-2007 키 자료
+        publisher: Keysolved
+        note: 1999-2006과 2007 Classic의 점화 키를 칩 없는 강철 B102, GM Passlock으로 적고, LHJ011 리모컨을
+          2003-2006과 2007 Classic의 별도 부품으로 적습니다.
+    ignitionKeyNote: Keysolved의 1999-2007 Silverado 1500 페이지는 점화 키를 칩이 없는 강철 B102로
+      적고, 방식은 키 안의 트랜스폰더가 아니라 차체 제어 모듈의 GM Passlock이라고 합니다. 1999-2006 전 트럭과 2007
+      Classic에 해당한다고 합니다. 같은 페이지는 FCC LHJ011 3버튼 별도 리모컨을 2003-2006과 2007
+      Classic에 적습니다. 이 톱니를 깎는 단계는 더하지 않습니다.
+    troubleshooting:
+      - id: no-cycle
+        title: 잠금이 전혀 순환하지 않음
+        text: North Coast Keyless의 2005 Silverado 프로그래밍 페이지는 잠금이 전혀 순환하지 않으면 키를 너무 빨리 또는
+          너무 느리게 돌렸거나, 키리스 시스템에 문제가 있거나, 키리스가 없는 차일 수 있다고 합니다. 열쇠 기술자나 딜러에게
+          확인하라고 합니다. 연 GM 정비 페이지는 열림 스위치를 놓으면 잠금이 순환해야 한다고만 하고, 이 구분은 적지 않습니다.
+      - id: early-cycle
+        title: 열림 스위치를 놓기 전에 잠금이 순환함
+        text: 같은 North Coast 페이지는 열림 버튼을 놓기 전에 순환하면 프로그래밍 모드에 들어가지 않은 것이니 처음부터 다시 하라고
+          합니다. 놓기 전에 계속 순환하면 키리스 시스템에 문제가 있어 열쇠 기술자나 딜러가 프로그래밍해야 한다고 합니다. 연 GM
+          정비 페이지에는 이 이른 순환 테스트가 없습니다.
+      - id: no-response
+        title: 리모컨의 두 번째 응답이 없음
+        text: North Coast는 Lock과 Unlock을 최대 30초, 잠금이 다시 순환할 때까지 누르라고 합니다. 연 GM 정비 페이지는 그
+          확인이 약 15초 뒤라고 합니다. 둘 다, 프로그래밍 모드가 확인된 뒤에도 리모컨이 계속 무반응인 경우를 위한 별도 테스트는
+          주지 않습니다. 그 경우는 여기서 미상입니다.
+  es:
+    title: Programación del mando del Chevrolet Silverado 1500 2003-2006
+    description: Pasos a bordo del mando keyless del Silverado 1500 2003-2006, con
+      ID FCC LHJ011, números de pieza, pila y precios citados.
+    summary: El mando keyless de un Chevrolet Silverado 1500 2003-2006 se programa
+      en el encendido, sin escáner. La hoja de la pieza 21997127 nombra esa
+      camioneta e imprime la secuencia. El mando va aparte; no es la llave
+      metálica de encendido.
+    scope: Silverado 1500 ligera, de 2003 a 2006, mercado de EE. UU. La misma hoja
+      también nombra la Silverado 1500 2007 y varios HD. Esos quedan fuera de
+      esta página. Una camioneta sin keyless de fábrica no tiene receptor al que
+      hable este mando.
+    diy:
+      summary: Programe en la misma sesión cada mando que quiera conservar. La hoja
+        dice que los transmisores ya guardados se borran cuando se acepta el
+        primero nuevo. Esta secuencia programa solo el mando keyless.
+      condition: Hace falta un mando compatible y la llave de encendido que gira el
+        cilindro. Esto no talla una llave de metal.
+      safetyNote: La hoja dice que el primer mando aceptado en esta sesión borra los
+        que la camioneta ya conoce. Una secuencia incorrecta puede borrar mandos
+        que funcionan o no entrar en modo de programación. Si las puertas no se
+        cierran y abren para confirmar el modo, deténgase. Un cerrajero o el
+        concesionario pueden terminar el trabajo.
+      notes:
+        - text: El propio encabezado de la hoja es la pieza 21997127 e incluye la
+            Chevrolet Silverado 1500 2003-2007 entre los vehículos que pueden
+            usar la secuencia impresa. Pide escáner a los dueños de Equinox
+            2005-2006, Torrent 2006 y Vue 2002-2003. Esas excepciones no son
+            esta camioneta.
+      steps:
+        - text: Cierre todas las puertas.
+        - text: Inserte la llave de encendido en el cilindro de la cerradura de encendido.
+        - text: Mantenga pulsado el interruptor de desbloqueo de la puerta.
+        - text: Mientras sostiene ese interruptor en desbloqueo, gire el encendido a ON,
+            OFF, ON, OFF.
+        - text: Suelte el interruptor de desbloqueo. Las puertas se cierran y se abren una
+            vez para confirmar que la camioneta está en modo de programación.
+        - text: En un mando, mantenga Lock y Unlock a la vez hasta que las puertas vuelvan
+            a cerrarse y abrirse. La hoja de instrucciones y los procedimientos
+            de servicio de GM abiertos aquí dicen que esa confirmación llega
+            tras unos 15 segundos. La página de programación de North Coast
+            Keyless para esta camioneta dice que la misma pulsación puede tardar
+            hasta 30 segundos.
+        - text: Repita la pulsación de Lock y Unlock para cada mando que quiera conservar,
+            hasta cuatro, en la misma sesión.
+        - text: Gire el encendido a RUN para salir del modo de programación y pruebe
+            bloqueo, desbloqueo y Panic en cada mando.
+    variants:
+      - id: lhj011-3-button
+        name: Mando keyless de 3 botones
+        years: 2003-2006
+        keyTypeNote: Durante el procedimiento la llave de encendido permanece en el
+          cilindro y usted pulsa un transmisor aparte. Car and Truck Remotes
+          vende el anuncio correspondiente como mando keyless para camionetas de
+          llave giratoria, con Lock, Unlock y Panic. No es una llave plegable ni
+          un mando de proximidad.
+        fccNotes:
+          - "Concesión FCC a Continental Automotive Systems para un transmisor
+            remoto inalámbrico de auto a 315,0 MHz. Fecha de concesión: 7 de
+            febrero de 2002, reproducida por FCCID.io. El mismo ID aparece en la
+            ficha de Car and Truck Remotes."
+          - Car and Truck Remotes dice que este ID, más el IC 24223-GV2 y el
+            modelo RT-G23B, aparece en la parte trasera del mando de posventa
+            que venden. No es el ID de la concesión OEM.
+        partNotes:
+          - Impreso en la hoja de instrucciones y listado por el vendedor como
+            número actual.
+          - Número antiguo listado por el vendedor. No está impreso en la hoja
+            de instrucciones.
+          - Número antiguo listado por el vendedor. No está impreso en la hoja
+            de instrucciones.
+          - Número antiguo listado por el vendedor. No está impreso en la hoja
+            de instrucciones.
+          - Número antiguo listado por el vendedor. No está impreso en la hoja
+            de instrucciones.
+          - Número antiguo listado por el vendedor. No está impreso en la hoja
+            de instrucciones.
+          - Número antiguo listado por el vendedor. No está impreso en la hoja
+            de instrucciones.
+          - Número antiguo listado por el vendedor. No está impreso en la hoja.
+            El vendedor dice que los números antiguos son intercambiables con
+            21997127.
+        batteryNote: Figura en la ficha del vendedor. La página de la concesión FCC no
+          nombra la pila.
+        frequencyNote: La concesión indica 315,0–315,0 MHz bajo la regla 15.231. La
+          ficha del vendedor también dice 315 MHz.
+    priceNotes:
+      - "Consultado el 19 de noviembre de 2026 en el JSON de producto de
+        Shopify, no en la etiqueta del tema. Los identificadores de Silverado
+        2003, 2004, 2005 y 2006 devolvieron available: true, precio 29,95
+        dólares y precio de comparación 100. El texto Sold out de la página es
+        una etiqueta oculta del tema. El precio es solo el mando. El anuncio
+        dice que incluye instrucciones para hacerlo uno mismo y no incluye
+        tallar la llave metálica."
+      - Consultado el 19 de noviembre de 2026. El JSON-LD dice priceCurrency
+        USD, precio 24,94 y availability OutOfStock. La API de la tienda
+        WooCommerce también dice currency_code USD, 2494 centavos e is_in_stock
+        false.
+      - "Consultado el 19 de noviembre de 2026. La moneda de la tienda es CAD y
+        el JSON-LD por defecto es 37,00 CAD, que no se muestra. Con currency=USD
+        la misma oferta es 30,00 USD e InStock. Una variante. La descripción
+        dice complete remote keys y el SKU es SAP-Tahoe-Complete-(2). La página
+        no dice que el precio sea por más de uno."
+      - No se encontró una cotización publicada de concesionario para un mando
+        de Silverado 1500 2003-2006. El vendedor dice que la pieza ahorra frente
+        al concesionario y no imprime una cifra en dólares del concesionario.
+      - No se encontró un precio publicado de cerrajero por programar este mando
+        o por tallar la llave de encendido.
+    shopLabels:
+      - Ficha del mando Silverado 2005 (LHJ011) en Car and Truck Remotes
+      - Búsqueda en Amazon de LHJ011 y la pieza 21997127
+      - Ficha de NorthCoast Keyless, FCC LHJ011, pieza 21997127
+      - Ficha de Standard Auto Part, FCC LHJ011, pieza 21997127
+    unverified:
+      - No se abrió una página del manual de servicio de un Silverado de
+        gasolina 2003-2006. Los procedimientos de GM citados aquí son
+        reimpresiones de Operation CHARM del manual híbrido Silverado 1500 de
+        2005 y del manual Silverado Classic de 2007. Imprimen la misma secuencia
+        a bordo que la hoja, incluidos unos 15 segundos, y no imprimen los tres
+        casos de fallo.
+      - Un precio de concesionario y uno de cerrajero para esta camioneta.
+      - El tamaño de pila en un documento de GM. CR2032 sale de la ficha del
+        vendedor.
+      - Qué cabinas, versiones y códigos de opción incluían keyless de fábrica.
+        La hoja nombra los años de la Silverado 1500 y no lista códigos RPO.
+    sources:
+      - id: acdelco-sheet
+        title: Hoja de instrucciones de programación del mando, pieza 21997127
+        publisher: Documento titulado como hoja de instrucciones de la pieza 21997127,
+          alojado en los servidores de imágenes de Amazon
+        note: Incluye la Chevrolet Silverado 1500 2003-2007 entre los vehículos que
+          pueden usar la secuencia a bordo impresa y nombra otras camionetas GM
+          que necesitan escáner.
+      - id: fcc-lhj011
+        title: Autorización de equipo del ID FCC LHJ011
+        publisher: Reproducción de FCCID.io de la concesión FCC a Continental Automotive
+          Systems, Inc.
+        note: "Fecha de concesión: 7 de febrero de 2002. Clase de equipo: transmisor
+          Part 15 de seguridad/control remoto. Frecuencia 315,0 MHz. Esta página
+          no descargó el PDF de la concesión desde fcc.gov."
+      - id: ctr-2005
+        title: Mando Silverado 2005, pieza 21997127, FCC LHJ011
+        publisher: Car and Truck Remotes
+        note: "Mando de posventa. JSON del producto el 19 de noviembre de 2026:
+          available true, 29,95 dólares, comparación 100. La etiqueta Sold out
+          es texto del tema, no inventario."
+      - id: gm-2005-hybrid
+        title: Manual de servicio Silverado 1500 hybrid 2005, programación del
+          transmisor
+        publisher: Reimpresión de Operation CHARM de un procedimiento GM del Silverado
+          1500 2WD V8-5.3L Hybrid 2005
+        note: El método 1 dice que las puertas se cierran y se abren unos 15 segundos
+          después de mantener Lock y Unlock. Es el manual híbrido, no una página
+          de gasolina 2003-2006. No imprime los tres casos de fallo.
+      - id: gm-2007-classic
+        title: Manual de servicio Silverado Classic 2007, programación del transmisor
+        publisher: Reimpresión de Operation CHARM de un procedimiento GM del Silverado
+          Classic 1500 4WD V8-4.8L 2007
+        note: El mismo método a bordo y la misma confirmación de unos 15 segundos. Es la
+          Classic, la carrocería anterior, no la carrocería nueva de 2007. No
+          imprime los tres casos de fallo.
+      - id: nck-2005-steps
+        title: Instrucciones de programación keyless del Silverado 2005
+        publisher: NorthCoast Keyless
+        note: Dice que mantener Lock y Unlock puede tardar hasta 30 segundos, e imprime
+          los casos de ningún ciclo y de ciclo temprano. La página cubre 1500,
+          2500 y 3500.
+      - id: nck-product
+        title: Mando de 3 botones Silverado 2003-2007, FCC LHJ011, pieza 21997127
+        publisher: NorthCoast Keyless
+        note: "JSON-LD del 19 de noviembre de 2026: 24,94 USD, OutOfStock. La API de la
+          tienda coincide: USD, agotado."
+      - id: sap-lhj011
+        title: Mando LHJ011, pieza 21997127, compatibilidad incluye Silverado 2003-2007
+        publisher: Standard Auto Part
+        note: El JSON-LD por defecto es 37,00 CAD y no se muestra. Con currency=USD es
+          30,00 USD, InStock, una variante. El SKU SAP-Tahoe-Complete-(2) no se
+          explica como un paquete múltiple.
+      - id: keysolved-1999-2007
+        title: Referencia de llave Chevrolet Silverado 1500 1999-2007
+        publisher: Keysolved
+        note: Lista la llave de contacto 1999-2006 y Classic 2007 como acero B102 sin
+          chip y GM Passlock, y el mando LHJ011 como pieza separada para
+          2003-2006 y Classic 2007.
+    ignitionKeyNote: La página de Keysolved del Silverado 1500 1999-2007 lista la
+      llave de contacto como un acero liso B102 sin chip, y el sistema como GM
+      Passlock en el módulo de carrocería, no como un transpondedor en la llave.
+      Dice que cubre todas las camionetas 1999-2006 y la Classic 2007. La misma
+      página lista un mando keyless separado de 3 botones, FCC LHJ011, para
+      2003-2006 y la Classic 2007. Esto no añade pasos para tallar esa espada.
+    troubleshooting:
+      - id: no-cycle
+        title: Las cerraduras no ciclan en absoluto
+        text: La página de programación de North Coast Keyless para el Silverado 2005
+          dice que si las cerraduras no ciclan nunca, puede estar girando la
+          llave demasiado rápido o demasiado lento, el sistema keyless puede
+          tener un fallo, o la camioneta puede no tener keyless. Dice que
+          consulte a un cerrajero o a un concesionario. Las páginas de servicio
+          de GM abiertas dicen que las cerraduras deben ciclar al soltar el
+          interruptor de apertura. No imprimen esta división.
+      - id: early-cycle
+        title: Las cerraduras ciclan antes de soltar el interruptor
+        text: La misma página de North Coast dice que un ciclo antes de soltar el botón
+          de apertura significa que la camioneta no entró en modo de
+          programación y hay que empezar de nuevo. Si las cerraduras siguen
+          ciclando antes de soltar el botón, esa página dice que el sistema
+          keyless tiene un problema y que un cerrajero o un concesionario debe
+          programar los mandos. Las páginas de servicio de GM abiertas no
+          imprimen esa prueba de ciclo temprano.
+      - id: no-response
+        title: El mando no da una segunda respuesta
+        text: North Coast dice mantener Lock y Unlock juntos hasta 30 segundos, hasta
+          que las cerraduras ciclen otra vez. Las páginas de servicio de GM
+          abiertas dicen que esa confirmación llega tras unos 15 segundos.
+          Ninguna de las dos da una prueba aparte para un mando que sigue en
+          silencio después de que las cerraduras ya ciclaron para confirmar el
+          modo. Ese caso es desconocido aquí.
+  pt-br:
+    title: Programação do controle do Chevrolet Silverado 1500 2003-2006
+    description: Passos a bordo do controle keyless da Silverado 1500 2003-2006, com
+      ID FCC LHJ011, números de peça, pilha e preços citados.
+    summary: O controle keyless de uma Chevrolet Silverado 1500 2003-2006 se
+      programa na ignição, sem scanner. A folha da peça 21997127 cita essa
+      picape e imprime a sequência. O controle é separado; não é a chave
+      metálica da ignição.
+    scope: Silverado 1500 leve, de 2003 a 2006, mercado dos EUA. A mesma folha
+      também cita a Silverado 1500 2007 e vários HD. Esses ficam fora desta
+      página. Uma picape sem keyless de fábrica não tem receptor para este
+      controle.
+    diy:
+      summary: Programe na mesma sessão cada controle que quiser manter. A folha diz
+        que os transmissores já gravados são apagados quando o primeiro novo é
+        aceito. Esta sequência programa só o controle keyless.
+      condition: É preciso um controle compatível e a chave de ignição que gira o
+        cilindro. Isto não corta uma chave de metal.
+      safetyNote: A folha diz que o primeiro controle aceito nesta sessão apaga os que
+        a picape já conhece. Uma sequência errada pode apagar controles que
+        funcionam ou não entrar no modo de programação. Se as portas não
+        travarem e destravarem para confirmar o modo, pare. Um chaveiro ou a
+        concessionária podem terminar o serviço.
+      notes:
+        - text: O próprio cabeçalho da folha é a peça 21997127 e inclui a Chevrolet
+            Silverado 1500 2003-2007 entre os veículos que podem usar a
+            sequência impressa. Pede scanner aos donos de Equinox 2005-2006,
+            Torrent 2006 e Vue 2002-2003. Essas exceções não são esta picape.
+      steps:
+        - text: Feche todas as portas.
+        - text: Insira a chave de ignição no cilindro da trava de ignição.
+        - text: Mantenha pressionado o interruptor de destravamento da porta.
+        - text: Enquanto segura esse interruptor em destravar, gire a ignição para ON,
+            OFF, ON, OFF.
+        - text: Solte o interruptor de destravamento. As portas travam e destravam uma vez
+            para confirmar que a picape entrou no modo de programação.
+        - text: Em um controle, mantenha Lock e Unlock juntos até as portas travarem e
+            destravarem de novo. A folha de instruções e os procedimentos de
+            serviço da GM abertos aqui dizem que essa confirmação chega após
+            cerca de 15 segundos. A página de programação da North Coast Keyless
+            para esta picape diz que a mesma pressão pode levar até 30 segundos.
+        - text: Repita segurar Lock e Unlock para cada controle que quiser manter, até
+            quatro, na mesma sessão.
+        - text: Gire a ignição para RUN para sair do modo de programação e teste travar,
+            destravar e Panic em cada controle.
+    variants:
+      - id: lhj011-3-button
+        name: Controle keyless de 3 botões
+        years: 2003-2006
+        keyTypeNote: Durante o procedimento a chave de ignição fica no cilindro e você
+          aperta um transmissor separado. A Car and Truck Remotes vende o
+          anúncio correspondente como controle keyless para picapes de chave
+          giratória, com Lock, Unlock e Panic. Não é chave canivete nem controle
+          de proximidade.
+        fccNotes:
+          - "Concessão FCC à Continental Automotive Systems para um transmissor
+            remoto sem fio de carro a 315,0 MHz. Data da concessão: 7 de
+            fevereiro de 2002, reproduzida pelo FCCID.io. O mesmo ID aparece na
+            ficha da Car and Truck Remotes."
+          - A Car and Truck Remotes diz que este ID, mais o IC 24223-GV2 e o
+            modelo RT-G23B, aparece no verso do controle de reposição que
+            vendem. Não é o ID da concessão OEM.
+        partNotes:
+          - Impresso na folha de instruções e listado pelo vendedor como número
+            atual.
+          - Número antigo listado pelo vendedor. Não está impresso na folha de
+            instruções.
+          - Número antigo listado pelo vendedor. Não está impresso na folha de
+            instruções.
+          - Número antigo listado pelo vendedor. Não está impresso na folha de
+            instruções.
+          - Número antigo listado pelo vendedor. Não está impresso na folha de
+            instruções.
+          - Número antigo listado pelo vendedor. Não está impresso na folha de
+            instruções.
+          - Número antigo listado pelo vendedor. Não está impresso na folha de
+            instruções.
+          - Número antigo listado pelo vendedor. Não está impresso na folha. O
+            vendedor diz que os números antigos são intercambiáveis com
+            21997127.
+        batteryNote: Consta na ficha do vendedor. A página da concessão FCC não nomeia a
+          pilha.
+        frequencyNote: A concessão indica 315,0–315,0 MHz sob a regra 15.231. A ficha do
+          vendedor também diz 315 MHz.
+    priceNotes:
+      - "Verificado em 19 de novembro de 2026 no JSON do produto Shopify, não no
+        rótulo do tema. Os produtos Silverado 2003, 2004, 2005 e 2006 retornaram
+        available: true, preço US$ 29,95 e preço de comparação US$ 100. O texto
+        Sold out na página é um rótulo oculto do tema. O preço é só o controle.
+        O anúncio diz que inclui instruções para fazer sozinho e não inclui
+        cortar a chave de metal."
+      - Verificado em 19 de novembro de 2026. O JSON-LD diz priceCurrency USD,
+        preço 24,94 e availability OutOfStock. A API da loja WooCommerce também
+        diz currency_code USD, 2494 centavos e is_in_stock false.
+      - "Verificado em 19 de novembro de 2026. A moeda da loja é CAD e o JSON-LD
+        padrão é 37,00 CAD, que não é mostrado. Com currency=USD a mesma oferta
+        é 30,00 USD e InStock. Uma variante. A descrição diz complete remote
+        keys e o SKU é SAP-Tahoe-Complete-(2). A página não diz que o preço é
+        por mais de um."
+      - Não achamos uma cotação publicada de concessionária para um controle de
+        Silverado 1500 2003-2006. O vendedor diz que a peça economiza em relação
+        à concessionária e não imprime um valor em dólares da concessionária.
+      - Não achamos um preço publicado de chaveiro para programar este controle
+        ou cortar a chave de ignição.
+    shopLabels:
+      - Ficha do controle Silverado 2005 (LHJ011) na Car and Truck Remotes
+      - Busca na Amazon de LHJ011 e da peça 21997127
+      - Ficha da NorthCoast Keyless, FCC LHJ011, peça 21997127
+      - Ficha da Standard Auto Part, FCC LHJ011, peça 21997127
+    unverified:
+      - Não foi aberta uma página do manual de serviço de um Silverado a
+        gasolina 2003-2006. Os procedimentos da GM citados aqui são reimpressões
+        do Operation CHARM do manual híbrido Silverado 1500 de 2005 e do manual
+        Silverado Classic de 2007. Eles trazem a mesma sequência de bordo da
+        folha, incluindo cerca de 15 segundos, e não trazem os três casos de
+        falha.
+      - Um preço de concessionária e um de chaveiro para esta picape.
+      - O tamanho da pilha num documento da GM. CR2032 vem da ficha do vendedor.
+      - Quais cabines, versões e códigos de opção incluíam keyless de fábrica. A
+        folha cita os anos da Silverado 1500 e não lista códigos RPO.
+    sources:
+      - id: acdelco-sheet
+        title: Folha de instruções de programação do controle, peça 21997127
+        publisher: Documento intitulado como folha de instruções da peça 21997127,
+          hospedado nos servidores de imagem da Amazon
+        note: Inclui a Chevrolet Silverado 1500 2003-2007 entre os veículos que podem
+          usar a sequência a bordo impressa e cita outras picapes GM que
+          precisam de scanner.
+      - id: fcc-lhj011
+        title: Autorização de equipamento do ID FCC LHJ011
+        publisher: Reprodução do FCCID.io da concessão FCC à Continental Automotive
+          Systems, Inc.
+        note: "Data da concessão: 7 de fevereiro de 2002. Classe: transmissor Part 15 de
+          segurança/controle remoto. Frequência 315,0 MHz. Esta página não
+          baixou o PDF da concessão em fcc.gov."
+      - id: ctr-2005
+        title: Controle Silverado 2005, peça 21997127, FCC LHJ011
+        publisher: Car and Truck Remotes
+        note: "Controle de reposição. JSON do produto em 19 de novembro de 2026:
+          available true, US$ 29,95, comparação US$ 100. O rótulo Sold out é
+          texto do tema, não estoque."
+      - id: gm-2005-hybrid
+        title: Manual de serviço Silverado 1500 hybrid 2005, programação do transmissor
+        publisher: Reimpressão do Operation CHARM de um procedimento GM do Silverado
+          1500 2WD V8-5.3L Hybrid 2005
+        note: O método 1 diz que as portas travam e destravam cerca de 15 segundos
+          depois de segurar Lock e Unlock. É o manual híbrido, não uma página a
+          gasolina 2003-2006. Não traz os três casos de falha.
+      - id: gm-2007-classic
+        title: Manual de serviço Silverado Classic 2007, programação do transmissor
+        publisher: Reimpressão do Operation CHARM de um procedimento GM do Silverado
+          Classic 1500 4WD V8-4.8L 2007
+        note: O mesmo método de bordo e a mesma confirmação de cerca de 15 segundos. É a
+          Classic, a carroceria anterior, não a carroceria nova de 2007. Não
+          traz os três casos de falha.
+      - id: nck-2005-steps
+        title: Instruções de programação keyless do Silverado 2005
+        publisher: NorthCoast Keyless
+        note: Diz que segurar Lock e Unlock pode levar até 30 segundos e traz os casos
+          de nenhum ciclo e de ciclo cedo. A página cobre 1500, 2500 e 3500.
+      - id: nck-product
+        title: Controle de 3 botões Silverado 2003-2007, FCC LHJ011, peça 21997127
+        publisher: NorthCoast Keyless
+        note: "JSON-LD de 19 de novembro de 2026: 24,94 USD, OutOfStock. A API da loja
+          confirma: USD, esgotado."
+      - id: sap-lhj011
+        title: Controle LHJ011, peça 21997127, aplicação inclui Silverado 2003-2007
+        publisher: Standard Auto Part
+        note: O JSON-LD padrão é 37,00 CAD e não é mostrado. Com currency=USD é 30,00
+          USD, InStock, uma variante. O SKU SAP-Tahoe-Complete-(2) não é
+          explicado como um pacote múltiplo.
+      - id: keysolved-1999-2007
+        title: Referência de chave Chevrolet Silverado 1500 1999-2007
+        publisher: Keysolved
+        note: Lista a chave de ignição 1999-2006 e Classic 2007 como aço B102 sem chip e
+          GM Passlock, e o controle LHJ011 como peça separada para 2003-2006 e
+          Classic 2007.
+    ignitionKeyNote: A página da Keysolved do Silverado 1500 1999-2007 lista a chave
+      de ignição como um aço liso B102 sem chip, e o sistema como GM Passlock no
+      módulo da carroceria, não como um transponder na chave. Diz que cobre
+      todas as picapes 1999-2006 e a Classic 2007. A mesma página lista um
+      controle keyless separado de 3 botões, FCC LHJ011, para 2003-2006 e a
+      Classic 2007. Isso não acrescenta passos para cortar essa lâmina.
+    troubleshooting:
+      - id: no-cycle
+        title: As travas não ciclam de jeito nenhum
+        text: A página de programação da North Coast Keyless para o Silverado 2005 diz
+          que, se as travas nunca ciclarem, você pode estar girando a chave
+          rápido ou devagar demais, o sistema keyless pode ter um problema, ou a
+          picape pode não ter keyless. Ela manda consultar um chaveiro ou uma
+          concessionária. As páginas de serviço da GM abertas dizem que as
+          travas devem ciclar ao soltar o interruptor de destravar. Elas não
+          trazem essa divisão.
+      - id: early-cycle
+        title: As travas ciclam antes de soltar o interruptor
+        text: A mesma página da North Coast diz que um ciclo antes de soltar o botão de
+          destravar significa que a picape não entrou no modo de programação e é
+          preciso recomeçar. Se as travas continuam ciclando antes de soltar o
+          botão, essa página diz que o sistema keyless tem um problema e que um
+          chaveiro ou uma concessionária precisa programar os controles. As
+          páginas de serviço da GM abertas não trazem esse teste de ciclo cedo.
+      - id: no-response
+        title: O controle não dá uma segunda resposta
+        text: A North Coast diz para segurar Lock e Unlock juntos por até 30 segundos,
+          até as travas ciclarem de novo. As páginas de serviço da GM abertas
+          dizem que essa confirmação chega após cerca de 15 segundos. Nenhuma
+          das duas dá um teste separado para um controle que continua mudo
+          depois que as travas já ciclaram para confirmar o modo. Esse caso é
+          desconhecido aqui.
+  de:
+    title: Funkschlüssel-Programmierung Chevrolet Silverado 1500 2003-2006
+    description: Schritte im Fahrzeug für den Keyless-Sender des Silverado 1500
+      2003-2006, mit FCC-ID LHJ011, Teilenummern, Batterie und belegten Preisen.
+    summary: Der Keyless-Sender eines Chevrolet Silverado 1500 2003-2006 lässt sich
+      an der Zündung programmieren, ohne Diagnosegerät. Das Blatt zur
+      Teilenummer 21997127 nennt diesen Truck und druckt die Tastenfolge. Der
+      Sender ist getrennt, nicht der Metallzündschlüssel.
+    scope: Leichter Silverado 1500, 2003 bis 2006, US-Markt. Dasselbe Blatt nennt
+      auch den Silverado 1500 2007 und mehrere HD. Die liegen außerhalb dieser
+      Seite. Ein Truck ohne werkseitiges Keyless hat keinen Empfänger für diesen
+      Sender.
+    diy:
+      summary: Programmieren Sie jeden Sender, den Sie behalten wollen, in derselben
+        Sitzung. Das Blatt sagt, bereits gespeicherte Sender werden gelöscht,
+        sobald der erste neue angenommen wird. Diese Folge programmiert nur den
+        Keyless-Sender.
+      condition: Sie brauchen einen passenden Sender und den Zündschlüssel, der den
+        Schließzylinder dreht. Das schneidet keinen Metallschlüssel.
+      safetyNote: Das Blatt sagt, der erste in dieser Sitzung angenommene Sender
+        löscht die, die der Truck schon kennt. Eine falsche Reihenfolge kann
+        funktionierende Sender löschen oder den Programmiermodus verfehlen. Wenn
+        die Türen nicht verriegeln und entriegeln, um den Modus zu bestätigen,
+        hören Sie auf. Ein Schlüsseldienst oder der Händler kann die Arbeit
+        beenden.
+      notes:
+        - text: Die Überschrift des Blatts selbst ist Teilenummer 21997127 und nennt den
+            Chevrolet Silverado 1500 2003-2007 unter den Fahrzeugen für die
+            gedruckte Folge. Für Equinox 2005-2006, Torrent 2006 und Vue
+            2002-2003 verlangt es ein Diagnosegerät. Diese Ausnahmen sind nicht
+            dieser Truck.
+      steps:
+        - text: Schließen Sie alle Türen.
+        - text: Stecken Sie den Zündschlüssel in den Zündschließzylinder.
+        - text: Halten Sie den Türentriegelungsschalter gedrückt.
+        - text: Halten Sie diesen Schalter in der Entriegelstellung und drehen Sie die
+            Zündung auf ON, OFF, ON, OFF.
+        - text: Lassen Sie den Entriegelungsschalter los. Die Türen verriegeln und
+            entriegeln einmal und bestätigen den Programmiermodus.
+        - text: Auf einem Sender Lock und Unlock zusammen halten, bis die Türen wieder
+            verriegeln und entriegeln. Das Anweisungsblatt und die hier
+            geöffneten GM-Serviceverfahren sagen, dass diese Bestätigung nach
+            etwa 15 Sekunden kommt. Die Programmierseite von North Coast Keyless
+            für diesen Truck sagt, dass dasselbe Halten bis zu 30 Sekunden
+            dauern kann.
+        - text: Wiederholen Sie das Halten von Lock und Unlock für jeden Sender, den Sie
+            behalten wollen, höchstens vier, in derselben Sitzung.
+        - text: Drehen Sie die Zündung auf RUN, um den Programmiermodus zu verlassen, und
+            prüfen Sie Verriegeln, Entriegeln und Panic an jedem Sender.
+    variants:
+      - id: lhj011-3-button
+        name: Keyless-Sender mit 3 Tasten
+        years: 2003-2006
+        keyTypeNote: Während des Ablaufs bleibt der Zündschlüssel im Zylinder, und Sie
+          drücken einen separaten Sender. Car and Truck Remotes verkauft das
+          passende Angebot als Keyless-Sender für Trucks mit Drehschlüssel,
+          Tasten Lock, Unlock und Panic. Das ist kein Klappschlüssel und kein
+          Näherungssender.
+        fccNotes:
+          - FCC-Zulassung für Continental Automotive Systems, drahtloser
+            Fahrzeug-Fernbedienungssender, 315,0 MHz. Zulassungsdatum 7. Februar
+            2002, wiedergegeben von FCCID.io. Dieselbe ID steht im Angebot von
+            Car and Truck Remotes.
+          - Car and Truck Remotes sagt, diese ID plus IC 24223-GV2 und Modell
+            RT-G23B stehe auf der Rückseite des Nachrüstsenders, den sie
+            verkaufen. Das ist nicht die OEM-Zulassungs-ID.
+        partNotes:
+          - Auf dem Anweisungsblatt gedruckt und vom Händler als aktuelle
+            Teilenummer genannt.
+          - Ältere, vom Händler genannte Nummer. Sie steht nicht auf dem
+            Anweisungsblatt.
+          - Ältere, vom Händler genannte Nummer. Sie steht nicht auf dem
+            Anweisungsblatt.
+          - Ältere, vom Händler genannte Nummer. Sie steht nicht auf dem
+            Anweisungsblatt.
+          - Ältere, vom Händler genannte Nummer. Sie steht nicht auf dem
+            Anweisungsblatt.
+          - Ältere, vom Händler genannte Nummer. Sie steht nicht auf dem
+            Anweisungsblatt.
+          - Ältere, vom Händler genannte Nummer. Sie steht nicht auf dem
+            Anweisungsblatt.
+          - Ältere, vom Händler genannte Nummer. Sie steht nicht auf dem Blatt.
+            Der Händler sagt, die älteren Nummern seien mit 21997127
+            austauschbar.
+        batteryNote: Steht im Händlerangebot. Die FCC-Zulassungsseite nennt die Zelle nicht.
+        frequencyNote: Die Zulassung nennt 315,0–315,0 MHz nach Regel 15.231. Das
+          Händlerangebot sagt ebenfalls 315 MHz.
+    priceNotes:
+      - "Geprüft am 19. November 2026 über die Shopify-Produkt-JSON, nicht über
+        die Theme-Beschriftung. Die Silverado-Artikel 2003, 2004, 2005 und 2006
+        meldeten available: true, Preis 29,95 Dollar, Vergleichspreis 100. Der
+        Text Sold out auf der Seite ist eine versteckte Theme-Zeile. Der Preis
+        ist nur der Sender. Das Angebot nennt eine Anleitung zum
+        Selbstprogrammieren und enthält keinen Schnitt des Metallschlüssels."
+      - "Geprüft am 19. November 2026. JSON-LD: priceCurrency USD, Preis 24,94,
+        availability OutOfStock. Die WooCommerce-Store-API sagt ebenfalls
+        currency_code USD, 2494 Cent und is_in_stock false."
+      - "Geprüft am 19. November 2026. Die Shop-Währung ist CAD, der
+        Standard-JSON-LD-Preis 37,00 CAD wird nicht gezeigt. Mit currency=USD
+        ist dasselbe Angebot 30,00 USD und InStock. Eine Variante. Die
+        Beschreibung sagt complete remote keys, die SKU ist
+        SAP-Tahoe-Complete-(2). Die Seite sagt nicht, dass der Preis für mehr
+        als einen Sender gilt."
+      - Ein veröffentlichtes Händlerangebot für einen Silverado-1500-Sender
+        2003-2006 wurde nicht gefunden. Der Händler sagt, das Teil spare
+        gegenüber dem Vertragshändler, druckt aber keinen Händlerbetrag in
+        Dollar.
+      - Ein veröffentlichter Schlüsseldienstpreis für das Programmieren dieses
+        Senders oder das Schneiden des Zündschlüssels wurde nicht gefunden.
+    shopLabels:
+      - Silverado-2005-Sender (LHJ011) bei Car and Truck Remotes
+      - Amazon-Suche nach LHJ011 und Teil 21997127
+      - Angebot von NorthCoast Keyless, FCC LHJ011, Teil 21997127
+      - Angebot von Standard Auto Part, FCC LHJ011, Teil 21997127
+    unverified:
+      - Eine Servicehandbuchseite für einen Benzin-Silverado 2003-2006 wurde
+        nicht geöffnet. Die hier zitierten GM-Verfahren sind Nachdrucke bei
+        Operation CHARM aus dem Hybrid-Handbuch Silverado 1500 2005 und dem
+        Silverado Classic 2007. Sie drucken dieselbe Bordfolge wie das Blatt,
+        einschließlich etwa 15 Sekunden, und nicht die drei Fehlerfälle.
+      - Ein Händlerpreis und ein Schlüsseldienstpreis für diesen Truck.
+      - Die Batteriegröße in einem GM-Dokument. CR2032 stammt aus dem
+        Händlerangebot.
+      - Welche Kabinen, Ausstattungen und Optionsnummern werkseitiges Keyless
+        hatten. Das Blatt nennt die Jahre des Silverado 1500 und keine
+        RPO-Codes.
+    sources:
+      - id: acdelco-sheet
+        title: Anweisungsblatt zur Funkschlüssel-Programmierung, Teil 21997127
+        publisher: Dokument mit dem Titel eines Anweisungsblatts zur Teilenummer
+          21997127, auf Amazons Bildservern
+        note: Nennt den Chevrolet Silverado 1500 2003-2007 unter den Fahrzeugen für die
+          gedruckte Folge im Fahrzeug und andere GM-Trucks, die ein
+          Diagnosegerät brauchen.
+      - id: fcc-lhj011
+        title: Gerätezulassung FCC-ID LHJ011
+        publisher: Wiedergabe durch FCCID.io der FCC-Zulassung für Continental
+          Automotive Systems, Inc.
+        note: "Zulassungsdatum 7. Februar 2002. Geräteklasse:
+          Part-15-Sicherheits-/Fernbedienungssender. Frequenz 315,0 MHz. Diese
+          Seite hat das Zulassungs-PDF nicht von fcc.gov geladen."
+      - id: ctr-2005
+        title: Silverado-2005-Sender, Teil 21997127, FCC LHJ011
+        publisher: Car and Truck Remotes
+        note: "Nachrüstsender. Produkt-JSON am 19. November 2026: available true, 29,95
+          Dollar, Vergleich 100. Die Zeile Sold out ist Theme-Text, kein
+          Bestand."
+      - id: gm-2005-hybrid
+        title: Servicehandbuch Silverado 1500 Hybrid 2005, Senderprogrammierung
+        publisher: Nachdruck bei Operation CHARM eines GM-Verfahrens für den Silverado
+          1500 2WD V8-5.3L Hybrid 2005
+        note: Methode 1 sagt, die Türen verriegeln und entriegeln etwa 15 Sekunden nach
+          dem Halten von Lock und Unlock. Das ist das Hybrid-Handbuch, keine
+          Benzinseite 2003-2006. Die drei Fehlerfälle fehlen.
+      - id: gm-2007-classic
+        title: Servicehandbuch Silverado Classic 2007, Senderprogrammierung
+        publisher: Nachdruck bei Operation CHARM eines GM-Verfahrens für den Silverado
+          Classic 1500 4WD V8-4.8L 2007
+        note: Dieselbe Bordmethode und dieselbe Bestätigung nach etwa 15 Sekunden. Das
+          ist der Classic, also die vorherige Karosserie, nicht der neue Aufbau
+          2007. Die drei Fehlerfälle fehlen.
+      - id: nck-2005-steps
+        title: Programmieranleitung Keyless für den Silverado 2005
+        publisher: NorthCoast Keyless
+        note: Sagt, das Halten von Lock und Unlock könne bis zu 30 Sekunden dauern, und
+          druckt die Fälle kein Schalten und zu frühes Schalten. Die Seite nennt
+          1500, 2500 und 3500.
+      - id: nck-product
+        title: 3-Tasten-Sender Silverado 2003-2007, FCC LHJ011, Teil 21997127
+        publisher: NorthCoast Keyless
+        note: "JSON-LD am 19. November 2026: 24,94 USD, OutOfStock. Die Store-API
+          bestätigt: USD, nicht auf Lager."
+      - id: sap-lhj011
+        title: Sender LHJ011, Teil 21997127, Passung einschließlich Silverado 2003-2007
+        publisher: Standard Auto Part
+        note: "Das Standard-JSON-LD ist 37,00 CAD und wird nicht gezeigt. Mit
+          currency=USD: 30,00 USD, InStock, eine Variante. Die SKU
+          SAP-Tahoe-Complete-(2) wird nicht als Mehrfachpack erklärt."
+      - id: keysolved-1999-2007
+        title: Schlüsselreferenz Chevrolet Silverado 1500 1999-2007
+        publisher: Keysolved
+        note: Nennt den Zündschlüssel 1999-2006 und Classic 2007 als Stahl B102 ohne
+          Chip und GM Passlock, und den Sender LHJ011 als separates Teil für
+          2003-2006 und Classic 2007.
+    ignitionKeyNote: Die Keysolved-Seite zum Silverado 1500 1999-2007 nennt den
+      Zündschlüssel einen glatten Stahl B102 ohne Chip und das System GM
+      Passlock im Karosseriesteuergerät, nicht einen Transponder im Schlüssel.
+      Sie sagt, das gelte für alle Trucks 1999-2006 und den Classic 2007.
+      Dieselbe Seite führt eine separate 3-Tasten-Fernbedienung, FCC LHJ011, für
+      2003-2006 und den Classic 2007. Schneideschritte für diese Klinge stehen
+      hier nicht.
+    troubleshooting:
+      - id: no-cycle
+        title: Die Schlösser schalten gar nicht
+        text: "Die Programmierseite von North Coast Keyless zum Silverado 2005 sagt:
+          Wenn die Schlösser nie schalten, dreht man den Schlüssel vielleicht zu
+          schnell oder zu langsam, die Keyless-Anlage hat ein Problem, oder der
+          Truck hat kein Keyless. Sie verweist an einen Schlüsseldienst oder ein
+          Händlerhaus. Die geöffneten GM-Service-Seiten sagen, die Schlösser
+          sollen schalten, wenn man den Entriegelungsschalter loslässt. Diese
+          Aufteilung drucken sie nicht."
+      - id: early-cycle
+        title: Die Schlösser schalten, bevor der Schalter losgelassen wird
+        text: "Dieselbe North-Coast-Seite sagt: Ein Schalten, bevor man die Entriegelung
+          loslässt, heißt, der Truck ist nicht im Programmiermodus, und man
+          fängt neu an. Wenn die Schlösser vor dem Loslassen weiter schalten,
+          sagt die Seite, die Keyless-Anlage habe ein Problem und ein
+          Schlüsseldienst oder Händler müsse die Sender programmieren. Die
+          geöffneten GM-Seiten drucken diesen Frühschalt-Test nicht."
+      - id: no-response
+        title: Keine zweite Antwort vom Sender
+        text: North Coast sagt, Lock und Unlock bis zu 30 Sekunden zusammen halten, bis
+          die Schlösser wieder schalten. Die geöffneten GM-Seiten sagen, die
+          Bestätigung komme nach etwa 15 Sekunden. Keine der Seiten gibt einen
+          eigenen Test für einen Sender, der stumm bleibt, nachdem die Schlösser
+          den Modus schon bestätigt haben. Dieser Fall ist hier unbekannt.
+  fr:
+    title: Programmation de la télécommande du Chevrolet Silverado 1500 2003-2006
+    description: Étapes à bord de la télécommande keyless du Silverado 1500
+      2003-2006, avec ID FCC LHJ011, références, pile et prix cités.
+    summary: La télécommande keyless d’un Chevrolet Silverado 1500 2003-2006 se
+      programme à l’allumage, sans valise. La feuille de la référence 21997127
+      cite ce pick-up et imprime la séquence. La télécommande est séparée ; ce
+      n’est pas la clé métallique de contact.
+    scope: Silverado 1500 léger, de 2003 à 2006, marché des États-Unis. La même
+      feuille cite aussi le Silverado 1500 2007 et plusieurs HD. Ils sont hors
+      de cette page. Un pick-up sans keyless d’usine n’a pas de récepteur pour
+      cette télécommande.
+    diy:
+      summary: Programmez dans la même séance chaque télécommande à conserver. La
+        feuille dit que les émetteurs déjà en mémoire s’effacent quand le
+        premier nouveau est accepté. Cette séquence ne programme que la
+        télécommande keyless.
+      condition: Il faut une télécommande compatible et la clé de contact qui tourne
+        le barillet. Cela ne taille pas une clé métallique.
+      safetyNote: La feuille dit que la première télécommande acceptée dans cette
+        séance efface celles que le pick-up connaît déjà. Une mauvaise séquence
+        peut effacer des télécommandes qui marchent ou ne jamais entrer en mode
+        programmation. Si les portes ne se verrouillent pas puis ne se
+        déverrouillent pas pour confirmer le mode, arrêtez. Un serrurier ou le
+        concessionnaire peut finir le travail.
+      notes:
+        - text: L’en-tête de la feuille est la référence 21997127 et inclut le Chevrolet
+            Silverado 1500 2003-2007 parmi les véhicules qui peuvent utiliser la
+            séquence imprimée. Elle demande une valise pour Equinox 2005-2006,
+            Torrent 2006 et Vue 2002-2003. Ces exceptions ne sont pas ce
+            pick-up.
+      steps:
+        - text: Fermez toutes les portes.
+        - text: Insérez la clé de contact dans le barillet d’allumage.
+        - text: Maintenez l’interrupteur de déverrouillage de porte enfoncé.
+        - text: Tout en tenant cet interrupteur en déverrouillage, tournez le contact sur
+            ON, OFF, ON, OFF.
+        - text: Relâchez l’interrupteur de déverrouillage. Les portes se verrouillent puis
+            se déverrouillent une fois pour confirmer le mode programmation.
+        - text: Sur une télécommande, maintenez Lock et Unlock ensemble jusqu’à ce que les
+            portes se verrouillent et se déverrouillent à nouveau. La feuille
+            d’instructions et les procédures d’atelier GM ouvertes ici disent
+            que cette confirmation arrive après environ 15 secondes. La page de
+            programmation de North Coast Keyless pour ce pick-up dit que le même
+            appui peut prendre jusqu’à 30 secondes.
+        - text: Répétez l’appui sur Lock et Unlock pour chaque télécommande à conserver,
+            jusqu’à quatre, dans la même séance.
+        - text: Tournez le contact sur RUN pour quitter le mode programmation, puis
+            essayez verrouillage, déverrouillage et Panic sur chaque
+            télécommande.
+    variants:
+      - id: lhj011-3-button
+        name: Télécommande keyless à 3 boutons
+        years: 2003-2006
+        keyTypeNote: Pendant la procédure la clé de contact reste dans le barillet et
+          vous appuyez sur un émetteur séparé. Car and Truck Remotes vend
+          l’annonce correspondante comme télécommande keyless pour pick-up à clé
+          tournante, avec Lock, Unlock et Panic. Ce n’est ni une clé pliante ni
+          une télécommande de proximité.
+        fccNotes:
+          - "Autorisation FCC de Continental Automotive Systems pour un émetteur
+            de télécommande sans fil automobile à 315,0 MHz. Date d’autorisation
+            : 7 février 2002, reproduite par FCCID.io. Le même ID figure sur la
+            fiche Car and Truck Remotes."
+          - Car and Truck Remotes dit que cet ID, plus l’IC 24223-GV2 et le
+            modèle RT-G23B, figure au dos de la télécommande d’après-vente
+            qu’ils vendent. Ce n’est pas l’ID d’autorisation OEM.
+        partNotes:
+          - Imprimé sur la feuille d’instructions et indiqué par le vendeur
+            comme référence actuelle.
+          - Ancien numéro indiqué par le vendeur. Il n’est pas imprimé sur la
+            feuille d’instructions.
+          - Ancien numéro indiqué par le vendeur. Il n’est pas imprimé sur la
+            feuille d’instructions.
+          - Ancien numéro indiqué par le vendeur. Il n’est pas imprimé sur la
+            feuille d’instructions.
+          - Ancien numéro indiqué par le vendeur. Il n’est pas imprimé sur la
+            feuille d’instructions.
+          - Ancien numéro indiqué par le vendeur. Il n’est pas imprimé sur la
+            feuille d’instructions.
+          - Ancien numéro indiqué par le vendeur. Il n’est pas imprimé sur la
+            feuille d’instructions.
+          - Ancien numéro indiqué par le vendeur. Il n’est pas imprimé sur la
+            feuille. Le vendeur dit que les anciens numéros sont
+            interchangeables avec 21997127.
+        batteryNote: Indiqué sur la fiche du vendeur. La page d’autorisation FCC ne
+          nomme pas la pile.
+        frequencyNote: L’autorisation indique 315,0–315,0 MHz selon la règle 15.231. La
+          fiche du vendeur dit aussi 315 MHz.
+    priceNotes:
+      - "Vérifié le 19 novembre 2026 dans le JSON produit Shopify, pas dans
+        l’étiquette du thème. Les fiches Silverado 2003, 2004, 2005 et 2006 ont
+        renvoyé available: true, prix 29,95 dollars, prix barré 100. Le texte
+        Sold out de la page est une étiquette cachée du thème. Le prix est la
+        télécommande seule. L’annonce dit que le mode d’emploi est inclus et que
+        la taille de la clé métallique ne l’est pas."
+      - Vérifié le 19 novembre 2026. Le JSON-LD indique priceCurrency USD, prix
+        24,94, availability OutOfStock. L’API boutique WooCommerce dit aussi
+        currency_code USD, 2494 centimes et is_in_stock false.
+      - "Vérifié le 19 novembre 2026. La devise de la boutique est CAD, et le
+        prix JSON-LD par défaut de 37,00 CAD n’est pas affiché. Avec
+        currency=USD la même offre est 30,00 USD et InStock. Une variante. La
+        description dit complete remote keys et le SKU est
+        SAP-Tahoe-Complete-(2). La page ne dit pas que le prix vaut pour plus
+        d’une télécommande."
+      - Aucun devis publié de concession pour une télécommande de Silverado 1500
+        2003-2006 n’a été trouvé. Le vendeur dit que la pièce économise par
+        rapport à la concession et n’imprime pas un montant concession en
+        dollars.
+      - Aucun prix publié de serrurier pour programmer cette télécommande ou
+        tailler la clé de contact n’a été trouvé.
+    shopLabels:
+      - Fiche télécommande Silverado 2005 (LHJ011) chez Car and Truck Remotes
+      - Recherche Amazon pour LHJ011 et la référence 21997127
+      - Fiche NorthCoast Keyless, FCC LHJ011, pièce 21997127
+      - Fiche Standard Auto Part, FCC LHJ011, pièce 21997127
+    unverified:
+      - Une page de manuel d’atelier d’un Silverado essence 2003-2006 n’a pas
+        été ouverte. Les procédures GM citées ici sont des reprises Operation
+        CHARM du manuel hybride Silverado 1500 2005 et du manuel Silverado
+        Classic 2007. Elles impriment la même séquence à bord que la feuille, y
+        compris environ 15 secondes, et pas les trois cas d’échec.
+      - Un prix concession et un prix serrurier pour ce pick-up.
+      - La taille de pile dans un document GM. CR2032 vient de la fiche du
+        vendeur.
+      - Quelles cabines, finitions et codes d’option avaient le keyless d’usine.
+        La feuille nomme les années du Silverado 1500 et ne liste pas de codes
+        RPO.
+    sources:
+      - id: acdelco-sheet
+        title: Feuille d’instructions de programmation de la télécommande, référence
+          21997127
+        publisher: Document intitulé feuille d’instructions de la référence 21997127,
+          hébergé sur les serveurs d’images d’Amazon
+        note: Inclut le Chevrolet Silverado 1500 2003-2007 parmi les véhicules qui
+          peuvent utiliser la séquence à bord imprimée et nomme d’autres pick-up
+          GM qui exigent une valise.
+      - id: fcc-lhj011
+        title: Autorisation d’équipement ID FCC LHJ011
+        publisher: Reproduction par FCCID.io de l’autorisation FCC de Continental
+          Automotive Systems, Inc.
+        note: "Date d’autorisation : 7 février 2002. Classe : émetteur Part 15 de
+          sécurité/télécommande. Fréquence 315,0 MHz. Cette page n’a pas
+          téléchargé le PDF d’autorisation sur fcc.gov."
+      - id: ctr-2005
+        title: Télécommande Silverado 2005, référence 21997127, FCC LHJ011
+        publisher: Car and Truck Remotes
+        note: "Télécommande d’après-vente. JSON produit le 19 novembre 2026 : available
+          true, 29,95 dollars, prix barré 100. L’étiquette Sold out est du texte
+          de thème, pas le stock."
+      - id: gm-2005-hybrid
+        title: Manuel d’atelier Silverado 1500 hybrid 2005, programmation de l’émetteur
+        publisher: Reprise Operation CHARM d’une procédure GM du Silverado 1500 2WD
+          V8-5.3L Hybrid 2005
+        note: La méthode 1 dit que les portes se verrouillent et se déverrouillent
+          environ 15 secondes après avoir maintenu Lock et Unlock. C’est le
+          manuel hybride, pas une page essence 2003-2006. Elle n’imprime pas les
+          trois cas d’échec.
+      - id: gm-2007-classic
+        title: Manuel d’atelier Silverado Classic 2007, programmation de l’émetteur
+        publisher: Reprise Operation CHARM d’une procédure GM du Silverado Classic 1500
+          4WD V8-4.8L 2007
+        note: La même méthode à bord et la même confirmation d’environ 15 secondes.
+          C’est la Classic, la carrosserie précédente, pas la nouvelle
+          carrosserie 2007. Pas les trois cas d’échec.
+      - id: nck-2005-steps
+        title: Instructions de programmation keyless du Silverado 2005
+        publisher: NorthCoast Keyless
+        note: Dit que maintenir Lock et Unlock peut prendre jusqu’à 30 secondes, et
+          imprime les cas sans cycle et de cycle trop tôt. La page couvre 1500,
+          2500 et 3500.
+      - id: nck-product
+        title: Télécommande 3 boutons Silverado 2003-2007, FCC LHJ011, pièce 21997127
+        publisher: NorthCoast Keyless
+        note: "JSON-LD du 19 novembre 2026 : 24,94 USD, OutOfStock. L’API boutique
+          confirme : USD, rupture."
+      - id: sap-lhj011
+        title: Télécommande LHJ011, pièce 21997127, compatibilité incluant Silverado
+          2003-2007
+        publisher: Standard Auto Part
+        note: "Le JSON-LD par défaut est 37,00 CAD et n’est pas affiché. Avec
+          currency=USD : 30,00 USD, InStock, une variante. Le SKU
+          SAP-Tahoe-Complete-(2) n’est pas expliqué comme un lot multiple."
+      - id: keysolved-1999-2007
+        title: Référence de clé Chevrolet Silverado 1500 1999-2007
+        publisher: Keysolved
+        note: Décrit la clé de contact 1999-2006 et Classic 2007 comme acier B102 sans
+          puce et GM Passlock, et la télécommande LHJ011 comme pièce séparée
+          pour 2003-2006 et Classic 2007.
+    ignitionKeyNote: La page Keysolved du Silverado 1500 1999-2007 décrit la clé de
+      contact comme un acier lisse B102 sans puce, et le système comme un GM
+      Passlock dans le module de carrosserie, pas comme un transpondeur dans la
+      clé. Elle dit que cela couvre tous les pick-up 1999-2006 et le Classic
+      2007. La même page liste une télécommande séparée à 3 boutons, FCC LHJ011,
+      pour 2003-2006 et le Classic 2007. Cela n’ajoute pas d’étapes pour tailler
+      cette lame.
+    troubleshooting:
+      - id: no-cycle
+        title: Les serrures ne cyclent pas du tout
+        text: La page de programmation North Coast Keyless du Silverado 2005 dit que si
+          les serrures ne cyclent jamais, la clé tourne peut-être trop vite ou
+          trop lentement, le système keyless a un problème, ou le pick-up n’a
+          pas de keyless. Elle dit de vérifier avec un serrurier ou un
+          concessionnaire. Les pages d’atelier GM ouvertes disent que les
+          serrures doivent cycler quand on relâche l’interrupteur de
+          déverrouillage. Elles n’impriment pas cette distinction.
+      - id: early-cycle
+        title: Les serrures cyclent avant de relâcher l’interrupteur
+        text: La même page North Coast dit qu’un cycle avant de relâcher le bouton de
+          déverrouillage signifie que le pick-up n’est pas entré en mode
+          programmation et qu’il faut recommencer. Si les serrures continuent de
+          cycler avant le relâchement, cette page dit que le système keyless a
+          un problème et qu’un serrurier ou un concessionnaire doit programmer
+          les télécommandes. Les pages d’atelier GM ouvertes n’impriment pas ce
+          test de cycle trop tôt.
+      - id: no-response
+        title: Pas de seconde réponse de la télécommande
+        text: North Coast dit de maintenir Lock et Unlock ensemble jusqu’à 30 secondes,
+          jusqu’à ce que les serrures cyclent encore. Les pages d’atelier GM
+          ouvertes disent que cette confirmation arrive après environ 15
+          secondes. Aucune des deux ne donne un test séparé pour une
+          télécommande qui reste silencieuse après que les serrures ont déjà
+          cyclé pour confirmer le mode. Ce cas est inconnu ici.
+programmingFacts:
+  onboardStatus: yes
+  minimumWorkingKeys: 0
+  pushButtonProcedure: unknown
+  sourceIds:
+    - acdelco-sheet
+  ignitionKeyInCylinder: required
+ignitionKey:
+  status: verified
+  blade: B102
+  transponder: none
+  note: Keysolved's 1999-2007 Silverado 1500 page lists the ignition key as a
+    plain steel B102 with no chip, and the system as GM Passlock in the body
+    control module rather than a transponder in the key. It says that covers all
+    1999-2006 trucks and the 2007 Classic. The same page lists a separate
+    3-button keyless remote, FCC LHJ011, for 2003-2006 and the 2007 Classic.
+    This does not add steps for cutting that blade.
+  sourceIds:
+    - keysolved-1999-2007
+troubleshooting:
+  - id: no-cycle
+    title: The locks do not cycle at all
+    text: North Coast Keyless's 2005 Silverado programming page says that if the
+      locks never cycle, you may be turning the key too quickly or too slowly,
+      the keyless-entry system may have a problem, or the truck may not have
+      keyless entry. It says to check with a locksmith or a dealer. The opened
+      GM service pages say the locks should cycle when you release the unlock
+      switch. They do not print this split.
+    sourceIds:
+      - nck-2005-steps
+      - gm-2005-hybrid
+      - gm-2007-classic
+  - id: early-cycle
+    title: The locks cycle before you release the unlock switch
+    text: The same North Coast page says a cycle before you release the unlock
+      button means the truck has not entered programming mode, and you start
+      over. If the locks keep cycling before you release the button, that page
+      says the keyless-entry system has a problem and a locksmith or dealer has
+      to program the remotes. The opened GM service pages do not print that
+      early-cycle test.
+    sourceIds:
+      - nck-2005-steps
+  - id: no-response
+    title: No second response from the remote
+    text: North Coast says to hold Lock and Unlock together for up to 30 seconds,
+      until the locks cycle again. The opened GM service pages say that
+      confirmation comes after about 15 seconds. Neither page gives a separate
+      test for a remote that stays silent after the locks have already cycled to
+      confirm program mode. That case is unknown here.
+    sourceIds:
+      - nck-2005-steps
+      - gm-2005-hybrid
+      - gm-2007-classic

@@ -1,0 +1,18 @@
+---
+import { anyAffiliateLive } from '../lib/affiliates';
+import { t } from '../i18n/messages';
+import { localeHref } from '../lib/paths';
+
+interface Props {
+  locale: string;
+}
+const { locale } = Astro.props;
+const copy = t(locale);
+const live = anyAffiliateLive();
+---
+
+<aside class="disclosure" role="note">
+  <strong>{copy.footerDisclosure}.</strong>{' '}
+  {live ? copy.discLive : copy.discEmpty}{' '}
+  <a href={localeHref(locale, 'affiliate-disclosure')}>{copy.aboutDiscLink}</a>.
+</aside>

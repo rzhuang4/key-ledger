@@ -1,0 +1,36 @@
+---
+import Base from '../../layouts/Base.astro';
+import DirectoryData from '../DirectoryData.astro';
+import LookupForm from '../LookupForm.astro';
+import { features } from '../../i18n/features';
+import { localeHref } from '../../lib/paths';
+import { loadVehicles, vehicleHref } from '../../lib/vehicles';
+
+interface Props {
+  locale: string;
+}
+const { locale } = Astro.props;
+const copy = features(locale);
+const vehicles = await loadVehicles();
+---
+
+<Base title={copy.lookupPageTitle} description={copy.lookupPageDescription} locale={locale}>
+  <div class="wrap">
+    <p class="kicker">{copy.navFind}</p>
+    <h1>{copy.lookupPageTitle}</h1>
+    <DirectoryData locale={locale} />
+    <LookupForm locale={locale} />
+    <h2>{copy.quizExamples}</h2>
+    <ul class="clean">
+      {
+        vehicles.map((entry) => (
+          <li>
+            <a href={localeHref(locale, vehicleHref(entry.data).replace(/^\/|\/$/g, ''))}>
+              {entry.data.yearSlug} {entry.data.make} {entry.data.model}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Base>

@@ -1,0 +1,34 @@
+---
+import Base from '../layouts/Base.astro';
+import { locales } from '../i18n/locales';
+import { t } from '../i18n/messages';
+import { localeHref } from '../lib/paths';
+
+const copy = t('en');
+---
+
+<Base title={`${copy.notFoundTitle} · ${copy.siteName}`} description={copy.notFoundDescription} locale="en">
+  <div class="wrap prose">
+    <p class="kicker">404</p>
+    <h1>{copy.notFoundH1}</h1>
+    <p>
+      {copy.notFoundBefore}
+      <a href={localeHref('en', '')}>{copy.notFoundBrowse}</a>
+      {copy.notFoundMid}
+      <a href={localeHref('en', 'fcc')}>{copy.notFoundFcc}</a>
+      {copy.notFoundAfter}
+    </p>
+    <ul>
+      {
+        locales.filter((locale) => locale.code !== 'en').map((locale) => {
+          const local = t(locale.code);
+          return (
+            <li lang={locale.htmlLang}>
+              <a href={localeHref(locale.code, '')}>{locale.label}</a>: {local.notFoundH1}
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
+</Base>

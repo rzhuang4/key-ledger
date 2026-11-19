@@ -1,0 +1,32 @@
+---
+import { features } from '../i18n/features';
+
+interface Props {
+  locale: string;
+}
+const copy = features(Astro.props.locale);
+---
+
+<form class="lookup no-print" data-lookup>
+  <p class="kicker">{copy.lookupTitle}</p>
+  <p class="muted">{copy.lookupLead}</p>
+  <div class="lookup-row">
+    <label>{copy.year}
+      <select data-year>
+        <option value="">{copy.choose}</option>
+      </select>
+    </label>
+    <label>{copy.make}
+      <select data-make disabled>
+        <option value="">{copy.choose}</option>
+      </select>
+    </label>
+    <label>{copy.model}
+      <select data-model disabled>
+        <option value="">{copy.choose}</option>
+      </select>
+    </label>
+  </div>
+  <p class="empty" data-lookup-msg hidden></p>
+  <a class="text-button" data-lookup-go hidden>{copy.openVehicle}</a>
+</form>

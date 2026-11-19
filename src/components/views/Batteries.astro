@@ -1,0 +1,83 @@
+---
+import Base from '../../layouts/Base.astro';
+import Disclosure from '../Disclosure.astro';
+import { features } from '../../i18n/features';
+import { shopLink } from '../../lib/affiliates';
+import { localizeVehicle } from '../../lib/localize';
+import { localeHref } from '../../lib/paths';
+import { loadVehicles, vehicleHref } from '../../lib/vehicles';
+
+interface Props {
+  locale: string;
+}
+const { locale } = Astro.props;
+const copy = features(locale);
+const vehicles = await loadVehicles();
+const groups = new Map<string, { vehicle: string; path: string; variant: string }[]>();
+const unknown: { vehicle: string; path: string; variant: string }[] = [];
+for (const entry of vehicles) {
+  const view = localizeVehicle(entry.data, locale);
+  entry.data.variants.forEach((variant, index) => {
+    const row = {
+      vehicle: `${entry.data.yearSlug} ${entry.data.make} ${entry.data.model}`,
+      path: vehicleHref(entry.data).replace(/^\/|\/$/g, ''),
+      variant: view.variants[index].name.text,
+    };
+    if (variant.battery.status === 'verified' && variant.battery.type) {
+      const list = groups.get(variant.battery.type) ?? [];
+      list.push(row);
+      groups.set(variant.battery.type, list);
+    } else {
+      unknown.push(row);
+    }
+  });
+}
+const amazon = (type: string) =>
+  shopLink('amazon', `https://www.amazon.com/s?k=${encodeURIComponent(`${type} battery`)}`);
+---
+
+<Base title={copy.batteryTitle} description={copy.batteryDescription} locale={locale}>
+  <div class="wrap">
+    <Disclosure locale={locale} />
+    <p class="kicker">{copy.navBatteries}</p>
+    <h1>{copy.batteryH1}</h1>
+    <p class="lede prose">{copy.batteryLead}</p>
+    {
+      [...groups.entries()].map(([type, rows]) => {
+        const shop = amazon(type);
+        return (
+          <article class="vehicle-block">
+            <h2 class="mono">{type}</h2>
+            <p>
+              <a href={shop.href} rel={shop.rel}>{copy.batteryAmazon}</a>
+              <span class="muted"> · {shop.name}</span>
+            </p>
+            <ul class="clean">
+              {rows.map((row) => (
+                <li>
+                  <a href={localeHref(locale, row.path)}>{row.vehicle}</a>
+                  <span class="muted"> · {row.variant}</span>
+                </li>
+              ))}
+            </ul>
+          </article>
+        );
+      })
+    }
+    {
+      unknown.length > 0 && (
+        <article class="vehicle-block">
+          <h2>{copy.batteryUnknown}</h2>
+          <ul class="clean">
+            {unknown.map((row) => (
+              <li>
+                <a href={localeHref(locale, row.path)}>{row.vehicle}</a>
+                <span class="chip unverified">{copy.batteryUnknown}</span>
+              </li>
+            ))}
+          </ul>
+        </article>
+      )
+    }
+  </div>
+</Base>

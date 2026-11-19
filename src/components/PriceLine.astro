@@ -1,0 +1,42 @@
+---
+import { features } from '../i18n/features';
+import { localeInfo } from '../i18n/locales';
+import { formatRange, formatReviewed } from '../lib/labels';
+
+interface Props {
+  locale: string;
+  unverifiedLabel: string;
+  row: {
+    status: string;
+    currency?: string;
+    retailer?: string;
+    checkedAt?: string;
+    stock?: string;
+    lowUsd?: number;
+    highUsd?: number;
+  };
+}
+const { locale, row, unverifiedLabel } = Astro.props;
+const copy = features(locale);
+const info = localeInfo(locale);
+const stock =
+  row.stock === 'in-stock' ? copy.stockIn :
+  row.stock === 'out-of-stock' ? copy.stockOut :
+  copy.stockUnknown;
+const retailer = !row.retailer || row.retailer === 'none' ? copy.noRetailer : row.retailer;
+const showUsd = row.status === 'verified' && row.currency === 'USD';
+---
+
+<div class="price-fact">
+  <p>{retailer}</p>
+  {
+    showUsd ? (
+      <p><span class="mono">USD</span> {formatRange(row.lowUsd, row.highUsd)}</p>
+    ) : (
+      <p><span class="chip unverified">{unverifiedLabel}</span></p>
+    )
+  }
+  {retailer === 'Standard Auto Part' && showUsd && <p>{copy.sapPackNote}</p>}
+  <p>{stock}</p>
+  {row.checkedAt && <p>{copy.checkedOn.replace('{date}', formatReviewed(row.checkedAt, info.dateLocale))}</p>}
+</div>

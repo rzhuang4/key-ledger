@@ -1,0 +1,138 @@
+---
+import Base from '../../layouts/Base.astro';
+import PriceLine from '../PriceLine.astro';
+import { features } from '../../i18n/features';
+import { t } from '../../i18n/messages';
+import { kbb, usdBand } from '../../data/published-prices';
+import { localeHref } from '../../lib/paths';
+import { loadVehicles, vehicleHref } from '../../lib/vehicles';
+
+interface Props {
+  locale: string;
+}
+const { locale } = Astro.props;
+const copy = features(locale);
+const ui = t(locale);
+const vehicles = await loadVehicles();
+const rowLabel = (id: string) =>
+  id === 'mechanical' ? ui.rowMechanical :
+  id === 'transponder' ? ui.rowTransponder :
+  id === 'switchblade' ? ui.rowSwitchblade :
+  ui.rowSmart;
+---
+
+<Base title={copy.estimateTitle} description={copy.estimateDescription} locale={locale}>
+  <div class="wrap">
+    <p class="kicker">{copy.navEstimate}</p>
+    <h1>{copy.estimateH1}</h1>
+    <p class="lede prose">{copy.estimateLead}</p>
+    <p class="prose">{copy.locksmithRefuse}</p>
+    <label class="no-print">{copy.model}
+      <select id="estimate-pick">
+        <option value="kbb">{copy.estimateGeneral}</option>
+        {
+          vehicles.map((entry) => (
+            <option value={entry.data.modelSlug}>{entry.data.yearSlug} {entry.data.make} {entry.data.model}</option>
+          ))
+        }
+      </select>
+    </label>
+
+    <article class="vehicle-block" data-estimate="kbb">
+      <h2>Kelley Blue Book</h2>
+      <p class="muted">{copy.kbbMeta}</p>
+      <p class="muted">{copy.kbbCaption}</p>
+      <p><a href={kbb.url} rel="noopener noreferrer">{kbb.publisher}</a></p>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>{ui.guideColType}</th>
+              <th>{ui.guideColParts}</th>
+              <th>{ui.guideColProg}</th>
+              <th>{ui.guideColTotal}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              kbb.rows.map((row) => (
+                <tr>
+                  <th scope="row">{rowLabel(row.id)}</th>
+                  <td>{usdBand(row.parts[0], row.parts[1])}</td>
+                  <td>{row.programming ? usdBand(row.programming[0], row.programming[1]) : ui.na}</td>
+                  <td>{usdBand(row.total[0], row.total[1])}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+      <p>{copy.kbbSavings}</p>
+      <p>{copy.kbbDiy}</p>
+    </article>
+
+    {
+      vehicles.map((entry) => {
+        const data = entry.data;
+        const tool =
+          data.programmingFacts.onboardStatus === 'yes'
+            ? copy.noTool
+            : data.programmingFacts.onboardStatus === 'needs-tool'
+              ? copy.toolUnknown
+              : copy.resultUnknown;
+        const channels = ['dealer', 'locksmith', 'online-diy'] as const;
+        return (
+          <article class="vehicle-block" data-estimate={data.modelSlug}>
+            <h2>
+              <a href={localeHref(locale, vehicleHref(data).replace(/^\/|\/$/g, ''))}>
+                {data.yearSlug} {data.make} {data.model}
+              </a>
+            </h2>
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th>{copy.estimateDealer}</th>
+                    <th>{copy.estimateLocksmith}</th>
+                    <th>{copy.estimateFob}</th>
+                    <th>{copy.estimateTool}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    {
+                      channels.map((channel) => {
+                        const rows = data.priceRanges.filter((row) => row.channel === channel);
+                        return (
+                          <td>
+                            {rows.map((row) => (
+                              <PriceLine locale={locale} row={row} unverifiedLabel={ui.unverifiedChip} />
+                            ))}
+                          </td>
+                        );
+                      })
+                    }
+                    <td>{tool}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+        );
+      })
+    }
+    <script is:inline>
+      const pick = document.querySelector('#estimate-pick');
+      const panels = document.querySelectorAll('[data-estimate]');
+      function apply() {
+        panels.forEach((panel) => {
+          panel.hidden = panel.getAttribute('data-estimate') !== pick.value;
+        });
+      }
+      if (pick) {
+        pick.addEventListener('change', apply);
+        apply();
+      }
+    </script>
+  </div>
+</Base>

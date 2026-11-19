@@ -1,0 +1,41 @@
+---
+import Base from '../../layouts/Base.astro';
+import { anyAffiliateLive, retailerList, shopLink } from '../../lib/affiliates';
+import { t } from '../../i18n/messages';
+
+interface Props {
+  locale: string;
+}
+const { locale } = Astro.props;
+const copy = t(locale);
+const live = anyAffiliateLive();
+const retailers = retailerList();
+---
+
+<Base title={copy.discTitle} description={copy.discDescription} locale={locale}>
+  <div class="wrap prose">
+    <p class="kicker">{copy.discKicker}</p>
+    <h1>{copy.discH1}</h1>
+    <p>{live ? copy.discLive : copy.discEmpty}</p>
+    <p>{copy.discConfig}</p>
+    <p>{copy.discSponsored}</p>
+    <h2>{copy.discH2}</h2>
+    <ul>
+      {
+        retailers.map((entry) => {
+          const link = shopLink(entry.id, entry.baseUrl);
+          return (
+            <li>
+              <a href={link.href} rel={link.rel}>{entry.name}</a>
+              <span class="muted">
+                {' '}
+                · {entry.affiliateQuery.trim() ? copy.discSet : copy.discUnset}
+              </span>
+            </li>
+          );
+        })
+      }
+    </ul>
+    <p>{copy.discOther}</p>
+  </div>
+</Base>

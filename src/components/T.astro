@@ -1,0 +1,18 @@
+---
+interface Props {
+  value: { text: string; fallback: boolean };
+  label: string;
+}
+const { value, label } = Astro.props;
+---
+
+{
+  value.fallback ? (
+    <>
+      <span class="fallback" lang="en">{value.text}</span>
+      <span class="fallback-tag">{label}</span>
+    </>
+  ) : (
+    value.text
+  )
+}

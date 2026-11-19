@@ -1,0 +1,84 @@
+---
+import Base from '../../layouts/Base.astro';
+import DirectoryData from '../DirectoryData.astro';
+import { features } from '../../i18n/features';
+import { t } from '../../i18n/messages';
+import { normalizeFcc } from '../../lib/catalog';
+import { localizeVehicle } from '../../lib/localize';
+import { localeHref } from '../../lib/paths';
+import { loadVehicles, vehicleHref } from '../../lib/vehicles';
+
+interface Props {
+  locale: string;
+}
+const { locale } = Astro.props;
+const copy = t(locale);
+const feat = features(locale);
+const vehicles = await loadVehicles();
+const rows = vehicles.flatMap((entry) => {
+  const view = localizeVehicle(entry.data, locale);
+  return view.variants.flatMap((variant) =>
+    variant.fccIds.map((fcc) => ({
+      id: fcc.id,
+      role: fcc.role,
+      frequency: variant.frequency.status === 'verified' ? variant.frequency.text : copy.unverifiedChip,
+      frequencyFallback: variant.frequency.status !== 'verified',
+      vehicle: `${entry.data.make} ${entry.data.model}`,
+      years: entry.data.yearSlug,
+      path: vehicleHref(entry.data).replace(/^\/|\/$/g, ''),
+      sourceUrl: entry.data.sources.find((source) => fcc.sourceIds.includes(source.id) && source.url.includes('fccid.io'))?.url,
+    })),
+  );
+});
+rows.sort((a, b) => a.id.localeCompare(b.id) || a.vehicle.localeCompare(b.vehicle));
+const roleLabel = (role: string) =>
+  role === 'oem' ? copy.roleOem : role === 'aftermarket-example' ? copy.roleAftermarket : copy.roleSeller;
+---
+
+<Base title={copy.fccTitle} description={copy.fccDescription} locale={locale}>
+  <div class="wrap">
+    <p class="kicker">{copy.fccKicker}</p>
+    <h1>{copy.fccH1}</h1>
+    <p class="lede prose">{copy.fccLede}</p>
+    <DirectoryData locale={locale} />
+    <form class="lookup no-print" data-fcc-search>
+      <label for="fcc-q">{feat.fccSearchLabel}
+        <input id="fcc-q" type="search" data-fcc-input placeholder={feat.fccPlaceholder} autocomplete="off" />
+      </label>
+      <p class="muted" data-fcc-status hidden></p>
+      <ul class="clean" data-fcc-results hidden></ul>
+    </form>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>{copy.colFcc}</th>
+            <th>{copy.colRole}</th>
+            <th>{copy.colFreq}</th>
+            <th>{copy.colVehicle}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            rows.map((row) => (
+              <tr data-fcc-row data-fcc-norm={normalizeFcc(row.id)}>
+                <th scope="row">
+                  {row.sourceUrl ? (
+                    <a class="mono" href={row.sourceUrl} rel="noopener noreferrer">{row.id}</a>
+                  ) : (
+                    <span class="mono">{row.id}</span>
+                  )}
+                </th>
+                <td>{roleLabel(row.role)}</td>
+                <td>{row.role === 'oem' ? row.frequency : copy.seeVehicle}</td>
+                <td>
+                  <a href={localeHref(locale, row.path)}>{row.vehicle} {row.years}</a>
+                </td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</Base>

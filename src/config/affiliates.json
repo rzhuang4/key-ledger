@@ -1,0 +1,34 @@
+{
+  "retailers": {
+    "carandtruckremotes": {
+      "name": "Car and Truck Remotes",
+      "baseUrl": "https://www.carandtruckremotes.com",
+      "affiliateQuery": ""
+    },
+    "carkeysexpress": {
+      "name": "Car Keys Express",
+      "baseUrl": "https://store.carkeysexpress.com",
+      "affiliateQuery": ""
+    },
+    "tomskey": {
+      "name": "Tom's Key Company",
+      "baseUrl": "https://tomskey.com",
+      "affiliateQuery": ""
+    },
+    "amazon": {
+      "name": "Amazon",
+      "baseUrl": "https://www.amazon.com",
+      "affiliateQuery": ""
+    },
+    "northcoastkeyless": {
+      "name": "NorthCoast Keyless",
+      "baseUrl": "https://northcoastkeyless.com",
+      "affiliateQuery": ""
+    },
+    "standardautopart": {
+      "name": "Standard Auto Part",
+      "baseUrl": "https://www.standardautopart.com",
+      "affiliateQuery": ""
+    }
+  }
+}

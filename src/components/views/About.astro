@@ -1,0 +1,39 @@
+---
+import Base from '../../layouts/Base.astro';
+import { t } from '../../i18n/messages';
+import { localeHref } from '../../lib/paths';
+
+interface Props {
+  locale: string;
+}
+const { locale } = Astro.props;
+const copy = t(locale);
+---
+
+<Base title={copy.aboutTitle} description={copy.aboutDescription} locale={locale}>
+  <div class="wrap prose">
+    <p class="kicker">{copy.aboutKicker}</p>
+    <h1>{copy.aboutH1}</h1>
+    <p>{copy.aboutP1}</p>
+    <h2>{copy.aboutH2Source}</h2>
+    <p>{copy.aboutSource}</p>
+    <h2>{copy.aboutH2Wont}</h2>
+    <ul>
+      <li>{copy.aboutWont1}</li>
+      <li>{copy.aboutWont2}</li>
+      <li>{copy.aboutWont3}</li>
+      <li>{copy.aboutWont4}</li>
+    </ul>
+    <p>{copy.aboutWarning}</p>
+    <h2>{copy.aboutH2Coverage}</h2>
+    <p>
+      {copy.aboutCoverage1}
+      <a href={localeHref(locale, 'fcc')}>{copy.aboutFcc}</a>
+      {copy.aboutCoverage2}
+    </p>
+    <p>
+      {copy.aboutShop}
+      <a href={localeHref(locale, 'affiliate-disclosure')}>{copy.aboutDiscLink}</a>.
+    </p>
+  </div>
+</Base>

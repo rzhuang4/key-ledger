@@ -1,0 +1,122 @@
+---
+import Base from '../../layouts/Base.astro';
+import DirectoryData from '../DirectoryData.astro';
+import LookupForm from '../LookupForm.astro';
+import { fill, t } from '../../i18n/messages';
+import { localizeVehicle } from '../../lib/localize';
+import { localeHref } from '../../lib/paths';
+import { loadVehicles, vehicleHref } from '../../lib/vehicles';
+
+interface Props {
+  locale: string;
+}
+const { locale } = Astro.props;
+const copy = t(locale);
+const vehicles = await loadVehicles();
+const makes = [...new Set(vehicles.map((entry) => entry.data.makeSlug))].map((slug) => {
+  const sample = vehicles.find((entry) => entry.data.makeSlug === slug);
+  return { slug, name: sample?.data.make ?? slug };
+});
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: copy.siteName,
+  description: copy.homeDescription,
+  inLanguage: copy === t('en') && locale !== 'en' ? 'en' : undefined,
+  url: Astro.site ? new URL(localeHref(locale, ''), Astro.site).href : undefined,
+};
+---
+
+<Base title={copy.homeTitle} description={copy.homeDescription} locale={locale} jsonLd={jsonLd}>
+  <div class="wrap">
+    <p class="kicker">{copy.homeKicker}</p>
+    <h1>{copy.homeH1}</h1>
+    <p class="lede prose">{copy.homeLede}</p>
+    <DirectoryData locale={locale} />
+    <LookupForm locale={locale} />
+    <div class="search">
+      <label for="q">{copy.searchLabel}</label>
+      <input id="q" type="search" placeholder={copy.searchPlaceholder} autocomplete="off" />
+      <p
+        class="muted"
+        id="count"
+        data-all={copy.countAll}
+        data-match={copy.countMatch}
+      >
+        {fill(copy.countAll, { n: vehicles.length })}
+      </p>
+    </div>
+    <p id="no-matches" class="empty" hidden>{copy.noMatch}</p>
+    <p class="chip-row" aria-label={copy.navBrowse}>
+      {makes.map((make) => (
+        <a class="chip" href={localeHref(locale, make.slug)}>{make.name}</a>
+      ))}
+    </p>
+    <div class="grid">
+      {
+        vehicles.map((entry) => {
+          const data = entry.data;
+          const view = localizeVehicle(data, locale);
+          const fcc = data.variants.flatMap((variant) => variant.fccIds.map((item) => item.id)).join(' ');
+          const search = `${data.make} ${data.model} ${data.yearSlug} ${data.yearStart} ${data.yearEnd} ${fcc}`.toLowerCase();
+          const blurb = view.summary.text;
+          return (
+            <article class="card" data-search={search}>
+              <p class="meta-row">
+                <span class:list={['status', data.diy.status]}>
+                  {data.diy.status === 'yes' ? copy.diyYes : data.diy.status === 'no' ? copy.diyNo : copy.diyTool}
+                </span>
+                <span class="chip">{data.yearSlug}</span>
+              </p>
+              <h2>
+                <a class="stretch" href={localeHref(locale, vehicleHref(data).replace(/^\/|\/$/g, ''))}>
+                  {data.make} {data.model}
+                </a>
+              </h2>
+              <p class="muted" lang={view.summary.fallback ? 'en' : undefined}>
+                {blurb.slice(0, 180)}{blurb.length > 180 ? '…' : ''}
+                {view.summary.fallback && <span class="fallback-tag">{copy.shownInEnglish}</span>}
+              </p>
+            </article>
+          );
+        })
+      }
+    </div>
+    <section class="prose">
+      <h2>{copy.beforeH2}</h2>
+      <p>
+        {copy.beforeBefore}
+        <a href={localeHref(locale, 'guides/dealer-vs-locksmith-vs-diy')}>{copy.beforeGuide}</a>
+        {copy.beforeMid}
+        <a href={localeHref(locale, 'fcc')}>{copy.beforeFcc}</a>
+        {copy.beforeAfter}
+      </p>
+    </section>
+    <script is:inline>
+      const input = document.querySelector('#q');
+      const cards = Array.from(document.querySelectorAll('[data-search]'));
+      const empty = document.querySelector('#no-matches');
+      const count = document.querySelector('#count');
+      const total = cards.length;
+      function apply() {
+        const query = input.value.trim().toLowerCase();
+        let shown = 0;
+        for (const card of cards) {
+          const ok = !query || card.dataset.search.includes(query);
+          card.hidden = !ok;
+          if (ok) shown += 1;
+        }
+        empty.hidden = shown !== 0;
+        count.textContent = query
+          ? count.dataset.match.replaceAll('{shown}', String(shown)).replaceAll('{total}', String(total))
+          : count.dataset.all.replaceAll('{n}', String(total));
+      }
+      input.addEventListener('input', apply);
+      const params = new URLSearchParams(location.search);
+      if (params.get('q')) {
+        input.value = params.get('q');
+        apply();
+      }
+    </script>
+  </div>
+</Base>

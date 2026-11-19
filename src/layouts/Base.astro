@@ -1,0 +1,122 @@
+---
+import '../styles/global.css';
+import { features } from '../i18n/features';
+import { t } from '../i18n/messages';
+import { localeInfo, locales } from '../i18n/locales';
+import { contentPath, href, localeHref } from '../lib/paths';
+
+interface Props {
+  title: string;
+  description: string;
+  locale?: string;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+}
+
+const { title, description, jsonLd } = Astro.props;
+const locale = Astro.props.locale ?? 'en';
+const info = localeInfo(locale);
+const copy = t(locale);
+const feat = features(locale);
+const path = contentPath(Astro.url.pathname);
+const canonicalPath = localeHref(locale, path);
+const canonical = Astro.site ? new URL(canonicalPath, Astro.site).href : undefined;
+const alternates = locales.map((item) => ({
+  hreflang: item.hreflang,
+  href: Astro.site ? new URL(localeHref(item.code, path), Astro.site).href : localeHref(item.code, path),
+}));
+const xDefault = Astro.site ? new URL(localeHref('en', path), Astro.site).href : localeHref('en', path);
+const payload = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+const json = payload.length
+  ? JSON.stringify(payload.length === 1 ? payload[0] : payload).replace(/</g, '\\u003c')
+  : '';
+const nav = [
+  [copy.navBrowse, localeHref(locale, '')],
+  [feat.navFind, localeHref(locale, 'find')],
+  [feat.navQuiz, localeHref(locale, 'quiz')],
+  [copy.navFcc, localeHref(locale, 'fcc')],
+  [feat.navEstimate, localeHref(locale, 'estimate')],
+  [feat.navBatteries, localeHref(locale, 'batteries')],
+  [copy.navCost, localeHref(locale, 'guides/dealer-vs-locksmith-vs-diy')],
+  [copy.navAbout, localeHref(locale, 'about')],
+];
+---
+
+<!doctype html>
+<html lang={info.htmlLang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#1c1915" />
+    <link rel="icon" type="image/svg+xml" href={href('/favicon.svg')} />
+    {canonical && <link rel="canonical" href={canonical} />}
+    {alternates.map((item) => <link rel="alternate" hreflang={item.hreflang} href={item.href} />)}
+    <link rel="alternate" hreflang="x-default" href={xDefault} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content={info.hreflang} />
+    {canonical && <meta property="og:url" content={canonical} />}
+    <title>{title}</title>
+    {json && <script type="application/ld+json" set:html={json} />}
+  </head>
+  <body data-locale={locale}>
+    <a class="skip" href="#content">{copy.skip}</a>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href={localeHref(locale, '')}>
+          <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+            <rect width="32" height="32" rx="7" fill="#1c1915"></rect>
+            <circle cx="11" cy="13" r="4.2" fill="none" stroke="#f3e6c8" stroke-width="1.8"></circle>
+            <path d="M14.6 14.6H25v2.4h-2.5V20H20v-3H14.6" fill="none" stroke="#f3e6c8" stroke-width="1.8"></path>
+          </svg>
+          <span>
+            <span class="brand-name">{copy.siteName}</span>
+            <span class="brand-kicker">{copy.siteKicker}</span>
+          </span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          {
+            nav.map(([label, href]) => (
+              <a href={href} aria-current={Astro.url.pathname === href ? 'page' : undefined}>
+                {label}
+              </a>
+            ))
+          }
+        </nav>
+        <details class="lang">
+          <summary>{copy.langMenu}: {info.label}</summary>
+          <ul>
+            {
+              locales.map((item) => (
+                <li>
+                  <a
+                    href={localeHref(item.code, path)}
+                    hrefLang={item.htmlLang}
+                    lang={item.htmlLang}
+                    aria-current={item.code === locale ? 'true' : undefined}
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </details>
+      </div>
+    </header>
+    <main id="content">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="wrap footer-row">
+        <p>{copy.footerFacts}</p>
+        <p>
+          <a href={localeHref(locale, 'affiliate-disclosure')}>{copy.footerDisclosure}</a>
+          ·
+          <a href={localeHref(locale, 'about')}>{copy.footerAbout}</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

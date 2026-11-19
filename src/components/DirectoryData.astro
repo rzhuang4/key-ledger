@@ -1,0 +1,27 @@
+---
+import { features } from '../i18n/features';
+import { buildCatalog } from '../lib/catalog';
+import { href, localeHref } from '../lib/paths';
+
+interface Props {
+  locale: string;
+}
+const { locale } = Astro.props;
+const copy = features(locale);
+const vehicles = await buildCatalog();
+const payload = JSON.stringify({
+  prefix: localeHref(locale, ''),
+  vehicles,
+}).replace(/</g, '\\u003c');
+const strings = JSON.stringify({
+  choose: copy.choose,
+  notCovered: copy.notCovered,
+  fccNone: copy.fccNone,
+  fccCount: copy.fccCount,
+  batteryUnknown: copy.batteryUnknown,
+}).replace(/</g, '\\u003c');
+---
+
+<script id="directory-catalog" type="application/json" set:html={payload} />
+<script id="directory-copy" type="application/json" set:html={strings} />
+<script src={href('directory.js')} defer></script>

@@ -1,0 +1,66 @@
+---
+import { features } from '../i18n/features';
+
+interface Props {
+  locale: string;
+  id: string;
+  facts: {
+    onboardStatus: string;
+    minimumWorkingKeys: number | string;
+    pushButtonProcedure: string;
+    ignitionKeyInCylinder: string;
+    ignitionBlade: string;
+    ignitionTransponder: string;
+    keyTypes: string[];
+  };
+}
+const { locale, facts } = Astro.props;
+const qid = Astro.props.id;
+const copy = features(locale);
+const strings = JSON.stringify({
+  resultDiy: copy.resultDiy,
+  resultShop: copy.resultShop,
+  resultTool: copy.resultTool,
+  resultToolShop: copy.resultToolShop,
+  resultPush: copy.resultPush,
+  resultType: copy.resultType,
+  resultUnsurePush: copy.resultUnsurePush,
+  resultUnknown: copy.resultUnknown,
+  resultCutKeyNoChip: copy.resultCutKeyNoChip,
+  resultKeyRequiredUnknown: copy.resultKeyRequiredUnknown,
+  resultKeyUnknown: copy.resultKeyUnknown,
+}).replace(/</g, '\\u003c');
+const factJson = JSON.stringify(facts).replace(/</g, '\\u003c');
+---
+
+<form class="quiz no-print" data-quiz data-copy={strings}>
+  <h2>{copy.quizTitle}</h2>
+  <p>{copy.quizLead}</p>
+  <fieldset>
+    <legend>{copy.qIgnition}</legend>
+    <label><input type="radio" name={`${qid}-ign`} value="yes" /> {copy.ignYes}</label>
+    <label><input type="radio" name={`${qid}-ign`} value="no" /> {copy.ignNo}</label>
+  </fieldset>
+  <fieldset>
+    <legend>{copy.qKeys}</legend>
+    <label><input type="radio" name={`${qid}-keys`} value="0" /> {copy.keys0}</label>
+    <label><input type="radio" name={`${qid}-keys`} value="1" /> {copy.keys1}</label>
+    <label><input type="radio" name={`${qid}-keys`} value="2" /> {copy.keys2}</label>
+  </fieldset>
+  <fieldset>
+    <legend>{copy.qPush}</legend>
+    <label><input type="radio" name={`${qid}-push`} value="yes" /> {copy.pushYes}</label>
+    <label><input type="radio" name={`${qid}-push`} value="no" /> {copy.pushNo}</label>
+    <label><input type="radio" name={`${qid}-push`} value="unsure" /> {copy.pushUnsure}</label>
+  </fieldset>
+  <fieldset>
+    <legend>{copy.qType}</legend>
+    <label><input type="radio" name={`${qid}-kind`} value="separate-remote" /> {copy.typeSeparate}</label>
+    <label><input type="radio" name={`${qid}-kind`} value="remote-head" /> {copy.typeRemote}</label>
+    <label><input type="radio" name={`${qid}-kind`} value="smart-prox" /> {copy.typeSmart}</label>
+    <label><input type="radio" name={`${qid}-kind`} value="transponder-only" /> {copy.typeTrans}</label>
+    <label><input type="radio" name={`${qid}-kind`} value="unsure" /> {copy.typeUnsure}</label>
+  </fieldset>
+  <script type="application/json" data-facts set:html={factJson} />
+  <p class="callout" data-quiz-result hidden></p>
+</form>

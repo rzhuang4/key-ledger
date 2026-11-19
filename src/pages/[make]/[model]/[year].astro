@@ -1,0 +1,7 @@
+---
+import Vehicle from '../../../components/views/Vehicle.astro';
+import { vehicleStaticPaths } from '../../../lib/routes';
+
+export const getStaticPaths = vehicleStaticPaths;
+---
+<Vehicle locale="en" entry={Astro.props.entry} />

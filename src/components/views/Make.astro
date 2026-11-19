@@ -1,0 +1,67 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { fill, t } from '../../i18n/messages';
+import { localeHref } from '../../lib/paths';
+import { vehicleHref } from '../../lib/vehicles';
+
+interface Props {
+  locale: string;
+  vehicles: CollectionEntry<'vehicles'>[];
+}
+const { locale, vehicles } = Astro.props;
+const copy = t(locale);
+const makeName = vehicles[0].data.make;
+const title = fill(copy.makeTitle, { make: makeName });
+const description = fill(copy.makeDescription, { make: makeName });
+const pageUrl = Astro.site ? new URL(localeHref(locale, vehicles[0].data.makeSlug), Astro.site).href : undefined;
+const homeUrl = Astro.site ? new URL(localeHref(locale, ''), Astro.site).href : undefined;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: copy.siteName, item: homeUrl },
+    { '@type': 'ListItem', position: 2, name: makeName, item: pageUrl },
+  ],
+};
+---
+
+<Base title={title} description={description} locale={locale} jsonLd={jsonLd}>
+  <div class="wrap">
+    <nav aria-label="Breadcrumb">
+      <ol class="crumbs">
+        <li><a href={localeHref(locale, '')}>{copy.crumbHome}</a></li>
+        <li>{makeName}</li>
+      </ol>
+    </nav>
+    <p class="kicker">{makeName}</p>
+    <h1>{fill(copy.makeH1, { make: makeName })}</h1>
+    <p class="lede prose">{copy.makeLede}</p>
+    <div class="grid">
+      {
+        vehicles.map((entry) => (
+          <article class="card">
+            <p class="meta-row">
+              <span class:list={['status', entry.data.diy.status]}>
+                {entry.data.diy.status === 'yes' ? copy.diyYes : entry.data.diy.status === 'no' ? copy.diyNo : copy.diyTool}
+              </span>
+              <span class="chip">{entry.data.yearSlug}</span>
+            </p>
+            <h2>
+              <a class="stretch" href={localeHref(locale, vehicleHref(entry.data).replace(/^\/|\/$/g, ''))}>
+                {entry.data.model}
+              </a>
+            </h2>
+            <p class="muted">{[...new Set(entry.data.variants.map((variant) => variant.keyType))].map((key) => (
+              key === 'flip-key' ? copy.keyFlip :
+              key === 'remote-head-key' ? copy.keyRemoteHead :
+              key === 'smart-prox' ? copy.keySmart :
+              key === 'transponder-only' ? copy.keyTransponder :
+              copy.keySeparate
+            )).join(', ')}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</Base>

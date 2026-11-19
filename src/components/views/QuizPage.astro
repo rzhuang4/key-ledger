@@ -1,0 +1,49 @@
+---
+import Base from '../../layouts/Base.astro';
+import DirectoryData from '../DirectoryData.astro';
+import QuizForm from '../QuizForm.astro';
+import { features } from '../../i18n/features';
+import { localeHref } from '../../lib/paths';
+import { loadVehicles, vehicleHref } from '../../lib/vehicles';
+
+interface Props {
+  locale: string;
+}
+const { locale } = Astro.props;
+const copy = features(locale);
+const vehicles = await loadVehicles();
+---
+
+<Base title={copy.quizPageTitle} description={copy.quizPageDescription} locale={locale}>
+  <div class="wrap">
+    <p class="kicker">{copy.navQuiz}</p>
+    <h1>{copy.quizPageTitle}</h1>
+    <p class="lede prose">{copy.quizGeneric}</p>
+    <DirectoryData locale={locale} />
+    <h2>{copy.quizExamples}</h2>
+    {
+      vehicles.map((entry) => {
+        const data = entry.data;
+        const facts = {
+          onboardStatus: data.programmingFacts.onboardStatus,
+          minimumWorkingKeys: data.programmingFacts.minimumWorkingKeys,
+          pushButtonProcedure: data.programmingFacts.pushButtonProcedure,
+          ignitionKeyInCylinder: data.programmingFacts.ignitionKeyInCylinder,
+          ignitionBlade: data.ignitionKey?.status === 'verified' ? data.ignitionKey.blade ?? '' : '',
+          ignitionTransponder: data.ignitionKey?.status === 'verified' ? data.ignitionKey.transponder ?? '' : '',
+          keyTypes: [...new Set(data.variants.map((variant) => variant.keyType))],
+        };
+        return (
+          <article class="vehicle-block">
+            <h3>
+              <a href={localeHref(locale, vehicleHref(data).replace(/^\/|\/$/g, ''))}>
+                {data.yearSlug} {data.make} {data.model}
+              </a>
+            </h3>
+            <QuizForm locale={locale} id={data.modelSlug} facts={facts} />
+          </article>
+        );
+      })
+    }
+  </div>
+</Base>

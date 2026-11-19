@@ -1,0 +1,442 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Cites from '../Cites.astro';
+import DirectoryData from '../DirectoryData.astro';
+import Disclosure from '../Disclosure.astro';
+import PriceLine from '../PriceLine.astro';
+import QuizForm from '../QuizForm.astro';
+import T from '../T.astro';
+import { features } from '../../i18n/features';
+import { t } from '../../i18n/messages';
+import { localeInfo } from '../../i18n/locales';
+import { shopLink } from '../../lib/affiliates';
+import { formatReviewed } from '../../lib/labels';
+import { localizeVehicle } from '../../lib/localize';
+import { localeHref } from '../../lib/paths';
+import { vehicleHref } from '../../lib/vehicles';
+
+interface Props {
+  locale: string;
+  entry: CollectionEntry<'vehicles'>;
+}
+const { locale, entry } = Astro.props;
+const copy = t(locale);
+const feat = features(locale);
+const fill = (template: string, vars: Record<string, string | number>) =>
+  template.replace(/\{(\w+)\}/g, (_, key) => (vars[key] == null ? '' : String(vars[key])));
+const info = localeInfo(locale);
+const data = entry.data;
+const quizFacts = {
+  onboardStatus: data.programmingFacts.onboardStatus,
+  minimumWorkingKeys: data.programmingFacts.minimumWorkingKeys,
+  pushButtonProcedure: data.programmingFacts.pushButtonProcedure,
+  ignitionKeyInCylinder: data.programmingFacts.ignitionKeyInCylinder,
+  ignitionBlade: data.ignitionKey?.status === 'verified' ? data.ignitionKey.blade ?? '' : '',
+  ignitionTransponder: data.ignitionKey?.status === 'verified' ? data.ignitionKey.transponder ?? '' : '',
+  keyTypes: [...new Set(data.variants.map((variant) => variant.keyType))],
+};
+const showDisclosure =
+  data.shopLinks.length > 0 || data.variants.some((variant) => variant.battery.status === 'verified');
+const view = localizeVehicle(data, locale);
+const pagePath = vehicleHref(data).replace(/^\/|\/$/g, '');
+const pageUrl = Astro.site ? new URL(localeHref(locale, pagePath), Astro.site).href : undefined;
+const homeUrl = Astro.site ? new URL(localeHref(locale, ''), Astro.site).href : undefined;
+const makeUrl = Astro.site ? new URL(localeHref(locale, data.makeSlug), Astro.site).href : undefined;
+const keyLabel = (key: string) =>
+  key === 'flip-key' ? copy.keyFlip :
+  key === 'remote-head-key' ? copy.keyRemoteHead :
+  key === 'smart-prox' ? copy.keySmart :
+  key === 'transponder-only' ? copy.keyTransponder :
+  copy.keySeparate;
+const channelLabel = (channel: string) =>
+  channel === 'dealer' ? copy.channelDealer :
+  channel === 'locksmith' ? copy.channelLocksmith :
+  copy.channelDiy;
+const roleLabel = (role: string) =>
+  role === 'oem' ? copy.roleOem :
+  role === 'aftermarket-example' ? copy.roleAftermarket :
+  copy.roleSeller;
+const sourcesForCites = data.sources;
+const jsonLd: Record<string, unknown>[] = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: copy.siteName, item: homeUrl },
+      { '@type': 'ListItem', position: 2, name: data.make, item: makeUrl },
+      { '@type': 'ListItem', position: 3, name: `${data.model} ${data.yearSlug}`, item: pageUrl },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: view.title.text,
+    description: view.description.text,
+    inLanguage: view.title.fallback ? 'en' : info.htmlLang,
+    dateModified: data.reviewed,
+    author: { '@type': 'Organization', name: 'Key Ledger' },
+    publisher: { '@type': 'Organization', name: 'Key Ledger' },
+    mainEntityOfPage: pageUrl,
+  },
+];
+if (view.diy.steps.length) {
+  jsonLd.push({
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: view.title.text,
+    description: view.diy.safetyNote.text,
+    inLanguage: view.diy.safetyNote.fallback ? 'en' : info.htmlLang,
+    step: view.diy.steps.map((step, index) => ({
+      '@type': 'HowToStep',
+      position: index + 1,
+      text: step.text.text,
+    })),
+  });
+}
+const h1 = `${data.yearStart === data.yearEnd ? data.yearStart : `${data.yearStart}–${data.yearEnd}`} ${data.make} ${data.model}`;
+---
+
+<Base title={`${view.title.text} · ${copy.siteName}`} description={view.description.text} locale={locale} jsonLd={jsonLd}>
+  <div class="wrap">
+    {showDisclosure && <Disclosure locale={locale} />}
+    <nav class="no-print" aria-label="Breadcrumb">
+      <ol class="crumbs">
+        <li><a href={localeHref(locale, '')}>{copy.crumbHome}</a></li>
+        <li><a href={localeHref(locale, data.makeSlug)}>{data.make}</a></li>
+        <li>{data.model} {data.yearSlug}</li>
+      </ol>
+    </nav>
+    <p class="kicker">{data.make} · {copy.usMarket}</p>
+    <h1>{h1}</h1>
+    <p class="muted no-print">{copy.checked.replace('{date}', formatReviewed(data.reviewed, info.dateLocale))} {copy.matchFcc}</p>
+    <p class="summary prose no-print"><T value={view.summary} label={copy.shownInEnglish} /></p>
+    <p class="prose no-print"><T value={view.scope} label={copy.shownInEnglish} /></p>
+
+    <section>
+      <h2>{copy.canYou}</h2>
+      <p>
+        <span class:list={['status', data.diy.status]}>
+          {data.diy.status === 'yes' ? copy.diyYes : data.diy.status === 'no' ? copy.diyNo : copy.diyTool}
+        </span>
+      </p>
+      <p><T value={view.diy.summary} label={copy.shownInEnglish} /> <Cites ids={data.diy.sourceIds} sources={sourcesForCites} /></p>
+      {view.diy.condition && <p><T value={view.diy.condition} label={copy.shownInEnglish} /></p>}
+      <div class="callout danger">
+        <strong>{copy.safety}</strong> <T value={view.diy.safetyNote} label={copy.shownInEnglish} />
+      </div>
+      {
+        view.diy.notes.map((note) => (
+          <p>
+            <T value={note.text} label={copy.shownInEnglish} /> <Cites ids={note.sourceIds} sources={sourcesForCites} />
+          </p>
+        ))
+      }
+      {
+        view.comparisons && (
+          <div class="table-scroll">
+            <p>
+              <T value={view.comparisons.caption} label={copy.shownInEnglish} />
+              <Cites ids={view.comparisons.sourceIds} sources={sourcesForCites} />
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <th>{copy.colStep}</th>
+                  {view.comparisons.columns.map((column) => <th><T value={column.heading} label={copy.shownInEnglish} /></th>)}
+                </tr>
+              </thead>
+              <tbody>
+                {view.comparisons.rows.map((row) => (
+                  <tr>
+                    <th scope="row"><T value={row.action} label={copy.shownInEnglish} /></th>
+                    {row.values.map((value) => <td><T value={value} label={copy.shownInEnglish} /></td>)}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )
+      }
+      {
+        view.ignitionKey && (
+          <>
+            <h3>{feat.ignitionH2}</h3>
+            <p>
+              {view.ignitionKey.status === 'verified' ? (
+                <>
+                  {view.ignitionKey.blade && <span class="mono">{view.ignitionKey.blade}</span>}{' '}
+                  <T value={view.ignitionKey.note} label={copy.shownInEnglish} />
+                  {view.ignitionKey.sourceIds && <Cites ids={view.ignitionKey.sourceIds} sources={sourcesForCites} />}
+                </>
+              ) : (
+                <>
+                  <span class="chip unverified">{copy.unverifiedChip}</span>{' '}
+                  <T value={view.ignitionKey.note} label={copy.shownInEnglish} />
+                </>
+              )}
+            </p>
+          </>
+        )
+      }
+      <p class="no-print">
+        <button type="button" class="text-button" onclick="window.print()">{feat.printSteps}</button>
+        <span class="muted"> {feat.printNote}</span>
+      </p>
+      {
+        view.diy.steps.length > 0 && (
+          <>
+            <h3>{copy.onBoardSteps}</h3>
+            <ol class="steps">
+              {view.diy.steps.map((step) => (
+                <li>
+                  <T value={step.text} label={copy.shownInEnglish} /> <Cites ids={step.sourceIds} sources={sourcesForCites} />
+                </li>
+              ))}
+            </ol>
+          </>
+        )
+      }
+      {
+        view.troubleshooting.length > 0 && (
+          <>
+            <h3>{feat.troubleH2}</h3>
+            {view.troubleshooting.map((item) => (
+              <article>
+                <h4><T value={item.title} label={copy.shownInEnglish} /></h4>
+                <p>
+                  <T value={item.text} label={copy.shownInEnglish} />
+                  <Cites ids={item.sourceIds} sources={sourcesForCites} />
+                </p>
+              </article>
+            ))}
+          </>
+        )
+      }
+    </section>
+
+    <DirectoryData locale={locale} />
+    <QuizForm locale={locale} id={data.modelSlug} facts={quizFacts} />
+
+    <section class="no-print">
+      <h2>{feat.buyH2}</h2>
+      {
+        view.variants.map((variant) => {
+          const oemIds = variant.fccIds.filter((item) => item.role === 'oem').map((item) => item.id);
+          const freq = variant.frequency.status === 'verified' ? variant.frequency.text : '';
+          const buttons = data.variants.find((item) => item.id === variant.id)?.buttons?.count;
+          return (
+            <article class="vehicle-block">
+              <h3><T value={variant.name} label={copy.shownInEnglish} /></h3>
+              <ol>
+                <li>{oemIds.length ? fill(feat.checkFcc, { id: oemIds.join(', ') }) : copy.unverifiedChip}</li>
+                <li>{buttons ? fill(feat.checkButtons, { n: buttons }) : feat.checkButtonsUnknown}</li>
+                <li>{freq ? fill(feat.checkFreq, { freq }) : feat.checkFreqUnknown}</li>
+              </ol>
+            </article>
+          );
+        })
+      }
+      <p>{feat.aftermarketNote}</p>
+      <p>
+        <a href="https://www.reddit.com/r/Locksmith/comments/1crnjt1/do_nonoem_replacement_key_fobs_work/" rel="noopener noreferrer">{feat.redditThread}</a>
+      </p>
+      <p>{feat.locksmithRefuse}</p>
+    </section>
+
+    <section class="no-print">
+      <h2>{copy.keysH2}</h2>
+      {
+        view.variants.map((variant) => (
+          <article class="vehicle-block">
+            <h3><T value={variant.name} label={copy.shownInEnglish} /></h3>
+            <p class="muted"><T value={variant.years} label={copy.shownInEnglish} /></p>
+            <dl class="facts">
+              <div>
+                <dt>{copy.keyType}</dt>
+                <dd>
+                  {keyLabel(variant.keyType)}. <T value={variant.keyTypeNote} label={copy.shownInEnglish} />
+                  <Cites ids={variant.keyTypeSourceIds} sources={sourcesForCites} />
+                </dd>
+              </div>
+              <div>
+                <dt>{copy.fccId}</dt>
+                <dd>
+                  {variant.fccIds.length === 0 && variant.fccUnverified && (
+                    <p class="fact">
+                      <span class="chip unverified">{copy.unverifiedChip}</span>{' '}
+                      <T value={variant.fccUnverified} label={copy.shownInEnglish} />
+                    </p>
+                  )}
+                  <ul class="clean">
+                    {variant.fccIds.map((fcc) => (
+                      <li>
+                        <span class="mono">{fcc.id}</span> · {roleLabel(fcc.role)}
+                        {fcc.note && <> <T value={fcc.note} label={copy.shownInEnglish} /></>}
+                        <Cites ids={fcc.sourceIds} sources={sourcesForCites} />
+                      </li>
+                    ))}
+                  </ul>
+                </dd>
+              </div>
+              <div>
+                <dt>{copy.partNumbers}</dt>
+                <dd>
+                  {variant.oemPartNumbers.length === 0 && variant.partsUnverified && (
+                    <p class="fact">
+                      <span class="chip unverified">{copy.unverifiedChip}</span>{' '}
+                      <T value={variant.partsUnverified} label={copy.shownInEnglish} />
+                    </p>
+                  )}
+                  <ul class="clean">
+                    {variant.oemPartNumbers.map((part) => (
+                      <li>
+                        <span class="mono">{part.number}</span>
+                        {part.note && <> — <T value={part.note} label={copy.shownInEnglish} /></>}
+                        <Cites ids={part.sourceIds} sources={sourcesForCites} />
+                      </li>
+                    ))}
+                  </ul>
+                </dd>
+              </div>
+              <div>
+                <dt>{copy.battery}</dt>
+                <dd>
+                  {variant.battery.status === 'verified' ? (
+                    <>
+                      <span class="mono">{variant.battery.type}</span>
+                      {variant.battery.note && <> <T value={variant.battery.note} label={copy.shownInEnglish} /></>}
+                      {variant.battery.sourceIds && <Cites ids={variant.battery.sourceIds} sources={sourcesForCites} />}
+                      {variant.battery.type && (
+                        <p>
+                          <a
+                            href={shopLink('amazon', `https://www.amazon.com/s?k=${encodeURIComponent(`${variant.battery.type} battery`)}`).href}
+                            rel={shopLink('amazon', `https://www.amazon.com/s?k=${encodeURIComponent(`${variant.battery.type} battery`)}`).rel}
+                          >{feat.batteryAmazon}</a>
+                        </p>
+                      )}
+                    </>
+                  ) : (
+                    variant.battery.note && (
+                      <>
+                        <span class="chip unverified">{copy.unverifiedChip}</span>{' '}
+                        <T value={variant.battery.note} label={copy.shownInEnglish} />
+                      </>
+                    )
+                  )}
+                </dd>
+              </div>
+              <div>
+                <dt>{copy.frequency}</dt>
+                <dd>
+                  {variant.frequency.status === 'verified' ? (
+                    <>
+                      {variant.frequency.text}
+                      {variant.frequency.note && <> <T value={variant.frequency.note} label={copy.shownInEnglish} /></>}
+                      {variant.frequency.sourceIds && <Cites ids={variant.frequency.sourceIds} sources={sourcesForCites} />}
+                    </>
+                  ) : (
+                    variant.frequency.note && (
+                      <>
+                        <span class="chip unverified">{copy.unverifiedChip}</span>{' '}
+                        <T value={variant.frequency.note} label={copy.shownInEnglish} />
+                      </>
+                    )
+                  )}
+                </dd>
+              </div>
+            </dl>
+            {
+              variant.sellerClaims.map((claim) => (
+                <p>
+                  <T value={claim.text} label={copy.shownInEnglish} /> <Cites ids={claim.sourceIds} sources={sourcesForCites} />
+                </p>
+              ))
+            }
+          </article>
+        ))
+      }
+    </section>
+
+    <section class="no-print">
+      <h2>{copy.pricesH2}</h2>
+      <p class="muted">{copy.priceDisclaimer}</p>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>{copy.colChannel}</th>
+              <th>{copy.colPrice}</th>
+              <th>{copy.colCovers}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              view.priceRanges.map((row) => (
+                <tr>
+                  <th scope="row">{channelLabel(row.channel)}</th>
+                  <td>
+                    <PriceLine locale={locale} row={row} unverifiedLabel={copy.unverifiedChip} />
+                  </td>
+                  <td>
+                    <T value={row.note} label={copy.shownInEnglish} />
+                    {row.sourceIds && row.sourceIds.length > 0 && <Cites ids={row.sourceIds} sources={sourcesForCites} />}
+                  </td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    {
+      view.shopLinks.length > 0 && (
+        <section class="no-print">
+          <h2>{copy.shopsH2}</h2>
+          <ul class="clean">
+            {view.shopLinks.map((link) => {
+              const shop = shopLink(link.retailer, link.url);
+              return (
+                <li>
+                  <a href={shop.href} rel={shop.rel}><T value={link.label} label={copy.shownInEnglish} /></a>
+                  <span class="muted"> · {shop.name}</span>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      )
+    }
+
+    <section class="no-print">
+      <h2>{copy.unverifiedH2}</h2>
+      {
+        view.unverified.length === 0 ? (
+          <p>{copy.noGaps}</p>
+        ) : (
+          <ul class="clean">
+            {view.unverified.map((item) => <li><T value={item} label={copy.shownInEnglish} /></li>)}
+          </ul>
+        )
+      }
+    </section>
+
+    <section>
+      <h2>{copy.sourcesH2}</h2>
+      <ol class="sources">
+        {
+          view.sources.map((source) => (
+            <li id={`source-${source.id}`}>
+              <a href={source.url} rel="noopener noreferrer"><T value={source.title} label={copy.shownInEnglish} /></a>
+              <div class="muted">
+                <T value={source.publisher} label={copy.shownInEnglish} />. {copy.accessed.replace('{date}', formatReviewed(source.accessed, info.dateLocale))}
+                {source.note && <> <T value={source.note} label={copy.shownInEnglish} /></>}
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+    </section>
+  </div>
+</Base>

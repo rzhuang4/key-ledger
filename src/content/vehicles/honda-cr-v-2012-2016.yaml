@@ -1,0 +1,1674 @@
+# 2012–2016 Honda CR-V. Copy this file to add a page. Rules: README.md.
+make: Honda
+makeSlug: honda
+model: CR-V
+modelSlug: cr-v
+yearStart: 2012
+yearEnd: 2016
+yearSlug: "2012-2016"
+market: US
+title: "2012-2016 Honda CR-V key programming and part numbers"
+description: "2012-2016 Honda CR-V immobilizer keys need a scan tool. FCC IDs,
+  part numbers, batteries, and seller prices, each with a source."
+summary: "Honda service pages for the 2012-2016 CR-V say a Honda Diagnostic
+  System (HDS) scan tool is required to register an immobilizer key, and that
+  the same job programs the keyless transmitter. Owners do not get an on-board
+  button sequence on this page. Two different remote-head keys show up in parts
+  listings, and the sellers do not agree on a single part number for 2012-2013."
+scope: "Fourth-generation CR-V, model years 2012 through 2016, US market,
+  remote-head keys with a blade. Push-button smart keys are excluded by the
+  sellers below and were not given their own FCC ID on this page. A 2012 key and
+  a 2015 key are not treated as the same part."
+reviewed: "2026-11-19"
+diy:
+  status: "needs-tool"
+  summary: "A 2012 CR-V LX service procedure and a 2012-2016 CR-V service reprint
+    both say the HDS is required to register immobilizer keys. Programming the
+    immobilizer also programs the keyless transmitter. The control unit stores
+    up to six immobilizer keys. Adding a key, in the 2012 LX text, takes a key
+    that is already registered plus the first password from Honda's iN system.
+    If every key is lost, that text calls for the immobilizer PCM code. Those
+    are shop steps. They are not reprinted here as something to try in a
+    driveway."
+  condition: "Tom's Key sells a separate programmer and says at least one working
+    key is required to use it. That is still a tool, not on-board programming.
+    Car Keys Express tells you the blade has to be cut."
+  safetyNote: "There is no on-board sequence on this page. Guessing ignition
+    cycles or button combinations can leave a key unrecognized, and a locksmith
+    or Honda dealer then has to recover it with the right tool. Stop if you do
+    not have that tool and the password or immobilizer code the service
+    procedure uses."
+  sourceIds:
+    - honda-2012-lx
+    - honda-2012-2016
+    - toms-3btn
+    - cke-2012
+variants:
+  - id: remote-head-2012-2013
+    name: "3-button remote-head key"
+    years: "Listed by sellers for 2012-2013, and by some for 2007-2013"
+    keyType: remote-head-key
+    keyTypeNote: "Car Keys Express calls this a remote and key combo, also known as
+      a remote-head key: an ignition key with a transponder plus Lock, Unlock,
+      and Panic. Tom's Key sells the same kind of 3-button key and says it will
+      not work on a push-button start."
+    keyTypeSourceIds:
+      - cke-2012
+      - toms-3btn
+    fccIds:
+      - id: MLBHLIK-1T
+        role: oem
+        note: "FCC grant to Honda Lock Mfg. Co., Ltd., model HLIK-1T, remote keyless
+          entry transmitter. Grant date May 9, 2006. Frequency on the grant is
+          313.85 MHz. Car Keys Express, Tom's Key, and MK3 all print MLBHLIK-1T
+          on CR-V remote-head listings."
+        sourceIds:
+          - fcc-mlbhlik-1t
+          - cke-2012
+          - toms-3btn
+          - mk3-2012
+    oemPartNumbers:
+      - number: "35118-T0A-A00"
+        note: "MK3 lists this as the OEM part for a 2012-2013 CR-V remote. The US
+          sellers checked below print different numbers. Not confirmed on a
+          Honda parts fiche."
+        sourceIds:
+          - mk3-2012
+      - number: "35111-SWA-306"
+        note: "Tom's Key lists this as the part its 3-button aftermarket key replaces.
+          The listing also covers other Honda models, not only the CR-V."
+        sourceIds:
+          - toms-3btn
+      - number: "HLIK-1T"
+        note: "Car Keys Express lists HLIK-1T as a part number. That string is also the
+          FCC model. Treat it as the seller's label, not as proof it is the
+          Honda parts-counter number."
+        sourceIds:
+          - cke-2012
+      - number: "5938192"
+        note: "Strattec number printed by Car Keys Express."
+        sourceIds:
+          - cke-2012
+    battery:
+      status: verified
+      type: CR1616
+      note: "MK3 states CR1616. The FCC grant does not name the cell. The Tom's Key
+        and Car Keys Express pages checked for this key do not list a battery."
+      sourceIds:
+        - mk3-2012
+    frequency:
+      status: verified
+      text: "313.85 MHz"
+      note: "That is the grant frequency. MK3's product page says 315 MHz for the same
+        FCC ID. Use the number on the grant, and match the ID on your key rather
+        than a rounded seller frequency."
+      sourceIds:
+        - fcc-mlbhlik-1t
+        - mk3-2012
+    sellerClaims:
+      - text: "Tom's Key lists the chip as Philips 46. MK3 lists transponder ID
+          PCF7961A. Those claims were not checked against a Honda document, and
+          they are not the same label."
+        sourceIds:
+          - toms-3btn
+          - mk3-2012
+      - text: "Tom's Key also prints 'MLBHL1K-1T' next to MLBHLIK-1T. The extra spelling
+          does not match the FCC grant. Read the ID on your key character by
+          character."
+        sourceIds:
+          - toms-3btn
+    buttons:
+      count: 3
+      sourceIds:
+        - cke-2012
+  - id: remote-head-2014-2016
+    name: "4-button remote-head key"
+    years: "2014-2016"
+    keyType: remote-head-key
+    keyTypeNote: "Tom's Key and Keys4Less both sell a 4-button remote-head key for
+      the 2014-2016 CR-V, with lock, unlock, panic, and a hatch or trunk
+      release. Both say the FCC ID is MLBHLIK6-1T. Tom's Key says it will not
+      work on push-button start. Keys4Less categorizes it as a remote head key."
+    keyTypeSourceIds:
+      - toms-4btn
+      - keys4less-2014
+    fccIds:
+      - id: MLBHLIK6-1T
+        role: oem
+        note: "FCC grant to Honda Lock Mfg. Co., Ltd., model HLIK6-1T, keyless-entry
+          transmitter. Grant date February 6, 2012. Frequency on the grant is
+          313.85 MHz. Keys4Less also prints MLBHLIK61T without a hyphen; the
+          grant uses MLBHLIK6-1T."
+        sourceIds:
+          - fcc-mlbhlik6-1t
+          - toms-4btn
+          - keys4less-2014
+    oemPartNumbers:
+      - number: "35118-T7S-A00"
+        note: "Printed by both Tom's Key and Keys4Less. Not confirmed on a Honda parts
+          fiche. Keys4Less also prints the unhyphenated form 35118T7SA00."
+        sourceIds:
+          - toms-4btn
+          - keys4less-2014
+      - number: "35118-T0A-A30"
+        note: "Printed by both Tom's Key and Keys4Less. Keys4Less also prints
+          35118T0AA30."
+        sourceIds:
+          - toms-4btn
+          - keys4less-2014
+    battery:
+      status: verified
+      type: CR1620
+      note: "Keys4Less states CR1620. Tom's Key's 2014-2016 page does not list a
+        battery. The FCC grant does not name the cell."
+      sourceIds:
+        - keys4less-2014
+    frequency:
+      status: verified
+      text: "313.85 MHz"
+      note: "Grant frequency. Keys4Less says 314 MHz. Tom's Key's page does not state
+        a frequency."
+      sourceIds:
+        - fcc-mlbhlik6-1t
+        - keys4less-2014
+    sellerClaims:
+      - text: "Tom's Key lists the transponder as Philips 47. That was not checked
+          against a Honda document."
+        sourceIds:
+          - toms-4btn
+    buttons:
+      count: 4
+      sourceIds:
+        - toms-4btn
+priceRanges:
+  - channel: online-diy
+    status: verified
+    lowUsd: 54.95
+    highUsd: 54.95
+    note: "Checked November 19, 2026 from Shopify product JSON. The 3-button
+      listing, fitment including CR-V 2007-2013, returned available: true, price
+      5495 cents ($54.95), compare-at 11999 cents ($119.99). The Sold out text
+      on the theme is not the stock status. The key is uncut unless you buy
+      their photo-cut option. The page says programming uses their separate
+      programmer."
+    sourceIds:
+      - toms-3btn
+    currency: USD
+    retailer: Tom's Key Company
+    checkedAt: "2026-11-19"
+    stock: in-stock
+  - channel: online-diy
+    status: verified
+    lowUsd: 60.95
+    highUsd: 60.95
+    note: "Checked November 19, 2026 from Shopify product JSON. The 2014-2016
+      4-button key returned available: true, price 6095 cents ($60.95),
+      compare-at 17999 cents ($179.99). The Sold out text on the theme is not
+      the stock status. Programming is described as their programmer, not an
+      on-board sequence."
+    sourceIds:
+      - toms-4btn
+    currency: USD
+    retailer: Tom's Key Company
+    checkedAt: "2026-11-19"
+    stock: in-stock
+  - channel: online-diy
+    status: verified
+    lowUsd: 88
+    highUsd: 88
+    note: "Checked November 19, 2026. The product JSON-LD offer said price 88.00 USD
+      and availability https://schema.org/OutOfStock. That shop is not one of
+      the affiliate retailers configured on this site. The price is cited only."
+    sourceIds:
+      - keys4less-2014
+    currency: USD
+    retailer: Keys4Less
+    checkedAt: "2026-11-19"
+    stock: out-of-stock
+  - channel: online-diy
+    status: unverified
+    note: "An earlier open the same day showed a from-price. A repeat request on
+      November 19, 2026 returned HTTP 429, and no priceCurrency was read. The
+      number is not shown."
+    sourceIds:
+      - cke-2012
+    currency: USD
+    retailer: Car Keys Express
+    checkedAt: "2026-11-19"
+    stock: unknown
+  - channel: dealer
+    status: unverified
+    note: "No Honda dealer quote for a 2012-2016 CR-V key was found."
+    currency: USD
+    retailer: none
+    checkedAt: "2026-11-19"
+    stock: unknown
+  - channel: locksmith
+    status: unverified
+    note: "No published locksmith price for cutting and programming a 2012-2016 CR-V
+      key was found. The service pages describe an HDS job and do not list a
+      fee."
+    currency: USD
+    retailer: none
+    checkedAt: "2026-11-19"
+    stock: unknown
+shopLinks:
+  - retailer: tomskey
+    url: "https://tomskey.com/products/honda-accord-crosstour-2010-2012-honda-cr-v-\
+      2007-2013-honda-cr-z-2011-2015-honda-fit-2009-2013-honda-insight-2010-201\
+      4-key-and-keyless-entry-remote-3-button-mlbhlik-1t-3b-key-and-keyless-ent\
+      ry-remote-3-button-mlbhlik-1t-3b"
+    label: "Tom's Key 3-button remote-head key (lists CR-V 2007-2013)"
+  - retailer: tomskey
+    url: "https://tomskey.com/products/honda-cr-v-2014-2016-key-and-keyless-entry-r\
+      emote-4-button-with-hatch-release-honrk-rctngl-4b-mlbhlik6-1t"
+    label: "Tom's Key 2014-2016 CR-V 4-button remote-head key"
+  - retailer: carkeysexpress
+    url: "https://store.carkeysexpress.com/keys-and-remotes/Honda/CR-V/2012/1000432\
+      -honda-3-button-keyless-entry-remote-and-key-combo-replacement"
+    label: "Car Keys Express 2012 CR-V 3-button remote-head key"
+  - retailer: amazon
+    url: "https://www.amazon.com/s?k=MLBHLIK-1T+MLBHLIK6-1T+CR-V+key"
+    label: "Amazon search for CR-V FCC IDs MLBHLIK-1T and MLBHLIK6-1T"
+unverified:
+  - "A single Honda parts-catalog number for each year. For 2012-2013, MK3,
+    Tom's Key, and Car Keys Express publish different numbers. For 2014-2016 the
+    two sellers agree with each other, and no Honda fiche was opened."
+  - "Which 2012-2016 trims have push-button start, and the FCC ID of that smart
+    key. Sellers only say these remote-head keys do not fit a push-button car."
+  - "Transponder chip identity in a Honda document. Seller labels disagree on
+    the 2012-2013 key (Philips 46 versus PCF7961A) and Tom's Key says Philips 47
+    for 2014-2016."
+  - "Dealer and locksmith installed prices."
+  - "MK3 listed the 2012-2013 remote at $38.75 and showed it out of stock. The
+    page carries a UAE contact number, so that figure is not used as a US price.
+    Currency and US shipping were not confirmed."
+sources:
+  - id: honda-2012-lx
+    title: "2012 CR-V LX immobilizer key registration procedure"
+    url: "https://lemon-manuals.la/Honda/2012/CR-V%20LX%2C%202.4L%20Eng%20VIN%203%2\
+      C%20Trans%20Mfr%20CD%20B5SA/Repair%20and%20Diagnosis%20%28Single%20Page%2\
+      9/Accessories%20%26%20Equipment/Anti-Theft%20Systems/Immobilizer%20System\
+      /Immobilizer%20Key%20Registration/Procedure/"
+    publisher: "Lemon Manuals reproduction of a Honda service procedure, credited on
+      the page to American Honda Motor Co., Inc."
+    accessed: "2026-11-19"
+    note: "States that the HDS is required and that immobilizer programming also
+      programs the keyless transmitter."
+  - id: honda-2012-2016
+    title: "2012-2016 CR-V immobilizer key registration"
+    url: "http://cr-v.automotive-manuals.com/crv_rm_re/R005459.HTML"
+    publisher: "Third-party HTML reprint headed 2012-2016 CR-V RM1/RM4, RE5/RE6"
+    accessed: "2026-11-19"
+    note: "Also states that the HDS is required and that the control unit stores up
+      to six immobilizer keys."
+  - id: fcc-mlbhlik-1t
+    title: "FCC ID MLBHLIK-1T equipment authorization"
+    url: "https://fccid.io/MLBHLIK-1T"
+    publisher: "FCCID.io reproduction of the FCC grant to Honda Lock Mfg. Co., Ltd."
+    accessed: "2026-11-19"
+    note: "Grant date May 9, 2006. Model HLIK-1T. Frequency 313.85 MHz."
+  - id: fcc-mlbhlik6-1t
+    title: "FCC ID MLBHLIK6-1T equipment authorization"
+    url: "https://fccid.io/MLBHLIK6-1T"
+    publisher: "FCCID.io reproduction of the FCC grant to Honda Lock Mfg. Co., Ltd."
+    accessed: "2026-11-19"
+    note: "Grant date February 6, 2012. Model HLIK6-1T. Frequency 313.85 MHz."
+  - id: cke-2012
+    title: "2012 Honda CR-V 3-button keyless entry remote and key combo"
+    url: "https://store.carkeysexpress.com/keys-and-remotes/Honda/CR-V/2012/1000432\
+      -honda-3-button-keyless-entry-remote-and-key-combo-replacement"
+    publisher: "Car Keys Express"
+    accessed: "2026-11-19"
+    note: "Earlier page text showed a from-price. A repeat request on November 19,
+      2026 returned HTTP 429, and no priceCurrency was read, so the number is
+      not shown. FCC ID MLBHLIK-1T. Part labels HLIK-1T and Strattec 5938192.
+      Fitment list includes CR-V 2007-2013."
+  - id: toms-3btn
+    title: "3-button key and remote, FCC MLBHLIK-1T, fitment includes CR-V 2007-2013"
+    url: "https://tomskey.com/products/honda-accord-crosstour-2010-2012-honda-cr-v-\
+      2007-2013-honda-cr-z-2011-2015-honda-fit-2009-2013-honda-insight-2010-201\
+      4-key-and-keyless-entry-remote-3-button-mlbhlik-1t-3b-key-and-keyless-ent\
+      ry-remote-3-button-mlbhlik-1t-3b"
+    publisher: "Tom's Key Company"
+    accessed: "2026-11-19"
+    note: "Product JSON November 19, 2026: available true, $54.95, compare-at
+      $119.99. Part 35111-SWA-306. Theme Sold out text ignored."
+  - id: toms-4btn
+    title: "2014-2016 Honda CR-V 4-button key and remote, FCC MLBHLIK6-1T"
+    url: "https://tomskey.com/products/honda-cr-v-2014-2016-key-and-keyless-entry-r\
+      emote-4-button-with-hatch-release-honrk-rctngl-4b-mlbhlik6-1t"
+    publisher: "Tom's Key Company"
+    accessed: "2026-11-19"
+    note: "Product JSON November 19, 2026: available true, $60.95, compare-at
+      $179.99. Parts 35118-T7S-A00 and 35118-T0A-A30. Theme Sold out text
+      ignored."
+  - id: keys4less-2014
+    title: "2014-2016 Honda CR-V remote-head key, FCC MLBHLIK6-1T"
+    url: "https://keys4less.net/product/genuine-oem-keyless-remote-head-key-fob-for\
+      -honda-cr-v-2014-2016-fcc-mlbhlik6-1t-mlbhlik61t-part-number-35118-t7s-a0\
+      0-35118t7sa00-35118-t0a-a30-35118t0aa30-oem"
+    publisher: "Keys4Less"
+    accessed: "2026-11-19"
+    note: "JSON-LD on November 19, 2026: $88.00 and schema.org/OutOfStock. Battery
+      CR1620. Frequency stated as 314 MHz. Also lists HR-V 2016-2021."
+  - id: mk3-2012
+    title: "2012-2013 Honda CR-V remote, part 35118-T0A-A00"
+    url: "https://www.mk3.com/honda-crv-genuine-remote-2012-2013-3buttons-315mhz-35\
+      118-t0a-a00"
+    publisher: "MK3"
+    accessed: "2026-11-19"
+    note: "Lists FCC MLBHLIK-1T, battery CR1616, and a $38.75 price shown out of
+      stock. Overseas contact details; not used as a US price."
+i18n:
+  zh-hant:
+    title: 2012-2016 Honda CR-V 鑰匙編程與零件號
+    description: 2012-2016 Honda CR-V 的防盜晶片鑰匙需要診斷機。FCC ID、零件號、電池與賣家價格都各有出處。
+    summary: 2012-2016 CR-V 的 Honda 維修頁說，登記防盜晶片鑰匙需要 Honda
+      診斷系統（HDS），同一項工作也會編程免鑰匙發射器。本頁沒有給車主車上按鍵順序。零件頁出現兩種不同的遙控頭鑰匙，賣家對 2012-2013
+      沒有一致的單一零件號。
+    scope: 第四代 CR-V，2012 至 2016 年式，美國市場，帶齒片的遙控頭鑰匙。下面的賣家排除按鈕啟動的智慧鑰匙，本頁也沒有給那種鑰匙自己的 FCC
+      ID。2012 的鑰匙和 2015 的鑰匙不當成同一零件。
+    diy:
+      summary: 2012 CR-V LX 的維修程序和一份 2012-2016 CR-V 維修轉載都說，登記防盜晶片鑰匙需要
+        HDS。編程防盜也會編程免鑰匙發射器。控制單元最多存六把防盜鑰匙。2012 LX 的文字說，加一把鑰匙需要一把已經登記的鑰匙，以及 Honda
+        iN 系統的第一組密碼。如果所有鑰匙都遺失，那段文字要求防盜 PCM 代碼。那些是店內步驟，這裡不把它們印成可以在車道上試的做法。
+      condition: Tom's Key 另售編程器，並說至少要有一把能用的鑰匙才能用它。那仍然是工具，不是車上編程。Car Keys Express 說齒片必須切削。
+      safetyNote: 本頁沒有車上順序。猜點火循環或按鈕組合可能讓鑰匙不被認得，之後鎖匠或 Honda
+        經銷商必須用正確的工具把系統救回來。如果沒有那個工具，也沒有維修程序要用的密碼或防盜代碼，就停下來。
+    variants:
+      - id: remote-head-2012-2013
+        name: 3 鍵遙控頭鑰匙
+        years: 賣家列為 2012-2013，有些列到 2007-2013
+        keyTypeNote: Car Keys Express 稱它為遙控器與鑰匙組合，也就是遙控頭鑰匙：帶晶片的點火鑰匙加上 Lock、Unlock 和
+          Panic。Tom's Key 販售同類 3 鍵鑰匙，並說它不能用在按鈕啟動的車上。
+        fccNotes:
+          - Honda Lock Mfg. Co., Ltd. 的 FCC 認證，型號 HLIK-1T，免鑰匙遙控發射器。認證日期 2006 年 5
+            月 9 日。認證上的頻率是 313.85 MHz。Car Keys Express、Tom's Key 和 MK3 的 CR-V
+            遙控頭鑰匙頁都印了 MLBHLIK-1T。
+        partNotes:
+          - MK3 把這個號碼列為 2012-2013 CR-V 遙控器的原廠零件。下面查過的美國賣家印的是不同號碼。沒有在 Honda
+            零件目錄上確認。
+          - Tom's Key 把這個號碼列為其 3 鍵售後鑰匙要替換的零件。該頁也涵蓋其他 Honda 車型，不只 CR-V。
+          - Car Keys Express 把 HLIK-1T 列成零件號。那個字串也是 FCC 型號。把它當成賣家的標籤，不要當成它就是
+            Honda 零件櫃檯的號碼。
+          - Car Keys Express 印出的 Strattec 號碼。
+        batteryNote: MK3 寫 CR1616。FCC 認證沒有寫電池。這裡查過的 Tom's Key 和 Car Keys Express
+          頁面沒有列出這把鑰匙的電池。
+        frequencyNote: 那是認證上的頻率。MK3 的商品頁對同一個 FCC ID 寫 315 MHz。請用認證上的數字，並以鑰匙上的 ID
+          為準，不要用賣家四捨五入的頻率。
+        sellerClaims:
+          - Tom's Key 把晶片寫成 Philips 46。MK3 寫晶片 ID PCF7961A。這些說法沒有對過 Honda
+            文件，而且不是同一個標籤。
+          - Tom's Key 也在 MLBHLIK-1T 旁邊印了 MLBHL1K-1T。多出來的拼法不符合 FCC 認證。請逐字讀鑰匙上的 ID。
+      - id: remote-head-2014-2016
+        name: 4 鍵遙控頭鑰匙
+        years: 2014-2016
+        keyTypeNote: Tom's Key 和 Keys4Less 都販售 2014-2016 CR-V 的 4 鍵遙控頭鑰匙，有上鎖、開鎖、Panic
+          和尾門或行李廂釋放。兩者都說 FCC ID 是 MLBHLIK6-1T。Tom's Key 說它不能用在按鈕啟動的車上。Keys4Less
+          把它歸在遙控頭鑰匙。
+        fccNotes:
+          - Honda Lock Mfg. Co., Ltd. 的 FCC 認證，型號 HLIK6-1T，免鑰匙發射器。認證日期 2012 年 2
+            月 6 日。認證頻率 313.85 MHz。Keys4Less 也印了沒有連字號的 MLBHLIK61T；認證用的是
+            MLBHLIK6-1T。
+        partNotes:
+          - Tom's Key 和 Keys4Less 都印了這個號碼。沒有在 Honda 零件目錄上確認。Keys4Less 也印了沒有連字號的
+            35118T7SA00。
+          - Tom's Key 和 Keys4Less 都印了這個號碼。Keys4Less 也印了 35118T0AA30。
+        batteryNote: Keys4Less 寫 CR1620。Tom's Key 的 2014-2016 頁面沒有列電池。FCC 認證沒有寫電池。
+        frequencyNote: 認證上的頻率。Keys4Less 寫 314 MHz。Tom's Key 的頁面沒有寫頻率。
+        sellerClaims:
+          - Tom's Key 把晶片寫成 Philips 47。沒有對過 Honda 文件。
+    priceNotes:
+      - "2026-11-19 依 Shopify 商品 JSON 查閱。含 CR-V 2007-2013 的 3 鍵商品回傳 available:
+        true，特價 54.95 美元，比較價 119.99
+        美元。主題上的售完文字不是庫存。除非加購照片切削，鑰匙是未切削的。頁面說編程要用他們另售的編程器。"
+      - "2026-11-19 依 Shopify 商品 JSON 查閱。2014-2016 的 4 鍵鑰匙回傳 available: true，特價
+        60.95 美元，比較價 179.99 美元。主題上的售完文字不是庫存。編程被描述成他們的編程器，不是車上順序。"
+      - 2026-11-19 查閱。商品 JSON-LD 的報價是 88.00 美元，availability 是
+        https://schema.org/OutOfStock。那家店不在本站設定的聯盟零售商裡。價格只作引用。
+      - 同一天較早打開時頁面有一個起價。2026-11-19 再次要求得到 HTTP 429，而且沒有讀到 priceCurrency。那個數字不顯示。
+      - 沒有找到 2012-2016 CR-V 鑰匙的 Honda 經銷商報價。
+      - 沒有找到切削並編程 2012-2016 CR-V 鑰匙的公開鎖匠價格。維修頁描述的是 HDS 作業，沒有列出費用。
+    shopLabels:
+      - Tom's Key 的 3 鍵遙控頭鑰匙（列出 CR-V 2007-2013）
+      - Tom's Key 的 2014-2016 CR-V 4 鍵遙控頭鑰匙
+      - Car Keys Express 的 2012 CR-V 3 鍵遙控頭鑰匙
+      - 在 Amazon 搜尋 CR-V 的 FCC ID MLBHLIK-1T 與 MLBHLIK6-1T
+    unverified:
+      - 各年份單一的 Honda 零件目錄號碼。2012-2013 年，MK3、Tom's Key 和 Car Keys Express
+        公布的號碼不同。2014-2016 兩家賣家彼此一致，但沒有打開 Honda 的零件目錄。
+      - 哪些 2012-2016 等級有按鈕啟動，以及那把智慧鑰匙的 FCC ID。賣家只說這些遙控頭鑰匙不適用按鈕啟動的車。
+      - Honda 文件裡的晶片身分。賣家對 2012-2013 鑰匙的標籤不一致（Philips 46 對上 PCF7961A），Tom's Key
+        把 2014-2016 寫成 Philips 47。
+      - 含安裝的經銷商與鎖匠價格。
+      - MK3 把 2012-2013 遙控器標為 38.75
+        美元並顯示缺貨。頁面有阿聯酋聯絡電話，所以這個數字不用作美國價格。貨幣和是否運到美國沒有確認。
+    sources:
+      - id: honda-2012-lx
+        title: 2012 CR-V LX 防盜鑰匙登記程序
+        publisher: Lemon Manuals 轉載的 Honda 維修程序，頁面註明來自 American Honda Motor Co., Inc.
+        note: 寫明需要 HDS，而且編程防盜也會編程免鑰匙發射器。
+      - id: honda-2012-2016
+        title: 2012-2016 CR-V 防盜鑰匙登記
+        publisher: 標題為 2012-2016 CR-V RM1/RM4, RE5/RE6 的第三方 HTML 轉載
+        note: 同樣寫明需要 HDS，而且控制單元最多存六把防盜鑰匙。
+      - id: fcc-mlbhlik-1t
+        title: FCC ID MLBHLIK-1T 設備認證
+        publisher: FCCID.io 轉載 Honda Lock Mfg. Co., Ltd. 的 FCC 認證
+        note: 認證日期 2006 年 5 月 9 日。型號 HLIK-1T。頻率 313.85 MHz。
+      - id: fcc-mlbhlik6-1t
+        title: FCC ID MLBHLIK6-1T 設備認證
+        publisher: FCCID.io 轉載 Honda Lock Mfg. Co., Ltd. 的 FCC 認證
+        note: 認證日期 2012 年 2 月 6 日。型號 HLIK6-1T。頻率 313.85 MHz。
+      - id: cke-2012
+        title: 2012 Honda CR-V 3 鍵免鑰匙遙控器與鑰匙組合
+        publisher: Car Keys Express
+        note: 較早的頁面文字有一個起價。2026-11-19 再次要求得到 HTTP 429，沒有讀到 priceCurrency，所以不顯示那個數字。FCC
+          ID MLBHLIK-1T。零件標籤 HLIK-1T 與 Strattec 5938192。適用清單含 CR-V 2007-2013。
+      - id: toms-3btn
+        title: 3 鍵鑰匙與遙控器，FCC MLBHLIK-1T，適用含 CR-V 2007-2013
+        publisher: Tom's Key Company
+        note: 2026-11-19 商品 JSON：available true、54.95 美元、比較價 119.99 美元。零件
+          35111-SWA-306。主題的售完文字略過。
+      - id: toms-4btn
+        title: 2014-2016 Honda CR-V 4 鍵鑰匙與遙控器，FCC MLBHLIK6-1T
+        publisher: Tom's Key Company
+        note: 2026-11-19 商品 JSON：available true、60.95 美元、比較價 179.99 美元。零件 35118-T7S-A00
+          與 35118-T0A-A30。主題的售完文字略過。
+      - id: keys4less-2014
+        title: 2014-2016 Honda CR-V 遙控頭鑰匙，FCC MLBHLIK6-1T
+        publisher: Keys4Less
+        note: 2026-11-19 的 JSON-LD：88.00 美元，schema.org/OutOfStock。電池 CR1620。頻率寫成 314
+          MHz。也列出 HR-V 2016-2021。
+      - id: mk3-2012
+        title: 2012-2013 Honda CR-V 遙控器，零件 35118-T0A-A00
+        publisher: MK3
+        note: 列出 FCC MLBHLIK-1T、電池 CR1616，以及顯示缺貨的 38.75 美元。有海外聯絡資料，不用作美國價格。
+  zh-hans:
+    title: 2012-2016 Honda CR-V 钥匙编程与零件号
+    description: 2012-2016 Honda CR-V 的防盗芯片钥匙需要诊断仪。FCC ID、零件号、电池与卖家价格都各有出处。
+    summary: 2012-2016 CR-V 的 Honda 维修页说，登记防盗芯片钥匙需要 Honda
+      诊断系统（HDS），同一项工作也会编程免钥匙发射器。本页没有给车主车上按键顺序。零件页出现两种不同的遥控头钥匙，卖家对 2012-2013
+      没有一致的单一零件号。
+    scope: 第四代 CR-V，2012 至 2016 年式，美国市场，带齿片的遥控头钥匙。下面的卖家排除按钮启动的智能钥匙，本页也没有给那种钥匙自己的 FCC
+      ID。2012 的钥匙和 2015 的钥匙不当成同一零件。
+    diy:
+      summary: 2012 CR-V LX 的维修程序和一份 2012-2016 CR-V 维修转载都说，登记防盗芯片钥匙需要
+        HDS。编程防盗也会编程免钥匙发射器。控制单元最多存六把防盗钥匙。2012 LX 的文字说，加一把钥匙需要一把已经登记的钥匙，以及 Honda
+        iN 系统的第一组密码。如果所有钥匙都丢失，那段文字要求防盗 PCM 代码。那些是店内步骤，这里不把它们印成可以在车道上试的做法。
+      condition: Tom's Key 另售编程器，并说至少要有一把能用的钥匙才能用它。那仍然是工具，不是车上编程。Car Keys Express 说齿片必须切削。
+      safetyNote: 本页没有车上顺序。猜点火循环或按钮组合可能让钥匙不被认得，之后锁匠或 Honda
+        经销商必须用正确的工具把系统救回来。如果没有那个工具，也没有维修程序要用的密码或防盗代码，就停下来。
+    variants:
+      - id: remote-head-2012-2013
+        name: 3 键遥控头钥匙
+        years: 卖家列为 2012-2013，有些列到 2007-2013
+        keyTypeNote: Car Keys Express 称它为遥控器与钥匙组合，也就是遥控头钥匙：带芯片的点火钥匙加上 Lock、Unlock 和
+          Panic。Tom's Key 贩售同类 3 键钥匙，并说它不能用在按钮启动的车上。
+        fccNotes:
+          - Honda Lock Mfg. Co., Ltd. 的 FCC 认证，型号 HLIK-1T，免钥匙遥控发射器。认证日期 2006 年 5
+            月 9 日。认证上的频率是 313.85 MHz。Car Keys Express、Tom's Key 和 MK3 的 CR-V
+            遥控头钥匙页都印了 MLBHLIK-1T。
+        partNotes:
+          - MK3 把这个号码列为 2012-2013 CR-V 遥控器的原厂零件。下面查过的美国卖家印的是不同号码。没有在 Honda
+            零件目录上确认。
+          - Tom's Key 把这个号码列为它的 3 键售后钥匙要替换的零件。该页也涵盖其他 Honda 车型，不只 CR-V。
+          - Car Keys Express 把 HLIK-1T 列成零件号。那个字符串也是 FCC 型号。把它当成卖家的标签，不要当成它就是
+            Honda 零件柜台的号码。
+          - Car Keys Express 印出的 Strattec 号码。
+        batteryNote: MK3 写 CR1616。FCC 认证没有写电池。这里查过的 Tom's Key 和 Car Keys Express
+          页面没有列出这把钥匙的电池。
+        frequencyNote: 那是认证上的频率。MK3 的商品页对同一个 FCC ID 写 315 MHz。请用认证上的数字，并以钥匙上的 ID
+          为准，不要用卖家四舍五入的频率。
+        sellerClaims:
+          - Tom's Key 把芯片写成 Philips 46。MK3 写芯片 ID PCF7961A。这些说法没有对过 Honda
+            文件，而且不是同一个标签。
+          - Tom's Key 也在 MLBHLIK-1T 旁边印了 MLBHL1K-1T。多出来的拼法不符合 FCC 认证。请逐字读钥匙上的 ID。
+      - id: remote-head-2014-2016
+        name: 4 键遥控头钥匙
+        years: 2014-2016
+        keyTypeNote: Tom's Key 和 Keys4Less 都贩售 2014-2016 CR-V 的 4 键遥控头钥匙，有上锁、开锁、Panic
+          和尾门或行李箱释放。两者都说 FCC ID 是 MLBHLIK6-1T。Tom's Key 说它不能用在按钮启动的车上。Keys4Less
+          把它归在遥控头钥匙。
+        fccNotes:
+          - Honda Lock Mfg. Co., Ltd. 的 FCC 认证，型号 HLIK6-1T，免钥匙发射器。认证日期 2012 年 2
+            月 6 日。认证频率 313.85 MHz。Keys4Less 也印了没有连字符的 MLBHLIK61T；认证用的是
+            MLBHLIK6-1T。
+        partNotes:
+          - Tom's Key 和 Keys4Less 都印了这个号码。没有在 Honda 零件目录上确认。Keys4Less 也印了没有连字符的
+            35118T7SA00。
+          - Tom's Key 和 Keys4Less 都印了这个号码。Keys4Less 也印了 35118T0AA30。
+        batteryNote: Keys4Less 写 CR1620。Tom's Key 的 2014-2016 页面没有列电池。FCC 认证没有写电池。
+        frequencyNote: 认证上的频率。Keys4Less 写 314 MHz。Tom's Key 的页面没有写频率。
+        sellerClaims:
+          - Tom's Key 把芯片写成 Philips 47。没有对过 Honda 文件。
+    priceNotes:
+      - "2026-11-19 依 Shopify 商品 JSON 查阅。含 CR-V 2007-2013 的 3 键商品回传 available:
+        true，特价 54.95 美元，比较价 119.99
+        美元。主题上的售完文字不是库存。除非加购照片切削，钥匙是未切削的。页面说编程要用他们另售的编程器。"
+      - "2026-11-19 依 Shopify 商品 JSON 查阅。2014-2016 的 4 键钥匙回传 available: true，特价
+        60.95 美元，比较价 179.99 美元。主题上的售完文字不是库存。编程被描述成他们的编程器，不是车上顺序。"
+      - 2026-11-19 查阅。商品 JSON-LD 的报价是 88.00 美元，availability 是
+        https://schema.org/OutOfStock。那家店不在本站设置的联盟零售商里。价格只作引用。
+      - 同一天较早打开时页面有一个起价。2026-11-19 再次请求得到 HTTP 429，而且没有读到 priceCurrency。那个数字不显示。
+      - 没有找到 2012-2016 CR-V 钥匙的 Honda 经销商报价。
+      - 没有找到切削并编程 2012-2016 CR-V 钥匙的公开锁匠价格。维修页描述的是 HDS 作业，没有列出费用。
+    shopLabels:
+      - Tom's Key 的 3 键遥控头钥匙（列出 CR-V 2007-2013）
+      - Tom's Key 的 2014-2016 CR-V 4 键遥控头钥匙
+      - Car Keys Express 的 2012 CR-V 3 键遥控头钥匙
+      - 在 Amazon 搜索 CR-V 的 FCC ID MLBHLIK-1T 与 MLBHLIK6-1T
+    unverified:
+      - 各年份单一的 Honda 零件目录号码。2012-2013 年，MK3、Tom's Key 和 Car Keys Express
+        公布的号码不同。2014-2016 两家卖家彼此一致，但没有打开 Honda 的零件目录。
+      - 哪些 2012-2016 等级有按钮启动，以及那把智能钥匙的 FCC ID。卖家只说这些遥控头钥匙不适用按钮启动的车。
+      - Honda 文件里的芯片身份。卖家对 2012-2013 钥匙的标签不一致（Philips 46 对上 PCF7961A），Tom's Key
+        把 2014-2016 写成 Philips 47。
+      - 含安装的经销商与锁匠价格。
+      - MK3 把 2012-2013 遥控器标为 38.75
+        美元并显示缺货。页面有阿联酋联系电话，所以这个数字不用作美国价格。货币和是否运到美国没有确认。
+    sources:
+      - id: honda-2012-lx
+        title: 2012 CR-V LX 防盗钥匙登记程序
+        publisher: Lemon Manuals 转载的 Honda 维修程序，页面注明来自 American Honda Motor Co., Inc.
+        note: 写明需要 HDS，而且编程防盗也会编程免钥匙发射器。
+      - id: honda-2012-2016
+        title: 2012-2016 CR-V 防盗钥匙登记
+        publisher: 标题为 2012-2016 CR-V RM1/RM4, RE5/RE6 的第三方 HTML 转载
+        note: 同样写明需要 HDS，而且控制单元最多存六把防盗钥匙。
+      - id: fcc-mlbhlik-1t
+        title: FCC ID MLBHLIK-1T 设备认证
+        publisher: FCCID.io 转载 Honda Lock Mfg. Co., Ltd. 的 FCC 认证
+        note: 认证日期 2006 年 5 月 9 日。型号 HLIK-1T。频率 313.85 MHz。
+      - id: fcc-mlbhlik6-1t
+        title: FCC ID MLBHLIK6-1T 设备认证
+        publisher: FCCID.io 转载 Honda Lock Mfg. Co., Ltd. 的 FCC 认证
+        note: 认证日期 2012 年 2 月 6 日。型号 HLIK6-1T。频率 313.85 MHz。
+      - id: cke-2012
+        title: 2012 Honda CR-V 3 键免钥匙遥控器与钥匙组合
+        publisher: Car Keys Express
+        note: 较早的页面文字有一个起价。2026-11-19 再次请求得到 HTTP 429，没有读到 priceCurrency，所以不显示那个数字。FCC
+          ID MLBHLIK-1T。零件标签 HLIK-1T 与 Strattec 5938192。适用清单含 CR-V 2007-2013。
+      - id: toms-3btn
+        title: 3 键钥匙与遥控器，FCC MLBHLIK-1T，适用含 CR-V 2007-2013
+        publisher: Tom's Key Company
+        note: 2026-11-19 商品 JSON：available true、54.95 美元、比较价 119.99 美元。零件
+          35111-SWA-306。主题的售完文字略过。
+      - id: toms-4btn
+        title: 2014-2016 Honda CR-V 4 键钥匙与遥控器，FCC MLBHLIK6-1T
+        publisher: Tom's Key Company
+        note: 2026-11-19 商品 JSON：available true、60.95 美元、比较价 179.99 美元。零件 35118-T7S-A00
+          与 35118-T0A-A30。主题的售完文字略过。
+      - id: keys4less-2014
+        title: 2014-2016 Honda CR-V 遥控头钥匙，FCC MLBHLIK6-1T
+        publisher: Keys4Less
+        note: 2026-11-19 的 JSON-LD：88.00 美元，schema.org/OutOfStock。电池 CR1620。频率写成 314
+          MHz。也列出 HR-V 2016-2021。
+      - id: mk3-2012
+        title: 2012-2013 Honda CR-V 遥控器，零件 35118-T0A-A00
+        publisher: MK3
+        note: 列出 FCC MLBHLIK-1T、电池 CR1616，以及显示缺货的 38.75 美元。有海外联系资料，不用作美国价格。
+  ja:
+    title: 2012-2016 Honda CR-V のキー登録と部品番号
+    description: 2012-2016 Honda CR-V のイモビライザーキーには診断機が必要です。FCC ID、部品番号、電池、販売価格にはそれぞれ出典があります。
+    summary: 2012-2016 CR-V の Honda 整備ページは、イモビライザーキーの登録に Honda
+      診断システム（HDS）が必要で、同じ作業がキーレス送信機も登録すると書いています。このページに車内のボタン順はありません。部品ページには 2
+      種類のリモコン一体キーが出て、2012-2013 年の部品番号は販売店のあいだで一つに揃っていません。
+    scope: 第 4 世代 CR-V、2012 年から 2016
+      年、米国市場、刃付きのリモコン一体キーです。下の販売店はプッシュボタンのスマートキーを外しており、このページもそのキー専用の FCC ID
+      は載せていません。2012 年のキーと 2015 年のキーは同じ部品として扱いません。
+    diy:
+      summary: 2012 CR-V LX の整備手順と、2012-2016 CR-V の整備転載はどちらも、イモビライザーキーの登録に HDS
+        が必要だと書いています。イモビライザーの登録はキーレス送信機も登録します。制御ユニットはイモビライザーキーを最大 6 本覚えます。2012 LX
+        の文面では、キーを 1 本足すには既に登録されたキーと、Honda の iN
+        システムの最初のパスワードが必要です。すべてのキーを失った場合、その文面はイモビライザーの PCM
+        コードを求めます。これらは店の手順であり、ここで私道で試す手順としては再掲しません。
+      condition: Tom's Key は別のプログラマを売り、使うには動くキーが少なくとも 1
+        本必要だと書いています。それは依然として工具であり、車内登録ではありません。Car Keys Express
+        は刃をカットする必要があるとしています。
+      safetyNote: このページに車内の順番はありません。イグニッションの回し方やボタンの組み合わせを推測すると、キーが認識されなくなり、鍵屋か Honda
+        ディーラーが正しい工具で復旧しなければならなくなります。その工具と、整備手順が使うパスワードまたはイモビライザーコードが無いときは止めてください。
+    variants:
+      - id: remote-head-2012-2013
+        name: 3 ボタンのリモコン一体キー
+        years: 販売店は 2012-2013、一部は 2007-2013 と記載
+        keyTypeNote: Car Keys Express
+          はこれをリモコンとキーの組み合わせ、つまりリモコン一体キーと呼んでいます。トランスポンダ付きイグニッションキーに
+          Lock、Unlock、Panic です。Tom's Key は同じ種類の 3
+          ボタンキーを売り、プッシュボタン始動の車には使えないとしています。
+        fccNotes:
+          - Honda Lock Mfg. Co., Ltd. への FCC 認証。型式 HLIK-1T、キーレスリモコン送信機。認証日 2006
+            年 5 月 9 日。認証上の周波数は 313.85 MHz。Car Keys Express、Tom's Key、MK3 の CR-V
+            リモコン一体キー掲載はどれも MLBHLIK-1T を印刷しています。
+        partNotes:
+          - MK3 はこれを 2012-2013 CR-V
+            リモコンの純正部品としています。下で見た米国の販売店は別の番号を印刷しています。Honda の部品表では確認していません。
+          - Tom's Key は、自社の 3 ボタン社外キーが置き換える部品としてこれを挙げています。掲載は CR-V 以外の Honda
+            も含みます。
+          - Car Keys Express は HLIK-1T を部品番号として挙げています。その文字列は FCC
+            の型式でもあります。販売店のラベルとして扱い、Honda の部品窓口の番号だと証明されたものとは扱わないでください。
+          - Car Keys Express が印刷した Strattec 番号です。
+        batteryNote: MK3 は CR1616 と書いています。FCC 認証は電池を書いていません。ここで見た Tom's Key と Car Keys
+          Express のページは、このキーの電池を載せていません。
+        frequencyNote: それは認証上の周波数です。MK3 の商品ページは同じ FCC ID を 315 MHz
+          としています。認証の数字を使い、販売店が丸めた周波数ではなくキー上の ID を合わせてください。
+        sellerClaims:
+          - Tom's Key はチップを Philips 46 とし、MK3 はトランスポンダ ID を PCF7961A としています。これらは
+            Honda の文書と照合しておらず、同じラベルでもありません。
+          - Tom's Key は MLBHLIK-1T の隣に MLBHL1K-1T も印刷しています。余分な綴りは FCC
+            認証と一致しません。キー上の ID を一文字ずつ読んでください。
+      - id: remote-head-2014-2016
+        name: 4 ボタンのリモコン一体キー
+        years: 2014-2016
+        keyTypeNote: Tom's Key と Keys4Less はどちらも 2014-2016 CR-V 向けの 4
+          ボタンリモコン一体キーを売り、施錠、解錠、Panic、テールゲートまたはトランク解除があります。どちらも FCC ID は
+          MLBHLIK6-1T としています。Tom's Key はプッシュボタン始動には使えないとしています。Keys4Less
+          はリモコン一体キーに分類しています。
+        fccNotes:
+          - Honda Lock Mfg. Co., Ltd. への FCC 認証。型式 HLIK6-1T、キーレス送信機。認証日 2012 年 2
+            月 6 日。認証周波数 313.85 MHz。Keys4Less はハイフン無しの MLBHLIK61T も印刷しています。認証は
+            MLBHLIK6-1T です。
+        partNotes:
+          - Tom's Key と Keys4Less の両方がこの番号を印刷しています。Honda
+            の部品表では確認していません。Keys4Less はハイフン無しの 35118T7SA00 も印刷しています。
+          - Tom's Key と Keys4Less の両方がこの番号を印刷しています。Keys4Less は 35118T0AA30
+            も印刷しています。
+        batteryNote: Keys4Less は CR1620 と書いています。Tom's Key の 2014-2016 ページは電池を載せていません。FCC
+          認証も電池を書いていません。
+        frequencyNote: 認証上の周波数です。Keys4Less は 314 MHz と書いています。Tom's Key のページは周波数を書いていません。
+        sellerClaims:
+          - Tom's Key はトランスポンダを Philips 47 としています。Honda の文書とは照合していません。
+    priceNotes:
+      - "2026-11-19 に Shopify の商品 JSON で確認。CR-V 2007-2013 を含む 3 ボタンは available:
+        true、54.95 ドル、比較価格 119.99
+        ドル。テーマの売り切れ表示は在庫ではありません。写真カットを買わない限りキーは未カットです。登録は別売りのプログラマを使うと書いています。"
+      - "2026-11-19 に Shopify の商品 JSON で確認。2014-2016 の 4 ボタンは available:
+        true、60.95 ドル、比較価格 179.99
+        ドル。テーマの売り切れ表示は在庫ではありません。登録は彼らのプログラマで、車内の順番ではないと書いています。"
+      - 2026-11-19 に確認。商品 JSON-LD の offer は 88.00 ドル、availability は
+        https://schema.org/OutOfStock。その店は当サイトのアフィリエイト設定にある販売店ではありません。価格は引用だけです。
+      - 同日の先の表示には起点価格がありました。2026-11-19 の再リクエストは HTTP 429 で、priceCurrency
+        は読んでいません。その数字は表示しません。
+      - 2012-2016 CR-V のキーについて、Honda ディーラーの見積は見つかりませんでした。
+      - 2012-2016 CR-V のキーをカットして登録する、公開された鍵屋の価格は見つかりませんでした。整備ページは HDS
+        の作業を説明し、料金は書いていません。
+    shopLabels:
+      - Tom's Key の 3 ボタンリモコン一体キー（CR-V 2007-2013 を記載）
+      - Tom's Key の 2014-2016 CR-V 4 ボタンリモコン一体キー
+      - Car Keys Express の 2012 CR-V 3 ボタンリモコン一体キー
+      - Amazon で CR-V の FCC ID MLBHLIK-1T と MLBHLIK6-1T を検索
+    unverified:
+      - 年式ごとの単一の Honda 部品表番号。2012-2013 年は MK3、Tom's Key、Car Keys Express
+        が違う番号を出しています。2014-2016 年は 2 店が互いに一致しますが、Honda の部品表は開いていません。
+      - 2012-2016 のどのグレードがプッシュボタン始動か、そのスマートキーの FCC
+        ID。販売店は、これらのリモコン一体キーはプッシュボタンの車には合わないとしか書いていません。
+      - Honda の文書にあるチップの識別。2012-2013 のキーについて販売店のラベルは一致せず（Philips 46 と
+        PCF7961A）、Tom's Key は 2014-2016 を Philips 47 としています。
+      - 取り付け込みのディーラー価格と鍵屋の価格。
+      - MK3 は 2012-2013 のリモコンを 38.75 ドルとし、在庫切れと表示していました。ページに UAE
+        の連絡先があるため、この数字は米国価格として使いません。通貨と米国への発送は確認していません。
+    sources:
+      - id: honda-2012-lx
+        title: 2012 CR-V LX のイモビライザーキー登録手順
+        publisher: Lemon Manuals が転載した Honda の整備手順。ページは American Honda Motor Co., Inc.
+          の提供と記しています
+        note: HDS が必要で、イモビライザーの登録はキーレス送信機も登録すると書いています。
+      - id: honda-2012-2016
+        title: 2012-2016 CR-V のイモビライザーキー登録
+        publisher: 見出しが 2012-2016 CR-V RM1/RM4, RE5/RE6 の第三者 HTML 転載
+        note: 同じく HDS が必要で、制御ユニットはイモビライザーキーを最大 6 本覚えると書いています。
+      - id: fcc-mlbhlik-1t
+        title: FCC ID MLBHLIK-1T の機器認証
+        publisher: FCCID.io による Honda Lock Mfg. Co., Ltd. への FCC 認証の転載
+        note: 認証日 2006 年 5 月 9 日。型式 HLIK-1T。周波数 313.85 MHz。
+      - id: fcc-mlbhlik6-1t
+        title: FCC ID MLBHLIK6-1T の機器認証
+        publisher: FCCID.io による Honda Lock Mfg. Co., Ltd. への FCC 認証の転載
+        note: 認証日 2012 年 2 月 6 日。型式 HLIK6-1T。周波数 313.85 MHz。
+      - id: cke-2012
+        title: 2012 Honda CR-V の 3 ボタンキーレスリモコンとキーの組み合わせ
+        publisher: Car Keys Express
+        note: 先のページ本文に起点価格がありました。2026-11-19 の再リクエストは HTTP 429 で、priceCurrency
+          は読まず、その数字は表示しません。FCC ID MLBHLIK-1T。部品ラベル HLIK-1T と Strattec
+          5938192。適合に CR-V 2007-2013。
+      - id: toms-3btn
+        title: 3 ボタンのキーとリモコン、FCC MLBHLIK-1T、適合に CR-V 2007-2013
+        publisher: Tom's Key Company
+        note: 2026-11-19 の商品 JSON：available true、54.95 ドル、比較価格 119.99 ドル。部品
+          35111-SWA-306。テーマの売り切れ文言は使いません。
+      - id: toms-4btn
+        title: 2014-2016 Honda CR-V の 4 ボタンキーとリモコン、FCC MLBHLIK6-1T
+        publisher: Tom's Key Company
+        note: 2026-11-19 の商品 JSON：available true、60.95 ドル、比較価格 179.99 ドル。部品
+          35118-T7S-A00 と 35118-T0A-A30。テーマの売り切れ文言は使いません。
+      - id: keys4less-2014
+        title: 2014-2016 Honda CR-V のリモコン一体キー、FCC MLBHLIK6-1T
+        publisher: Keys4Less
+        note: 2026-11-19 の JSON-LD：88.00 ドル、schema.org/OutOfStock。電池 CR1620。周波数は 314
+          MHz。HR-V 2016-2021 も記載。
+      - id: mk3-2012
+        title: 2012-2013 Honda CR-V のリモコン、部品 35118-T0A-A00
+        publisher: MK3
+        note: FCC MLBHLIK-1T、電池 CR1616、在庫切れ表示の 38.75 ドルを記載。海外の連絡先があるため米国価格としては使いません。
+  ko:
+    title: 2012-2016 Honda CR-V 키 프로그래밍과 부품 번호
+    description: 2012-2016 Honda CR-V 이모빌라이저 키에는 진단기가 필요합니다. FCC ID, 부품 번호, 배터리, 판매
+      가격은 각각 출처가 있습니다.
+    summary: 2012-2016 CR-V Honda 정비 페이지는 이모빌라이저 키 등록에 Honda 진단 시스템(HDS)이 필요하고, 같은
+      작업이 키리스 송신기도 프로그래밍한다고 합니다. 이 페이지에는 차 안 버튼 순서가 없습니다. 부품 페이지에 서로 다른 리모컨 헤드
+      키가 두 가지 나오고, 2012-2013 부품 번호는 판매자마다 하나로 모이지 않습니다.
+    scope: 4세대 CR-V, 2012년부터 2016년, 미국 시장, 날이 있는 리모컨 헤드 키입니다. 아래 판매자는 버튼 시동 스마트 키를
+      빼고, 이 페이지도 그 키만의 FCC ID를 주지 않습니다. 2012년 키와 2015년 키는 같은 부품으로 보지 않습니다.
+    diy:
+      summary: 2012 CR-V LX 정비 절차와 2012-2016 CR-V 정비 전재는 모두 이모빌라이저 키 등록에 HDS가 필요하다고
+        합니다. 이모빌라이저를 프로그래밍하면 키리스 송신기도 프로그래밍됩니다. 제어 장치는 이모빌라이저 키를 최대 여섯 개 저장합니다.
+        2012 LX 문장은 키를 하나 추가하려면 이미 등록된 키와 Honda iN 시스템의 첫 비밀번호가 필요하다고 합니다. 모든 키를
+        잃으면 그 문장은 이모빌라이저 PCM 코드를 요구합니다. 이것은 가게 절차이며, 여기서 차도에서 시험할 절차로 다시 적지
+        않습니다.
+      condition: Tom's Key는 별도 프로그래머를 팔며, 쓰려면 작동하는 키가 적어도 하나 필요하다고 합니다. 그것은 여전히 도구이지 차
+        안 프로그래밍이 아닙니다. Car Keys Express는 날을 깎아야 한다고 합니다.
+      safetyNote: 이 페이지에는 차 안 순서가 없습니다. 점화 사이클이나 버튼 조합을 짐작하면 키가 인식되지 않을 수 있고, 그다음 열쇠
+        기술자나 Honda 딜러가 맞는 도구로 복구해야 합니다. 그 도구와 정비 절차가 쓰는 비밀번호 또는 이모빌라이저 코드가 없으면
+        멈추세요.
+    variants:
+      - id: remote-head-2012-2013
+        name: 버튼 3개 리모컨 헤드 키
+        years: 판매자는 2012-2013, 일부는 2007-2013으로 적음
+        keyTypeNote: Car Keys Express는 이것을 리모컨과 키 조합, 즉 리모컨 헤드 키라고 합니다. 트랜스폰더가 있는 점화 키에
+          Lock, Unlock, Panic입니다. Tom's Key는 같은 종류의 버튼 3개 키를 팔며 버튼 시동 차에는 안 된다고
+          합니다.
+        fccNotes:
+          - Honda Lock Mfg. Co., Ltd.의 FCC 인증. 모델 HLIK-1T, 키리스 리모컨 송신기. 인증일
+            2006년 5월 9일. 인증 주파수는 313.85 MHz. Car Keys Express, Tom's Key, MK3의
+            CR-V 리모컨 헤드 키 페이지는 모두 MLBHLIK-1T를 인쇄합니다.
+        partNotes:
+          - MK3는 이것을 2012-2013 CR-V 리모컨의 순정 부품으로 적습니다. 아래에서 본 미국 판매자는 다른 번호를
+            인쇄합니다. Honda 부품 목록에서는 확인하지 않았습니다.
+          - Tom's Key는 자사 버튼 3개 애프터마켓 키가 대체하는 부품으로 이것을 적습니다. 그 페이지는 CR-V 말고 다른
+            Honda도 포함합니다.
+          - Car Keys Express는 HLIK-1T를 부품 번호로 적습니다. 그 문자열은 FCC 모델이기도 합니다. 판매자
+            라벨로 보고, Honda 부품 창구 번호라는 증거로 보지 마세요.
+          - Car Keys Express가 인쇄한 Strattec 번호입니다.
+        batteryNote: MK3는 CR1616이라고 합니다. FCC 인증은 배터리를 적지 않습니다. 여기서 본 Tom's Key와 Car Keys
+          Express 페이지는 이 키의 배터리를 적지 않습니다.
+        frequencyNote: 그것은 인증상의 주파수입니다. MK3 상품 페이지는 같은 FCC ID를 315 MHz로 적습니다. 인증의 숫자를
+          쓰고, 판매자가 반올림한 주파수보다 키의 ID를 맞추세요.
+        sellerClaims:
+          - Tom's Key는 칩을 Philips 46으로, MK3는 트랜스폰더 ID를 PCF7961A로 적습니다. 이 주장들은
+            Honda 문서와 대조하지 않았고, 같은 라벨도 아닙니다.
+          - Tom's Key는 MLBHLIK-1T 옆에 MLBHL1K-1T도 인쇄합니다. 덧붙은 철자는 FCC 인증과 맞지 않습니다.
+            키의 ID를 한 글자씩 읽으세요.
+      - id: remote-head-2014-2016
+        name: 버튼 4개 리모컨 헤드 키
+        years: 2014-2016
+        keyTypeNote: Tom's Key와 Keys4Less는 모두 2014-2016 CR-V용 버튼 4개 리모컨 헤드 키를 팔며, 잠금, 잠금
+          해제, Panic, 테일게이트 또는 트렁크 열림이 있습니다. 둘 다 FCC ID를 MLBHLIK6-1T라고 합니다. Tom's
+          Key는 버튼 시동에는 안 된다고 합니다. Keys4Less는 리모컨 헤드 키로 분류합니다.
+        fccNotes:
+          - Honda Lock Mfg. Co., Ltd.의 FCC 인증. 모델 HLIK6-1T, 키리스 송신기. 인증일 2012년
+            2월 6일. 인증 주파수 313.85 MHz. Keys4Less는 하이픈 없는 MLBHLIK61T도 인쇄합니다. 인증은
+            MLBHLIK6-1T입니다.
+        partNotes:
+          - Tom's Key와 Keys4Less가 모두 이 번호를 인쇄합니다. Honda 부품 목록에서는 확인하지 않았습니다.
+            Keys4Less는 하이픈 없는 35118T7SA00도 인쇄합니다.
+          - Tom's Key와 Keys4Less가 모두 이 번호를 인쇄합니다. Keys4Less는 35118T0AA30도 인쇄합니다.
+        batteryNote: Keys4Less는 CR1620이라고 합니다. Tom's Key의 2014-2016 페이지는 배터리를 적지 않습니다.
+          FCC 인증도 배터리를 적지 않습니다.
+        frequencyNote: 인증상의 주파수입니다. Keys4Less는 314 MHz라고 합니다. Tom's Key 페이지는 주파수를 적지 않습니다.
+        sellerClaims:
+          - Tom's Key는 트랜스폰더를 Philips 47로 적습니다. Honda 문서와는 대조하지 않았습니다.
+    priceNotes:
+      - "2026-11-19에 Shopify 상품 JSON으로 확인했습니다. CR-V 2007-2013이 포함된 3버튼은
+        available: true, 54.95달러, 비교가 119.99달러였습니다. 테마의 품절 문구는 재고가 아닙니다. 사진 절삭을
+        사지 않으면 키는 깎이지 않은 상태입니다. 프로그래밍은 별도 프로그래머를 쓴다고 합니다."
+      - "2026-11-19에 Shopify 상품 JSON으로 확인했습니다. 2014-2016 4버튼은 available: true,
+        60.95달러, 비교가 179.99달러였습니다. 테마의 품절 문구는 재고가 아닙니다. 프로그래밍은 그들의 프로그래머이지 차 안
+        순서가 아니라고 합니다."
+      - 2026-11-19에 확인했습니다. 상품 JSON-LD 오퍼는 88.00달러, availability는
+        https://schema.org/OutOfStock였습니다. 그 가게는 이 사이트의 제휴 판매점에 없습니다. 가격은 인용만
+        합니다.
+      - 같은 날 먼저 연 페이지에 시작 가격이 있었습니다. 2026-11-19 재요청은 HTTP 429였고 priceCurrency는
+        읽지 못했습니다. 그 숫자는 표시하지 않습니다.
+      - 2012-2016 CR-V 키의 Honda 딜러 견적은 찾지 못했습니다.
+      - 2012-2016 CR-V 키를 깎고 프로그래밍하는 공개된 열쇠 기술자 가격은 찾지 못했습니다. 정비 페이지는 HDS 작업을
+        설명하고 요금은 적지 않습니다.
+    shopLabels:
+      - Tom's Key의 버튼 3개 리모컨 헤드 키(CR-V 2007-2013 기재)
+      - Tom's Key의 2014-2016 CR-V 버튼 4개 리모컨 헤드 키
+      - Car Keys Express의 2012 CR-V 버튼 3개 리모컨 헤드 키
+      - Amazon에서 CR-V FCC ID MLBHLIK-1T와 MLBHLIK6-1T 검색
+    unverified:
+      - 연식마다 하나의 Honda 부품 목록 번호. 2012-2013은 MK3, Tom's Key, Car Keys Express가 다른
+        번호를 냅니다. 2014-2016은 두 판매자가 서로 같지만 Honda 부품 목록은 열지 않았습니다.
+      - 2012-2016 어느 트림이 버튼 시동인지, 그 스마트 키의 FCC ID. 판매자는 이 리모컨 헤드 키가 버튼 시동 차에는 안
+        맞는다고만 합니다.
+      - Honda 문서의 칩 정체. 2012-2013 키에 대해 판매자 라벨이 다르고(Philips 46 대 PCF7961A),
+        Tom's Key는 2014-2016을 Philips 47로 적습니다.
+      - 장착을 포함한 딜러와 열쇠 기술자 가격.
+      - MK3는 2012-2013 리모컨을 38.75달러로 적고 품절로 보여 주었습니다. 페이지에 UAE 연락처가 있어 이 숫자는 미국
+        가격으로 쓰지 않습니다. 통화와 미국 배송은 확인하지 않았습니다.
+    sources:
+      - id: honda-2012-lx
+        title: 2012 CR-V LX 이모빌라이저 키 등록 절차
+        publisher: Lemon Manuals가 옮긴 Honda 정비 절차. 페이지는 American Honda Motor Co., Inc.
+          제공이라고 적습니다
+        note: HDS가 필요하고, 이모빌라이저 프로그래밍이 키리스 송신기도 프로그래밍한다고 적습니다.
+      - id: honda-2012-2016
+        title: 2012-2016 CR-V 이모빌라이저 키 등록
+        publisher: 제목이 2012-2016 CR-V RM1/RM4, RE5/RE6인 제3자 HTML 전재
+        note: 마찬가지로 HDS가 필요하고, 제어 장치가 이모빌라이저 키를 최대 여섯 개 저장한다고 합니다.
+      - id: fcc-mlbhlik-1t
+        title: FCC ID MLBHLIK-1T 기기 인증
+        publisher: FCCID.io가 옮긴 Honda Lock Mfg. Co., Ltd.의 FCC 인증
+        note: 인증일 2006년 5월 9일. 모델 HLIK-1T. 주파수 313.85 MHz.
+      - id: fcc-mlbhlik6-1t
+        title: FCC ID MLBHLIK6-1T 기기 인증
+        publisher: FCCID.io가 옮긴 Honda Lock Mfg. Co., Ltd.의 FCC 인증
+        note: 인증일 2012년 2월 6일. 모델 HLIK6-1T. 주파수 313.85 MHz.
+      - id: cke-2012
+        title: 2012 Honda CR-V 버튼 3개 키리스 리모컨과 키 조합
+        publisher: Car Keys Express
+        note: 이전 페이지 글에 시작 가격이 있었습니다. 2026-11-19 재요청은 HTTP 429였고 priceCurrency는 읽지 못해 그
+          숫자는 표시하지 않습니다. FCC ID MLBHLIK-1T. 부품 라벨 HLIK-1T와 Strattec 5938192. 적용에
+          CR-V 2007-2013.
+      - id: toms-3btn
+        title: 버튼 3개 키와 리모컨, FCC MLBHLIK-1T, 적합에 CR-V 2007-2013
+        publisher: Tom's Key Company
+        note: "2026-11-19 상품 JSON: available true, 54.95달러, 비교가 119.99달러. 부품
+          35111-SWA-306. 테마의 품절 문구는 쓰지 않습니다."
+      - id: toms-4btn
+        title: 2014-2016 Honda CR-V 버튼 4개 키와 리모컨, FCC MLBHLIK6-1T
+        publisher: Tom's Key Company
+        note: "2026-11-19 상품 JSON: available true, 60.95달러, 비교가 179.99달러. 부품
+          35118-T7S-A00과 35118-T0A-A30. 테마의 품절 문구는 쓰지 않습니다."
+      - id: keys4less-2014
+        title: 2014-2016 Honda CR-V 리모컨 헤드 키, FCC MLBHLIK6-1T
+        publisher: Keys4Less
+        note: "2026-11-19 JSON-LD: 88.00달러, schema.org/OutOfStock. 배터리 CR1620. 주파수는 314
+          MHz. HR-V 2016-2021도 기재."
+      - id: mk3-2012
+        title: 2012-2013 Honda CR-V 리모컨, 부품 35118-T0A-A00
+        publisher: MK3
+        note: FCC MLBHLIK-1T, 배터리 CR1616, 품절 표시의 38.75달러를 적습니다. 해외 연락처가 있어 미국 가격으로는 쓰지
+          않습니다.
+  es:
+    title: Programación y números de pieza de la Honda CR-V 2012-2016
+    description: Las llaves con inmovilizador de la Honda CR-V 2012-2016 necesitan
+      una herramienta de diagnóstico. ID FCC, números de pieza, pilas y precios
+      de vendedores, cada uno con fuente.
+    summary: Las páginas de servicio de Honda para la CR-V 2012-2016 dicen que hace
+      falta el sistema de diagnóstico Honda (HDS) para registrar una llave con
+      inmovilizador, y que el mismo trabajo programa el transmisor keyless. Esta
+      página no da una secuencia de botones a bordo. En las fichas aparecen dos
+      llaves con mando distintas, y los vendedores no coinciden en un solo
+      número de pieza para 2012-2013.
+    scope: CR-V de cuarta generación, años 2012 a 2016, mercado de EE. UU., llaves
+      con mando y hoja. Los vendedores de abajo excluyen las llaves inteligentes
+      de botón, y esta página no les asigna un ID FCC propio. Una llave de 2012
+      y una de 2015 no se tratan como la misma pieza.
+    diy:
+      summary: Un procedimiento de servicio del CR-V LX 2012 y una reimpresión de
+        servicio del CR-V 2012-2016 dicen que el HDS es necesario para registrar
+        llaves con inmovilizador. Programar el inmovilizador también programa el
+        transmisor keyless. La unidad guarda hasta seis llaves. En el texto del
+        LX 2012, añadir una llave exige una ya registrada y la primera
+        contraseña del sistema iN de Honda. Si se pierden todas, ese texto pide
+        el código PCM del inmovilizador. Son pasos de taller. Aquí no se
+        reimprimen como algo para probar en la entrada.
+      condition: Tom's Key vende un programador aparte y dice que hace falta al menos
+        una llave que funcione para usarlo. Sigue siendo una herramienta, no
+        programación a bordo. Car Keys Express dice que la hoja debe cortarse.
+      safetyNote: En esta página no hay secuencia a bordo. Adivinar ciclos de
+        encendido o combinaciones de botones puede dejar una llave no
+        reconocida, y entonces un cerrajero o un concesionario Honda tiene que
+        recuperarla con la herramienta correcta. Deténgase si no tiene esa
+        herramienta ni la contraseña o el código de inmovilizador que usa el
+        procedimiento.
+    variants:
+      - id: remote-head-2012-2013
+        name: Llave con mando de 3 botones
+        years: Listada por vendedores para 2012-2013, y por algunos para 2007-2013
+        keyTypeNote: "Car Keys Express lo llama combo de mando y llave, también llave
+          con mando en la cabeza: una llave de encendido con transpondedor más
+          Lock, Unlock y Panic. Tom's Key vende el mismo tipo de llave de 3
+          botones y dice que no sirve en un arranque por botón."
+        fccNotes:
+          - "Concesión FCC a Honda Lock Mfg. Co., Ltd., modelo HLIK-1T,
+            transmisor keyless. Fecha: 9 de mayo de 2006. La frecuencia de la
+            concesión es 313,85 MHz. Car Keys Express, Tom's Key y MK3 imprimen
+            MLBHLIK-1T en fichas de llave con mando de CR-V."
+        partNotes:
+          - MK3 lo lista como pieza OEM del mando CR-V 2012-2013. Los vendedores
+            de EE. UU. revisados abajo imprimen otros números. No confirmado en
+            una ficha de piezas Honda.
+          - Tom's Key lo lista como la pieza que sustituye su llave de posventa
+            de 3 botones. La ficha también cubre otros Honda, no solo la CR-V.
+          - Car Keys Express lista HLIK-1T como número de pieza. Esa cadena es
+            también el modelo FCC. Trátela como etiqueta del vendedor, no como
+            prueba de que sea el número del mostrador de piezas Honda.
+          - Número Strattec impreso por Car Keys Express.
+        batteryNote: MK3 indica CR1616. La concesión FCC no nombra la pila. Las páginas
+          de Tom's Key y Car Keys Express revisadas para esta llave no listan
+          una pila.
+        frequencyNote: Esa es la frecuencia de la concesión. La página de MK3 dice 315
+          MHz para el mismo ID FCC. Use la cifra de la concesión y haga
+          coincidir el ID de su llave, no una frecuencia redondeada del
+          vendedor.
+        sellerClaims:
+          - Tom's Key lista el chip como Philips 46. MK3 lista el ID de
+            transpondedor PCF7961A. Esas afirmaciones no se contrastaron con un
+            documento de Honda y no son la misma etiqueta.
+          - Tom's Key también imprime MLBHL1K-1T junto a MLBHLIK-1T. Esa grafía
+            extra no coincide con la concesión FCC. Lea el ID de su llave
+            carácter por carácter.
+      - id: remote-head-2014-2016
+        name: Llave con mando de 4 botones
+        years: 2014-2016
+        keyTypeNote: Tom's Key y Keys4Less venden una llave con mando de 4 botones para
+          la CR-V 2014-2016, con bloqueo, desbloqueo, Panic y apertura de portón
+          o maletero. Ambos dicen que el ID FCC es MLBHLIK6-1T. Tom's Key dice
+          que no sirve con arranque por botón. Keys4Less la clasifica como llave
+          con mando en la cabeza.
+        fccNotes:
+          - "Concesión FCC a Honda Lock Mfg. Co., Ltd., modelo HLIK6-1T,
+            transmisor keyless. Fecha: 6 de febrero de 2012. Frecuencia de la
+            concesión: 313,85 MHz. Keys4Less también imprime MLBHLIK61T sin
+            guion; la concesión usa MLBHLIK6-1T."
+        partNotes:
+          - Impreso por Tom's Key y por Keys4Less. No confirmado en una ficha de
+            piezas Honda. Keys4Less también imprime la forma sin guiones
+            35118T7SA00.
+          - Impreso por Tom's Key y por Keys4Less. Keys4Less también imprime
+            35118T0AA30.
+        batteryNote: Keys4Less indica CR1620. La página 2014-2016 de Tom's Key no lista
+          una pila. La concesión FCC no nombra la pila.
+        frequencyNote: Frecuencia de la concesión. Keys4Less dice 314 MHz. La página de
+          Tom's Key no indica frecuencia.
+        sellerClaims:
+          - Tom's Key lista el transpondedor como Philips 47. No se contrastó
+            con un documento de Honda.
+    priceNotes:
+      - "Consultado el 19 de noviembre de 2026 en el JSON de Shopify. El anuncio
+        de 3 botones, con CR-V 2007-2013, devolvió available: true, 54,95
+        dólares y comparación 119,99. El texto de agotado del tema no es el
+        inventario. La llave va sin tallar salvo que compre el corte por foto.
+        La página dice que la programación usa su programador aparte."
+      - "Consultado el 19 de noviembre de 2026 en el JSON de Shopify. La llave
+        de 4 botones 2014-2016 devolvió available: true, 60,95 dólares y
+        comparación 179,99. El texto de agotado del tema no es el inventario. La
+        programación se describe como su programador, no como una secuencia a
+        bordo."
+      - Consultado el 19 de noviembre de 2026. La oferta JSON-LD dijo 88,00
+        dólares y availability https://schema.org/OutOfStock. Esa tienda no es
+        uno de los comercios de afiliación configurados aquí. El precio solo se
+        cita.
+      - Una apertura anterior el mismo día mostró un precio desde. Una nueva
+        solicitud el 19 de noviembre de 2026 devolvió HTTP 429 y no se leyó
+        priceCurrency. El número no se muestra.
+      - No se encontró una cotización de concesionario Honda para una llave de
+        CR-V 2012-2016.
+      - No se encontró un precio publicado de cerrajero por cortar y programar
+        una llave de CR-V 2012-2016. Las páginas de servicio describen un
+        trabajo con HDS y no listan una tarifa.
+    shopLabels:
+      - Llave con mando de 3 botones de Tom's Key (lista CR-V 2007-2013)
+      - Llave con mando de 4 botones CR-V 2014-2016 de Tom's Key
+      - Llave con mando de 3 botones CR-V 2012 de Car Keys Express
+      - Búsqueda en Amazon de los ID FCC MLBHLIK-1T y MLBHLIK6-1T de la CR-V
+    unverified:
+      - Un solo número de catálogo de piezas Honda por año. En 2012-2013, MK3,
+        Tom's Key y Car Keys Express publican números distintos. En 2014-2016
+        los dos vendedores coinciden entre sí, y no se abrió una ficha Honda.
+      - Qué versiones 2012-2016 tienen arranque por botón y el ID FCC de esa
+        llave inteligente. Los vendedores solo dicen que estas llaves con mando
+        no caben en un auto de botón.
+      - La identidad del chip en un documento de Honda. Las etiquetas de los
+        vendedores no coinciden en la llave 2012-2013 (Philips 46 frente a
+        PCF7961A) y Tom's Key dice Philips 47 para 2014-2016.
+      - Precios instalados de concesionario y cerrajero.
+      - MK3 listó el mando 2012-2013 a 38,75 dólares y lo mostró agotado. La
+        página tiene un teléfono de contacto de EAU, así que esa cifra no se usa
+        como precio de EE. UU. La moneda y el envío a EE. UU. no se confirmaron.
+    sources:
+      - id: honda-2012-lx
+        title: Procedimiento de registro de llave con inmovilizador del CR-V LX 2012
+        publisher: Reproducción de Lemon Manuals de un procedimiento de servicio Honda,
+          acreditada en la página a American Honda Motor Co., Inc.
+        note: Dice que el HDS es necesario y que programar el inmovilizador también
+          programa el transmisor keyless.
+      - id: honda-2012-2016
+        title: Registro de llave con inmovilizador del CR-V 2012-2016
+        publisher: Reimpresión HTML de terceros encabezada 2012-2016 CR-V RM1/RM4, RE5/RE6
+        note: También dice que el HDS es necesario y que la unidad guarda hasta seis
+          llaves con inmovilizador.
+      - id: fcc-mlbhlik-1t
+        title: Autorización de equipo del ID FCC MLBHLIK-1T
+        publisher: Reproducción de FCCID.io de la concesión FCC a Honda Lock Mfg. Co.,
+          Ltd.
+        note: "Fecha de concesión: 9 de mayo de 2006. Modelo HLIK-1T. Frecuencia 313,85
+          MHz."
+      - id: fcc-mlbhlik6-1t
+        title: Autorización de equipo del ID FCC MLBHLIK6-1T
+        publisher: Reproducción de FCCID.io de la concesión FCC a Honda Lock Mfg. Co.,
+          Ltd.
+        note: "Fecha de concesión: 6 de febrero de 2012. Modelo HLIK6-1T. Frecuencia
+          313,85 MHz."
+      - id: cke-2012
+        title: Combo de mando keyless y llave de 3 botones de la Honda CR-V 2012
+        publisher: Car Keys Express
+        note: Un texto anterior de la página mostró un precio desde. Una nueva solicitud
+          el 19 de noviembre de 2026 devolvió HTTP 429 y no se leyó
+          priceCurrency, así que el número no se muestra. ID FCC MLBHLIK-1T.
+          Etiquetas HLIK-1T y Strattec 5938192. La lista incluye CR-V 2007-2013.
+      - id: toms-3btn
+        title: Llave y mando de 3 botones, FCC MLBHLIK-1T, encaje incluye CR-V 2007-2013
+        publisher: Tom's Key Company
+        note: "JSON del 19 de noviembre de 2026: available true, 54,95 dólares,
+          comparación 119,99. Pieza 35111-SWA-306. Se ignora el texto de agotado
+          del tema."
+      - id: toms-4btn
+        title: Llave y mando de 4 botones de la Honda CR-V 2014-2016, FCC MLBHLIK6-1T
+        publisher: Tom's Key Company
+        note: "JSON del 19 de noviembre de 2026: available true, 60,95 dólares,
+          comparación 179,99. Piezas 35118-T7S-A00 y 35118-T0A-A30. Se ignora el
+          texto de agotado del tema."
+      - id: keys4less-2014
+        title: Llave con mando de la Honda CR-V 2014-2016, FCC MLBHLIK6-1T
+        publisher: Keys4Less
+        note: "JSON-LD del 19 de noviembre de 2026: 88,00 dólares y
+          schema.org/OutOfStock. Pila CR1620. Frecuencia indicada 314 MHz.
+          También lista HR-V 2016-2021."
+      - id: mk3-2012
+        title: Mando Honda CR-V 2012-2013, pieza 35118-T0A-A00
+        publisher: MK3
+        note: Lista FCC MLBHLIK-1T, pila CR1616 y un precio de 38,75 dólares mostrado
+          agotado. Hay datos de contacto en el extranjero; no se usa como precio
+          de EE. UU.
+  pt-br:
+    title: Programação e números de peça da Honda CR-V 2012-2016
+    description: As chaves com imobilizador da Honda CR-V 2012-2016 precisam de uma
+      ferramenta de diagnóstico. IDs FCC, números de peça, pilhas e preços de
+      vendedores, cada um com fonte.
+    summary: As páginas de serviço da Honda para a CR-V 2012-2016 dizem que o
+      sistema de diagnóstico Honda (HDS) é necessário para registrar uma chave
+      com imobilizador, e que o mesmo serviço programa o transmissor keyless.
+      Esta página não dá uma sequência de botões a bordo. Nas fichas aparecem
+      duas chaves com controle diferentes, e os vendedores não concordam num
+      único número de peça para 2012-2013.
+    scope: CR-V de quarta geração, anos 2012 a 2016, mercado dos EUA, chaves com
+      controle e lâmina. Os vendedores abaixo excluem as chaves inteligentes de
+      botão, e esta página não lhes dá um ID FCC próprio. Uma chave de 2012 e
+      uma de 2015 não são tratadas como a mesma peça.
+    diy:
+      summary: Um procedimento de serviço do CR-V LX 2012 e uma reimpressão de serviço
+        do CR-V 2012-2016 dizem que o HDS é necessário para registrar chaves com
+        imobilizador. Programar o imobilizador também programa o transmissor
+        keyless. A unidade guarda até seis chaves. No texto do LX 2012,
+        acrescentar uma chave exige uma já registrada e a primeira senha do
+        sistema iN da Honda. Se todas se perdem, esse texto pede o código PCM do
+        imobilizador. São passos de oficina. Aqui não são reimpressos como algo
+        para tentar na garagem.
+      condition: A Tom's Key vende um programador separado e diz que é preciso pelo
+        menos uma chave que funcione para usá-lo. Continua sendo uma ferramenta,
+        não programação a bordo. A Car Keys Express diz que a lâmina tem de ser
+        cortada.
+      safetyNote: Nesta página não há sequência a bordo. Adivinhar ciclos de ignição
+        ou combinações de botões pode deixar uma chave não reconhecida, e então
+        um chaveiro ou uma concessionária Honda precisa recuperá-la com a
+        ferramenta certa. Pare se você não tiver essa ferramenta nem a senha ou
+        o código do imobilizador que o procedimento usa.
+    variants:
+      - id: remote-head-2012-2013
+        name: Chave com controle de 3 botões
+        years: Listada por vendedores para 2012-2013, e por alguns para 2007-2013
+        keyTypeNote: "A Car Keys Express chama isto de combo de controle e chave, também
+          chave com controle na cabeça: uma chave de ignição com transponder
+          mais Lock, Unlock e Panic. A Tom's Key vende o mesmo tipo de chave de
+          3 botões e diz que não serve em partida por botão."
+        fccNotes:
+          - "Concessão FCC à Honda Lock Mfg. Co., Ltd., modelo HLIK-1T,
+            transmissor keyless. Data: 9 de maio de 2006. A frequência da
+            concessão é 313,85 MHz. Car Keys Express, Tom's Key e MK3 imprimem
+            MLBHLIK-1T em fichas de chave com controle de CR-V."
+        partNotes:
+          - A MK3 lista isto como peça OEM do controle CR-V 2012-2013. Os
+            vendedores dos EUA vistos abaixo imprimem outros números. Não
+            confirmado numa ficha de peças Honda.
+          - A Tom's Key lista isto como a peça que a chave de reposição de 3
+            botões substitui. A ficha também cobre outros Honda, não só a CR-V.
+          - A Car Keys Express lista HLIK-1T como número de peça. Essa string
+            também é o modelo FCC. Trate como rótulo do vendedor, não como prova
+            de que seja o número do balcão de peças Honda.
+          - Número Strattec impresso pela Car Keys Express.
+        batteryNote: A MK3 indica CR1616. A concessão FCC não nomeia a pilha. As páginas
+          da Tom's Key e da Car Keys Express vistas para esta chave não listam
+          uma pilha.
+        frequencyNote: Essa é a frequência da concessão. A página da MK3 diz 315 MHz
+          para o mesmo ID FCC. Use o número da concessão e confira o ID na
+          chave, não uma frequência arredondada do vendedor.
+        sellerClaims:
+          - A Tom's Key lista o chip como Philips 46. A MK3 lista o ID de
+            transponder PCF7961A. Essas afirmações não foram conferidas com um
+            documento Honda e não são o mesmo rótulo.
+          - A Tom's Key também imprime MLBHL1K-1T ao lado de MLBHLIK-1T. Essa
+            grafia extra não bate com a concessão FCC. Leia o ID da chave
+            caractere por caractere.
+      - id: remote-head-2014-2016
+        name: Chave com controle de 4 botões
+        years: 2014-2016
+        keyTypeNote: Tom's Key e Keys4Less vendem uma chave com controle de 4 botões
+          para a CR-V 2014-2016, com travar, destravar, Panic e abertura do
+          porta-malas. Ambos dizem que o ID FCC é MLBHLIK6-1T. A Tom's Key diz
+          que não serve com partida por botão. A Keys4Less classifica como chave
+          com controle na cabeça.
+        fccNotes:
+          - "Concessão FCC à Honda Lock Mfg. Co., Ltd., modelo HLIK6-1T,
+            transmissor keyless. Data: 6 de fevereiro de 2012. Frequência da
+            concessão: 313,85 MHz. A Keys4Less também imprime MLBHLIK61T sem
+            hífen; a concessão usa MLBHLIK6-1T."
+        partNotes:
+          - Impresso pela Tom's Key e pela Keys4Less. Não confirmado numa ficha
+            de peças Honda. A Keys4Less também imprime a forma sem hífens
+            35118T7SA00.
+          - Impresso pela Tom's Key e pela Keys4Less. A Keys4Less também imprime
+            35118T0AA30.
+        batteryNote: A Keys4Less indica CR1620. A página 2014-2016 da Tom's Key não
+          lista uma pilha. A concessão FCC não nomeia a pilha.
+        frequencyNote: Frequência da concessão. A Keys4Less diz 314 MHz. A página da
+          Tom's Key não indica frequência.
+        sellerClaims:
+          - A Tom's Key lista o transponder como Philips 47. Não foi conferido
+            com um documento Honda.
+    priceNotes:
+      - "Verificado em 19 de novembro de 2026 no JSON da Shopify. O anúncio de 3
+        botões, com CR-V 2007-2013, retornou available: true, US$ 54,95 e
+        comparação US$ 119,99. O texto de esgotado do tema não é o estoque. A
+        chave vai sem corte, a menos que se compre o corte por foto. A página
+        diz que a programação usa o programador separado deles."
+      - "Verificado em 19 de novembro de 2026 no JSON da Shopify. A chave de 4
+        botões 2014-2016 retornou available: true, US$ 60,95 e comparação US$
+        179,99. O texto de esgotado do tema não é o estoque. A programação é
+        descrita como o programador deles, não como uma sequência a bordo."
+      - Verificado em 19 de novembro de 2026. A oferta JSON-LD disse US$ 88,00 e
+        availability https://schema.org/OutOfStock. Essa loja não é uma das
+        lojas de afiliado configuradas aqui. O preço é só citação.
+      - Uma abertura anterior no mesmo dia mostrou um preço a partir de. Um novo
+        pedido em 19 de novembro de 2026 devolveu HTTP 429 e nenhum
+        priceCurrency foi lido. O número não é mostrado.
+      - Não achamos uma cotação de concessionária Honda para uma chave de CR-V
+        2012-2016.
+      - Não achamos um preço publicado de chaveiro para cortar e programar uma
+        chave de CR-V 2012-2016. As páginas de serviço descrevem um serviço com
+        HDS e não listam uma taxa.
+    shopLabels:
+      - Chave com controle de 3 botões da Tom's Key (lista CR-V 2007-2013)
+      - Chave com controle de 4 botões CR-V 2014-2016 da Tom's Key
+      - Chave com controle de 3 botões CR-V 2012 da Car Keys Express
+      - Busca na Amazon dos IDs FCC MLBHLIK-1T e MLBHLIK6-1T da CR-V
+    unverified:
+      - Um único número de catálogo de peças Honda por ano. Em 2012-2013, MK3,
+        Tom's Key e Car Keys Express publicam números diferentes. Em 2014-2016
+        os dois vendedores concordam entre si, e uma ficha Honda não foi aberta.
+      - Quais versões 2012-2016 têm partida por botão e o ID FCC dessa chave
+        inteligente. Os vendedores só dizem que estas chaves com controle não
+        servem num carro de botão.
+      - A identidade do chip num documento Honda. Os rótulos dos vendedores não
+        batem na chave 2012-2013 (Philips 46 contra PCF7961A) e a Tom's Key diz
+        Philips 47 para 2014-2016.
+      - Preços instalados de concessionária e chaveiro.
+      - A MK3 listou o controle 2012-2013 a US$ 38,75 e mostrou esgotado. A
+        página tem um telefone dos Emirados, então esse valor não é usado como
+        preço dos EUA. Moeda e envio aos EUA não foram confirmados.
+    sources:
+      - id: honda-2012-lx
+        title: Procedimento de registro de chave com imobilizador do CR-V LX 2012
+        publisher: Reprodução da Lemon Manuals de um procedimento de serviço Honda,
+          creditada na página à American Honda Motor Co., Inc.
+        note: Diz que o HDS é necessário e que programar o imobilizador também programa
+          o transmissor keyless.
+      - id: honda-2012-2016
+        title: Registro de chave com imobilizador do CR-V 2012-2016
+        publisher: Reimpressão HTML de terceiros com cabeçalho 2012-2016 CR-V RM1/RM4,
+          RE5/RE6
+        note: Também diz que o HDS é necessário e que a unidade guarda até seis chaves
+          com imobilizador.
+      - id: fcc-mlbhlik-1t
+        title: Autorização de equipamento do ID FCC MLBHLIK-1T
+        publisher: Reprodução do FCCID.io da concessão FCC à Honda Lock Mfg. Co., Ltd.
+        note: "Data da concessão: 9 de maio de 2006. Modelo HLIK-1T. Frequência 313,85
+          MHz."
+      - id: fcc-mlbhlik6-1t
+        title: Autorização de equipamento do ID FCC MLBHLIK6-1T
+        publisher: Reprodução do FCCID.io da concessão FCC à Honda Lock Mfg. Co., Ltd.
+        note: "Data da concessão: 6 de fevereiro de 2012. Modelo HLIK6-1T. Frequência
+          313,85 MHz."
+      - id: cke-2012
+        title: Combo de controle keyless e chave de 3 botões da Honda CR-V 2012
+        publisher: Car Keys Express
+        note: Um texto anterior da página mostrou um preço a partir de. Um novo pedido
+          em 19 de novembro de 2026 devolveu HTTP 429 e nenhum priceCurrency foi
+          lido, então o número não é mostrado. ID FCC MLBHLIK-1T. Rótulos
+          HLIK-1T e Strattec 5938192. A lista inclui CR-V 2007-2013.
+      - id: toms-3btn
+        title: Chave e controle de 3 botões, FCC MLBHLIK-1T, encaixe inclui CR-V
+          2007-2013
+        publisher: Tom's Key Company
+        note: "JSON de 19 de novembro de 2026: available true, US$ 54,95, comparação US$
+          119,99. Peça 35111-SWA-306. O texto de esgotado do tema é ignorado."
+      - id: toms-4btn
+        title: Chave e controle de 4 botões da Honda CR-V 2014-2016, FCC MLBHLIK6-1T
+        publisher: Tom's Key Company
+        note: "JSON de 19 de novembro de 2026: available true, US$ 60,95, comparação US$
+          179,99. Peças 35118-T7S-A00 e 35118-T0A-A30. O texto de esgotado do
+          tema é ignorado."
+      - id: keys4less-2014
+        title: Chave com controle da Honda CR-V 2014-2016, FCC MLBHLIK6-1T
+        publisher: Keys4Less
+        note: "JSON-LD de 19 de novembro de 2026: US$ 88,00 e schema.org/OutOfStock.
+          Pilha CR1620. Frequência indicada 314 MHz. Também lista HR-V
+          2016-2021."
+      - id: mk3-2012
+        title: Controle Honda CR-V 2012-2013, peça 35118-T0A-A00
+        publisher: MK3
+        note: Lista FCC MLBHLIK-1T, pilha CR1616 e um preço de US$ 38,75 mostrado
+          esgotado. Há contato no exterior; não é usado como preço dos EUA.
+  de:
+    title: Programmierung und Teilenummern des Honda CR-V 2012-2016
+    description: Wegfahrsperrenschlüssel des Honda CR-V 2012-2016 brauchen ein
+      Diagnosegerät. FCC-IDs, Teilenummern, Batterien und Händlerpreise, jeweils
+      mit Quelle.
+    summary: Honda-Serviceunterlagen zum CR-V 2012-2016 sagen, zum Anlernen eines
+      Wegfahrsperrenschlüssels sei das Honda-Diagnosesystem (HDS) nötig, und
+      dieselbe Arbeit programmiere auch den Keyless-Sender. Diese Seite gibt
+      keine Tastenfolge im Fahrzeug. In den Teileangeboten stehen zwei
+      verschiedene Fernbedienungsschlüssel, und die Händler sind sich bei
+      2012-2013 nicht über eine einzige Teilenummer einig.
+    scope: CR-V der vierten Generation, Modelljahre 2012 bis 2016, US-Markt,
+      Fernbedienungsschlüssel mit Bart. Die Händler unten schließen
+      Startknopf-Smart-Keys aus, und diese Seite gibt ihnen keine eigene FCC-ID.
+      Ein Schlüssel von 2012 und einer von 2015 gelten nicht als dasselbe Teil.
+    diy:
+      summary: Ein Serviceablauf des CR-V LX 2012 und ein Service-Nachdruck des CR-V
+        2012-2016 sagen, zum Registrieren von Wegfahrsperrenschlüsseln sei das
+        HDS nötig. Das Programmieren der Wegfahrsperre programmiert auch den
+        Keyless-Sender. Das Steuergerät speichert bis zu sechs Schlüssel. Im
+        LX-2012-Text braucht das Hinzufügen einen bereits registrierten
+        Schlüssel und das erste Passwort aus Hondas iN-System. Sind alle
+        Schlüssel weg, verlangt der Text den PCM-Code der Wegfahrsperre. Das
+        sind Werkstattschritte. Sie werden hier nicht als etwas zum Ausprobieren
+        in der Einfahrt nachgedruckt.
+      condition: Tom's Key verkauft ein separates Programmiergerät und sagt,
+        mindestens ein funktionierender Schlüssel sei nötig. Das bleibt ein
+        Werkzeug, keine Programmierung im Fahrzeug. Car Keys Express sagt, der
+        Bart müsse geschnitten werden.
+      safetyNote: Auf dieser Seite gibt es keine Folge im Fahrzeug. Zündzyklen oder
+        Tastenkombinationen zu raten kann einen Schlüssel unerkannt lassen, und
+        dann müssen Schlüsseldienst oder Honda-Händler das System mit dem
+        richtigen Gerät wiederherstellen. Hören Sie auf, wenn Sie dieses Gerät
+        und das Passwort oder den Wegfahrsperrencode aus der Serviceanweisung
+        nicht haben.
+    variants:
+      - id: remote-head-2012-2013
+        name: Fernbedienungsschlüssel mit 3 Tasten
+        years: Von Händlern für 2012-2013 genannt, von manchen für 2007-2013
+        keyTypeNote: "Car Keys Express nennt das eine Kombination aus Sender und
+          Schlüssel, also einen Fernbedienungsschlüssel: ein Zündschlüssel mit
+          Transponder plus Lock, Unlock und Panic. Tom's Key verkauft denselben
+          3-Tasten-Schlüssel und sagt, er passe nicht zu Startknopf."
+        fccNotes:
+          - FCC-Zulassung für Honda Lock Mfg. Co., Ltd., Modell HLIK-1T,
+            Keyless-Sender. Datum 9. Mai 2006. Die Frequenz der Zulassung ist
+            313,85 MHz. Car Keys Express, Tom's Key und MK3 drucken MLBHLIK-1T
+            auf CR-V-Fernbedienungsschlüssel.
+        partNotes:
+          - MK3 nennt das die OEM-Teilenummer für einen CR-V-Sender 2012-2013.
+            Die unten geprüften US-Händler drucken andere Nummern. Nicht in
+            einer Honda-Teileliste bestätigt.
+          - Tom's Key nennt das die Teilenummer, die der
+            3-Tasten-Nachrüstschlüssel ersetzen soll. Das Angebot umfasst auch
+            andere Honda, nicht nur den CR-V.
+          - Car Keys Express nennt HLIK-1T eine Teilenummer. Dieselbe
+            Zeichenfolge ist auch das FCC-Modell. Behandeln Sie sie als
+            Händleretikett, nicht als Beweis, dass es die
+            Honda-Teilethekennummer ist.
+          - Von Car Keys Express gedruckte Strattec-Nummer.
+        batteryNote: MK3 nennt CR1616. Die FCC-Zulassung nennt die Zelle nicht. Die hier
+          geprüften Seiten von Tom's Key und Car Keys Express listen für diesen
+          Schlüssel keine Batterie.
+        frequencyNote: Das ist die Frequenz der Zulassung. Die MK3-Seite sagt 315 MHz
+          für dieselbe FCC-ID. Nehmen Sie die Zahl der Zulassung und gleichen
+          Sie die ID auf dem Schlüssel ab, nicht eine gerundete Händlerfrequenz.
+        sellerClaims:
+          - Tom's Key nennt den Chip Philips 46. MK3 nennt die Transponder-ID
+            PCF7961A. Diese Angaben wurden nicht mit einem Honda-Dokument
+            abgeglichen und sind nicht dasselbe Etikett.
+          - Tom's Key druckt neben MLBHLIK-1T auch MLBHL1K-1T. Die zusätzliche
+            Schreibweise entspricht nicht der FCC-Zulassung. Lesen Sie die ID
+            auf dem Schlüssel Zeichen für Zeichen.
+      - id: remote-head-2014-2016
+        name: Fernbedienungsschlüssel mit 4 Tasten
+        years: 2014-2016
+        keyTypeNote: Tom's Key und Keys4Less verkaufen einen
+          4-Tasten-Fernbedienungsschlüssel für den CR-V 2014-2016, mit
+          Verriegeln, Entriegeln, Panic und Heckklappen- oder Kofferraumöffnung.
+          Beide nennen die FCC-ID MLBHLIK6-1T. Tom's Key sagt, er passe nicht
+          zum Startknopf. Keys4Less ordnet ihn als Fernbedienungsschlüssel ein.
+        fccNotes:
+          - FCC-Zulassung für Honda Lock Mfg. Co., Ltd., Modell HLIK6-1T,
+            Keyless-Sender. Datum 6. Februar 2012. Frequenz der Zulassung 313,85
+            MHz. Keys4Less druckt auch MLBHLIK61T ohne Bindestrich; die
+            Zulassung verwendet MLBHLIK6-1T.
+        partNotes:
+          - Von Tom's Key und Keys4Less gedruckt. Nicht in einer
+            Honda-Teileliste bestätigt. Keys4Less druckt auch die Form ohne
+            Bindestriche 35118T7SA00.
+          - Von Tom's Key und Keys4Less gedruckt. Keys4Less druckt auch
+            35118T0AA30.
+        batteryNote: Keys4Less nennt CR1620. Die 2014-2016-Seite von Tom's Key listet
+          keine Batterie. Die FCC-Zulassung nennt die Zelle nicht.
+        frequencyNote: Frequenz der Zulassung. Keys4Less sagt 314 MHz. Die Seite von
+          Tom's Key nennt keine Frequenz.
+        sellerClaims:
+          - Tom's Key nennt den Transponder Philips 47. Das wurde nicht mit
+            einem Honda-Dokument abgeglichen.
+    priceNotes:
+      - "Geprüft am 19. November 2026 über die Shopify-JSON. Der
+        3-Tasten-Artikel, Passung einschließlich CR-V 2007-2013, meldete
+        available: true, 54,95 Dollar, Vergleich 119,99. Der Ausverkauft-Text
+        des Themes ist nicht der Bestand. Der Schlüssel ist ungeschnitten, außer
+        man kauft den Fotoschnitt. Die Seite sagt, die Programmierung nutze
+        ihren separaten Programmer."
+      - "Geprüft am 19. November 2026 über die Shopify-JSON. Der
+        4-Tasten-Schlüssel 2014-2016 meldete available: true, 60,95 Dollar,
+        Vergleich 179,99. Der Ausverkauft-Text des Themes ist nicht der Bestand.
+        Die Programmierung wird als ihr Programmer beschrieben, nicht als
+        Bordfolge."
+      - Geprüft am 19. November 2026. Das JSON-LD-Angebot sagte 88,00 Dollar und
+        availability https://schema.org/OutOfStock. Dieser Shop ist keiner der
+        hier eingetragenen Partnerhändler. Der Preis wird nur zitiert.
+      - Ein früherer Aufruf am selben Tag zeigte einen Ab-Preis. Eine neue
+        Anfrage am 19. November 2026 lieferte HTTP 429, und es wurde kein
+        priceCurrency gelesen. Die Zahl wird nicht gezeigt.
+      - Ein Honda-Händlerangebot für einen CR-V-Schlüssel 2012-2016 wurde nicht
+        gefunden.
+      - Ein veröffentlichter Schlüsseldienstpreis für Schneiden und
+        Programmieren eines CR-V-Schlüssels 2012-2016 wurde nicht gefunden. Die
+        Serviceseiten beschreiben eine HDS-Arbeit und nennen keine Gebühr.
+    shopLabels:
+      - 3-Tasten-Fernbedienungsschlüssel von Tom's Key (nennt CR-V 2007-2013)
+      - 4-Tasten-CR-V-2014-2016-Schlüssel von Tom's Key
+      - 3-Tasten-CR-V-2012-Schlüssel von Car Keys Express
+      - Amazon-Suche nach den CR-V-FCC-IDs MLBHLIK-1T und MLBHLIK6-1T
+    unverified:
+      - Eine einzige Honda-Katalognummer pro Jahr. Für 2012-2013 nennen MK3,
+        Tom's Key und Car Keys Express verschiedene Nummern. Für 2014-2016
+        stimmen die zwei Händler überein, und eine Honda-Teileliste wurde nicht
+        geöffnet.
+      - Welche Ausstattungen 2012-2016 Startknopf haben und die FCC-ID dieses
+        Smart Keys. Die Händler sagen nur, diese Fernbedienungsschlüssel passten
+        nicht zu einem Startknopf-Auto.
+      - Die Chip-Identität in einem Honda-Dokument. Die Händleretiketten
+        widersprechen sich beim Schlüssel 2012-2013 (Philips 46 gegen PCF7961A),
+        und Tom's Key sagt Philips 47 für 2014-2016.
+      - Händler- und Schlüsseldienstpreise inklusive Einbau.
+      - MK3 nannte den Sender 2012-2013 mit 38,75 Dollar und zeigte ihn als
+        nicht vorrätig. Die Seite hat eine Kontaktnummer aus den VAE, daher wird
+        die Zahl nicht als US-Preis verwendet. Währung und Versand in die USA
+        wurden nicht bestätigt.
+    sources:
+      - id: honda-2012-lx
+        title: Registrierung des Wegfahrsperrenschlüssels CR-V LX 2012
+        publisher: Wiedergabe durch Lemon Manuals eines Honda-Serviceablaufs, auf der
+          Seite American Honda Motor Co., Inc. zugeschrieben
+        note: Sagt, das HDS sei nötig und das Programmieren der Wegfahrsperre
+          programmiere auch den Keyless-Sender.
+      - id: honda-2012-2016
+        title: Registrierung des Wegfahrsperrenschlüssels CR-V 2012-2016
+        publisher: HTML-Nachdruck eines Dritten mit der Überschrift 2012-2016 CR-V
+          RM1/RM4, RE5/RE6
+        note: Sagt ebenfalls, das HDS sei nötig und das Steuergerät speichere bis zu
+          sechs Wegfahrsperrenschlüssel.
+      - id: fcc-mlbhlik-1t
+        title: Gerätezulassung FCC-ID MLBHLIK-1T
+        publisher: Wiedergabe durch FCCID.io der FCC-Zulassung für Honda Lock Mfg. Co.,
+          Ltd.
+        note: Zulassungsdatum 9. Mai 2006. Modell HLIK-1T. Frequenz 313,85 MHz.
+      - id: fcc-mlbhlik6-1t
+        title: Gerätezulassung FCC-ID MLBHLIK6-1T
+        publisher: Wiedergabe durch FCCID.io der FCC-Zulassung für Honda Lock Mfg. Co.,
+          Ltd.
+        note: Zulassungsdatum 6. Februar 2012. Modell HLIK6-1T. Frequenz 313,85 MHz.
+      - id: cke-2012
+        title: Keyless-Sender und Schlüssel, 3 Tasten, Honda CR-V 2012
+        publisher: Car Keys Express
+        note: Ein früherer Seitentext zeigte einen Ab-Preis. Eine neue Anfrage am 19.
+          November 2026 lieferte HTTP 429, und es wurde kein priceCurrency
+          gelesen, daher wird die Zahl nicht gezeigt. FCC-ID MLBHLIK-1T.
+          Etiketten HLIK-1T und Strattec 5938192. Die Liste enthält CR-V
+          2007-2013.
+      - id: toms-3btn
+        title: 3-Tasten-Schlüssel und Sender, FCC MLBHLIK-1T, Passform inklusive CR-V
+          2007-2013
+        publisher: Tom's Key Company
+        note: "Produkt-JSON 19. November 2026: available true, 54,95 Dollar, Vergleich
+          119,99. Teil 35111-SWA-306. Der Ausverkauft-Text des Themes wird nicht
+          verwendet."
+      - id: toms-4btn
+        title: 4-Tasten-Schlüssel und Sender Honda CR-V 2014-2016, FCC MLBHLIK6-1T
+        publisher: Tom's Key Company
+        note: "Produkt-JSON 19. November 2026: available true, 60,95 Dollar, Vergleich
+          179,99. Teile 35118-T7S-A00 und 35118-T0A-A30. Der Ausverkauft-Text
+          des Themes wird nicht verwendet."
+      - id: keys4less-2014
+        title: Fernbedienungsschlüssel Honda CR-V 2014-2016, FCC MLBHLIK6-1T
+        publisher: Keys4Less
+        note: "JSON-LD am 19. November 2026: 88,00 Dollar und schema.org/OutOfStock.
+          Batterie CR1620. Frequenz als 314 MHz. Führt auch HR-V 2016-2021."
+      - id: mk3-2012
+        title: Honda-CR-V-2012-2013-Sender, Teil 35118-T0A-A00
+        publisher: MK3
+        note: Nennt FCC MLBHLIK-1T, Batterie CR1616 und 38,75 Dollar als nicht vorrätig.
+          Ausländische Kontaktdaten; nicht als US-Preis verwendet.
+  fr:
+    title: Programmation et références de la Honda CR-V 2012-2016
+    description: Les clés antidémarrage de la Honda CR-V 2012-2016 exigent un outil
+      de diagnostic. ID FCC, références, piles et prix vendeurs, chacun avec une
+      source.
+    summary: Les pages d’atelier Honda pour le CR-V 2012-2016 disent que le système
+      de diagnostic Honda (HDS) est requis pour enregistrer une clé
+      antidémarrage, et que le même travail programme l’émetteur keyless. Cette
+      page ne donne pas de séquence de boutons à bord. Les fiches montrent deux
+      clés à télécommande différentes, et les vendeurs ne s’accordent pas sur
+      une seule référence pour 2012-2013.
+    scope: CR-V de quatrième génération, années 2012 à 2016, marché des États-Unis,
+      clés à télécommande avec panneton. Les vendeurs ci-dessous excluent les
+      clés intelligentes à bouton, et cette page ne leur donne pas d’ID FCC
+      propre. Une clé de 2012 et une de 2015 ne sont pas traitées comme la même
+      pièce.
+    diy:
+      summary: Une procédure d’atelier du CR-V LX 2012 et une réimpression d’atelier
+        du CR-V 2012-2016 disent que le HDS est requis pour enregistrer des clés
+        antidémarrage. Programmer l’antidémarrage programme aussi l’émetteur
+        keyless. Le boîtier mémorise jusqu’à six clés. Dans le texte du LX 2012,
+        ajouter une clé exige une clé déjà enregistrée et le premier mot de
+        passe du système iN de Honda. Si toutes les clés sont perdues, ce texte
+        demande le code PCM de l’antidémarrage. Ce sont des étapes d’atelier.
+        Elles ne sont pas réimprimées ici comme quelque chose à essayer dans
+        l’allée.
+      condition: Tom's Key vend un programmateur séparé et dit qu’il faut au moins une
+        clé qui marche pour l’utiliser. Cela reste un outil, pas une
+        programmation à bord. Car Keys Express dit que le panneton doit être
+        taillé.
+      safetyNote: Il n’y a pas de séquence à bord sur cette page. Deviner des cycles
+        de contact ou des combinaisons de boutons peut laisser une clé non
+        reconnue, et un serrurier ou un concessionnaire Honda devra alors la
+        récupérer avec le bon outil. Arrêtez si vous n’avez pas cet outil ni le
+        mot de passe ou le code antidémarrage que la procédure utilise.
+    variants:
+      - id: remote-head-2012-2013
+        name: Clé à télécommande à 3 boutons
+        years: Indiquée par des vendeurs pour 2012-2013, et par certains pour 2007-2013
+        keyTypeNote: "Car Keys Express appelle cela un combo télécommande et clé, aussi
+          clé à tête télécommande : une clé de contact à transpondeur plus Lock,
+          Unlock et Panic. Tom's Key vend le même type de clé à 3 boutons et dit
+          qu’elle ne va pas sur un démarrage à bouton."
+        fccNotes:
+          - "Autorisation FCC de Honda Lock Mfg. Co., Ltd., modèle HLIK-1T,
+            émetteur keyless. Date : 9 mai 2006. La fréquence de l’autorisation
+            est 313,85 MHz. Car Keys Express, Tom's Key et MK3 impriment
+            MLBHLIK-1T sur des fiches de clé à télécommande de CR-V."
+        partNotes:
+          - MK3 l’indique comme référence OEM de la télécommande CR-V 2012-2013.
+            Les vendeurs américains vus plus bas impriment d’autres numéros. Non
+            confirmé sur une fiche pièces Honda.
+          - Tom's Key l’indique comme la référence que sa clé d’après-vente à 3
+            boutons remplace. La fiche couvre aussi d’autres Honda, pas
+            seulement le CR-V.
+          - Car Keys Express indique HLIK-1T comme référence. Cette chaîne est
+            aussi le modèle FCC. Traitez-la comme une étiquette du vendeur, pas
+            comme la preuve que c’est le numéro du comptoir pièces Honda.
+          - Numéro Strattec imprimé par Car Keys Express.
+        batteryNote: MK3 indique CR1616. L’autorisation FCC ne nomme pas la pile. Les
+          pages Tom's Key et Car Keys Express vues pour cette clé ne listent pas
+          de pile.
+        frequencyNote: C’est la fréquence de l’autorisation. La page MK3 dit 315 MHz
+          pour le même ID FCC. Utilisez le chiffre de l’autorisation et faites
+          correspondre l’ID sur la clé, pas une fréquence arrondie du vendeur.
+        sellerClaims:
+          - Tom's Key indique la puce comme Philips 46. MK3 indique l’ID
+            transpondeur PCF7961A. Ces affirmations n’ont pas été confrontées à
+            un document Honda et ne sont pas la même étiquette.
+          - Tom's Key imprime aussi MLBHL1K-1T à côté de MLBHLIK-1T. Cette
+            graphie en plus ne correspond pas à l’autorisation FCC. Lisez l’ID
+            sur la clé caractère par caractère.
+      - id: remote-head-2014-2016
+        name: Clé à télécommande à 4 boutons
+        years: 2014-2016
+        keyTypeNote: Tom's Key et Keys4Less vendent une clé à télécommande 4 boutons
+          pour le CR-V 2014-2016, avec verrouillage, déverrouillage, Panic et
+          ouverture du hayon ou du coffre. Tous deux disent que l’ID FCC est
+          MLBHLIK6-1T. Tom's Key dit qu’elle ne va pas sur un démarrage à
+          bouton. Keys4Less la classe comme clé à tête télécommande.
+        fccNotes:
+          - "Autorisation FCC de Honda Lock Mfg. Co., Ltd., modèle HLIK6-1T,
+            émetteur keyless. Date : 6 février 2012. Fréquence de l’autorisation
+            : 313,85 MHz. Keys4Less imprime aussi MLBHLIK61T sans trait d’union
+            ; l’autorisation utilise MLBHLIK6-1T."
+        partNotes:
+          - Imprimé par Tom's Key et par Keys4Less. Non confirmé sur une fiche
+            pièces Honda. Keys4Less imprime aussi la forme sans traits
+            35118T7SA00.
+          - Imprimé par Tom's Key et par Keys4Less. Keys4Less imprime aussi
+            35118T0AA30.
+        batteryNote: Keys4Less indique CR1620. La page 2014-2016 de Tom's Key ne liste
+          pas de pile. L’autorisation FCC ne nomme pas la pile.
+        frequencyNote: Fréquence de l’autorisation. Keys4Less dit 314 MHz. La page de
+          Tom's Key n’indique pas de fréquence.
+        sellerClaims:
+          - Tom's Key indique le transpondeur comme Philips 47. Cela n’a pas été
+            confronté à un document Honda.
+    priceNotes:
+      - "Vérifié le 19 novembre 2026 dans le JSON Shopify. La fiche 3 boutons,
+        compatibilité CR-V 2007-2013 comprise, a renvoyé available: true, 54,95
+        dollars et prix barré 119,99. Le texte épuisé du thème n’est pas le
+        stock. La clé n’est pas taillée sauf si l’on achète la taille sur photo.
+        La page dit que la programmation utilise leur programmateur séparé."
+      - "Vérifié le 19 novembre 2026 dans le JSON Shopify. La clé 4 boutons
+        2014-2016 a renvoyé available: true, 60,95 dollars et prix barré 179,99.
+        Le texte épuisé du thème n’est pas le stock. La programmation est
+        décrite comme leur programmateur, pas comme une séquence à bord."
+      - Vérifié le 19 novembre 2026. L’offre JSON-LD indiquait 88,00 dollars et
+        availability https://schema.org/OutOfStock. Cette boutique n’est pas un
+        détaillant affilié configuré ici. Le prix est seulement cité.
+      - Une ouverture plus tôt le même jour montrait un prix à partir de. Une
+        nouvelle demande le 19 novembre 2026 a renvoyé HTTP 429, et aucun
+        priceCurrency n’a été lu. Le nombre n’est pas affiché.
+      - Aucun devis de concession Honda pour une clé de CR-V 2012-2016 n’a été
+        trouvé.
+      - Aucun prix publié de serrurier pour tailler et programmer une clé de
+        CR-V 2012-2016 n’a été trouvé. Les pages d’atelier décrivent un travail
+        HDS et ne listent pas de tarif.
+    shopLabels:
+      - Clé à télécommande 3 boutons de Tom's Key (cite CR-V 2007-2013)
+      - Clé à télécommande 4 boutons CR-V 2014-2016 de Tom's Key
+      - Clé à télécommande 3 boutons CR-V 2012 de Car Keys Express
+      - Recherche Amazon des ID FCC MLBHLIK-1T et MLBHLIK6-1T du CR-V
+    unverified:
+      - Un seul numéro de catalogue de pièces Honda par année. Pour 2012-2013,
+        MK3, Tom's Key et Car Keys Express publient des numéros différents. Pour
+        2014-2016 les deux vendeurs s’accordent, et aucune fiche Honda n’a été
+        ouverte.
+      - Quelles finitions 2012-2016 ont le démarrage à bouton et l’ID FCC de
+        cette clé intelligente. Les vendeurs disent seulement que ces clés à
+        télécommande ne vont pas sur une voiture à bouton.
+      - L’identité de la puce dans un document Honda. Les étiquettes des
+        vendeurs divergent sur la clé 2012-2013 (Philips 46 contre PCF7961A) et
+        Tom's Key dit Philips 47 pour 2014-2016.
+      - Prix posés de concession et de serrurier.
+      - MK3 affichait la télécommande 2012-2013 à 38,75 dollars et la montrait
+        en rupture. La page a un numéro des Émirats, donc ce chiffre n’est pas
+        utilisé comme prix des États-Unis. La devise et l’expédition vers les
+        États-Unis n’ont pas été confirmées.
+    sources:
+      - id: honda-2012-lx
+        title: Procédure d’enregistrement de clé antidémarrage du CR-V LX 2012
+        publisher: Reproduction par Lemon Manuals d’une procédure d’atelier Honda,
+          créditée sur la page à American Honda Motor Co., Inc.
+        note: Dit que le HDS est requis et que programmer l’antidémarrage programme
+          aussi l’émetteur keyless.
+      - id: honda-2012-2016
+        title: Enregistrement de clé antidémarrage du CR-V 2012-2016
+        publisher: Réimpression HTML tierce intitulée 2012-2016 CR-V RM1/RM4, RE5/RE6
+        note: Dit aussi que le HDS est requis et que le boîtier mémorise jusqu’à six
+          clés antidémarrage.
+      - id: fcc-mlbhlik-1t
+        title: Autorisation d’équipement ID FCC MLBHLIK-1T
+        publisher: Reproduction par FCCID.io de l’autorisation FCC de Honda Lock Mfg.
+          Co., Ltd.
+        note: "Date d’autorisation : 9 mai 2006. Modèle HLIK-1T. Fréquence 313,85 MHz."
+      - id: fcc-mlbhlik6-1t
+        title: Autorisation d’équipement ID FCC MLBHLIK6-1T
+        publisher: Reproduction par FCCID.io de l’autorisation FCC de Honda Lock Mfg.
+          Co., Ltd.
+        note: "Date d’autorisation : 6 février 2012. Modèle HLIK6-1T. Fréquence 313,85
+          MHz."
+      - id: cke-2012
+        title: Combo télécommande keyless et clé 3 boutons de la Honda CR-V 2012
+        publisher: Car Keys Express
+        note: Un texte de page plus ancien montrait un prix à partir de. Une nouvelle
+          demande le 19 novembre 2026 a renvoyé HTTP 429 et aucun priceCurrency
+          n’a été lu, donc le nombre n’est pas affiché. ID FCC MLBHLIK-1T.
+          Étiquettes HLIK-1T et Strattec 5938192. La liste inclut CR-V
+          2007-2013.
+      - id: toms-3btn
+        title: Clé et télécommande 3 boutons, FCC MLBHLIK-1T, montage incluant CR-V
+          2007-2013
+        publisher: Tom's Key Company
+        note: "JSON du 19 novembre 2026 : available true, 54,95 dollars, prix barré
+          119,99. Pièce 35111-SWA-306. Le texte épuisé du thème est ignoré."
+      - id: toms-4btn
+        title: Clé et télécommande 4 boutons Honda CR-V 2014-2016, FCC MLBHLIK6-1T
+        publisher: Tom's Key Company
+        note: "JSON du 19 novembre 2026 : available true, 60,95 dollars, prix barré
+          179,99. Pièces 35118-T7S-A00 et 35118-T0A-A30. Le texte épuisé du
+          thème est ignoré."
+      - id: keys4less-2014
+        title: Clé à télécommande Honda CR-V 2014-2016, FCC MLBHLIK6-1T
+        publisher: Keys4Less
+        note: "JSON-LD du 19 novembre 2026 : 88,00 dollars et schema.org/OutOfStock.
+          Pile CR1620. Fréquence indiquée 314 MHz. Liste aussi le HR-V
+          2016-2021."
+      - id: mk3-2012
+        title: Télécommande Honda CR-V 2012-2013, référence 35118-T0A-A00
+        publisher: MK3
+        note: Indique FCC MLBHLIK-1T, pile CR1616 et 38,75 dollars affichés en rupture.
+          Coordonnées à l’étranger ; non utilisé comme prix des États-Unis.
+programmingFacts:
+  onboardStatus: needs-tool
+  minimumWorkingKeys: 1
+  pushButtonProcedure: unknown
+  sourceIds:
+    - honda-2012-lx
+    - honda-2012-2016
+  ignitionKeyInCylinder: unknown

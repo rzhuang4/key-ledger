@@ -1,0 +1,101 @@
+---
+import Base from '../../layouts/Base.astro';
+import Disclosure from '../Disclosure.astro';
+import { features } from '../../i18n/features';
+import { fill, t } from '../../i18n/messages';
+import { shopLink } from '../../lib/affiliates';
+import { localeHref } from '../../lib/paths';
+
+interface Props {
+  locale: string;
+}
+const { locale } = Astro.props;
+const copy = t(locale);
+const feat = features(locale);
+const kbb = 'https://www.kbb.com/car-advice/key-fob-replacement/';
+const shops = [
+  shopLink('carandtruckremotes', 'https://www.carandtruckremotes.com/products/2005-chevrolet-silverado-remote-key-fob-aftermarket'),
+  shopLink('carandtruckremotes', 'https://www.carandtruckremotes.com/products/2013-ford-f-150-remote-key-fob-aftermarket'),
+  shopLink('tomskey', 'https://tomskey.com/products/honda-cr-v-2014-2016-key-and-keyless-entry-remote-4-button-with-hatch-release-honrk-rctngl-4b-mlbhlik6-1t'),
+  shopLink('carkeysexpress', 'https://store.carkeysexpress.com/keys-and-remotes/Honda/CR-V/2012/1000432-honda-3-button-keyless-entry-remote-and-key-combo-replacement'),
+];
+const pageUrl = Astro.site ? new URL(localeHref(locale, 'guides/dealer-vs-locksmith-vs-diy'), Astro.site).href : undefined;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: copy.guideH1,
+  description: copy.guideDescription,
+  dateModified: '2026-11-19',
+  inLanguage: locale === 'en' ? 'en' : undefined,
+  author: { '@type': 'Organization', name: 'Key Ledger' },
+  publisher: { '@type': 'Organization', name: 'Key Ledger' },
+  mainEntityOfPage: pageUrl,
+};
+const rows = [
+  [copy.rowMechanical, '$5–$15', copy.na, '$5–$15'],
+  [copy.rowTransponder, '$50–$100', '$75–$150', '$125–$250'],
+  [copy.rowSwitchblade, '$75–$150', '$75–$150', '$150–$300'],
+  [copy.rowSmart, '$125–$250', '$75–$150', '$200–$400'],
+];
+---
+
+<Base title={copy.guideTitle} description={copy.guideDescription} locale={locale} jsonLd={jsonLd}>
+  <div class="wrap">
+    <Disclosure locale={locale} />
+    <p class="kicker">{copy.guideKicker}</p>
+    <h1>{copy.guideH1}</h1>
+    <p class="lede prose">{copy.guideLede}</p>
+    <p class="muted">{copy.guideByline}</p>
+    <h2>{copy.guideH2Published}</h2>
+    <p>{copy.guidePublished}</p>
+    <p class="muted">{feat.kbbMeta}</p>
+    <div class="table-scroll">
+      <table>
+        <caption class="muted">{copy.guideCaption}</caption>
+        <thead>
+          <tr>
+            <th>{copy.guideColType}</th>
+            <th>{copy.guideColParts}</th>
+            <th>{copy.guideColProg}</th>
+            <th>{copy.guideColTotal}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((row) => (
+            <tr>
+              <th scope="row">{row[0]}</th>
+              <td>{row[1]}</td>
+              <td>{row[2]}</td>
+              <td>{row[3]}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p>
+      {copy.guideAfter}{' '}
+      <a href={kbb} rel="noopener noreferrer">{copy.guideReadKbb}</a>.
+    </p>
+    <h2>{copy.guideH2Use}</h2>
+    <ul class="clean">
+      <li>
+        <a href={localeHref(locale, 'chevrolet/silverado-1500/2003-2006')}>2003–2006 Silverado 1500</a>: {copy.guideSilverado}
+      </li>
+      <li>
+        <a href={localeHref(locale, 'ford/f-150/2011-2014')}>2011–2014 F-150</a>: {copy.guideFord}
+      </li>
+      <li>
+        <a href={localeHref(locale, 'honda/cr-v/2012-2016')}>2012–2016 CR-V</a>: {copy.guideHonda}
+      </li>
+    </ul>
+    <p>{copy.guideDifferent}</p>
+    <h2>{copy.guideH2Listings}</h2>
+    <ul class="clean">
+      <li><a href={shops[0].href} rel={shops[0].rel}>{fill(copy.guideLinkSilverado, { name: shops[0].name })}</a></li>
+      <li><a href={shops[1].href} rel={shops[1].rel}>{fill(copy.guideLinkFord, { name: shops[1].name })}</a></li>
+      <li><a href={shops[2].href} rel={shops[2].rel}>{fill(copy.guideLinkCrv4, { name: shops[2].name })}</a></li>
+      <li><a href={shops[3].href} rel={shops[3].rel}>{fill(copy.guideLinkCrv2, { name: shops[3].name })}</a></li>
+    </ul>
+    <p class="muted">{copy.guideStock}</p>
+  </div>
+</Base>
