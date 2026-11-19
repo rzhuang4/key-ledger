@@ -64,6 +64,8 @@ const vehicles = defineCollection({
       status: z.enum(['yes', 'no', 'needs-tool']),
       heroAnswer: z.string().min(1).optional(),
       heroNotice: z.string().min(1).optional(),
+      priceCaution: z.string().min(1).optional(),
+      priceCautionSourceIds: z.array(z.string().min(1)).min(1).optional(),
       summary: z.string().min(20),
       condition: z.string().min(1).optional(),
       safetyNote: z.string().min(20),

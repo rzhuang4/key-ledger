@@ -10,21 +10,30 @@ market: US
 title: "2007-2011 Toyota Tundra keyless remote programming"
 description: "On-board steps for a 2007-2011 Toyota Tundra keyless remote, FCC
   ID GQ43VT20T, seller part numbers, the CR2032 battery, and USD prices."
-summary: "Toyota service pages for a 2007, a 2009, and a 2011 Tundra publish a
-  switch-operation way to register the keyless remote. No scan tool is required
-  for that remote. The same pages also describe a Techstream path. A seller of
-  the matching remote says on-board programming is not available."
-scope: "2007-2011 Toyota Tundra trucks that have a metal ignition key and a
-  separate keyless remote. The switch section was opened for a 2007 4.7L 4WD, a
-  2009 4.7L 4WD, and a 2011 5.7L 4WD. Other engines, cabs, and the 2012-2013
-  trucks were not opened, so this page does not cover them. A push-button smart
-  key has no ignition cylinder for this sequence, and this page does not apply
-  to it. The sequence registers the remote only. It does not cut a key and it
-  does not register an immobilizer chip."
+summary: "Toyota service pages opened for 2007, 2009, 2011, 2012, and 2013
+  Tundras publish a switch sequence for the keyless remote. Sellers of the
+  matching aftermarket and used remotes say a locksmith has to program them.
+  It is not confirmed that those remotes accept the switch sequence."
+scope: "This page is the 2007-2011 Toyota Tundra with a metal ignition key and
+  a separate keyless remote. Sellers list the same FCC ID through 2018. The
+  switch section was opened for a 2007 4.7L 4WD, a 2009 4.7L 4WD, a 2011 5.7L
+  4WD, a 2012 Limited 5.7L 4WD, and a 2013 SR5 4.6L RWD. Those 2012 and 2013
+  pages still print the same switch sequence. 2014 and later were not opened.
+  A push-button smart key has no ignition cylinder for this sequence, and this
+  page does not apply to it. The sequence registers the remote only."
 reviewed: "2026-11-19"
 diy:
   status: "yes"
-  heroNotice: "Push-button smart key, or no ignition key cylinder? This page does not apply."
+  heroAnswer: "Yes, per Toyota service pages; some sellers say a locksmith is needed"
+  heroNotice: "Push-button smart key, or no ignition key cylinder? This page does not apply. Sellers list this remote for 2007-2018. The same on-board switch section was opened on 2012 and 2013 service pages. 2014 and later were not opened."
+  priceCaution: "Car and Truck Remotes says on-board programming is no. NorthCoast Keyless says a locksmith must program the remote. Toyota service pages for 2007, 2009, 2011, 2012, and 2013 publish an on-board switch sequence. Not confirmed that these aftermarket or lightly used remotes accept that sequence. On a Toyota Tundra Forum thread about a 2009, one owner reported the door sequence failed after many tries and that Techstream then registered the fobs. No report on that thread confirmed an aftermarket GQ43VT20T registering with the switch sequence alone."
+  priceCautionSourceIds:
+    - ctr-gq43
+    - nck-gq43
+    - tundra-2007
+    - tundra-2012
+    - tundra-2013
+    - tundra-forum-2009
   summary: "The opened Tundra service pages give a switch sequence that registers
     the door-lock remote without a scan tool. Add mode keeps remotes already
     stored, until the truck is holding four. Rewrite mode erases the stored
@@ -53,13 +62,17 @@ diy:
       sourceIds:
         - tundra-2007
         - tundra-2011
-    - text: "Car and Truck Remotes prints 'On Board Programming: No' on the
-        aftermarket remote that lists this FCC ID and these part numbers. That
-        disagrees with the switch section in the service pages opened above.
-        The seller also says the remote must be programmed by a locksmith and
-        that the price is the remote only."
+    - text: "Car and Truck Remotes prints 'On Board Programming: No.' NorthCoast
+        Keyless says a locksmith must program the remote. Those lines disagree
+        with the switch section on the Toyota pages. It is not confirmed that
+        the aftermarket or lightly used remotes accept that sequence."
       sourceIds:
         - ctr-gq43
+        - nck-gq43
+        - tundra-2007
+        - tundra-2012
+        - tundra-2013
+        - tundra-forum-2009
   steps:
     - text: "Start with the key out of the ignition, the driver door open and
         unlocked, and every other door closed."
@@ -95,13 +108,21 @@ diy:
         end after that answer."
       sourceIds:
         - tundra-2007
-    - text: "For add or rewrite, within 5 seconds press Lock or Unlock once. Do
-        not hold both. One lock-unlock cycle means that remote was stored. Two
-        cycles means it failed, and the pages say to start over."
+    - text: "For add or rewrite, the switch-operation section says to press a
+        single switch (Lock or Unlock) within 5 seconds. One lock-unlock cycle
+        means that remote was stored. Two cycles means it failed, and the pages
+        say to start over."
       sourceIds:
         - tundra-2007
-    - text: "Repeat that single button press for each remote you want to keep, up
-        to four in the same session."
+    - text: "The Techstream section on those same pages says to press Lock and
+        Unlock together for 1 to 1.5 seconds, then press either switch. A Tundra
+        forum write-up uses that two-button hold as well. Those are a second
+        version of the button press, not the switch-operation wording."
+      sourceIds:
+        - tundra-2007
+        - tundra-forum-2009
+    - text: "Repeat that Lock or Unlock press for each remote you want to keep,
+        up to four in the same session."
       sourceIds:
         - tundra-2007
     - text: "Open a door, or put the key back in the cylinder, to leave
@@ -185,7 +206,7 @@ priceRanges:
       The shop currency is USD. The listing says the price is one remote, that
       the seller does not cut or program it, and that it fits a 2007-2018 Tundra
       with a turn-the-key ignition. That year span is wider than this page."
-    heroNote: "Remote only. The seller does not cut or program it."
+    heroNote: "Remote only. The seller says on-board programming is no. Toyota's service pages publish a switch sequence. Not confirmed for this aftermarket remote."
     variantId: gq43vt20t-3-button
     sourceIds:
       - ctr-gq43
@@ -200,7 +221,10 @@ priceRanges:
     note: "NorthCoast Keyless lists a lightly used 3-button remote, FCC GQ43VT20T,
       at $29.94. The store API on November 19, 2026 reported that variation in
       stock, currency USD. The listing includes a battery and says a locksmith
-      must program it. Fitment on the page runs through 2018, past this page."
+      must program it. The page lists fitment 2007-2018. Toyota pages opened
+      through 2013 still print a switch sequence. Not confirmed that this used
+      remote accepts that sequence."
+    heroNote: "Remote only. The seller says a locksmith must program it. Toyota's service pages publish a switch sequence. Not confirmed for this used remote."
     variantId: gq43vt20t-3-button
     sourceIds:
       - nck-gq43
@@ -214,7 +238,9 @@ priceRanges:
     highUsd: 49.94
     note: "The same NorthCoast Keyless listing prices a new remote at $49.94. The
       store API on November 19, 2026 reported that variation out of stock,
-      currency USD. It is the remote, not a programmed key."
+      currency USD. It is the remote, not a programmed key. The listing says a
+      locksmith must program it."
+    heroNote: "Remote only. The seller says a locksmith must program it. Not confirmed for this remote."
     variantId: gq43vt20t-3-button
     sourceIds:
       - nck-gq43
@@ -229,7 +255,9 @@ priceRanges:
     note: "Car and Truck Remotes lists a Strattec 5938208 remote, same FCC ID and
       the same Toyota part numbers, at $39.95. Product data on November 19, 2026
       showed it unavailable. The shop currency is USD. The price is one remote.
-      The seller does not cut or program it."
+      The seller says it does not cut or program it, and the matching aftermarket
+      listing says on-board programming is no."
+    heroNote: "Remote only. The seller says on-board programming is no. Not confirmed for this remote."
     variantId: gq43vt20t-3-button
     sourceIds:
       - ctr-strattec
@@ -239,15 +267,16 @@ priceRanges:
     stock: out-of-stock
   - channel: dealer
     status: unverified
-    note: "No Toyota dealer price for a 2007-2011 Tundra remote, installed or
-      parts-only, was found. The service pages do show a Techstream registration
-      path, which is the shop method, but they do not print a price."
+    note: "ToyotaPartsNow lists 89742-AE011 as a door-control transmitter that
+      replaces 89742-AE010 and fits 2007-2017 Tundra. The page opened on
+      November 19, 2026 did not show a price for that part. Seller compare-at
+      prices are not a dealer price. No dealer installed price was found."
     currency: USD
     retailer: none
     checkedAt: "2026-11-19"
     stock: unknown
     sourceIds:
-      - tundra-2011
+      - toyota-parts-ae011
   - channel: locksmith
     status: unverified
     note: "No locksmith posted a dollar amount for programming this Tundra remote.
@@ -269,13 +298,14 @@ shopLinks:
 unverified:
   - "A Toyota parts-fiche number that is limited to 2007-2011. Sellers list
     89742-AE010 and 89742-AE011 together across a longer year span."
-  - "The ignition-key blade and whether that key has a transponder. The switch
-    procedure uses the cylinder, and no Toyota key-code page was opened."
+  - "A Toyota document that names the chip. The blade and chip below are from
+    key sellers, not from a Toyota fiche."
   - "Whether every 2007-2011 cab and engine uses the same switch section. The
     pages opened were a 2007 4.7L 4WD, a 2009 4.7L 4WD, and a 2011 5.7L 4WD."
-  - "2012 and 2013 Tundra remote registration. Those manuals were not opened, so
-    this page does not cover them."
-  - "A dealer or locksmith price, in any region."
+  - "2014 and later registration. Those manuals were not opened. A 2012 Limited
+    5.7L 4WD page and a 2013 SR5 4.6L RWD page still print the switch sequence."
+  - "A dealer parts price for 89742-AE010 or 89742-AE011, and any locksmith's
+    posted price for this remote."
   - "Which 2007-2011 trucks were built without keyless entry."
 troubleshooting:
   - id: no-mode-answer
@@ -301,10 +331,22 @@ troubleshooting:
       - tundra-2007
       - tundra-2009
 ignitionKey:
-  status: unverified
-  note: "The switch procedure requires a key in the ignition cylinder. No source
-    opened here names the blade or says whether that key has a transponder chip.
-    This page does not program an immobilizer."
+  status: verified
+  blade: TR47
+  transponder: present
+  sourceIds:
+    - mykey-toy44d
+    - ctr-toy44
+  note: "Check the key head. My Key Supply lists a TOY44D transponder key, chip
+    4D67, blade TR47, for Tundra 2007-2009, with no remote buttons. Car and
+    Truck Remotes says a 2010 Tundra was issued two keys. A dot on the head is
+    the Texas 4D 67 chip they call the Dot chip, Ilco TOY44D-PT, test key TR47,
+    listed for Tundra 2007-2010. A letter G on the head is the key they call
+    the G chip, Ilco TOY44G-PT, test key TR47, and they also print Texas 4D 67
+    for that G chip. They list the G key for Tundra 2010-2017, which includes
+    2011. Both of their 2010 lines say to verify, because a 2010 truck may have
+    either stamp. Cutting the blade is not enough to start the engine. Car and
+    Truck Remotes says a locksmith has to cut and program this key."
 sources:
   - id: tundra-2007
     title: "2007 Toyota Tundra wireless door lock registration"
@@ -352,6 +394,57 @@ sources:
     accessed: "2026-11-19"
     note: "Product JSON on November 19, 2026: available false, price 3995 cents,
       compare-at 13000. Same shop currency, USD."
+  - id: tundra-2012
+    title: "2012 Toyota Tundra wireless door lock registration"
+    url: "https://lemon-manuals.la/Toyota/2012/Tundra%20Limited%2C%204D%20Pickup%20Crew%20Cab%2C%205.7L%20Eng%20VIN%20Y%2C%204WD/Repair%20and%20Diagnosis/Body%20%26%20Frame/Door%20Locks/Wireless%20Door%20Lock%20Control%20System%20%28Diagnostics%20-%20Introduction%29/Wireless%20Door%20Lock%20Control%20System/Registration/Registration/"
+    publisher: "Lemon Manuals reproduction of a 2012 Toyota Tundra Limited service page, 5.7L 4WD"
+    accessed: "2026-11-19"
+    note: "Still prints register-by-switch-operation beside the Techstream path.
+      The steps match the 2007-2011 pages, including a four-code limit."
+  - id: tundra-2013
+    title: "2013 Toyota Tundra wireless door lock registration"
+    url: "https://lemon-manuals.la/Toyota/2013/Tundra%20SR5%2C%204D%20Pickup%20Crew%20Cab%2C%204.6L%20Eng%20VIN%20M%2C%20RWD/Repair%20and%20Diagnosis/Accessories%20%26%20Equipment/Anti-Theft%20Systems/Wireless%20Door%20Lock%20Control%20System%20%28Diagnostics%20-%20Introduction%29/Wireless%20Door%20Lock%20Control%20System/Registration/Registration/"
+    publisher: "Lemon Manuals reproduction of a 2013 Toyota Tundra SR5 service page, 4.6L RWD"
+    accessed: "2026-11-19"
+    note: "Still prints the same switch-operation section beside Techstream.
+      Four recognition codes. 2014 and later were not opened."
+  - id: tundra-forum-2009
+    title: "Fob registration/programming for a 2009"
+    url: "https://www.tundras.com/threads/fob-registration-programming-for-a-2009.174235/"
+    publisher: "Toyota Tundra Forum"
+    accessed: "2026-11-19"
+    note: "A 2009 owner wrote that the door sequence failed after many tries and
+      that Techstream then registered the fobs. Another reply said Techstream
+      worked and that not every fob works as claimed. The thread does not show
+      an aftermarket GQ43VT20T registering by the switch sequence alone."
+  - id: toyota-parts-ae011
+    title: "Toyota Tundra key fob parts list, including 89742-AE011"
+    url: "https://www.toyotapartsnow.com/parts-select/toyota-tundra-key-fob"
+    publisher: "ToyotaPartsNow"
+    accessed: "2026-11-19"
+    note: "Lists 89742-AE011 as Transmitter, Door Control, replaces 89742-AE010,
+      fitment 2007-2017 Tundra. No price was shown for that part. Other
+      transmitters on the page had prices. Those other parts are not this remote."
+  - id: mykey-toy44d
+    title: "TOY44D transponder key, 4D67, blade TR47"
+    url: "https://mykeysupply.com/product/toyota-44d-transponder-key/"
+    publisher: "My Key Supply"
+    accessed: "2026-11-19"
+    note: "Aftermarket transponder key, no remote buttons. Chip 4D67 (master),
+      blade TR47. The fitment table includes Toyota Tundra 2007-2009. The page
+      says to cut the blade and program the chip, and it is written for
+      locksmiths and dealers."
+  - id: ctr-toy44
+    title: "2010 Toyota Tundra transponder key blank, TOY44D and TOY44G"
+    url: "https://www.carandtruckremotes.com/products/2010-toyota-tundra-transponder-key-blank-aftermarket"
+    publisher: "Car and Truck Remotes"
+    accessed: "2026-11-19"
+    note: "Says Toyota issued two keys that year. A dot on the key is Texas 4D
+      67, called the Dot chip, Ilco TOY44D-PT, test key TR47, Tundra 2007-2010.
+      A letter G is called the G chip, Ilco TOY44G-PT, test key TR47, and the
+      page also prints Texas 4D 67 for that option, Tundra 2010-2017. Both 2010
+      lines say to verify. A locksmith must cut and program the key. Cutting
+      alone will not start the engine."
   - id: nck-gq43
     title: "2007-2018 Toyota Tundra 3-button remote, FCC GQ43VT20T"
     url: "https://northcoastkeyless.com/product/toyota-tundra-3-button-key-fob-remote-fcc-gq43vt20t-p-n-89742-ae010-89742-ae011/"
@@ -369,4 +462,6 @@ programmingFacts:
     - tundra-2007
     - tundra-2009
     - tundra-2011
+    - tundra-2012
+    - tundra-2013
   ignitionKeyInCylinder: required

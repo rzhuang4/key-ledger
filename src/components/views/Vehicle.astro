@@ -211,14 +211,25 @@ function leadSentence(text: string) {
       <h2>{copy.pricesH2}</h2>
       <ul class="price-rows">
         {
-          view.priceRanges.map((row) => (
+          view.priceRanges.map((row, index) => (
             <li>
               <strong>{channelLabel(row.channel)}</strong>
               <PriceLine locale={locale} row={row} unverifiedLabel={copy.unverifiedChip} />
+              {data.priceRanges[index]?.heroNote && <p class="detail">{data.priceRanges[index].heroNote}</p>}
             </li>
           ))
         }
       </ul>
+      {
+        data.diy.priceCaution && (
+          <p class="detail">
+            {data.diy.priceCaution}{' '}
+            {data.diy.priceCautionSourceIds && (
+              <Cites ids={data.diy.priceCautionSourceIds} sources={sourcesForCites} />
+            )}
+          </p>
+        )
+      }
       <details class="fold">
         <summary>What each price includes</summary>
         <ul class="clean">
