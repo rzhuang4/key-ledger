@@ -158,6 +158,7 @@ function leadSentence(text: string) {
         {data.diy.status === 'needs-tool' && (
           <p class="detail">Not the full job. Cutting and programming are separate.</p>
         )}
+        {data.diy.heroNotice && <p class="detail">{data.diy.heroNotice}</p>}
       </article>
       {
         splitYears ? (
@@ -199,11 +200,11 @@ function leadSentence(text: string) {
               <p class="kicker">Price</p>
               <strong>{cheapest ? `From $${cheapest.lowUsd?.toFixed(2)}` : 'Not verified'}</strong>
               {cheapest && <p class="muted">{cheapest.retailer}, {stockWord}</p>}
+              {cheapest?.heroNote && <p class="detail">{cheapest.heroNote}</p>}
             </article>
           </>
         )
       }
-      {data.diy.heroNotice && <p class="scope-line">{data.diy.heroNotice}</p>}
     </section>
 
     <section class="vehicle-block price-card">

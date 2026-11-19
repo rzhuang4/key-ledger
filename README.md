@@ -2,11 +2,12 @@
 
 Static directory of US car key-fob and smart-key replacement notes, organized by make, model, and year. Pages say whether an owner can program a replacement, and they cite a URL and an access date for every procedure, FCC ID, part number, and price. Anything that was not checked is labeled **unverified / not yet researched**. The site does not publish ratings or testimonials.
 
-The three seed pages are:
+The vehicle pages are:
 
 - [2003–2006 Chevrolet Silverado 1500](src/content/vehicles/chevrolet-silverado-1500-2003-2006.yaml)
 - [2011–2014 Ford F-150](src/content/vehicles/ford-f-150-2011-2014.yaml)
 - [2012–2016 Honda CR-V](src/content/vehicles/honda-cr-v-2012-2016.yaml)
+- [2007–2011 Toyota Tundra](src/content/vehicles/toyota-tundra-2007-2011.yaml)
 
 ## Requirements
 

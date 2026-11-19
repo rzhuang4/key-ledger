@@ -1,0 +1,372 @@
+# 2007–2011 Toyota Tundra. The 2007–2011 Camry remote needs a tool, so this truck is the on-board fallback.
+make: Toyota
+makeSlug: toyota
+model: Tundra
+modelSlug: tundra
+yearStart: 2007
+yearEnd: 2011
+yearSlug: "2007-2011"
+market: US
+title: "2007-2011 Toyota Tundra keyless remote programming"
+description: "On-board steps for a 2007-2011 Toyota Tundra keyless remote, FCC
+  ID GQ43VT20T, seller part numbers, the CR2032 battery, and USD prices."
+summary: "Toyota service pages for a 2007, a 2009, and a 2011 Tundra publish a
+  switch-operation way to register the keyless remote. No scan tool is required
+  for that remote. The same pages also describe a Techstream path. A seller of
+  the matching remote says on-board programming is not available."
+scope: "2007-2011 Toyota Tundra trucks that have a metal ignition key and a
+  separate keyless remote. The switch section was opened for a 2007 4.7L 4WD, a
+  2009 4.7L 4WD, and a 2011 5.7L 4WD. Other engines, cabs, and the 2012-2013
+  trucks were not opened, so this page does not cover them. A push-button smart
+  key has no ignition cylinder for this sequence, and this page does not apply
+  to it. The sequence registers the remote only. It does not cut a key and it
+  does not register an immobilizer chip."
+reviewed: "2026-11-19"
+diy:
+  status: "yes"
+  heroNotice: "Push-button smart key, or no ignition key cylinder? This page does not apply."
+  summary: "The opened Tundra service pages give a switch sequence that registers
+    the door-lock remote without a scan tool. Add mode keeps remotes already
+    stored, until the truck is holding four. Rewrite mode erases the stored
+    remotes and keeps only the ones you register in that session."
+  condition: "You need the ignition key that fits the cylinder, and every remote
+    you want the truck to keep. The remote price below is the remote only."
+  safetyNote: "Rewrite mode erases remotes the truck already knows. A missed
+    time limit can leave you out of registration mode, and a locksmith or dealer
+    then has to finish the job. If the doors do not answer the mode you chose,
+    stop. Do not keep cycling the ignition."
+  sourceIds:
+    - tundra-2007
+    - tundra-2009
+    - tundra-2011
+  notes:
+    - text: "Add mode keeps codes already stored. If a fifth code is added, the
+        pages say the oldest stored code is erased. Rewrite mode clears every
+        stored code first. The truck can hold four recognition codes."
+      sourceIds:
+        - tundra-2007
+        - tundra-2009
+        - tundra-2011
+    - text: "The same pages also describe registration with an Intelligent Tester
+        or Techstream. That path is a shop tool. No dealer dollar amount for it
+        was found."
+      sourceIds:
+        - tundra-2007
+        - tundra-2011
+    - text: "Car and Truck Remotes prints 'On Board Programming: No' on the
+        aftermarket remote that lists this FCC ID and these part numbers. That
+        disagrees with the switch section in the service pages opened above.
+        The seller also says the remote must be programmed by a locksmith and
+        that the price is the remote only."
+      sourceIds:
+        - ctr-gq43
+  steps:
+    - text: "Start with the key out of the ignition, the driver door open and
+        unlocked, and every other door closed."
+      sourceIds:
+        - tundra-2007
+    - text: "Within 5 seconds, insert the key and remove it, then insert it and
+        remove it again. End with the key out."
+      sourceIds:
+        - tundra-2007
+    - text: "Within 40 seconds, close and open the driver door twice. End with
+        that door open."
+      sourceIds:
+        - tundra-2007
+    - text: "Still inside those 40 seconds, insert the key and remove it. End
+        with the key out."
+      sourceIds:
+        - tundra-2007
+    - text: "Close and open the driver door twice again. End with that door open."
+      sourceIds:
+        - tundra-2007
+    - text: "Insert the key and close all the doors."
+      sourceIds:
+        - tundra-2007
+    - text: "Within 40 seconds, turn the ignition from ON to OFF about once per
+        second. Once chooses add mode. Twice chooses rewrite mode. Three times
+        chooses confirmation. Five times chooses prohibition. Zero, four, or six
+        or more gets no lock response."
+      sourceIds:
+        - tundra-2007
+    - text: "Remove the key. Within 5 seconds the locks answer. Add mode cycles
+        once. Rewrite mode cycles twice. Confirmation cycles once for each stored
+        remote, or five times if none are stored. Confirmation and prohibition
+        end after that answer."
+      sourceIds:
+        - tundra-2007
+    - text: "For add or rewrite, within 5 seconds press Lock or Unlock once. Do
+        not hold both. One lock-unlock cycle means that remote was stored. Two
+        cycles means it failed, and the pages say to start over."
+      sourceIds:
+        - tundra-2007
+    - text: "Repeat that single button press for each remote you want to keep, up
+        to four in the same session."
+      sourceIds:
+        - tundra-2007
+    - text: "Open a door, or put the key back in the cylinder, to leave
+        registration. Then test lock, unlock, and panic."
+      sourceIds:
+        - tundra-2007
+variants:
+  - id: gq43vt20t-3-button
+    name: "3-button keyless remote"
+    years: "Listed by sellers for 2007-2011 Tundra, and for later years this page does not cover"
+    keyType: separate-remote
+    keyTypeNote: "Car and Truck Remotes and NorthCoast Keyless both sell a separate
+      3-button remote, Lock, Unlock, and Panic, for a turn-the-key Tundra. It is
+      not a remote-head key and not a push-button smart key. The service pages
+      call the part a door control transmitter."
+    keyTypeSourceIds:
+      - ctr-gq43
+      - nck-gq43
+      - tundra-2007
+    fccIds:
+      - id: GQ43VT20T
+        role: oem
+        note: "FCC grant to TRW Inc. for an automotive remote control. The grant
+          reproduced by FCCID.io lists 315.0 MHz under rule 15.231. Original
+          grant date September 30, 2002. Later class II grants are dated June 1,
+          2010 and August 24, 2012. Both sellers print this ID on the Tundra remote."
+        sourceIds:
+          - fcc-gq43
+          - ctr-gq43
+          - nck-gq43
+    oemPartNumbers:
+      - number: "89742-AE010"
+        summary: true
+        note: "Printed by Car and Truck Remotes and by NorthCoast Keyless as a
+          Toyota part this remote replaces. The listings also name later Tundra
+          years. Not confirmed on a Toyota parts fiche for 2007-2011 only."
+        sourceIds:
+          - ctr-gq43
+          - nck-gq43
+      - number: "89742-AE011"
+        note: "Printed beside 89742-AE010 on the same two listings. The sellers do
+          not say which of the two numbers is the 2007-2011 part."
+        sourceIds:
+          - ctr-gq43
+          - nck-gq43
+    battery:
+      status: verified
+      type: CR2032
+      note: "NorthCoast Keyless lists CR2032 as the compatible battery. Car and
+        Truck Remotes also prints CR2032. The FCC grant page does not name the cell."
+      sourceIds:
+        - nck-gq43
+        - ctr-gq43
+    frequency:
+      status: verified
+      text: "315 MHz"
+      note: "The grant lists 315.0–315.0 MHz. Both sellers also print 315 MHz."
+      sourceIds:
+        - fcc-gq43
+        - ctr-gq43
+        - nck-gq43
+    buttons:
+      count: 3
+      sourceIds:
+        - ctr-gq43
+        - nck-gq43
+    sellerClaims:
+      - text: "Car and Truck Remotes says on-board programming is no, and that a
+          locksmith must program the remote. The service pages opened for this
+          truck print a switch sequence that does not use a scan tool."
+        sourceIds:
+          - ctr-gq43
+          - tundra-2007
+priceRanges:
+  - channel: online-diy
+    status: verified
+    lowUsd: 24.95
+    highUsd: 24.95
+    note: "Car and Truck Remotes, Vernon Hills, Illinois, lists this aftermarket
+      remote at $24.95. Product data on November 19, 2026 showed it available.
+      The shop currency is USD. The listing says the price is one remote, that
+      the seller does not cut or program it, and that it fits a 2007-2018 Tundra
+      with a turn-the-key ignition. That year span is wider than this page."
+    heroNote: "Remote only. The seller does not cut or program it."
+    variantId: gq43vt20t-3-button
+    sourceIds:
+      - ctr-gq43
+    currency: USD
+    retailer: Car and Truck Remotes
+    checkedAt: "2026-11-19"
+    stock: in-stock
+  - channel: online-diy
+    status: verified
+    lowUsd: 29.94
+    highUsd: 29.94
+    note: "NorthCoast Keyless lists a lightly used 3-button remote, FCC GQ43VT20T,
+      at $29.94. The store API on November 19, 2026 reported that variation in
+      stock, currency USD. The listing includes a battery and says a locksmith
+      must program it. Fitment on the page runs through 2018, past this page."
+    variantId: gq43vt20t-3-button
+    sourceIds:
+      - nck-gq43
+    currency: USD
+    retailer: NorthCoast Keyless
+    checkedAt: "2026-11-19"
+    stock: in-stock
+  - channel: online-diy
+    status: verified
+    lowUsd: 49.94
+    highUsd: 49.94
+    note: "The same NorthCoast Keyless listing prices a new remote at $49.94. The
+      store API on November 19, 2026 reported that variation out of stock,
+      currency USD. It is the remote, not a programmed key."
+    variantId: gq43vt20t-3-button
+    sourceIds:
+      - nck-gq43
+    currency: USD
+    retailer: NorthCoast Keyless
+    checkedAt: "2026-11-19"
+    stock: out-of-stock
+  - channel: online-diy
+    status: verified
+    lowUsd: 39.95
+    highUsd: 39.95
+    note: "Car and Truck Remotes lists a Strattec 5938208 remote, same FCC ID and
+      the same Toyota part numbers, at $39.95. Product data on November 19, 2026
+      showed it unavailable. The shop currency is USD. The price is one remote.
+      The seller does not cut or program it."
+    variantId: gq43vt20t-3-button
+    sourceIds:
+      - ctr-strattec
+    currency: USD
+    retailer: Car and Truck Remotes
+    checkedAt: "2026-11-19"
+    stock: out-of-stock
+  - channel: dealer
+    status: unverified
+    note: "No Toyota dealer price for a 2007-2011 Tundra remote, installed or
+      parts-only, was found. The service pages do show a Techstream registration
+      path, which is the shop method, but they do not print a price."
+    currency: USD
+    retailer: none
+    checkedAt: "2026-11-19"
+    stock: unknown
+    sourceIds:
+      - tundra-2011
+  - channel: locksmith
+    status: unverified
+    note: "No locksmith posted a dollar amount for programming this Tundra remote.
+      Car and Truck Remotes says a locksmith must program the remote it sells,
+      and that those fees are extra, without stating the fee."
+    currency: USD
+    retailer: none
+    checkedAt: "2026-11-19"
+    stock: unknown
+    sourceIds:
+      - ctr-gq43
+shopLinks:
+  - retailer: carandtruckremotes
+    url: "https://www.carandtruckremotes.com/products/aftermarket-remote-for-toyota-pn-89742-ae010-89742-ae011"
+    label: "Car and Truck Remotes 3-button remote, FCC GQ43VT20T"
+  - retailer: northcoastkeyless
+    url: "https://northcoastkeyless.com/product/toyota-tundra-3-button-key-fob-remote-fcc-gq43vt20t-p-n-89742-ae010-89742-ae011/"
+    label: "NorthCoast Keyless 3-button Tundra remote, FCC GQ43VT20T"
+unverified:
+  - "A Toyota parts-fiche number that is limited to 2007-2011. Sellers list
+    89742-AE010 and 89742-AE011 together across a longer year span."
+  - "The ignition-key blade and whether that key has a transponder. The switch
+    procedure uses the cylinder, and no Toyota key-code page was opened."
+  - "Whether every 2007-2011 cab and engine uses the same switch section. The
+    pages opened were a 2007 4.7L 4WD, a 2009 4.7L 4WD, and a 2011 5.7L 4WD."
+  - "2012 and 2013 Tundra remote registration. Those manuals were not opened, so
+    this page does not cover them."
+  - "A dealer or locksmith price, in any region."
+  - "Which 2007-2011 trucks were built without keyless entry."
+troubleshooting:
+  - id: no-mode-answer
+    title: "The locks do not answer after the ignition count"
+    text: "The 2007 figure and the service text say zero, four, or six or more
+      ON-to-OFF cycles get no lock response. The count has to be one, two,
+      three, or five, about one second apart, and the earlier door and key steps
+      have to stay inside their time limits."
+    sourceIds:
+      - tundra-2007
+  - id: two-cycles
+    title: "The locks cycle twice after the remote button"
+    text: "Two lock-unlock cycles mean that remote was not stored. The pages say
+      to start the whole sequence again. One cycle means it was stored."
+    sourceIds:
+      - tundra-2007
+  - id: rewrite-erases
+    title: "A working remote stopped working"
+    text: "Rewrite mode erases every code already stored. Add mode erases the
+      oldest code once the truck is asked to hold more than four. Program every
+      remote you want to keep in the same session."
+    sourceIds:
+      - tundra-2007
+      - tundra-2009
+ignitionKey:
+  status: unverified
+  note: "The switch procedure requires a key in the ignition cylinder. No source
+    opened here names the blade or says whether that key has a transponder chip.
+    This page does not program an immobilizer."
+sources:
+  - id: tundra-2007
+    title: "2007 Toyota Tundra wireless door lock registration"
+    url: "https://lemon-manuals.la/Toyota/2007/Tundra%20Base%2C%204.7%20T%2C%204WD/Repair%20and%20Diagnosis/Body%20%26%20Frame/Door%20Locks/Door%20Lock/Wireless%20Door%20Lock%20Control%20System/Registration/"
+    publisher: "Lemon Manuals reproduction of a 2007 Toyota Tundra service page, 4.7L 4WD"
+    accessed: "2026-11-19"
+    note: "Prints switch operation with no scan tool, and a separate Intelligent
+      Tester or Techstream path. The mode figure shows one ON-OFF cycle for add,
+      two for rewrite, three for confirmation, and five for prohibition."
+  - id: tundra-2009
+    title: "2009 Toyota Tundra wireless door lock registration"
+    url: "https://charm.li/Toyota/2009/Tundra%204WD%20V8-4.7L%20%282UZ-FE%29/Repair%20and%20Diagnosis/Body%20and%20Frame/Locks/Keyless%20Entry/Testing%20and%20Inspection/Programming%20and%20Relearning/Registration/"
+    publisher: "Operation CHARM reproduction of a 2009 Toyota Tundra service page, 4.7L 4WD"
+    accessed: "2026-11-19"
+    note: "The switch-operation section matches the 2007 page, including the
+      single Lock or Unlock press and a four-code limit."
+  - id: tundra-2011
+    title: "2011 Toyota Tundra wireless door lock registration"
+    url: "https://lemon-manuals.gy/Toyota/2011/Tundra%204WD%20V8-5.7L%20%283UR-FE%29/Repair%20and%20Diagnosis/Body%20and%20Frame/Locks/Keyless%20Entry/Testing%20and%20Inspection/Programming%20and%20Relearning/Registration/"
+    publisher: "Lemon Manuals reproduction of a 2011 Toyota Tundra service page, 5.7L 4WD"
+    accessed: "2026-11-19"
+    note: "The switch-operation section is still present beside the Techstream
+      path. Four recognition codes. Confirmation cycles once per stored code, or
+      five times when none are stored."
+  - id: fcc-gq43
+    title: "FCC ID GQ43VT20T equipment authorization"
+    url: "https://fccid.io/GQ43VT20T"
+    publisher: "FCCID.io reproduction of the FCC grant to TRW Inc."
+    accessed: "2026-11-19"
+    note: "Automotive remote control. 315.0 MHz under rule 15.231. Original grant
+      September 30, 2002. The grant page does not name the battery."
+  - id: ctr-gq43
+    title: "Aftermarket Toyota remote, parts 89742-AE010 and 89742-AE011"
+    url: "https://www.carandtruckremotes.com/products/aftermarket-remote-for-toyota-pn-89742-ae010-89742-ae011"
+    publisher: "Car and Truck Remotes"
+    accessed: "2026-11-19"
+    note: "Product JSON on November 19, 2026: available true, price 2495 cents,
+      compare-at 19000. Shop meta.json currency USD, country US, city Vernon
+      Hills, Illinois. Description says one remote, on-board programming no,
+      battery CR2032, 3 buttons, and fitment includes Tundra 2007-2018."
+  - id: ctr-strattec
+    title: "Strattec 5938208 Toyota remote, FCC GQ43VT20T"
+    url: "https://www.carandtruckremotes.com/products/strattec-5938208-toyota-keyless-entry-remote"
+    publisher: "Car and Truck Remotes"
+    accessed: "2026-11-19"
+    note: "Product JSON on November 19, 2026: available false, price 3995 cents,
+      compare-at 13000. Same shop currency, USD."
+  - id: nck-gq43
+    title: "2007-2018 Toyota Tundra 3-button remote, FCC GQ43VT20T"
+    url: "https://northcoastkeyless.com/product/toyota-tundra-3-button-key-fob-remote-fcc-gq43vt20t-p-n-89742-ae010-89742-ae011/"
+    publisher: "NorthCoast Keyless"
+    accessed: "2026-11-19"
+    note: "Store API on November 19, 2026, currency USD. Lightly used variation
+      2994 cents and in stock. New variation 4994 cents and out of stock. The
+      page lists battery CR2032 and parts 89742-AE010, 89742-AE011, and
+      89742-AE040."
+programmingFacts:
+  onboardStatus: yes
+  minimumWorkingKeys: 0
+  pushButtonProcedure: unknown
+  sourceIds:
+    - tundra-2007
+    - tundra-2009
+    - tundra-2011
+  ignitionKeyInCylinder: required
