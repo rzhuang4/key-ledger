@@ -195,7 +195,7 @@ const en: FeatureCopy = {
   checkedOn: 'Checked {date}',
   noRetailer: 'No sourced retailer',
   kbbMeta: 'Kelley Blue Book · USD · article July 14, 2025 · accessed November 19, 2026 · not a shop listing, so no stock status.',
-  sapPackNote: 'Price assumed for 1 remote; pack size not confirmed (SKU ends in -(2)).',
+  sapPackNote: 'Amazon.ca lists this package as 1 complete remote key.',
 };
 
 type Pack = Record<LocaleCode, FeatureCopy>;

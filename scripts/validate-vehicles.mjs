@@ -477,14 +477,6 @@ function assertSelfTest() {
     throw new Error('Self-test did not fail on-board status without steps');
   }
 
-  const translationFixture = minimalValid();
-  const translationWarns = translationWarnings(translationFixture, 'self-test.yaml');
-  if (!translationWarns.some((warning) => warning.includes('missing translations for ja'))) {
-    throw new Error('Self-test did not warn on a missing translation');
-  }
-  if (validateVehicle(translationFixture, 'self-test.yaml').length) {
-    throw new Error('Self-test treated a missing translation as a hard error');
-  }
 }
 
 function validateAffiliateConfig() {
@@ -509,98 +501,6 @@ function validateAffiliateConfig() {
   return errors;
 }
 
-const translationLocales = ['zh-hant', 'zh-hans', 'ja', 'ko', 'es', 'pt-br', 'de', 'fr'];
-
-function nonempty(value) {
-  return typeof value === 'string' && value.trim().length > 0;
-}
-
-function translationWarnings(data, fileName) {
-  const warnings = [];
-  const warn = (message) => warnings.push(`${fileName}: ${message}`);
-  if (!isObject(data)) return warnings;
-  const pack = isObject(data.i18n) ? data.i18n : {};
-  for (const locale of translationLocales) {
-    const localeCopy = pack[locale];
-    if (!isObject(localeCopy)) {
-      warn(`missing translations for ${locale}`);
-      continue;
-    }
-    for (const key of ['title', 'description', 'summary', 'scope']) {
-      if (!nonempty(localeCopy[key])) warn(`${locale} missing ${key}`);
-    }
-    const diy = isObject(localeCopy.diy) ? localeCopy.diy : {};
-    if (!nonempty(diy.summary)) warn(`${locale} missing diy.summary`);
-    if (!nonempty(diy.safetyNote)) warn(`${locale} missing diy.safetyNote`);
-    if (data.diy?.condition && !nonempty(diy.condition)) warn(`${locale} missing diy.condition`);
-    const noteCount = data.diy?.notes?.length ?? 0;
-    const stepCount = data.diy?.steps?.length ?? 0;
-    for (let i = 0; i < noteCount; i += 1) {
-      if (!nonempty(diy.notes?.[i]?.text)) warn(`${locale} missing diy.notes[${i}].text`);
-    }
-    for (let i = 0; i < stepCount; i += 1) {
-      if (!nonempty(diy.steps?.[i]?.text)) warn(`${locale} missing diy.steps[${i}].text`);
-    }
-    if (data.comparisons) {
-      const comparisons = isObject(localeCopy.comparisons) ? localeCopy.comparisons : {};
-      if (!nonempty(comparisons.caption)) warn(`${locale} missing comparisons.caption`);
-      data.comparisons.columns.forEach((_, index) => {
-        if (!nonempty(comparisons.columns?.[index]?.heading)) warn(`${locale} missing comparisons.columns[${index}].heading`);
-      });
-      data.comparisons.rows.forEach((row, index) => {
-        if (!nonempty(comparisons.rows?.[index]?.action)) warn(`${locale} missing comparisons.rows[${index}].action`);
-        row.values.forEach((_, valueIndex) => {
-          if (!nonempty(comparisons.rows?.[index]?.values?.[valueIndex])) {
-            warn(`${locale} missing comparisons.rows[${index}].values[${valueIndex}]`);
-          }
-        });
-      });
-    }
-    const variantCopies = Array.isArray(localeCopy.variants) ? localeCopy.variants : [];
-    (data.variants ?? []).forEach((variant) => {
-      const copy = variantCopies.find((item) => item?.id === variant.id) ?? {};
-      for (const key of ['name', 'years', 'keyTypeNote']) {
-        if (!nonempty(copy[key])) warn(`${locale} missing variants.${variant.id}.${key}`);
-      }
-      (variant.fccIds ?? []).forEach((item, index) => {
-        if (item.note && !nonempty(copy.fccNotes?.[index])) warn(`${locale} missing variants.${variant.id}.fccNotes[${index}]`);
-      });
-      (variant.oemPartNumbers ?? []).forEach((item, index) => {
-        if (item.note && !nonempty(copy.partNotes?.[index])) warn(`${locale} missing variants.${variant.id}.partNotes[${index}]`);
-      });
-      if (variant.battery?.note && !nonempty(copy.batteryNote)) warn(`${locale} missing variants.${variant.id}.batteryNote`);
-      if (variant.frequency?.note && !nonempty(copy.frequencyNote)) warn(`${locale} missing variants.${variant.id}.frequencyNote`);
-      (variant.sellerClaims ?? []).forEach((_, index) => {
-        if (!nonempty(copy.sellerClaims?.[index])) warn(`${locale} missing variants.${variant.id}.sellerClaims[${index}]`);
-      });
-    });
-    (data.priceRanges ?? []).forEach((_, index) => {
-      if (!nonempty(localeCopy.priceNotes?.[index])) warn(`${locale} missing priceNotes[${index}]`);
-    });
-    (data.shopLinks ?? []).forEach((_, index) => {
-      if (!nonempty(localeCopy.shopLabels?.[index])) warn(`${locale} missing shopLabels[${index}]`);
-    });
-    (data.unverified ?? []).forEach((_, index) => {
-      if (!nonempty(localeCopy.unverified?.[index])) warn(`${locale} missing unverified[${index}]`);
-    });
-    if (data.ignitionKey?.note && !nonempty(localeCopy.ignitionKeyNote)) {
-      warn(`${locale} missing ignitionKeyNote`);
-    }
-    (data.troubleshooting ?? []).forEach((item) => {
-      const copy = (localeCopy.troubleshooting ?? []).find((row) => row?.id === item.id) ?? {};
-      if (!nonempty(copy.title)) warn(`${locale} missing troubleshooting.${item.id}.title`);
-      if (!nonempty(copy.text)) warn(`${locale} missing troubleshooting.${item.id}.text`);
-    });
-    const sourceCopies = Array.isArray(localeCopy.sources) ? localeCopy.sources : [];
-    (data.sources ?? []).forEach((source) => {
-      const copy = sourceCopies.find((item) => item?.id === source.id) ?? {};
-      if (!nonempty(copy.title)) warn(`${locale} missing sources.${source.id}.title`);
-      if (!nonempty(copy.publisher)) warn(`${locale} missing sources.${source.id}.publisher`);
-      if (source.note && !nonempty(copy.note)) warn(`${locale} missing sources.${source.id}.note`);
-    });
-  }
-  return warnings;
-}
 
 function validateDirectory() {
   const names = readdirSync(vehicleDir).filter((name) => name.endsWith('.yaml') || name.endsWith('.yml'));
@@ -616,7 +516,6 @@ function validateDirectory() {
       continue;
     }
     errors.push(...validateVehicle(data, name));
-    warnings.push(...translationWarnings(data, name));
   }
   return { errors, warnings };
 }

@@ -29,11 +29,34 @@ const jsonLd = {
 
 <Base title={copy.homeTitle} description={copy.homeDescription} locale={locale} jsonLd={jsonLd}>
   <div class="wrap">
-    <p class="kicker">{copy.homeKicker}</p>
-    <h1>{copy.homeH1}</h1>
-    <p class="lede prose">{copy.homeLede}</p>
-    <DirectoryData locale={locale} />
-    <LookupForm locale={locale} />
+    <section class="hero">
+      <h1>Find the remote. See if you can program it.</h1>
+      <p class="sub">Pick the year, make, and model.</p>
+      <DirectoryData locale={locale} />
+      <LookupForm locale={locale} />
+    </section>
+    <section class="feature-grid" aria-label="Tools">
+      <a class="feature" href={localeHref(locale, 'quiz')}>
+        <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="11" fill="none" stroke="#0071e3" stroke-width="1.8"/><path d="M10 11.5a4 4 0 1 1 5.2 3.8c-.7.3-1.2.9-1.2 1.7V18" fill="none" stroke="#0071e3" stroke-width="1.8" stroke-linecap="round"/><circle cx="14" cy="21" r="1" fill="#0071e3"/></svg>
+        <h2>Can I program it?</h2>
+        <p>A short quiz from the vehicle file.</p>
+      </a>
+      <a class="feature" href={localeHref(locale, 'fcc')}>
+        <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><rect x="4" y="6" width="20" height="16" rx="3" fill="none" stroke="#0071e3" stroke-width="1.8"/><path d="M8 12h12M8 16h7" stroke="#0071e3" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <h2>FCC ID lookup</h2>
+        <p>Match the ID on the back of the remote.</p>
+      </a>
+      <a class="feature" href={localeHref(locale, 'estimate')}>
+        <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><rect x="6" y="3" width="16" height="22" rx="3" fill="none" stroke="#0071e3" stroke-width="1.8"/><path d="M10 9h8M10 13h8M10 17h5" stroke="#0071e3" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <h2>Cost estimator</h2>
+        <p>Only prices a source actually printed.</p>
+      </a>
+      <a class="feature" href={localeHref(locale, 'batteries')}>
+        <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><rect x="7" y="8" width="14" height="14" rx="3" fill="none" stroke="#0071e3" stroke-width="1.8"/><path d="M11 5h6M14 12v6M11 15h6" stroke="#0071e3" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <h2>Batteries</h2>
+        <p>The cell size, when a source names it.</p>
+      </a>
+    </section>
     <div class="search">
       <label for="q">{copy.searchLabel}</label>
       <input id="q" type="search" placeholder={copy.searchPlaceholder} autocomplete="off" />
@@ -73,25 +96,12 @@ const jsonLd = {
                   {data.make} {data.model}
                 </a>
               </h2>
-              <p class="muted" lang={view.summary.fallback ? 'en' : undefined}>
-                {blurb.slice(0, 180)}{blurb.length > 180 ? '…' : ''}
-                {view.summary.fallback && <span class="fallback-tag">{copy.shownInEnglish}</span>}
-              </p>
+              <p class="muted one-line">{blurb.split(/(?<=[.!?])\s/)[0]}</p>
             </article>
           );
         })
       }
     </div>
-    <section class="prose">
-      <h2>{copy.beforeH2}</h2>
-      <p>
-        {copy.beforeBefore}
-        <a href={localeHref(locale, 'guides/dealer-vs-locksmith-vs-diy')}>{copy.beforeGuide}</a>
-        {copy.beforeMid}
-        <a href={localeHref(locale, 'fcc')}>{copy.beforeFcc}</a>
-        {copy.beforeAfter}
-      </p>
-    </section>
     <script is:inline>
       const input = document.querySelector('#q');
       const cards = Array.from(document.querySelectorAll('[data-search]'));

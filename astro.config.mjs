@@ -22,30 +22,6 @@ export default defineConfig({
   base: normalizeBase(process.env.BASE_PATH),
   trailingSlash: 'always',
   integrations: [
-    sitemap({
-      i18n: {
-        defaultLocale: 'en',
-        locales: {
-          en: 'en',
-          'zh-hant': 'zh-Hant',
-          'zh-hans': 'zh-Hans',
-          ja: 'ja',
-          ko: 'ko',
-          es: 'es',
-          'pt-br': 'pt-BR',
-          de: 'de',
-          fr: 'fr',
-        },
-      },
-      serialize(item) {
-        if (item.links?.length) {
-          const english = item.links.find((link) => link.lang === 'en');
-          if (english && !item.links.some((link) => link.lang === 'x-default')) {
-            item.links.push({ lang: 'x-default', url: english.url });
-          }
-        }
-        return item;
-      },
-    }),
+    sitemap(),
   ],
 });

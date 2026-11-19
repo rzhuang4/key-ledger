@@ -1,13 +1,5 @@
 {
   "locales": [
-    { "code": "en", "htmlLang": "en", "hreflang": "en", "label": "English", "dateLocale": "en-US" },
-    { "code": "zh-hant", "htmlLang": "zh-Hant", "hreflang": "zh-Hant", "label": "繁體中文", "dateLocale": "zh-TW" },
-    { "code": "zh-hans", "htmlLang": "zh-Hans", "hreflang": "zh-Hans", "label": "简体中文", "dateLocale": "zh-CN" },
-    { "code": "ja", "htmlLang": "ja", "hreflang": "ja", "label": "日本語", "dateLocale": "ja-JP" },
-    { "code": "ko", "htmlLang": "ko", "hreflang": "ko", "label": "한국어", "dateLocale": "ko-KR" },
-    { "code": "es", "htmlLang": "es", "hreflang": "es", "label": "Español", "dateLocale": "es" },
-    { "code": "pt-br", "htmlLang": "pt-BR", "hreflang": "pt-BR", "label": "Português (Brasil)", "dateLocale": "pt-BR" },
-    { "code": "de", "htmlLang": "de", "hreflang": "de", "label": "Deutsch", "dateLocale": "de-DE" },
-    { "code": "fr", "htmlLang": "fr", "hreflang": "fr", "label": "Français", "dateLocale": "fr-FR" }
+    { "code": "en", "htmlLang": "en", "hreflang": "en", "label": "English", "dateLocale": "en-US" }
   ]
 }

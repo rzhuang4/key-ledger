@@ -114,6 +114,7 @@
       message.hidden = true;
       go.hidden = false;
       go.href = localePrefix + model.value + '/';
+      window.location.assign(go.href);
     });
   }
 

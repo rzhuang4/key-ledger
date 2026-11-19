@@ -95,6 +95,28 @@ if (view.diy.steps.length) {
   });
 }
 const h1 = `${data.yearStart === data.yearEnd ? data.yearStart : `${data.yearStart}–${data.yearEnd}`} ${data.make} ${data.model}`;
+const programAnswer =
+  data.diy.status === 'yes' ? 'Yes' :
+  data.diy.status === 'needs-tool' ? 'Needs a tool' :
+  'Locksmith or dealer';
+const inStockOffers = data.priceRanges
+  .filter((row) => row.channel === 'online-diy' && row.status === 'verified' && row.stock === 'in-stock' && row.currency === 'USD' && row.lowUsd != null)
+  .slice()
+  .sort((a, b) => (a.lowUsd ?? 0) - (b.lowUsd ?? 0));
+const cheapest = inStockOffers[0];
+const shopFigure = data.priceRanges.find((row) =>
+  (row.channel === 'dealer' || row.channel === 'locksmith') && row.status === 'verified' && row.currency === 'USD' && row.lowUsd != null,
+);
+const primary = data.variants[0];
+const buyFcc = primary.fccIds.find((item) => item.role === 'oem')?.id ?? primary.fccIds[0]?.id ?? 'Unknown';
+const buyPart = primary.oemPartNumbers[0]?.number ?? 'Unknown';
+const stockWord = cheapest?.stock === 'in-stock' ? 'in stock' : cheapest?.stock === 'out-of-stock' ? 'out of stock' : 'stock unknown';
+function leadSentence(text: string) {
+  const end = text.search(/[.!?](\s|$)/);
+  const sentence = end === -1 ? text : text.slice(0, end + 1);
+  if (sentence.length <= 92) return sentence;
+  return `${sentence.slice(0, 88).trim()}…`;
+}
 ---
 
 <Base title={`${view.title.text} · ${copy.siteName}`} description={view.description.text} locale={locale} jsonLd={jsonLd}>
@@ -107,14 +129,110 @@ const h1 = `${data.yearStart === data.yearEnd ? data.yearStart : `${data.yearSta
         <li>{data.model} {data.yearSlug}</li>
       </ol>
     </nav>
-    <p class="kicker">{data.make} · {copy.usMarket}</p>
+    <p class="kicker">{data.make}</p>
     <h1>{h1}</h1>
-    <p class="muted no-print">{copy.checked.replace('{date}', formatReviewed(data.reviewed, info.dateLocale))} {copy.matchFcc}</p>
-    <p class="summary prose no-print"><T value={view.summary} label={copy.shownInEnglish} /></p>
-    <p class="prose no-print"><T value={view.scope} label={copy.shownInEnglish} /></p>
+    <section class="tiles" aria-label="Short answers">
+      <article class="tile">
+        <p class="kicker">Program it yourself?</p>
+        <strong>{programAnswer}</strong>
+      </article>
+      <article class="tile">
+        <p class="kicker">Buy</p>
+        <strong>{buyFcc} · {buyPart}</strong>
+      </article>
+      <article class="tile">
+        <p class="kicker">Price</p>
+        <strong>
+          {cheapest ? `From $${cheapest.lowUsd?.toFixed(2)}` : 'Not verified'}
+        </strong>
+        {cheapest && <p class="muted">{cheapest.retailer}, {stockWord}</p>}
+      </article>
+    </section>
 
-    <section>
-      <h2>{copy.canYou}</h2>
+    <section class="vehicle-block price-card">
+      <h2>{copy.pricesH2}</h2>
+      <ul class="price-rows">
+        {
+          view.priceRanges.map((row) => (
+            <li>
+              <strong>{channelLabel(row.channel)}</strong>
+              <PriceLine locale={locale} row={row} unverifiedLabel={copy.unverifiedChip} />
+            </li>
+          ))
+        }
+      </ul>
+      <details class="fold">
+        <summary>What each price includes</summary>
+        <ul class="clean">
+          {view.priceRanges.map((row) => (
+            <li>
+              <strong>{channelLabel(row.channel)}.</strong>{' '}
+              <T value={row.note} label={copy.shownInEnglish} />
+              {row.sourceIds && row.sourceIds.length > 0 && <Cites ids={row.sourceIds} sources={sourcesForCites} />}
+            </li>
+          ))}
+        </ul>
+      </details>
+    </section>
+
+    <div class="callout danger">
+      <strong>{copy.safety}</strong> {leadSentence(view.diy.safetyNote.text)}
+      {
+        view.diy.safetyNote.text.length > leadSentence(view.diy.safetyNote.text).length && (
+          <details class="fold">
+            <summary>Full safety note</summary>
+            <p><T value={view.diy.safetyNote} label={copy.shownInEnglish} /></p>
+          </details>
+        )
+      }
+    </div>
+    <p class="no-print">
+      <button type="button" class="text-button" onclick="window.print()">{feat.printSteps}</button>
+    </p>
+    {
+      view.diy.steps.length > 0 ? (
+        <ol class="steps">
+          {view.diy.steps.map((step) => {
+            const full = step.text.text;
+            const short = leadSentence(full);
+            const rest = short.endsWith('…') ? full : full.slice(short.length).trim();
+            return (
+              <li>
+                {short}
+                {rest && (
+                  <details>
+                    <summary>More</summary>
+                    <p><T value={step.text} label={copy.shownInEnglish} /> <Cites ids={step.sourceIds} sources={sourcesForCites} /></p>
+                  </details>
+                )}
+                {!rest && <Cites ids={step.sourceIds} sources={sourcesForCites} />}
+              </li>
+            );
+          })}
+        </ol>
+      ) : (
+        <p><T value={view.diy.summary} label={copy.shownInEnglish} /></p>
+      )
+    }
+    {
+      view.troubleshooting.length > 0 && (
+        <section>
+          <h2>{feat.troubleH2}</h2>
+          {view.troubleshooting.map((item) => (
+            <details class="fold">
+              <summary><T value={item.title} label={copy.shownInEnglish} /></summary>
+              <p>
+                <T value={item.text} label={copy.shownInEnglish} />
+                <Cites ids={item.sourceIds} sources={sourcesForCites} />
+              </p>
+            </details>
+          ))}
+        </section>
+      )
+    }
+
+    <details class="fold">
+      <summary>About this vehicle</summary>
       <p>
         <span class:list={['status', data.diy.status]}>
           {data.diy.status === 'yes' ? copy.diyYes : data.diy.status === 'no' ? copy.diyNo : copy.diyTool}
@@ -179,47 +297,18 @@ const h1 = `${data.yearStart === data.yearEnd ? data.yearStart : `${data.yearSta
           </>
         )
       }
-      <p class="no-print">
-        <button type="button" class="text-button" onclick="window.print()">{feat.printSteps}</button>
-        <span class="muted"> {feat.printNote}</span>
-      </p>
-      {
-        view.diy.steps.length > 0 && (
-          <>
-            <h3>{copy.onBoardSteps}</h3>
-            <ol class="steps">
-              {view.diy.steps.map((step) => (
-                <li>
-                  <T value={step.text} label={copy.shownInEnglish} /> <Cites ids={step.sourceIds} sources={sourcesForCites} />
-                </li>
-              ))}
-            </ol>
-          </>
-        )
-      }
-      {
-        view.troubleshooting.length > 0 && (
-          <>
-            <h3>{feat.troubleH2}</h3>
-            {view.troubleshooting.map((item) => (
-              <article>
-                <h4><T value={item.title} label={copy.shownInEnglish} /></h4>
-                <p>
-                  <T value={item.text} label={copy.shownInEnglish} />
-                  <Cites ids={item.sourceIds} sources={sourcesForCites} />
-                </p>
-              </article>
-            ))}
-          </>
-        )
-      }
-    </section>
+      <p class="prose"><T value={view.summary} label={copy.shownInEnglish} /></p>
+      <p class="prose"><T value={view.scope} label={copy.shownInEnglish} /></p>
+    </details>
 
-    <DirectoryData locale={locale} />
-    <QuizForm locale={locale} id={data.modelSlug} facts={quizFacts} />
+    <details class="fold no-print">
+      <summary>Can I program it myself?</summary>
+      <DirectoryData locale={locale} />
+      <QuizForm locale={locale} id={data.modelSlug} facts={quizFacts} />
+    </details>
 
-    <section class="no-print">
-      <h2>{feat.buyH2}</h2>
+    <details class="fold no-print">
+      <summary>{feat.buyH2}</summary>
       {
         view.variants.map((variant) => {
           const oemIds = variant.fccIds.filter((item) => item.role === 'oem').map((item) => item.id);
@@ -242,10 +331,10 @@ const h1 = `${data.yearStart === data.yearEnd ? data.yearStart : `${data.yearSta
         <a href="https://www.reddit.com/r/Locksmith/comments/1crnjt1/do_nonoem_replacement_key_fobs_work/" rel="noopener noreferrer">{feat.redditThread}</a>
       </p>
       <p>{feat.locksmithRefuse}</p>
-    </section>
+    </details>
 
-    <section class="no-print">
-      <h2>{copy.keysH2}</h2>
+    <details class="fold">
+      <summary>{copy.keysH2}</summary>
       {
         view.variants.map((variant) => (
           <article class="vehicle-block">
@@ -356,44 +445,12 @@ const h1 = `${data.yearStart === data.yearEnd ? data.yearStart : `${data.yearSta
           </article>
         ))
       }
-    </section>
-
-    <section class="no-print">
-      <h2>{copy.pricesH2}</h2>
-      <p class="muted">{copy.priceDisclaimer}</p>
-      <div class="table-scroll">
-        <table>
-          <thead>
-            <tr>
-              <th>{copy.colChannel}</th>
-              <th>{copy.colPrice}</th>
-              <th>{copy.colCovers}</th>
-            </tr>
-          </thead>
-          <tbody>
-            {
-              view.priceRanges.map((row) => (
-                <tr>
-                  <th scope="row">{channelLabel(row.channel)}</th>
-                  <td>
-                    <PriceLine locale={locale} row={row} unverifiedLabel={copy.unverifiedChip} />
-                  </td>
-                  <td>
-                    <T value={row.note} label={copy.shownInEnglish} />
-                    {row.sourceIds && row.sourceIds.length > 0 && <Cites ids={row.sourceIds} sources={sourcesForCites} />}
-                  </td>
-                </tr>
-              ))
-            }
-          </tbody>
-        </table>
-      </div>
-    </section>
+    </details>
 
     {
       view.shopLinks.length > 0 && (
-        <section class="no-print">
-          <h2>{copy.shopsH2}</h2>
+        <details class="fold no-print">
+          <summary>{copy.shopsH2}</summary>
           <ul class="clean">
             {view.shopLinks.map((link) => {
               const shop = shopLink(link.retailer, link.url);
@@ -405,12 +462,12 @@ const h1 = `${data.yearStart === data.yearEnd ? data.yearStart : `${data.yearSta
               );
             })}
           </ul>
-        </section>
+        </details>
       )
     }
 
-    <section class="no-print">
-      <h2>{copy.unverifiedH2}</h2>
+    <details class="fold">
+      <summary>{copy.unverifiedH2}</summary>
       {
         view.unverified.length === 0 ? (
           <p>{copy.noGaps}</p>
@@ -420,10 +477,17 @@ const h1 = `${data.yearStart === data.yearEnd ? data.yearStart : `${data.yearSta
           </ul>
         )
       }
-    </section>
+    </details>
 
-    <section>
-      <h2>{copy.sourcesH2}</h2>
+    <details class="fold">
+      <summary>How we checked</summary>
+      <p>
+        Stock and prices were read from each store's product data on November 19, 2026, not from a Sold out label drawn by the page theme.
+        Only prices marked as US dollars are shown. The source list has the page addresses and the raw checks.
+      </p>
+    </details>
+    <details class="fold">
+      <summary>{copy.sourcesH2}</summary>
       <ol class="sources">
         {
           view.sources.map((source) => (
@@ -437,6 +501,6 @@ const h1 = `${data.yearStart === data.yearEnd ? data.yearStart : `${data.yearSta
           ))
         }
       </ol>
-    </section>
+    </details>
   </div>
 </Base>

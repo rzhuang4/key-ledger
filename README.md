@@ -49,37 +49,13 @@ Build output folder: **`dist/`**. Do not commit it. A host should run `npm run b
 8. Add `sources`. Each source needs `id`, `title`, `url` (http or https), `publisher`, and `accessed`. Every `sourceIds` / `sourceId` in the file must match one, and every source must be cited at least once.
 9. Add `shopLinks` (or an empty list). `retailer` must be a key in `src/config/affiliates.json`, and `url` must start with that retailer's `baseUrl`.
 10. Add `unverified`: a list of strings for facts you could not pin down. Use an empty list only when you truly have nothing open.
-11. Add translations in the same file under `i18n`, keyed by locale code: `zh-hant`, `zh-hans`, `ja`, `ko`, `es`, `pt-br`, `de`, `fr`. Do not copy FCC IDs, part numbers, prices, source URLs, or access dates into those blocks. They stay in the English fields and are shared. Translate only prose:
-    - `title`, `description`, `summary`, `scope`
-    - `diy.summary`, `diy.condition` (if the English file has one), `diy.safetyNote` (must say a wrong sequence can require a locksmith, in that language)
-    - `diy.notes[].text` and `diy.steps[].text`, in the same order as English
-    - `comparisons.caption`, `comparisons.columns[].heading`, `comparisons.rows[].action`, and `comparisons.rows[].values[]`, if present
-    - each variant, matched by `id`: `name`, `years`, `keyTypeNote`, `fccNotes[]`, `partNotes[]`, `batteryNote`, `frequencyNote`, `sellerClaims[]`
-    - `priceNotes[]`, `shopLabels[]`, `unverified[]`, in the same order as English
-    - `ignitionKeyNote` when `ignitionKey` is present
-    - `troubleshooting[]` matched by `id`: `title` and `text`, when that list is present
-    - `sources[]` matched by `id`: `title`, `publisher`, and `note` when the English source has a note
-12. If a translation string is missing, the page shows the English sentence with a visible “English” label. `npm run check` prints a warning for each gap and still exits 0. It exits 1 only when required facts or sources are missing.
-13. Run `npm run check`, then `npm run build`. English is at `/{makeSlug}/{modelSlug}/{yearSlug}/`. Other languages use the same path with a prefix, for example `/ja/chevrolet/silverado-1500/2003-2006/`. The FCC index and sitemap rebuild for every locale. No other registration step.
+11. Run `npm run check`, then `npm run build`. Pages are English only, at `/{makeSlug}/{modelSlug}/{yearSlug}/`. No other registration step.
 
-Do not guess an FCC ID, part number, programming step, or price. Do not add reviews, testimonials, star ratings, or review schema. Do not invent a fact in a translation that is not in the English text.
+Do not guess an FCC ID, part number, programming step, or price. Do not add reviews, testimonials, star ratings, or review schema.
 
-## Languages
+## Language
 
-English is the default and has no prefix. Other locales:
-
-| URL prefix | Language | `html lang` / hreflang |
-| --- | --- | --- |
-| `/zh-hant/` | Traditional Chinese | `zh-Hant` |
-| `/zh-hans/` | Simplified Chinese | `zh-Hans` |
-| `/ja/` | Japanese | `ja` |
-| `/ko/` | Korean | `ko` |
-| `/es/` | Spanish | `es` |
-| `/pt-br/` | Brazilian Portuguese | `pt-BR` |
-| `/de/` | German | `de` |
-| `/fr/` | French | `fr` |
-
-`zh-Hant` covers Traditional Chinese readers (including `zh-TW`). `zh-Hans` covers Simplified Chinese readers (including `zh-CN`). Each page has `hreflang` alternates, including `x-default` pointing at the English URL. Interface strings live in `src/i18n/messages.ts` and `src/i18n/ui-extra.json`. Prices stay in US dollars.
+The site is English only. Pages use a self-canonical URL and do not publish hreflang alternates. Prices stay in US dollars.
 
 ## Affiliate parameters
 

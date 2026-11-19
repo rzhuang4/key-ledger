@@ -28,15 +28,15 @@ const showUsd = row.status === 'verified' && row.currency === 'USD';
 ---
 
 <div class="price-fact">
-  <p>{retailer}</p>
+  <span>{retailer}</span>
   {
     showUsd ? (
-      <p><span class="mono">USD</span> {formatRange(row.lowUsd, row.highUsd)}</p>
+      <span><span class="mono">USD</span> {formatRange(row.lowUsd, row.highUsd)}</span>
     ) : (
-      <p><span class="chip unverified">{unverifiedLabel}</span></p>
+      <span class="chip unverified">{unverifiedLabel}</span>
     )
   }
-  {retailer === 'Standard Auto Part' && showUsd && <p>{copy.sapPackNote}</p>}
-  <p>{stock}</p>
-  {row.checkedAt && <p>{copy.checkedOn.replace('{date}', formatReviewed(row.checkedAt, info.dateLocale))}</p>}
+  <span>{stock}</span>
+  {row.checkedAt && <span class="muted">{copy.checkedOn.replace('{date}', formatReviewed(row.checkedAt, info.dateLocale))}</span>}
+  {retailer === 'Standard Auto Part' && showUsd && <span class="pack">{copy.sapPackNote}</span>}
 </div>
