@@ -25,16 +25,13 @@ reviewed: "2026-11-19"
 diy:
   status: "yes"
   heroAnswer: "Genuine Toyota remote: yes, per service pages. Aftermarket: not confirmed."
-  bottomLine: "Bottom line: the $24.95 aftermarket remote is not confirmed to self-program. The confirmed route is a genuine Toyota remote. One dealer lists that part at $76.77, MSRP $107.30, part only, with programming not included."
+  bottomLine: "No Tundra owner report found of an aftermarket remote registering with only the on-board sequence. Owners report aftermarket remotes registering with Techstream. One reply says the fobs are hit and miss, and to buy from Amazon so they can be returned. The 2009 original poster also wrote: 'Seems like quite a few people were successful with the door dance.' That sentence does not say whether those remotes were aftermarket."
   heroNotice: "Push-button smart key, or no ignition key cylinder? This page does not apply. Sellers list this remote for 2007-2018. The same on-board switch section was opened on 2012 and 2013 service pages. 2014 and later were not opened."
-  priceCaution: "The $24.95 remote is aftermarket. Car and Truck Remotes says on-board programming is no. NorthCoast Keyless says a locksmith must program its remote. Toyota service pages publish an on-board switch sequence for the door-control transmitter. No owner reports found yet of an aftermarket remote registering this way. On a Toyota Tundra Forum thread about a 2009, one owner reported the door sequence failed after many tries and that Techstream then registered the fobs."
+  priceCaution: "No Tundra owner report found of an aftermarket remote registering with only the on-board sequence. On the 2009 thread, the original poster wrote that the door sequence failed after 8 to 10 tries and that Techstream then registered the fobs, and also wrote: 'Seems like quite a few people were successful with the door dance.' That success line does not say whether those remotes were aftermarket. On two other Tundra forum threads, a member wrote that aftermarket remotes from Amazon or eBay programmed with Techstream and worked. A reply on the 2009 thread says the fobs are hit and miss, and to buy from Amazon so they can be returned."
   priceCautionSourceIds:
-    - ctr-gq43
-    - nck-gq43
-    - tundra-2007
-    - tundra-2012
-    - tundra-2013
     - tundra-forum-2009
+    - tundras-keyless
+    - tundras-ebay
   summary: "The opened Tundra service pages give a switch sequence that registers
     the door-lock remote without a scan tool. Add mode keeps remotes already
     stored, until the truck is holding four. Rewrite mode erases the stored
@@ -63,17 +60,18 @@ diy:
       sourceIds:
         - tundra-2007
         - tundra-2011
-    - text: "Car and Truck Remotes prints 'On Board Programming: No.' NorthCoast
-        Keyless says a locksmith must program the remote. Those lines disagree
-        with the switch section on the Toyota pages. It is not confirmed that
-        the aftermarket or lightly used remotes accept that sequence."
+    - text: "No Tundra owner report found of an aftermarket remote registering with
+        only the on-board sequence. The 2009 original poster wrote that the door
+        sequence failed, then Techstream worked, and also wrote that quite a few
+        people were successful with the door dance, without saying those remotes
+        were aftermarket. Other posts say aftermarket remotes programmed with
+        Techstream."
       sourceIds:
-        - ctr-gq43
-        - nck-gq43
-        - tundra-2007
-        - tundra-2012
-        - tundra-2013
         - tundra-forum-2009
+        - tundras-keyless
+        - tundras-ebay
+        - tundras-keyless
+        - tundras-ebay
   steps:
     - text: "Start with the key out of the ignition, the driver door open and
         unlocked, and every other door closed."
@@ -131,9 +129,56 @@ diy:
       sourceIds:
         - tundra-2007
 variants:
+  - id: genuine-oem
+    name: "Genuine Toyota 3-button remote"
+    years: "NorthCoast Keyless lists this remote for 2007-2018 Tundra. This page's steps were checked for 2007-2011."
+    heroLabel: "Genuine Toyota"
+    keyType: separate-remote
+    keyTypeNote: "NorthCoast Keyless calls this a High Quality Genuine OEM Toyota Key Fob Remote, 3 buttons, Lock, Unlock, and Panic. The same listing says a locksmith must program it. The lightly used ones are described as professionally cleared and ready to program. Toyota service pages publish an on-board switch sequence for the door-control transmitter. This page did not find an owner report that an aftermarket remote registered that way."
+    keyTypeSourceIds:
+      - nck-gq43
+      - tundra-2007
+    fccIds:
+      - id: GQ43VT20T
+        role: oem
+        note: "Printed on the NorthCoast Keyless listing. The FCC grant is the TRW automotive remote at 315.0 MHz."
+        sourceIds:
+          - nck-gq43
+          - fcc-gq43
+    oemPartNumbers:
+      - number: "89742-AE011"
+        summary: true
+        note: "Printed by NorthCoast Keyless. ToyotaPartsNow and ToyotaPartsDeal both say 89742-AE011 is discontinued and that it replaces 89742-AE010."
+        sourceIds:
+          - nck-gq43
+          - toyota-parts-ae011
+          - toyota-parts-deal
+      - number: "89742-AE010"
+        note: "Also printed by NorthCoast Keyless. The parts sites say 89742-AE011 replaces it."
+        sourceIds:
+          - nck-gq43
+          - toyota-parts-ae011
+    battery:
+      status: verified
+      type: CR2032
+      note: "NorthCoast Keyless lists CR2032. The FCC grant page does not name the cell."
+      sourceIds:
+        - nck-gq43
+    frequency:
+      status: verified
+      text: "315 MHz"
+      note: "NorthCoast Keyless prints 315 MHz. The grant lists 315.0 MHz."
+      sourceIds:
+        - nck-gq43
+        - fcc-gq43
+    buttons:
+      count: 3
+      sourceIds:
+        - nck-gq43
   - id: gq43vt20t-3-button
-    name: "3-button keyless remote"
-    years: "Listed by sellers for 2007-2011 Tundra, and for later years this page does not cover"
+    name: "Aftermarket 3-button remote"
+    years: "Car and Truck Remotes lists this remote for Tundra 2007-2018. This page's steps were checked for 2007-2011."
+    heroLabel: "Aftermarket"
     keyType: separate-remote
     keyTypeNote: "Car and Truck Remotes and NorthCoast Keyless both sell a separate
       3-button remote, Lock, Unlock, and Panic, for a turn-the-key Tundra. It is
@@ -156,7 +201,6 @@ variants:
           - nck-gq43
     oemPartNumbers:
       - number: "89742-AE010"
-        summary: true
         note: "Printed by Car and Truck Remotes and by NorthCoast Keyless as a
           Toyota part this remote replaces. The listings also name later Tundra
           years. Not confirmed on a Toyota parts fiche for 2007-2011 only."
@@ -207,7 +251,7 @@ priceRanges:
       The shop currency is USD. The listing says the price is one remote, that
       the seller does not cut or program it, and that it fits a 2007-2018 Tundra
       with a turn-the-key ignition. That year span is wider than this page."
-    heroNote: "Aftermarket remote only. No owner reports found yet of an aftermarket remote registering with only the switch sequence. The seller says on-board programming is no."
+    heroNote: "Aftermarket. On-board registration not confirmed. The seller says on-board programming is no."
     variantId: gq43vt20t-3-button
     sourceIds:
       - ctr-gq43
@@ -225,8 +269,8 @@ priceRanges:
       must program it. The page lists fitment 2007-2018. Toyota pages opened
       through 2013 still print a switch sequence. Not confirmed that this used
       remote accepts that sequence."
-    heroNote: "Remote only. The seller says a locksmith must program it. Toyota's service pages publish a switch sequence. Not confirmed for this used remote."
-    variantId: gq43vt20t-3-button
+    heroNote: "Lightly used. In stock. The seller says High Quality Genuine OEM Toyota Key Fob Remote, and also says a locksmith must program it. Service pages publish an on-board sequence for the transmitter. No owner report found of an aftermarket remote registering that way."
+    variantId: genuine-oem
     sourceIds:
       - nck-gq43
     currency: USD
@@ -242,7 +286,7 @@ priceRanges:
       currency USD. It is the remote, not a programmed key. The listing says a
       locksmith must program it."
     heroNote: "Remote only. The seller says a locksmith must program it. Not confirmed for this remote."
-    variantId: gq43vt20t-3-button
+    variantId: genuine-oem
     sourceIds:
       - nck-gq43
     currency: USD
@@ -276,7 +320,8 @@ priceRanges:
       MSRP USD 107.30. The listing is the part only. It does not include
       programming. Stock not listed. Checked 2026-11-19. ToyotaPartsNow lists
       the same part and did not show a price."
-    heroNote: "Genuine new OEM part only. MSRP $107.30. Programming is not included."
+    heroNote: "New OEM part only. MSRP $107.30. Programming not included. Stock not listed. ToyotaPartsNow and ToyotaPartsDeal say 89742-AE011 is discontinued."
+    variantId: genuine-oem
     currency: USD
     retailer: Lakeland Toyota
     checkedAt: "2026-11-19"
@@ -435,6 +480,28 @@ sources:
       28 percent. The page does not say whether the part is in stock. Address
       on the page: 2925 Mall Hill Drive, Lakeland, FL 33810. Part only; no
       programming is mentioned."
+  - id: toyota-parts-deal
+    title: "Toyota 89742-AE011 door control transmitter"
+    url: "https://www.toyotapartsdeal.com/oem/toyota~transmitter~door~co~89742-ae011.html"
+    publisher: "ToyotaPartsDeal"
+    accessed: "2026-11-19"
+    note: "Manufacturer's notes say this part is discontinued. It replaces
+      89742-AE010. Fitment listed includes 2007-2018 Tundra. No price was shown."
+  - id: tundras-keyless
+    title: "Keyless entry"
+    url: "https://www.tundras.com/threads/keyless-entry.44145/"
+    publisher: "Toyota Tundra Forum"
+    accessed: "2026-11-19"
+    note: "A member wrote that they bought aftermarket remotes from Amazon or
+      eBay and programmed them with Techstream."
+  - id: tundras-ebay
+    title: "Remote key fobs from eBay? Any good?"
+    url: "https://www.tundras.com/threads/remote-key-fobs-from-ebay-any-good.40441/"
+    publisher: "Toyota Tundra Forum"
+    accessed: "2026-11-19"
+    note: "A member wrote that remotes from Amazon or eBay, most likely eBay,
+      programmed with Techstream and have worked fine. The thread is in the
+      2007-2013 Tundra section. The original poster has a 2013 Tundra."
   - id: toyota-parts-ae011
     title: "Toyota Tundra key fob parts list, including 89742-AE011"
     url: "https://www.toyotapartsnow.com/parts-select/toyota-tundra-key-fob"

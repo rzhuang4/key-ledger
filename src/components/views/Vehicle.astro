@@ -112,7 +112,10 @@ const yearSpan = (variant: (typeof data.variants)[number]) =>
       : `${variant.yearStart}–${variant.yearEnd}`
     : null;
 const yearVariants = data.variants.filter((variant) => yearSpan(variant));
-const splitYears = yearVariants.length > 1;
+const labeledVariants = data.variants.filter((variant) => variant.heroLabel);
+const splitRows = labeledVariants.length > 1 ? labeledVariants : yearVariants;
+const splitYears = splitRows.length > 1;
+const rowLabel = (variant: (typeof data.variants)[number]) => variant.heroLabel ?? yearSpan(variant);
 const fccOf = (variant: (typeof data.variants)[number]) =>
   variant.fccIds.find((item) => item.role === 'oem')?.id ?? variant.fccIds[0]?.id ?? 'Unknown';
 const buttonLabel = (variant: (typeof data.variants)[number]) =>
@@ -126,6 +129,8 @@ const hardwareFor = (variantId: string) =>
     .sort((a, b) => (a.lowUsd ?? 0) - (b.lowUsd ?? 0))[0];
 const serviceFor = (variantId: string) =>
   data.priceRanges.find((row) => row.variantId === variantId && row.stock === 'service' && row.status === 'verified' && row.lowUsd != null);
+const dealerFor = (variantId: string) =>
+  data.priceRanges.find((row) => row.variantId === variantId && row.channel === 'dealer' && row.status === 'verified' && row.lowUsd != null);
 const primary = data.variants[0];
 const buyFcc = fccOf(primary);
 const buyPart = summaryPart(primary) ?? primary.oemPartNumbers[0]?.number ?? 'Unknown';
@@ -163,27 +168,34 @@ function leadSentence(text: string) {
       </article>
       {
         splitYears ? (
-          yearVariants.map((variant) => {
+          splitRows.map((variant) => {
             const hardware = hardwareFor(variant.id);
             const service = serviceFor(variant.id);
+            const dealer = dealerFor(variant.id);
             const part = summaryPart(variant);
             const buttons = buttonLabel(variant);
             return (
               <div class="year-pair">
                 <article class="tile">
-                  <p class="kicker">{yearSpan(variant)} · Buy</p>
+                  <p class="kicker">{rowLabel(variant)} · Buy</p>
                   <strong>{fccOf(variant)}</strong>
                   {(part || buttons || variant.fitment) && (
                     <p class="detail">{[part, buttons, variant.fitment].filter(Boolean).join(' · ')}</p>
                   )}
                 </article>
                 <article class="tile">
-                  <p class="kicker">{yearSpan(variant)} · Price</p>
+                  <p class="kicker">{rowLabel(variant)} · Price</p>
                   <strong>{hardware ? `From $${hardware.lowUsd?.toFixed(2)}` : 'Not verified'}</strong>
                   {hardware && (
                     <p class="detail">
                       {hardware.retailer}
                       {hardware.heroNote ? `. ${hardware.heroNote}` : ''}
+                    </p>
+                  )}
+                  {dealer && (
+                    <p class="detail">
+                      {dealer.retailer} ${dealer.lowUsd?.toFixed(2)}
+                      {dealer.heroNote ? `. ${dealer.heroNote}` : ''}
                     </p>
                   )}
                   {service?.heroNote && <p class="detail">{service.heroNote}</p>}
@@ -396,11 +408,15 @@ function leadSentence(text: string) {
           );
         })
       }
-      <p>{feat.aftermarketNote}</p>
-      <p>
-        <a href="https://www.reddit.com/r/Locksmith/comments/1crnjt1/do_nonoem_replacement_key_fobs_work/" rel="noopener noreferrer">{feat.redditThread}</a>
-      </p>
-      <p>{feat.locksmithRefuse}</p>
+      {data.modelSlug !== 'tundra' && (
+        <>
+          <p>{feat.aftermarketNote}</p>
+          <p>
+            <a href="https://www.reddit.com/r/Locksmith/comments/1crnjt1/do_nonoem_replacement_key_fobs_work/" rel="noopener noreferrer">{feat.redditThread}</a>
+          </p>
+          <p>{feat.locksmithRefuse}</p>
+        </>
+      )}
     </details>
 
     <details class="fold">

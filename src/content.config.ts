@@ -105,6 +105,7 @@ const vehicles = defineCollection({
           yearStart: z.number().int().optional(),
           yearEnd: z.number().int().optional(),
           fitment: z.string().min(1).optional(),
+          heroLabel: z.string().min(1).optional(),
           keyType: z.enum([
             'flip-key',
             'remote-head-key',
