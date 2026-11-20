@@ -175,6 +175,7 @@ const vehicles = defineCollection({
       .array(
         z.object({
           channel: z.enum(['dealer', 'locksmith', 'online-diy']),
+          channelName: z.string().min(1).optional(),
           status: z.enum(['verified', 'unverified']),
           currency: z.literal('USD'),
           retailer: z.string().min(1),

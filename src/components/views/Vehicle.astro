@@ -226,29 +226,19 @@ function leadSentence(text: string) {
         {
           view.priceRanges.map((row, index) => (
             <li>
-              <strong>{channelLabel(row.channel)}</strong>
+              <strong>{data.priceRanges[index]?.channelName ?? channelLabel(row.channel)}</strong>
               <PriceLine locale={locale} row={row} unverifiedLabel={copy.unverifiedChip} />
               {data.priceRanges[index]?.heroNote && <p class="detail">{data.priceRanges[index].heroNote}</p>}
             </li>
           ))
         }
       </ul>
-      {
-        data.diy.priceCaution && (
-          <p class="detail">
-            {data.diy.priceCaution}{' '}
-            {data.diy.priceCautionSourceIds && (
-              <Cites ids={data.diy.priceCautionSourceIds} sources={sourcesForCites} />
-            )}
-          </p>
-        )
-      }
       <details class="fold">
         <summary>What each price includes</summary>
         <ul class="clean">
-          {view.priceRanges.map((row) => (
+          {view.priceRanges.map((row, index) => (
             <li>
-              <strong>{channelLabel(row.channel)}.</strong>{' '}
+              <strong>{data.priceRanges[index]?.channelName ?? channelLabel(row.channel)}.</strong>{' '}
               <T value={row.note} label={copy.shownInEnglish} />
               {row.sourceIds && row.sourceIds.length > 0 && <Cites ids={row.sourceIds} sources={sourcesForCites} />}
             </li>
@@ -268,6 +258,17 @@ function leadSentence(text: string) {
         )
       }
     </div>
+    <h2>On-board programming</h2>
+    {
+      data.diy.priceCaution && (
+        <p>
+          {data.diy.priceCaution}{' '}
+          {data.diy.priceCautionSourceIds && (
+            <Cites ids={data.diy.priceCautionSourceIds} sources={sourcesForCites} />
+          )}
+        </p>
+      )
+    }
     <p class="no-print">
       <button type="button" class="text-button" onclick="window.print()">{feat.printSteps}</button>
     </p>

@@ -252,6 +252,7 @@ priceRanges:
       the seller does not cut or program it, and that it fits a 2007-2018 Tundra
       with a turn-the-key ignition. That year span is wider than this page."
     heroNote: "Aftermarket. On-board registration not confirmed. The seller says on-board programming is no."
+    channelName: "Buy online + locksmith"
     variantId: gq43vt20t-3-button
     sourceIds:
       - ctr-gq43
@@ -269,7 +270,7 @@ priceRanges:
       must program it. The page lists fitment 2007-2018. Toyota pages opened
       through 2013 still print a switch sequence. Not confirmed that this used
       remote accepts that sequence."
-    heroNote: "Lightly used. In stock. The seller says High Quality Genuine OEM Toyota Key Fob Remote, and also says a locksmith must program it. Service pages publish an on-board sequence for the transmitter. No owner report found of an aftermarket remote registering that way."
+    heroNote: "Genuine Toyota part; Toyota service pages give an on-board registration procedure; the seller says a locksmith should program it; no owner report found on whether a cleared used fob registers with the on-board procedure; the seller offers a 30 Day Return Period for Full Product Refund."
     variantId: genuine-oem
     sourceIds:
       - nck-gq43
@@ -303,6 +304,7 @@ priceRanges:
       The seller says it does not cut or program it, and the matching aftermarket
       listing says on-board programming is no."
     heroNote: "Remote only. The seller says on-board programming is no. Not confirmed for this remote."
+    channelName: "Buy online + locksmith"
     variantId: gq43vt20t-3-button
     sourceIds:
       - ctr-strattec
@@ -318,8 +320,8 @@ priceRanges:
       Genuine new OEM door-control transmitter 89742-AE011 for a 2011 Tundra.
       The page says this number replaces 89742-AE010. Your price USD 76.77.
       MSRP USD 107.30. The listing is the part only. It does not include
-      programming. Stock not listed. Checked 2026-11-19. ToyotaPartsNow lists
-      the same part and did not show a price."
+      programming. Stock not listed. Checked 2026-11-19. The ToyotaPartsNow
+      page for 89742-AE011 says the part is discontinued and shows no price."
     heroNote: "New OEM part only. MSRP $107.30. Programming not included. Stock not listed. ToyotaPartsNow and ToyotaPartsDeal say 89742-AE011 is discontinued."
     variantId: genuine-oem
     currency: USD
@@ -331,15 +333,11 @@ priceRanges:
       - toyota-parts-ae011
   - channel: locksmith
     status: unverified
-    note: "No locksmith price page posted a dollar amount for programming this
-      Tundra remote. Car and Truck Remotes says a locksmith must program the
-      remote it sells, and that those fees are extra, without stating the fee."
+    note: "No public locksmith programming price found."
     currency: USD
     retailer: none
     checkedAt: "2026-11-19"
     stock: unknown
-    sourceIds:
-      - ctr-gq43
 shopLinks:
   - retailer: carandtruckremotes
     url: "https://www.carandtruckremotes.com/products/aftermarket-remote-for-toyota-pn-89742-ae010-89742-ae011"
@@ -503,13 +501,12 @@ sources:
       programmed with Techstream and have worked fine. The thread is in the
       2007-2013 Tundra section. The original poster has a 2013 Tundra."
   - id: toyota-parts-ae011
-    title: "Toyota Tundra key fob parts list, including 89742-AE011"
-    url: "https://www.toyotapartsnow.com/parts-select/toyota-tundra-key-fob"
+    title: "Toyota 89742-AE011 door control transmitter"
+    url: "https://www.toyotapartsnow.com/oem/toyota~transmitter-door-control~89742-ae011"
     publisher: "ToyotaPartsNow"
-    accessed: "2026-11-19"
-    note: "Lists 89742-AE011 as Transmitter, Door Control, replaces 89742-AE010,
-      fitment 2007-2017 Tundra. No price was shown for that part. Other
-      transmitters on the page had prices. Those other parts are not this remote."
+    accessed: "2026-11-20"
+    note: "Manufacturer's Notes say this part is discontinued. It replaces
+      89742-AE010. Fitment includes 2007-2017 Tundra. No price is shown."
   - id: mykey-toy44d
     title: "TOY44D transponder key, 4D67, blade TR47"
     url: "https://mykeysupply.com/product/toyota-44d-transponder-key/"
