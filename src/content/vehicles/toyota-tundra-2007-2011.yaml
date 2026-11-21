@@ -260,6 +260,7 @@ priceRanges:
     retailer: Car and Truck Remotes
     checkedAt: "2026-11-19"
     stock: in-stock
+    stockBasis: shopify-js
   - channel: online-diy
     status: verified
     lowUsd: 29.94
@@ -277,7 +278,7 @@ priceRanges:
     currency: USD
     retailer: NorthCoast Keyless
     checkedAt: "2026-11-19"
-    stock: in-stock
+    stock: unknown
   - channel: online-diy
     status: verified
     lowUsd: 49.94
@@ -293,7 +294,7 @@ priceRanges:
     currency: USD
     retailer: NorthCoast Keyless
     checkedAt: "2026-11-19"
-    stock: out-of-stock
+    stock: unknown
   - channel: online-diy
     status: verified
     lowUsd: 39.95
@@ -312,6 +313,7 @@ priceRanges:
     retailer: Car and Truck Remotes
     checkedAt: "2026-11-19"
     stock: out-of-stock
+    stockBasis: shopify-js
   - channel: dealer
     status: verified
     lowUsd: 76.77

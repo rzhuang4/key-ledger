@@ -175,6 +175,7 @@ priceRanges:
     retailer: Car and Truck Remotes
     checkedAt: "2026-11-19"
     stock: in-stock
+    stockBasis: shopify-js
   - channel: online-diy
     status: verified
     lowUsd: 24.94
@@ -187,6 +188,7 @@ priceRanges:
     retailer: NorthCoast Keyless
     checkedAt: "2026-11-19"
     stock: out-of-stock
+    stockBasis: json-ld
   - channel: online-diy
     status: verified
     lowUsd: 30
@@ -200,6 +202,7 @@ priceRanges:
     retailer: Standard Auto Part
     checkedAt: "2026-11-19"
     stock: in-stock
+    stockBasis: json-ld
   - channel: dealer
     status: unverified
     note: "No published dealer quote for a 2003-2006 Silverado 1500 remote was

@@ -276,6 +276,13 @@ export function validateVehicle(data, fileName) {
       if (row.stock === 'service' && row.channel === 'online-diy') {
         fail(`${where} online hardware cannot use stock service`);
       }
+      if (row.stock === 'in-stock' || row.stock === 'out-of-stock') {
+        if (row.stockBasis !== 'shopify-js' && row.stockBasis !== 'json-ld') {
+          fail(`${where}.stockBasis must be shopify-js or json-ld when stock is in-stock or out-of-stock`);
+        }
+      } else if (row.stockBasis != null && row.stockBasis !== 'shopify-js' && row.stockBasis !== 'json-ld') {
+        fail(`${where}.stockBasis must be shopify-js or json-ld`);
+      }
       if (row.variantId !== undefined) {
         const ids = new Set((Array.isArray(data.variants) ? data.variants : []).map((variant) => variant?.id));
         if (typeof row.variantId !== 'string' || !ids.has(row.variantId)) {
@@ -288,7 +295,6 @@ export function validateVehicle(data, fileName) {
         if (!Array.isArray(row.sourceIds) || row.sourceIds.length === 0) {
           fail(`${where} verified price needs sourceIds`);
         }
-        if (row.stock === 'unknown') fail(`${where} verified price needs a stock status from the source`);
         if (row.lowUsd !== undefined && row.highUsd !== undefined && row.lowUsd > row.highUsd) {
           fail(`${where} lowUsd is above highUsd`);
         }
@@ -477,6 +483,39 @@ function assertSelfTest() {
   const guessedErrors = validateVehicle(guessed, 'self-test.yaml');
   if (!guessedErrors.some((error) => error.includes('must not include a dollar amount'))) {
     throw new Error('Self-test did not fail an unverified price that included a number');
+  }
+
+  const noBasis = minimalValid();
+  noBasis.priceRanges = noBasis.priceRanges.map((row) =>
+    row.channel === 'online-diy'
+      ? { ...row, status: 'verified', lowUsd: 12, stock: 'in-stock', sourceIds: ['src'] }
+      : row,
+  );
+  const noBasisErrors = validateVehicle(noBasis, 'self-test.yaml');
+  if (!noBasisErrors.some((error) => error.includes('stockBasis'))) {
+    throw new Error('Self-test did not fail an in-stock price without a product-data basis');
+  }
+
+  const themeBasis = minimalValid();
+  themeBasis.priceRanges = themeBasis.priceRanges.map((row) =>
+    row.channel === 'online-diy'
+      ? { ...row, status: 'verified', lowUsd: 12, stock: 'out-of-stock', stockBasis: 'theme-label', sourceIds: ['src'] }
+      : row,
+  );
+  const themeErrors = validateVehicle(themeBasis, 'self-test.yaml');
+  if (!themeErrors.some((error) => error.includes('stockBasis'))) {
+    throw new Error('Self-test did not fail a stock claim based on a theme label');
+  }
+
+  const productBasis = minimalValid();
+  productBasis.priceRanges = productBasis.priceRanges.map((row) =>
+    row.channel === 'online-diy'
+      ? { ...row, status: 'verified', lowUsd: 12, stock: 'in-stock', stockBasis: 'shopify-js', sourceIds: ['src'] }
+      : row,
+  );
+  const productErrors = validateVehicle(productBasis, 'self-test.yaml');
+  if (productErrors.some((error) => error.includes('stockBasis'))) {
+    throw new Error(`Self-test rejected a Shopify availability basis:\n${productErrors.join('\n')}`);
   }
 
   const steps = minimalValid();

@@ -193,7 +193,7 @@ function leadSentence(text: string) {
               return (
                 <article class="tile">
                   <p class="kicker">{rowLabel(variant)}</p>
-                  <strong>{fccOf(variant)}</strong>
+                  <strong>{variant.fccLine ?? fccOf(variant)}</strong>
                   {(part || buttons || variant.fitment) && (
                     <p class="detail">{[part, buttons, variant.fitment].filter(Boolean).join(' · ')}</p>
                   )}
@@ -212,7 +212,7 @@ function leadSentence(text: string) {
               <div class="year-pair">
                 <article class="tile">
                   <p class="kicker">{rowLabel(variant)} · Buy</p>
-                  <strong>{fccOf(variant)}</strong>
+                  <strong>{variant.fccLine ?? fccOf(variant)}</strong>
                   {(part || buttons || variant.fitment) && (
                     <p class="detail">{[part, buttons, variant.fitment].filter(Boolean).join(' · ')}</p>
                   )}
@@ -434,6 +434,7 @@ function leadSentence(text: string) {
       <summary>{feat.buyH2}</summary>
       {
         view.variants.map((variant) => {
+          const rawVariant = data.variants.find((item) => item.id === variant.id);
           const oemIds = variant.fccIds.filter((item) => item.role === 'oem').map((item) => item.id);
           const freq = variant.frequency.status === 'verified' ? variant.frequency.text : '';
           const buttons = data.variants.find((item) => item.id === variant.id)?.buttons?.count;
@@ -441,7 +442,7 @@ function leadSentence(text: string) {
             <article class="vehicle-block">
               <h3><T value={variant.name} label={copy.shownInEnglish} /></h3>
               <ol>
-                <li>{oemIds.length ? fill(feat.checkFcc, { id: oemIds.join(', ') }) : copy.unverifiedChip}</li>
+                <li>{rawVariant?.fccLine ? rawVariant.fccLine : oemIds.length ? fill(feat.checkFcc, { id: oemIds.join(', ') }) : copy.unverifiedChip}</li>
                 <li>{buttons ? fill(feat.checkButtons, { n: buttons }) : feat.checkButtonsUnknown}</li>
                 <li>{freq ? fill(feat.checkFreq, { freq }) : feat.checkFreqUnknown}</li>
               </ol>

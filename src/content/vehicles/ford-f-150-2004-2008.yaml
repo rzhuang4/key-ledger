@@ -26,13 +26,13 @@ scope: "New-style Ford F-150, 2004 through 2008, US market, with a separate
   different section, and that section requires two previously programmed coded
   keys."
 reviewed: "2026-11-21"
-priceVerdict: "Program an aftermarket remote yourself: $12.95. Locksmith including programming: $50 (one shop, sold out). Genuine Ford part: $67.50, programming not included."
+priceVerdict: "Program an aftermarket remote yourself: $12.95. Puget Sound Locksmith (Tacoma, Washington), programming in store: $50. In stock (product data, 2026-11-21). Genuine Ford part: $67.50, programming not included."
 diy:
   status: "yes"
   heroAnswer: "Yes, for the separate remote. The ignition-cycle procedure does not require two programmed keys, and it does not program the SecuriLock chip."
   bottomLine: "A 2007 F-150 service procedure and the 2006 owner's guide both print a tool-free remote sequence. You need a key that turns the ignition. You do not need two programmed keys, and you do not need a working remote if the doors can be unlocked with the power lock switch. Aftermarket owner reports are separate from that procedure."
-  heroNotice: "This page does not apply to a 2004 Heritage, to a 2011-2014 integrated key, or to programming the SecuriLock chip that starts the engine."
-  priceCaution: "flyndubya89 wrote that an eBay remote for a 2006 SuperCrew had 'No problems getting it working and hasn't failed yet.' Nola 07 FX4 wrote that an eBay remote, about $10 with shipping, was 'working fine' within 2 minutes. barriosman wrote that two Amazon remotes were 'working in 10 minutes' and did not state the truck's year. Barn Queen, writing about a 2004, said the Ford dealer charges almost $75. That is one owner's statement, not a posted price."
+  heroNotice: "Reprogramming makes any remote that is not present stop working, including a lost one, so bring every remote you have. This page does not apply to a 2004 Heritage, to a 2011-2014 integrated key, or to programming the SecuriLock chip that starts the engine."
+  priceCaution: "flyndubya89 wrote that an eBay remote for a 2006 SuperCrew had 'No problems getting it working and hasn't failed yet.' barriosman wrote that two Amazon remotes were 'working in 10 minutes' and did not state the truck's year. Barn Queen, writing about a 2004, said the Ford dealer charges almost $75. That is one owner's statement, not a posted price."
   priceCautionSourceIds:
     - f150-aftermarket
     - f150-programming
@@ -65,11 +65,11 @@ diy:
         keys are not available, the guide says to take the truck to a dealer."
       sourceIds:
         - owner-2006
-    - text: "Owner reports, not the procedure: a 2006 SuperCrew owner and a
-        2007 FX4 owner wrote that eBay remotes programmed. One Amazon buyer
-        wrote that two remotes worked in 10 minutes and did not state the year.
-        A 2004 owner wrote that the dealer charges almost $75. That last figure
-        is not a posted price."
+    - text: "Owner reports, not the procedure: a 2006 SuperCrew owner wrote
+        that an eBay remote programmed. One Amazon buyer wrote that two
+        remotes worked in 10 minutes and did not state the year. A 2004 owner
+        wrote that the dealer charges almost $75. That last figure is not a
+        posted price."
       sourceIds:
         - f150-aftermarket
         - f150-programming
@@ -99,18 +99,20 @@ scopeCards:
   - label: "2004-2008 new style"
     text: "This page. Ford Parts Connect lists 8L3Z-15K601-B for F150 NEW
       STYLE 2004-08. The remote procedure opened here is the 2006 owner's
-      guide and the 2007 service page. A 2006 owner and a 2007 owner reported
-      eBay remotes they programmed themselves."
+      guide and the 2007 service page. A 2006 owner reported an eBay remote
+      that programmed."
     sourceIds:
       - ford-parts-8l3z
       - owner-2006
       - ford-2007-rke
       - f150-aftermarket
   - label: "2004 Heritage"
-    text: "Not this page. Edmunds says the 2004 F-150 Heritage is a carryover
-      of the previous year's model. AutoWeek, in July 2003, called Heritage
-      Ford's name for the generation it kept selling beside the redesigned
-      2004 F-150."
+    text: "Not this page. The Heritage is the previous-generation truck.
+      Edmunds calls it a carryover of the previous year's model, and AutoWeek,
+      in July 2003, called it the generation Ford kept selling beside the
+      redesigned 2004 F-150. Look for a Heritage badge or the separate
+      Heritage owner's guide. This page did not open Ford's Heritage
+      procedure."
     sourceIds:
       - edmunds-heritage
       - autoweek-2004
@@ -127,6 +129,7 @@ variants:
     name: "Genuine Ford keyless transmitter"
     years: "Ford Parts Connect lists this transmitter for F150 NEW STYLE 2004-08 and Mark LT."
     heroLabel: "Genuine Ford"
+    fccLine: "CWTWB1U331 or CWTWB1U345 (sellers list them as the same remote)"
     keyType: separate-remote
     keyTypeNote: "Ford Parts Connect sells 8L3Z-15K601-B as a keyless entry
       transmitter. The page does not print an FCC ID and does not say the
@@ -135,15 +138,25 @@ variants:
     keyTypeSourceIds:
       - ford-parts-8l3z
     fccIds:
-      - id: CWTWB1U345
-        role: oem
-        note: "Not printed on the Ford parts page. Car and Truck Remotes and
-          Puget Sound Locksmith print CWTWB1U345 with the part numbers that
-          include 8L3Z-15K601-AA. Those listings also print other FCC IDs on
-          the same remote, so this page does not assign one FCC ID to one year."
+      - id: CWTWB1U331
+        role: seller-listed
+        note: "Printed with CWTWB1U345 on both the Car and Truck Remotes
+          listing and the Puget Sound Locksmith listing. fccid.io shows the
+          grant to ALPS ALPINE dated 2001-09-18, frequency 314.5-315.5 MHz.
+          This page does not say which year uses which ID."
         sourceIds:
           - ctr-f150
           - puget-rke
+          - fcc-331
+      - id: CWTWB1U345
+        role: seller-listed
+        note: "Printed with CWTWB1U331 on both seller listings. The Ford parts
+          page does not print an FCC ID. fccid.io shows the grant to ALPS
+          ALPINE dated 2006-12-11, frequency 315.0 MHz."
+        sourceIds:
+          - ctr-f150
+          - puget-rke
+          - fcc-345
     oemPartNumbers:
       - number: "8L3Z-15K601-B"
         summary: true
@@ -178,6 +191,7 @@ variants:
     name: "Aftermarket keyless remote"
     years: "Car and Truck Remotes lists this remote for F-150 1998-2010. This page stops at 2008."
     heroLabel: "Aftermarket"
+    fccLine: "CWTWB1U331 or CWTWB1U345 (sellers list them as the same remote)"
     keyType: separate-remote
     keyTypeNote: "Car and Truck Remotes sells one aftermarket remote and prints
       On Board Programming: Yes. The FCC IDs are listed together, not split
@@ -185,14 +199,23 @@ variants:
     keyTypeSourceIds:
       - ctr-f150
     fccIds:
-      - id: CWTWB1U345
+      - id: CWTWB1U331
         role: seller-listed
-        note: "The first FCC ID on the Car and Truck Remotes listing. The same
-          line also prints CWTWB1U331, CWTWB1U212, and GQ43VT11T. Puget Sound
-          Locksmith prints those IDs and also OUCD6000022."
+        note: "Car and Truck Remotes and Puget Sound Locksmith both print
+          CWTWB1U331 and CWTWB1U345 on this remote, along with other IDs.
+          fccid.io dates the CWTWB1U331 grant 2001-09-18."
         sourceIds:
           - ctr-f150
           - puget-rke
+          - fcc-331
+      - id: CWTWB1U345
+        role: seller-listed
+        note: "Same two seller lists. fccid.io dates the CWTWB1U345 grant
+          2006-12-11 at 315.0 MHz. No year is assigned to either ID."
+        sourceIds:
+          - ctr-f150
+          - puget-rke
+          - fcc-345
     oemPartNumbers:
       - number: "8L3Z-15K601-AA"
         note: "Car and Truck Remotes lists 8L3Z-15K601-AA and 8L3Z-15K601-B
@@ -230,15 +253,17 @@ priceRanges:
       as $7.50 below MSRP $75.00. The page says Ready to ship tomorrow, and
       its shipping policy says in-stock orders ship within 24 hours. Part
       only. No programming is listed. Application line: F150 NEW STYLE 2004-08,
-      MARK LT. Dollar prices on a US store page."
-    heroNote: "Part only. Ready to ship tomorrow. Keyport, NJ. New-style 2004-2008."
+      MARK LT. Dollar prices on a US store page. The page does not publish
+      Shopify availability or JSON-LD availability, so this row does not claim
+      a stock status."
+    heroNote: "Part only. Programming not included. Keyport, NJ. New-style 2004-2008."
     variantId: genuine-ford
     sourceIds:
       - ford-parts-8l3z
     currency: USD
     retailer: Ford Parts Connect
     checkedAt: "2026-11-21"
-    stock: in-stock
+    stock: unknown
   - channel: online-diy
     status: verified
     lowUsd: 12.95
@@ -256,21 +281,24 @@ priceRanges:
     retailer: Car and Truck Remotes
     checkedAt: "2026-11-21"
     stock: in-stock
+    stockBasis: shopify-js
   - channel: locksmith
     status: verified
     lowUsd: 50
     highUsd: 50
     note: "Puget Sound Locksmith, one shop in Tacoma, Washington. Currency
-      USD. Product page opened November 21, 2026, says Sold out. Price $50.
-      The description says all prices include programming and cutting of the
-      keys at one of their service locations, and that mobile service is
-      chosen at checkout. The fitment list includes Ford F-Series 1998-2003
-      and 2004-2010, plus other Ford models."
-    heroNote: "Posted price $50, and the product page says Sold out. Includes programming and cutting at their locations."
+      USD. Shopify product data on November 21, 2026: available true, price
+      5000 cents, one variant, also available. In stock (product data,
+      2026-11-21). Price $50. The description says all prices include
+      programming and cutting of the keys at one of their service locations,
+      and that mobile service is chosen at checkout. The fitment list includes
+      Ford F-Series 1998-2003 and 2004-2010, plus other Ford models."
+    heroNote: "In stock (product data, 2026-11-21). Includes programming and cutting at their locations."
     currency: USD
     retailer: Puget Sound Locksmith
     checkedAt: "2026-11-21"
-    stock: service
+    stock: in-stock
+    stockBasis: shopify-js
     variantId: aftermarket-remote
     sourceIds:
       - puget-rke
@@ -334,8 +362,7 @@ sources:
     publisher: "F150 Forum"
     accessed: "2026-11-21"
     note: "flyndubya89, 2006 SuperCrew, eBay remote: 'No problems getting it
-      working and hasn't failed yet.' Page 2, Nola 07 FX4, eBay remote about
-      $10: 'within 2 minutes it was working fine.'"
+      working and hasn't failed yet.'"
   - id: f150-programming
     title: "Programming Keyless Entry Remotes"
     url: "https://www.f150forum.com/f4/programming-keyless-entry-remotes-236003/"
@@ -367,11 +394,27 @@ sources:
     url: "https://pslocksmith.shop/products/ford-rke-ford-3b1"
     publisher: "Puget Sound Locksmith"
     accessed: "2026-11-21"
-    note: "Product page says Sold out. Price $50. Description says all prices
-      include programming and cutting at a service location, and mobile service
-      is a checkout option. Fitment includes Ford F-Series 2004-2010. FCC IDs
-      include CWTWB1U345, CWTWB1U331, CWTWB1U212, GQ43VT11T, and OUCD6000022.
-      OE numbers include 8L3Z-15K601-AA. Shop currency USD."
+    note: "Shopify product file: available true, 5000 cents, one variant also
+      available. In stock (product data, 2026-11-21). Price $50. Description
+      says all prices include programming and cutting at a service location,
+      and mobile service is a checkout option. Fitment includes Ford F-Series
+      2004-2010. FCC IDs include CWTWB1U345, CWTWB1U331, CWTWB1U212,
+      GQ43VT11T, and OUCD6000022. OE numbers include 8L3Z-15K601-AA. Shop
+      currency USD."
+  - id: fcc-331
+    title: "FCC ID CWTWB1U331"
+    url: "https://fccid.io/CWTWB1U331"
+    publisher: "FCCID.io reproduction of the FCC grant to ALPS ALPINE CO., LTD."
+    accessed: "2026-11-21"
+    note: "Grant date 2001-09-18. Frequency range 314.5-315.5 MHz. Automobile
+      security system."
+  - id: fcc-345
+    title: "FCC ID CWTWB1U345"
+    url: "https://fccid.io/CWTWB1U345"
+    publisher: "FCCID.io reproduction of the FCC grant to ALPS ALPINE CO., LTD."
+    accessed: "2026-11-21"
+    note: "Grant date 2006-12-11. Frequency 315.0 MHz. Vehicle remote keyless
+      entry transmitter."
   - id: edmunds-heritage
     title: "2004 Ford F-150 Heritage review"
     url: "https://www.edmunds.com/ford/f-150-heritage/2004/review/"

@@ -288,7 +288,7 @@ priceRanges:
     currency: USD
     retailer: NorthCoast Keyless
     checkedAt: "2026-11-20"
-    stock: in-stock
+    stock: unknown
   - channel: online-diy
     status: verified
     lowUsd: 49.94
@@ -304,7 +304,7 @@ priceRanges:
     currency: USD
     retailer: NorthCoast Keyless
     checkedAt: "2026-11-20"
-    stock: out-of-stock
+    stock: unknown
   - channel: online-diy
     status: verified
     lowUsd: 24.95
@@ -323,6 +323,7 @@ priceRanges:
     retailer: Car and Truck Remotes
     checkedAt: "2026-11-20"
     stock: in-stock
+    stockBasis: shopify-js
   - channel: dealer
     status: unverified
     note: "ToyotaPartsNow's page for 89742-AE011 says Manufacturer's Notes:

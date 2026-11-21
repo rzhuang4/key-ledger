@@ -251,6 +251,7 @@ export function localizeVehicle(data: RawVehicle, locale: string): VehicleCopy {
       retailer: row.retailer,
       checkedAt: row.checkedAt,
       stock: row.stock,
+      stockBasis: row.stockBasis,
       lowUsd: row.lowUsd,
       highUsd: row.highUsd,
       sourceIds: row.sourceIds,

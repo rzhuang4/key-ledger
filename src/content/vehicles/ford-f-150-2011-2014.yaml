@@ -229,6 +229,7 @@ priceRanges:
     retailer: Car and Truck Remotes
     checkedAt: "2026-11-19"
     stock: in-stock
+    stockBasis: shopify-js
   - channel: dealer
     status: unverified
     note: "No Ford dealer parts-and-labor price for a 2011-2014 F-150 key was found."

@@ -13,6 +13,7 @@ interface Props {
     retailer?: string;
     checkedAt?: string;
     stock?: string;
+    stockBasis?: string;
     lowUsd?: number;
     highUsd?: number;
     note?: string | { text: string };
@@ -22,12 +23,18 @@ const { locale, row, unverifiedLabel, compactService = false } = Astro.props;
 const noteText = typeof row.note === 'string' ? row.note : row.note?.text;
 const copy = features(locale);
 const info = localeInfo(locale);
-const stock =
+const stockBase =
   row.stock === 'in-stock' ? copy.stockIn :
   row.stock === 'out-of-stock' ? copy.stockOut :
   row.stock === 'service' ? copy.stockService :
   row.stock === 'not-listed' ? copy.stockNotListed :
   copy.stockUnknown;
+const stock =
+  (row.stock === 'in-stock' || row.stock === 'out-of-stock') &&
+  (row.stockBasis === 'shopify-js' || row.stockBasis === 'json-ld') &&
+  row.checkedAt
+    ? `${stockBase} (product data, ${row.checkedAt})`
+    : stockBase;
 const retailer = !row.retailer || row.retailer === 'none' ? copy.noRetailer : row.retailer;
 const showUsd =
   row.status === 'verified' &&
