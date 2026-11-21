@@ -276,35 +276,39 @@ priceRanges:
     status: verified
     lowUsd: 29.94
     highUsd: 29.94
-    note: "NorthCoast Keyless, lightly used, $29.94. Store API on November 20,
-      2026: in stock, currency USD. The product name covers Tacoma 2005-2017.
-      The description says High Quality Genuine OEM Toyota Key Fob Remote, says
-      a professional locksmith must program it, and offers a 30 Day Return
-      Period for Full Product Refund. Remote only."
+    note: "NorthCoast Keyless, lightly used, $29.94. Variation 86244 on
+      November 21, 2026: in stock, 2994 cents, currency USD. The parent product
+      was not used for stock. The product name covers Tacoma 2005-2017. The
+      description says High Quality Genuine OEM Toyota Key Fob Remote, says a
+      professional locksmith must program it, and offers a 30 Day Return Period
+      for Full Product Refund. Remote only. In stock (product data, 2026-11-21)."
     heroNote: "Lightly used, in stock. Seller says genuine OEM. Seller also says a locksmith must program it. 30 Day Return Period for Full Product Refund."
     variantId: genuine-oem
     sourceIds:
       - nck-tacoma
     currency: USD
     retailer: NorthCoast Keyless
-    checkedAt: "2026-11-20"
-    stock: unknown
+    checkedAt: "2026-11-21"
+    stock: in-stock
+    stockBasis: woocommerce-store-api
   - channel: online-diy
     status: verified
     lowUsd: 49.94
     highUsd: 49.94
-    note: "The same NorthCoast Keyless listing, new condition, $49.94. Store API
-      on November 20, 2026: out of stock, currency USD. Same genuine-OEM wording
-      and the same locksmith sentence. Remote only. The page's Dealership $250
-      line is not used."
+    note: "The same NorthCoast Keyless listing, new condition, $49.94.
+      Variation 86237 on November 21, 2026: out of stock, 4994 cents, currency
+      USD. Same genuine-OEM wording and the same locksmith sentence. Remote
+      only. The page's Dealership $250 line is not used. Out of stock (product
+      data, 2026-11-21)."
     heroNote: "New, out of stock. Same listing. Seller says genuine OEM and that a locksmith must program it."
     variantId: genuine-oem
     sourceIds:
       - nck-tacoma
     currency: USD
     retailer: NorthCoast Keyless
-    checkedAt: "2026-11-20"
-    stock: unknown
+    checkedAt: "2026-11-21"
+    stock: out-of-stock
+    stockBasis: woocommerce-store-api
   - channel: online-diy
     status: verified
     lowUsd: 24.95
@@ -514,12 +518,12 @@ sources:
     title: "2005-2017 Toyota Tacoma 3-button remote, FCC GQ43VT20T"
     url: "https://northcoastkeyless.com/product/toyota-tacoma-3-button-key-fob-remote-fcc-gq43vt20t-p-n-89742-ae010-89742-ae011/"
     publisher: "NorthCoast Keyless"
-    accessed: "2026-11-20"
-    note: "Store API: lightly used variation 2994 cents, USD, in stock. New
-      variation 4994 cents, USD, out of stock. Description says High Quality
-      Genuine OEM Toyota Key Fob Remote, says a locksmith must program it, and
-      says 30 Day Return Period for Full Product Refund. The Dealership $250
-      line is not used."
+    accessed: "2026-11-21"
+    note: "Variation 86244, lightly used, 2994 cents, USD, in stock on
+      November 21, 2026. Variation 86237, new, 4994 cents, USD, out of stock.
+      Description says High Quality Genuine OEM Toyota Key Fob Remote, says a
+      locksmith must program it, and says 30 Day Return Period for Full Product
+      Refund. The Dealership $250 line is not used."
   - id: ctr-gq43
     title: "Aftermarket Toyota remote, parts 89742-AE010 and 89742-AE011"
     url: "https://www.carandtruckremotes.com/products/aftermarket-remote-for-toyota-pn-89742-ae010-89742-ae011"

@@ -180,14 +180,17 @@ priceRanges:
     status: verified
     lowUsd: 24.94
     highUsd: 24.94
-    note: NorthCoast Keyless lists this remote at $24.94. It was out of stock on
-      November 19, 2026. The listing describes re-cased original electronics.
+    note: "NorthCoast Keyless lists this remote at $24.94. JSON-LD on
+      November 21, 2026 has one Offer at 24.94 USD with availability InStock.
+      The listing describes re-cased original electronics. In stock (product
+      data, 2026-11-21)."
+    heroNote: "In stock. Re-cased original electronics."
     sourceIds:
       - nck-product
     currency: USD
     retailer: NorthCoast Keyless
-    checkedAt: "2026-11-19"
-    stock: out-of-stock
+    checkedAt: "2026-11-21"
+    stock: in-stock
     stockBasis: json-ld
   - channel: online-diy
     status: verified
@@ -303,9 +306,8 @@ sources:
     title: 2003-2007 Chevrolet Silverado 3-button remote, FCC LHJ011, part 21997127
     url: https://northcoastkeyless.com/product/2003-2006-chevrolet-silverado-keyless-entry-remote-fob-fcc-id-lhj011-pn-21997127/
     publisher: NorthCoast Keyless
-    accessed: "2026-11-19"
-    note: "JSON-LD on November 19, 2026: 24.94 USD, OutOfStock. Store API agrees:
-      USD, out of stock."
+    accessed: "2026-11-21"
+    note: "JSON-LD on November 21, 2026: one Offer, 24.94 USD, InStock."
   - id: sap-lhj011
     title: LHJ011 remote, part 21997127, fitment includes 2003-2007 Silverado
     url: https://www.standardautopart.com/products/car-keyless-entry-remote-for-escalade-avalanche-equinox-silverado-ssr-suburban-tahoe-sierra-yukon-h1-h2-torrent-vue-lhj011-complete-remote-2

@@ -183,7 +183,7 @@ const vehicles = defineCollection({
           retailer: z.string().min(1),
           checkedAt: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
           stock: z.enum(['in-stock', 'out-of-stock', 'unknown', 'service', 'not-listed']),
-          stockBasis: z.enum(['shopify-js', 'json-ld']).optional(),
+          stockBasis: z.enum(['shopify-js', 'json-ld', 'woocommerce-store-api']).optional(),
           variantId: z.string().min(1).optional(),
           heroNote: z.string().min(1).optional(),
           lowUsd: z.number().nonnegative().optional(),

@@ -276,12 +276,17 @@ export function validateVehicle(data, fileName) {
       if (row.stock === 'service' && row.channel === 'online-diy') {
         fail(`${where} online hardware cannot use stock service`);
       }
+      // Stock claims come only from product data, not a theme's Sold out label.
+      // json-ld: use the Offer whose price equals this row, not a parent aggregate.
+      // woocommerce-store-api: a variation URL /wp-json/wc/store/v1/products/<id> only.
+      // A variable product's ?slug= parent reports is_in_stock false and is not a basis.
+      const stockBases = ['shopify-js', 'json-ld', 'woocommerce-store-api'];
       if (row.stock === 'in-stock' || row.stock === 'out-of-stock') {
-        if (row.stockBasis !== 'shopify-js' && row.stockBasis !== 'json-ld') {
-          fail(`${where}.stockBasis must be shopify-js or json-ld when stock is in-stock or out-of-stock`);
+        if (!stockBases.includes(row.stockBasis)) {
+          fail(`${where}.stockBasis must be shopify-js, json-ld, or woocommerce-store-api when stock is in-stock or out-of-stock`);
         }
-      } else if (row.stockBasis != null && row.stockBasis !== 'shopify-js' && row.stockBasis !== 'json-ld') {
-        fail(`${where}.stockBasis must be shopify-js or json-ld`);
+      } else if (row.stockBasis != null && !stockBases.includes(row.stockBasis)) {
+        fail(`${where}.stockBasis must be shopify-js, json-ld, or woocommerce-store-api`);
       }
       if (row.variantId !== undefined) {
         const ids = new Set((Array.isArray(data.variants) ? data.variants : []).map((variant) => variant?.id));
@@ -516,6 +521,17 @@ function assertSelfTest() {
   const productErrors = validateVehicle(productBasis, 'self-test.yaml');
   if (productErrors.some((error) => error.includes('stockBasis'))) {
     throw new Error(`Self-test rejected a Shopify availability basis:\n${productErrors.join('\n')}`);
+  }
+
+  const variationBasis = minimalValid();
+  variationBasis.priceRanges = variationBasis.priceRanges.map((row) =>
+    row.channel === 'online-diy'
+      ? { ...row, status: 'verified', lowUsd: 29.94, stock: 'in-stock', stockBasis: 'woocommerce-store-api', sourceIds: ['src'] }
+      : row,
+  );
+  const variationErrors = validateVehicle(variationBasis, 'self-test.yaml');
+  if (variationErrors.some((error) => error.includes('stockBasis'))) {
+    throw new Error(`Self-test rejected a WooCommerce variation basis:\n${variationErrors.join('\n')}`);
   }
 
   const steps = minimalValid();

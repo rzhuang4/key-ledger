@@ -266,35 +266,37 @@ priceRanges:
     lowUsd: 29.94
     highUsd: 29.94
     note: "NorthCoast Keyless lists a lightly used 3-button remote, FCC GQ43VT20T,
-      at $29.94. The store API on November 19, 2026 reported that variation in
-      stock, currency USD. The listing includes a battery and says a locksmith
-      must program it. The page lists fitment 2007-2018. Toyota pages opened
-      through 2013 still print a switch sequence. Not confirmed that this used
-      remote accepts that sequence."
-    heroNote: "Genuine Toyota part; Toyota service pages give an on-board registration procedure; the seller says a locksmith should program it; no owner report found on whether a cleared used fob registers with the on-board procedure; the seller offers a 30 Day Return Period for Full Product Refund."
+      at $29.94. Variation 86258 on November 21, 2026: in stock, 2994 cents,
+      currency USD. The listing includes a battery and says a locksmith must
+      program it. The page lists fitment 2007-2018. Toyota pages opened through
+      2013 still print a switch sequence. Not confirmed that this used remote
+      accepts that sequence. In stock (product data, 2026-11-21)."
+    heroNote: "Lightly used, in stock. Genuine Toyota part. Toyota service pages give an on-board registration procedure. The seller says a locksmith should program it. No owner report found on whether a cleared used fob registers with the on-board procedure. The seller offers a 30 Day Return Period for Full Product Refund."
     variantId: genuine-oem
     sourceIds:
       - nck-gq43
     currency: USD
     retailer: NorthCoast Keyless
-    checkedAt: "2026-11-19"
-    stock: unknown
+    checkedAt: "2026-11-21"
+    stock: in-stock
+    stockBasis: woocommerce-store-api
   - channel: online-diy
     status: verified
     lowUsd: 49.94
     highUsd: 49.94
-    note: "The same NorthCoast Keyless listing prices a new remote at $49.94. The
-      store API on November 19, 2026 reported that variation out of stock,
-      currency USD. It is the remote, not a programmed key. The listing says a
-      locksmith must program it."
-    heroNote: "Remote only. The seller says a locksmith must program it. Not confirmed for this remote."
+    note: "The same NorthCoast Keyless listing prices a new remote at $49.94.
+      Variation 86251 on November 21, 2026: out of stock, 4994 cents, currency
+      USD. It is the remote, not a programmed key. The listing says a locksmith
+      must program it. Out of stock (product data, 2026-11-21)."
+    heroNote: "New, out of stock. Remote only. The seller says a locksmith must program it. Not confirmed for this remote."
     variantId: genuine-oem
     sourceIds:
       - nck-gq43
     currency: USD
     retailer: NorthCoast Keyless
-    checkedAt: "2026-11-19"
-    stock: unknown
+    checkedAt: "2026-11-21"
+    stock: out-of-stock
+    stockBasis: woocommerce-store-api
   - channel: online-diy
     status: verified
     lowUsd: 39.95
@@ -533,10 +535,10 @@ sources:
     title: "2007-2018 Toyota Tundra 3-button remote, FCC GQ43VT20T"
     url: "https://northcoastkeyless.com/product/toyota-tundra-3-button-key-fob-remote-fcc-gq43vt20t-p-n-89742-ae010-89742-ae011/"
     publisher: "NorthCoast Keyless"
-    accessed: "2026-11-19"
-    note: "Store API on November 19, 2026, currency USD. Lightly used variation
-      2994 cents and in stock. New variation 4994 cents and out of stock. The
-      page lists battery CR2032 and parts 89742-AE010, 89742-AE011, and
+    accessed: "2026-11-21"
+    note: "Variation 86258, lightly used, 2994 cents, USD, in stock on
+      November 21, 2026. Variation 86251, new, 4994 cents, USD, out of stock.
+      The page lists battery CR2032 and parts 89742-AE010, 89742-AE011, and
       89742-AE040."
 programmingFacts:
   onboardStatus: yes

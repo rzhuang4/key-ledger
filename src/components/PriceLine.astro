@@ -31,7 +31,7 @@ const stockBase =
   copy.stockUnknown;
 const stock =
   (row.stock === 'in-stock' || row.stock === 'out-of-stock') &&
-  (row.stockBasis === 'shopify-js' || row.stockBasis === 'json-ld') &&
+  (row.stockBasis === 'shopify-js' || row.stockBasis === 'json-ld' || row.stockBasis === 'woocommerce-store-api') &&
   row.checkedAt
     ? `${stockBase} (product data, ${row.checkedAt})`
     : stockBase;
