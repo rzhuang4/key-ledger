@@ -1,0 +1,396 @@
+# 2004-2008 Ford F-150, new style, separate keyless remote. Not the 2004 Heritage and not the 2011-2014 integrated key.
+make: Ford
+makeSlug: ford
+model: F-150
+modelSlug: f-150
+yearStart: 2004
+yearEnd: 2008
+yearSlug: "2004-2008"
+market: US
+title: "2004-2008 Ford F-150 keyless remote programming"
+description: "Notes for the new-style 2004-2008 F-150 separate keyless remote,
+  with the Ford ignition-cycle procedure and USD prices. Heritage and later
+  integrated keys are not covered."
+summary: "The new-style 2004-2008 F-150 uses a separate keyless remote. A 2007
+  factory procedure and a 2006 owner's guide both print an ignition-cycle
+  sequence that does not ask for two programmed keys. That sequence does not
+  program the SecuriLock chip. The 2004 Heritage is a different truck."
+scope: "New-style Ford F-150, 2004 through 2008, US market, with a separate
+  keyless remote. Ford Parts Connect lists transmitter 8L3Z-15K601-B for
+  F150 NEW STYLE 2004-08. This page does not cover the 2004 F-150 Heritage.
+  Edmunds calls the Heritage a carryover of the previous year's model, and a
+  2003 AutoWeek article calls Heritage Ford's name for the generation it kept
+  selling beside the redesigned 2004 truck. It does not cover 2011-2014 trucks,
+  which use an integrated key and have their own page. It does not program the
+  SecuriLock key. The 2006 owner's guide puts spare-key programming in a
+  different section, and that section requires two previously programmed coded
+  keys."
+reviewed: "2026-11-21"
+diy:
+  status: "yes"
+  heroAnswer: "Yes, for the separate remote. The ignition-cycle procedure does not require two programmed keys, and it does not program the SecuriLock chip."
+  bottomLine: "A 2007 F-150 service procedure and the 2006 owner's guide both print a tool-free remote sequence. You need a key that turns the ignition. You do not need two programmed keys, and you do not need a working remote if the doors can be unlocked with the power lock switch. Aftermarket owner reports are separate from that procedure."
+  heroNotice: "This page does not apply to a 2004 Heritage, to a 2011-2014 integrated key, or to programming the SecuriLock chip that starts the engine."
+  priceCaution: "flyndubya89 wrote that an eBay remote for a 2006 SuperCrew had 'No problems getting it working and hasn't failed yet.' Nola 07 FX4 wrote that an eBay remote, about $10 with shipping, was 'working fine' within 2 minutes. barriosman wrote that two Amazon remotes were 'working in 10 minutes' and did not state the truck's year. Barn Queen, writing about a 2004, said the Ford dealer charges almost $75. That is one owner's statement, not a posted price."
+  priceCautionSourceIds:
+    - f150-aftermarket
+    - f150-programming
+  summary: "The numbered steps are the 2007 F-150 factory procedure for the
+    remote transmitter. The 2006 owner's guide transcription prints the same
+    kind of sequence and a different transmitter limit. Forum posts are owner
+    reports."
+  condition: "Have every remote you want to keep. Remotes that are not present
+    are dropped. A key has to turn the ignition. The doors have to be unlocked
+    before you start. Two programmed keys are required only for the separate
+    spare-key procedure."
+  safetyNote: "The service page allows four remotes and the 2006 guide says
+    six. A remote left out of the session stops working. If the locks never
+    cycle, stop and have a locksmith or dealer check the truck. The spare-key
+    procedure is a different job."
+  sourceIds:
+    - ford-2007-rke
+    - owner-2006
+  notes:
+    - text: "The 2006 F-150 Owner's Guide transcription says to have all remote
+        transmitters available, maximum of six. Transmitters that are not
+        present will no longer operate the vehicle. It says to unlock the
+        doors with the power door lock control, then cycle the ignition from
+        1 (OFF/LOCK) to 3 (ON) eight times within 10 seconds, ending in ON.
+        It does not mention a scan tool. This site did not open Ford's PDF."
+      sourceIds:
+        - owner-2006
+    - text: "The same 2006 guide's spare-key section is SecuriLock, not the
+        remote. It requires two previously programmed coded keys. If those two
+        keys are not available, the guide says to take the truck to a dealer."
+      sourceIds:
+        - owner-2006
+    - text: "Owner reports, not the procedure: a 2006 SuperCrew owner and a
+        2007 FX4 owner wrote that eBay remotes programmed. One Amazon buyer
+        wrote that two remotes worked in 10 minutes and did not state the year.
+        A 2004 owner wrote that the dealer charges almost $75. That last figure
+        is not a posted price."
+      sourceIds:
+        - f150-aftermarket
+        - f150-programming
+  steps:
+    - text: "Program every remote in the same session. The 2007 procedure says
+        this can be done with a scan tool or with the steps below. Unlock the
+        truck electronically with a remote, the keypad if the truck has one,
+        or the door lock switch while the driver door is open."
+      sourceIds:
+        - ford-2007-rke
+    - text: "Turn the key from OFF to RUN eight times within 10 seconds. The
+        eighth turn ends in RUN. If the truck enters program mode, the doors
+        lock and then unlock."
+      sourceIds:
+        - ford-2007-rke
+    - text: "Within 20 seconds, press any button on a remote. The doors lock
+        and then unlock to confirm that remote. Repeat for each remote. Do not
+        try to program more than four."
+      sourceIds:
+        - ford-2007-rke
+    - text: "If the locks do not answer a remote, wait several seconds and
+        press a button again. The mode ends when the key is turned OFF, when
+        20 seconds pass, or when four remotes have been programmed."
+      sourceIds:
+        - ford-2007-rke
+scopeCards:
+  - label: "2004-2008 new style"
+    text: "This page. Ford Parts Connect lists 8L3Z-15K601-B for F150 NEW
+      STYLE 2004-08. The remote procedure opened here is the 2006 owner's
+      guide and the 2007 service page. A 2006 owner and a 2007 owner reported
+      eBay remotes they programmed themselves."
+    sourceIds:
+      - ford-parts-8l3z
+      - owner-2006
+      - ford-2007-rke
+      - f150-aftermarket
+  - label: "2004 Heritage"
+    text: "Not this page. Edmunds says the 2004 F-150 Heritage is a carryover
+      of the previous year's model. AutoWeek, in July 2003, called Heritage
+      Ford's name for the generation it kept selling beside the redesigned
+      2004 F-150."
+    sourceIds:
+      - edmunds-heritage
+      - autoweek-2004
+  - label: "2009 and later"
+    text: "Not this page. Car and Truck Remotes lists the same remote shape
+      through 2010 F-150, but the Ford parts line used here stops at new-style
+      2008, and no 2009 or 2010 Ford procedure was opened. The 2011-2014
+      integrated key has its own page."
+    sourceIds:
+      - ctr-f150
+      - ford-parts-8l3z
+variants:
+  - id: genuine-ford
+    name: "Genuine Ford keyless transmitter"
+    years: "Ford Parts Connect lists this transmitter for F150 NEW STYLE 2004-08 and Mark LT."
+    heroLabel: "Genuine Ford"
+    keyType: separate-remote
+    keyTypeNote: "Ford Parts Connect sells 8L3Z-15K601-B as a keyless entry
+      transmitter. The page does not print an FCC ID and does not say the
+      price includes programming. Superseded numbers on that page include
+      8L3Z-15K601-AA."
+    keyTypeSourceIds:
+      - ford-parts-8l3z
+    fccIds:
+      - id: CWTWB1U345
+        role: oem
+        note: "Not printed on the Ford parts page. Car and Truck Remotes and
+          Puget Sound Locksmith print CWTWB1U345 with the part numbers that
+          include 8L3Z-15K601-AA. Those listings also print other FCC IDs on
+          the same remote, so this page does not assign one FCC ID to one year."
+        sourceIds:
+          - ctr-f150
+          - puget-rke
+    oemPartNumbers:
+      - number: "8L3Z-15K601-B"
+        summary: true
+        note: "The Ford Parts Connect part number. Applications line: F150
+          NEW STYLE 2004-08, MARK LT."
+        sourceIds:
+          - ford-parts-8l3z
+      - number: "8L3Z-15K601-AA"
+        note: "Listed by Ford Parts Connect as a superseded number for
+          8L3Z-15K601-B, written there as 8L3Z15K601AA."
+        sourceIds:
+          - ford-parts-8l3z
+    battery:
+      status: verified
+      type: CR2032
+      note: "Printed on the Car and Truck Remotes listing for this remote.
+        The Ford parts page does not name the cell."
+      sourceIds:
+        - ctr-f150
+    frequency:
+      status: verified
+      text: "315 MHz"
+      note: "Printed on the Car and Truck Remotes listing. The Ford parts page
+        does not print a frequency."
+      sourceIds:
+        - ctr-f150
+    buttons:
+      count: 3
+      sourceIds:
+        - ctr-f150
+  - id: aftermarket-remote
+    name: "Aftermarket keyless remote"
+    years: "Car and Truck Remotes lists this remote for F-150 1998-2010. This page stops at 2008."
+    heroLabel: "Aftermarket"
+    keyType: separate-remote
+    keyTypeNote: "Car and Truck Remotes sells one aftermarket remote and prints
+      On Board Programming: Yes. The FCC IDs are listed together, not split
+      by year: CWTWB1U345, CWTWB1U331, CWTWB1U212, and GQ43VT11T."
+    keyTypeSourceIds:
+      - ctr-f150
+    fccIds:
+      - id: CWTWB1U345
+        role: seller-listed
+        note: "The first FCC ID on the Car and Truck Remotes listing. The same
+          line also prints CWTWB1U331, CWTWB1U212, and GQ43VT11T. Puget Sound
+          Locksmith prints those IDs and also OUCD6000022."
+        sourceIds:
+          - ctr-f150
+          - puget-rke
+    oemPartNumbers:
+      - number: "8L3Z-15K601-AA"
+        note: "Car and Truck Remotes lists 8L3Z-15K601-AA and 8L3Z-15K601-B
+          among the Ford numbers for this aftermarket remote."
+        sourceIds:
+          - ctr-f150
+      - number: "2L3T-15K601-AA"
+        note: "Also printed on that listing, with 2L3T-15K601-AB and
+          F8DB-15K601-AA."
+        sourceIds:
+          - ctr-f150
+    battery:
+      status: verified
+      type: CR2032
+      note: "Printed on the Car and Truck Remotes listing."
+      sourceIds:
+        - ctr-f150
+    frequency:
+      status: verified
+      text: "315 MHz"
+      note: "Printed on the Car and Truck Remotes listing."
+      sourceIds:
+        - ctr-f150
+    buttons:
+      count: 3
+      sourceIds:
+        - ctr-f150
+priceRanges:
+  - channel: dealer
+    status: verified
+    lowUsd: 67.5
+    highUsd: 67.5
+    note: "Ford Parts Connect, one parts store, 200 State Route 35, Keyport,
+      New Jersey. Page opened November 21, 2026: sale price $67.50, described
+      as $7.50 below MSRP $75.00. The page says Ready to ship tomorrow, and
+      its shipping policy says in-stock orders ship within 24 hours. Part
+      only. No programming is listed. Application line: F150 NEW STYLE 2004-08,
+      MARK LT. Dollar prices on a US store page."
+    heroNote: "Part only. Ready to ship tomorrow. Keyport, NJ. New-style 2004-2008."
+    variantId: genuine-ford
+    sourceIds:
+      - ford-parts-8l3z
+    currency: USD
+    retailer: Ford Parts Connect
+    checkedAt: "2026-11-21"
+    stock: in-stock
+  - channel: online-diy
+    status: verified
+    lowUsd: 12.95
+    highUsd: 12.95
+    note: "Car and Truck Remotes, Vernon Hills, Illinois, one online seller.
+      Product JSON on November 21, 2026: available, 1295 cents, shop currency
+      USD. Aftermarket remote only, with a battery and do-it-yourself
+      instructions. The seller does not cut a key. The listing says On Board
+      Programming: Yes. Fitment includes F-150 1998-2010."
+    heroNote: "Aftermarket remote only. In stock. Seller says On Board Programming: Yes. Vernon Hills, IL."
+    variantId: aftermarket-remote
+    sourceIds:
+      - ctr-f150
+    currency: USD
+    retailer: Car and Truck Remotes
+    checkedAt: "2026-11-21"
+    stock: in-stock
+  - channel: locksmith
+    status: verified
+    lowUsd: 50
+    highUsd: 50
+    note: "Puget Sound Locksmith, one shop. Shop record: city Tacoma,
+      Washington, currency USD. Product page opened November 21, 2026, says
+      Sold out. Price $50. The description says all prices include programming
+      and cutting of the keys at one of their service locations, and that
+      mobile service is chosen at checkout. The fitment list includes Ford
+      F-Series 1998-2003 and 2004-2010, plus other Ford models. This is the
+      Tacoma, Washington shop, not the Toyota truck."
+    heroNote: "Posted price $50, and the product page says Sold out. Includes programming and cutting at their locations. Tacoma, WA, not the truck."
+    currency: USD
+    retailer: Puget Sound Locksmith
+    checkedAt: "2026-11-21"
+    stock: service
+    variantId: aftermarket-remote
+    sourceIds:
+      - puget-rke
+shopLinks:
+  - retailer: carandtruckremotes
+    url: "https://www.carandtruckremotes.com/products/2004-ford-f-150-remote-key-fob-aftermarket"
+    label: "Car and Truck Remotes 2004 F-150 remote"
+unverified:
+  - "Which of the printed FCC IDs belongs to which model year. The seller pages
+    list several IDs on one remote."
+  - "A 2004, 2005, or 2008 Ford procedure. The steps are the 2007 service page
+    and the 2006 owner's guide transcription."
+  - "The metal key's blade code."
+troubleshooting:
+  - id: locks-silent
+    title: "The locks never cycle"
+    text: "The 2007 procedure says the doors lock and then unlock when program
+      mode starts. If they do not, the truck did not enter the mode. The 2006
+      guide starts by unlocking the doors with the power lock control."
+    sourceIds:
+      - ford-2007-rke
+      - owner-2006
+  - id: old-remote-dead
+    title: "An old remote stopped working"
+    text: "The 2006 guide says transmitters that are not present during
+      programming will no longer operate the vehicle. Bring every remote you
+      still want."
+    sourceIds:
+      - owner-2006
+ignitionKey:
+  status: verified
+  transponder: present
+  sourceIds:
+    - owner-2006
+  note: "The 2006 guide calls SecuriLock an engine immobilization system. A
+    coded key has to be programmed before it will start the engine. Programming
+    a spare key yourself requires two previously programmed coded keys. The
+    remote steps do not do that job. No blade code was on the pages opened."
+sources:
+  - id: ford-2007-rke
+    title: "2007 F-150 remote keyless entry transmitter programming"
+    url: "https://workshop-manuals.com/ford/f_150_2007_factory/body/501_14_handles_locks_latches_and_entry_systems/general_procedures/remote_keyless_entry_transmitter_programming/"
+    publisher: "Workshop-manuals.com reproduction of a 2007 F-150 factory procedure"
+    accessed: "2026-11-21"
+    note: "Section 501-14, revised July 14, 2006. Scan tool or the ignition
+      sequence. OFF to RUN eight times within 10 seconds, ending in RUN.
+      Maximum of four transmitters. All transmitters programmed at the same
+      time. Unlock first with a remote, the keypad, or the door switch."
+  - id: owner-2006
+    title: "2006 F-150 Owner's Guide, locks and security"
+    url: "https://www.carmanualsonline.info/ford-f150-2006-11-g-owners-manual/11"
+    publisher: "Car Manuals Online transcription of the 2006 F-150 Owner's Guide"
+    accessed: "2026-11-21"
+    note: "Pages marked 2006 F-150 Owners Guide, USA. Remote programming uses
+      the power lock control and eight ignition cycles, maximum of six
+      transmitters. Spare keys are a separate SecuriLock section and need two
+      programmed keys. Ford's own PDF was not opened."
+  - id: f150-aftermarket
+    title: "Aftermarket Key Fobs"
+    url: "https://www.f150forum.com/f4/aftermarket-key-fobs-139932/"
+    publisher: "F150 Forum"
+    accessed: "2026-11-21"
+    note: "flyndubya89, 2006 SuperCrew, eBay remote: 'No problems getting it
+      working and hasn't failed yet.' Page 2, Nola 07 FX4, eBay remote about
+      $10: 'within 2 minutes it was working fine.'"
+  - id: f150-programming
+    title: "Programming Keyless Entry Remotes"
+    url: "https://www.f150forum.com/f4/programming-keyless-entry-remotes-236003/"
+    publisher: "F150 Forum"
+    accessed: "2026-11-21"
+    note: "Barn Queen, 2004, said the Ford dealer charges almost $75. That is
+      one owner's statement. barriosman wrote that two Amazon remotes were
+      working in 10 minutes and did not state the year."
+  - id: ctr-f150
+    title: "2004 Ford F-150 remote key fob"
+    url: "https://www.carandtruckremotes.com/products/2004-ford-f-150-remote-key-fob-aftermarket"
+    publisher: "Car and Truck Remotes"
+    accessed: "2026-11-21"
+    note: "Product JSON November 21, 2026: available, 1295 cents. Shop currency
+      USD. City Vernon Hills, Illinois. On Board Programming: Yes. Battery
+      CR2032. 315 MHz. Three buttons. FCC IDs listed together. Fitment includes
+      F-150 1998-2010. Remote only."
+  - id: ford-parts-8l3z
+    title: "Ford keyless entry transmitter 8L3Z-15K601-B"
+    url: "https://www.fordpartsconnect.com/oem-parts/ford-keyless-entry-transmitter-8l3z15k601b"
+    publisher: "Ford Parts Connect"
+    accessed: "2026-11-21"
+    note: "Sale price $67.50, MSRP $75.00. Ready to ship tomorrow. Store
+      address 200 State Route 35, Keyport, NJ. Applications: F150 NEW STYLE
+      2004-08, MARK LT. Superseded numbers include 8L3Z15K601AA. No FCC ID and
+      no programming price on the page."
+  - id: puget-rke
+    title: "Ford RKE-FORD-3B1"
+    url: "https://pslocksmith.shop/products/ford-rke-ford-3b1"
+    publisher: "Puget Sound Locksmith"
+    accessed: "2026-11-21"
+    note: "Product page says Sold out. Price $50. Description says all prices
+      include programming and cutting at a service location, and mobile service
+      is a checkout option. Fitment includes Ford F-Series 2004-2010. FCC IDs
+      include CWTWB1U345, CWTWB1U331, CWTWB1U212, GQ43VT11T, and OUCD6000022.
+      OE numbers include 8L3Z-15K601-AA. Shop record: Tacoma, Washington, USD."
+  - id: edmunds-heritage
+    title: "2004 Ford F-150 Heritage review"
+    url: "https://www.edmunds.com/ford/f-150-heritage/2004/review/"
+    publisher: "Edmunds"
+    accessed: "2026-11-21"
+    note: "Edmunds says the F-150 Heritage is a carryover of the previous
+      year's model."
+  - id: autoweek-2004
+    title: "Redesigned F-150 to start at $22,010"
+    url: "https://www.autoweek.com/news/a2100271/redesigned-f-150-start-22010-current-generation-sticks-around/"
+    publisher: "Autoweek"
+    accessed: "2026-11-21"
+    note: "July 2003. Heritage is Ford's designation for the then-current
+      generation it would keep selling beside the redesigned 2004 F-150."
+programmingFacts:
+  onboardStatus: yes
+  minimumWorkingKeys: 0
+  pushButtonProcedure: not-covered
+  sourceIds:
+    - ford-2007-rke
+    - owner-2006
+  ignitionKeyInCylinder: required

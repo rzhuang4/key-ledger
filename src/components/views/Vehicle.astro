@@ -180,6 +180,7 @@ function leadSentence(text: string) {
             const hardware = hardwareFor(variant.id);
             const service = serviceFor(variant.id);
             const dealer = dealerFor(variant.id);
+            const headline = hardware ?? dealer;
             const part = summaryPart(variant);
             const buttons = buttonLabel(variant);
             return (
@@ -193,14 +194,14 @@ function leadSentence(text: string) {
                 </article>
                 <article class="tile">
                   <p class="kicker">{rowLabel(variant)} · Price</p>
-                  <strong>{hardware ? `From $${hardware.lowUsd?.toFixed(2)}` : 'Not verified'}</strong>
-                  {hardware && (
+                  <strong>{headline ? `From $${headline.lowUsd?.toFixed(2)}` : 'Not verified'}</strong>
+                  {headline && (
                     <p class="detail">
-                      {hardware.retailer}
-                      {hardware.heroNote ? `. ${hardware.heroNote}` : ''}
+                      {headline.retailer}
+                      {headline.heroNote ? `. ${headline.heroNote}` : ''}
                     </p>
                   )}
-                  {dealer && (
+                  {hardware && dealer && (
                     <p class="detail">
                       {dealer.retailer} ${dealer.lowUsd?.toFixed(2)}
                       {dealer.heroNote ? `. ${dealer.heroNote}` : ''}
