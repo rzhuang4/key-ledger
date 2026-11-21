@@ -11,11 +11,10 @@ title: "2005-2015 Toyota Tacoma keyless remote programming"
 description: "Notes for the 2005-2015 Tacoma 3-button remote, FCC GQ43VT20T
   and part 89742-AE011, with owner reports and USD prices. 2016+ is not covered."
 summary: "The 2005-2015 Tacoma keyless remote that sellers list is a separate
-  3-button fob, FCC GQ43VT20T, part 89742-AE011. A 2006 owner reported an
-  aftermarket eBay remote programmed from the seller's instructions. A seller
-  says do-it-yourself programming is only for 2004-2010 Tacomas. Some owners
-  of 2011 and 2015 trucks report the door sequence worked. A 2015-2018 Toyota
-  manual page that was opened prints only Techstream registration."
+  3-button fob, FCC GQ43VT20T, part 89742-AE011. Toyota keyless-entry
+  registration pages for these years print a tool-free on-board procedure.
+  Aftermarket remote quality varies. A 2006 owner reported one aftermarket
+  remote programmed from the seller's instructions."
 scope: "Second-generation Tacoma, 2005 through 2015, US market, trucks that
   left the factory with keyless entry and a separate 3-button remote. This page
   does not cover 2016 and later. My Locksmith Express lists those trucks with
@@ -24,104 +23,147 @@ scope: "Second-generation Tacoma, 2005 through 2015, US market, trucks that
   was not built with the keyless receiver. A 2015 owner wrote that a dealer and
   later a master mechanic said that truck had no radio hardware for a fob, and
   another 2015 owner wrote that the door sequence needs the factory receiver.
-  The remote steps do not program the engine-start chip. A 2009 Tacoma service
-  page that was opened is immobilizer registration, and a 2013 owner wrote that
-  the key needs a computer."
+  The remote steps do not program the chip in the metal key. That key has to
+  be cut and programmed on its own."
 reviewed: "2026-11-20"
 diy:
   status: "yes"
-  heroAnswer: "2005-2010: a 2006 owner reported an aftermarket remote programmed from the seller's instructions. 2011-2015: the sources conflict."
-  bottomLine: "A 2006 owner reported a $20 aftermarket eBay remote programmed with the seller's instructions. For 2011-2015, KeylessPros says DIY is only for 2004-2010, a Tacoma World member says the fob is self programmable on most 2005-2011 trucks, and some 2011 and 2015 owners report the door sequence worked. A 2015-2018 Toyota manual page prints only Techstream registration."
+  heroAnswer: "Yes, on a 2005-2015 truck that has factory keyless entry. Toyota's registration pages print a tool-free procedure. Aftermarket remote quality varies."
+  bottomLine: "For 2005-2015 trucks with factory keyless entry, Toyota service pages print a tool-free on-board procedure. Aftermarket quality varies. The aftermarket owner report on this page is one 2006 truck. Two 2015 owners reported Amazon remotes working, and their posts do not say those remotes were aftermarket."
   heroNotice: "This page does not apply to 2016 and later trucks, to a truck built without factory keyless entry, or to programming the transponder that starts the engine."
-  priceCaution: "joes06tacoma, a 2006 owner, wrote that a $20 shipped aftermarket eBay remote from keyless king 'Programmed no problem using his instructions.' TRDSport10 wrote that GQ43VT20T is self programmable on most 2005-2011 Tacomas. Yaozer wrote that an OEM fob worked on a 2011. Hook78 wrote that the posted door sequence worked on a 2015 TRD Off-Road. hoffengineering and 565hunter wrote that Amazon remotes worked on 2015 trucks. KeylessPros says DIY self-programming is only available for 2004-2010 Tacoma. A 2015-2018 Toyota manual page prints Techstream registration and no switch sequence. Chrome wrote that a dealer phone quote was about $202 for a fob and programming. That is one person's report of a quote, not a posted price."
+  priceCaution: "joes06tacoma, a 2006 owner, wrote that a $20 shipped aftermarket eBay remote from keyless king 'Programmed no problem using his instructions.' That is the aftermarket owner-success report, and it is a 2006 truck. hoffengineering and 565hunter wrote that Amazon remotes worked on 2015 trucks. Their posts do not call those remotes aftermarket. KeylessPros says DIY self-programming is only available for its own remote on 2004-2010 Sienna and Tacoma, and that other models and years need a dealer or locksmith. That is the seller's limit for that product, not a Toyota rule. Chrome wrote that a dealer phone quote was about $202 for a fob and programming. That is one person's report of a quote, not a posted price."
   priceCautionSourceIds:
     - tw-fob-questions
     - tw-2015-procedure
     - amazon-keylesspros
-    - tacoma-2015-manual
-  summary: "Owner reports and a seller's instruction limit do not say the same
-    thing for 2011-2015. The steps below are the sequence a Tacoma World member
-    posted for a 2015, not a Toyota service page. The 2015-2018 Toyota page that
-    was opened uses Techstream."
-  condition: "The posted sequence uses the ignition key. It programs the remote,
-    not the chip that starts the engine. KeylessPros says its remote needs one
-    working original key that starts the vehicle."
+  summary: "The numbered steps are the keyless-entry registration printed on
+    the Toyota pages for 2011, 2012, 2013, 2014, and 2015. None of those pages
+    uses Techstream. CHARM 2006, 2009, and 2010 print the same sequence.
+    Forum posts below are owner reports, not the procedure."
+  condition: "Start with no key in the ignition and only the driver door open.
+    The procedure registers the remote. It does not program the chip in the
+    metal key."
   safetyNote: "A wrong sequence can fail to enter programming mode. Chrome's
     2015 base truck never got the locks to cycle, and a dealer told him the
     truck had no keyless receiver. If the locks do not answer, stop and have a
     locksmith or dealer check whether the truck was built with keyless entry."
   sourceIds:
-    - tw-2015-procedure
-    - tw-fob-questions
+    - charm-2011
+    - charm-2012
+    - lemon-2013
+    - lemon-2014
+    - lemon-2015
   notes:
-    - text: "The numbered steps are the rewrite-mode sequence pheerles posted on
-        a 2015 Tacoma World thread. They are not copied from a Toyota manual.
-        The 2015-2018 Toyota Tacoma registration page that was opened has only
-        a Techstream procedure."
+    - text: "CHARM keyless-entry registration for 2006, 2009, and 2010 prints
+        the same switch sequence as the 2011 and 2012 pages, including the
+        1.0 to 1.5 second press of Lock and Unlock together. No Techstream
+        step is on those pages."
       sourceIds:
-        - tw-2015-procedure
-        - tacoma-2015-manual
+        - charm-2006
+        - charm-2009
+        - charm-2010
+    - text: "KeylessPros limits do-it-yourself programming to its own remote
+        on 2004-2010 Tacoma. That sentence is the seller's product limit."
+      sourceIds:
+        - amazon-keylesspros
   steps:
-    - text: "Start with the key out of the ignition, the driver door open and
-        unlocked, and the other doors closed. This wording is the forum post,
-        not a Toyota manual."
+    - text: "No key in the ignition key cylinder, and only the driver door
+        open. Insert the key and remove it twice within 5 seconds."
       sourceIds:
-        - tw-2015-procedure
-    - text: "Within 5 seconds, insert the key and remove it twice."
+        - charm-2011
+        - charm-2012
+        - lemon-2013
+        - lemon-2014
+        - lemon-2015
+    - text: "Within 40 seconds, close and open the driver door twice, then
+        insert the key and remove it."
       sourceIds:
-        - tw-2015-procedure
-    - text: "Within 40 seconds, close and open the driver door twice."
+        - charm-2011
+        - lemon-2015
+    - text: "Within 40 seconds, close and open the driver door twice again.
+        Insert the key and close all doors."
       sourceIds:
-        - tw-2015-procedure
-    - text: "Insert the key and remove it once."
+        - charm-2011
+        - lemon-2015
+    - text: "Within 40 seconds, turn the ignition from LOCK to ON and back to
+        LOCK at about 1 second intervals. Once selects Add mode. Twice selects
+        Rewrite mode. Three times selects Confirmation mode. Five times selects
+        Prohibition mode. Zero, four, or six or more gets no lock response.
+        Remove the key."
       sourceIds:
-        - tw-2015-procedure
-    - text: "Within 40 seconds, close and open the driver door twice again."
+        - charm-2011
+        - charm-2012
+        - lemon-2014
+        - lemon-2015
+    - text: "The locks answer the mode. In Confirmation mode they cycle once
+        for each registered code. If nothing is registered, they cycle 11
+        times. Confirmation mode and Prohibition mode end after that answer."
       sourceIds:
-        - tw-2015-procedure
-    - text: "Insert the key, close the driver door, and turn the ignition from
-        LOCK to ON and back to LOCK twice, about one second apart, for rewrite
-        mode. Remove the key. The post says the locks cycle twice if rewrite
-        mode was selected."
+        - charm-2011
+        - charm-2012
+        - lemon-2013
+        - lemon-2015
+    - text: "Within 45 seconds of Add mode or Rewrite mode, press the Lock and
+        Unlock switches at the same time for 1.0 to 1.5 seconds. Within 3
+        seconds of moving your finger away, press either switch for more than
+        1.0 second."
       sourceIds:
-        - tw-2015-procedure
-    - text: "Within 40 seconds, press Lock and Unlock together for 1 second,
-        then within 3 seconds press Lock. The post says one lock cycle means
-        the remote was recognized and two cycles means it was not."
+        - charm-2011
+        - charm-2012
+        - lemon-2013
+        - lemon-2014
+        - lemon-2015
+    - text: "Within 5 seconds the locks cycle once if the code was registered,
+        or twice if it failed. If it fails, start again. Another remote can be
+        registered within 45 seconds of the previous one. Add mode keeps old
+        codes until more than four are stored, then drops the oldest. Rewrite
+        mode clears the old codes first."
       sourceIds:
-        - tw-2015-procedure
-    - text: "Repeat that button pair for each other remote, up to four. Opening
-        the driver door, inserting the key, waiting 40 seconds, or registering
-        four remotes ends the mode."
+        - charm-2012
+        - lemon-2013
+        - lemon-2015
+    - text: "Registration ends if the key is inserted, any door is opened, or
+        45 seconds pass after a code is registered."
       sourceIds:
-        - tw-2015-procedure
+        - charm-2011
+        - lemon-2014
+        - lemon-2015
 scopeCards:
   - label: "2005-2010"
-    text: "KeylessPros says DIY self-programming is available for 2004-2010
-      Tacoma. joes06tacoma, a 2006 owner, wrote that a $20 shipped aftermarket
-      eBay remote 'Programmed no problem using his instructions.'"
+    text: "CHARM keyless-entry registration for 2006, 2009, and 2010 prints
+      the tool-free procedure, with no Techstream. joes06tacoma, a 2006 owner,
+      wrote that a $20 shipped aftermarket eBay remote 'Programmed no problem
+      using his instructions.' That aftermarket report is this year range."
     sourceIds:
-      - amazon-keylesspros
+      - charm-2006
+      - charm-2009
+      - charm-2010
       - tw-fob-questions
   - label: "2011-2015"
-    text: "These years conflict. KeylessPros says DIY is only for 2004-2010.
-      TRDSport10 wrote that GQ43VT20T is self programmable on most 2005-2011
-      Tacomas. A 2011 owner wrote that an OEM fob worked. 2015 owners wrote
-      that the posted sequence and Amazon remotes worked. A 2015-2018 Toyota
-      manual page prints only Techstream. This page does not treat DIY as
-      settled for 2011-2015."
+    text: "CHARM 2011 and 2012, and Lemon Manuals 2013, 2014, and 2015, print
+      the same tool-free registration. No Techstream step is on those pages.
+      Two 2015 owners wrote that Amazon remotes worked. Their posts do not
+      say the remotes were aftermarket."
     sourceIds:
-      - amazon-keylesspros
-      - tw-fob-questions
+      - charm-2011
+      - charm-2012
+      - lemon-2013
+      - lemon-2014
+      - lemon-2015
       - tw-2015-procedure
-      - tacoma-2015-manual
   - label: "2016 and later"
     text: "This page does not cover these years. My Locksmith Express lists a
       remote-head key, FCC GQ4-52T, for 2016-2023 SR trucks without
       push-button start, and a smart key, FCC HYQ14FBA, for 2016-2021
-      push-button trims. That is the shop's fitment table, not a Toyota fiche."
+      push-button trims. That is the shop's fitment table, not a Toyota fiche.
+      A Tacoma manual labeled 2015-2018 on ttguide includes a 2GR-FKS smart-key
+      start section, and its wireless registration page prints only Techstream.
+      Car and Truck Remotes lists an H-chip metal key for 2016-2018 Tacoma."
     sourceIds:
       - mle-tacoma
+      - ttguide-2gr
+      - ttguide-wireless
+      - ctr-key-2016
 variants:
   - id: genuine-oem
     name: "Genuine Toyota 3-button remote"
@@ -316,12 +358,6 @@ shopLinks:
 unverified:
   - "A current dealer price for 89742-AE011. The ToyotaPartsNow page says the
     part is discontinued and shows no price."
-  - "A Toyota service page for 2005-2014 Tacoma that prints the door sequence.
-    The steps on this page are a forum post. The 2015-2018 manual page that
-    was opened prints Techstream only."
-  - "Whether every 2011-2015 Tacoma will accept the door sequence. Owner
-    reports and the KeylessPros limit do not agree."
-  - "The ignition-key blade code."
   - "Which trims left the factory without a keyless receiver. The 2015 thread
     shows that some trucks did."
 troubleshooting:
@@ -335,23 +371,36 @@ troubleshooting:
       - tw-2015-procedure
   - id: two-cycles
     title: "The locks cycle twice"
-    text: "pheerles's posted steps say two lock cycles mean the remote was not
-      recognized. theferalkid wrote that on a 2015 the locks cycled twice and
-      the remote still worked after another Lock press. Those two reports do
-      not say the same thing."
+    text: "The Toyota registration pages say two lock cycles mean the code was
+      not registered. theferalkid wrote that on a 2015 the locks cycled twice
+      and the remote still worked after another Lock press. That is one owner's
+      report, not the service page."
     sourceIds:
+      - charm-2011
+      - lemon-2015
       - tw-2015-procedure
 ignitionKey:
   status: verified
+  blade: TR47
   transponder: present
   sourceIds:
-    - tacoma-2009-immo
+    - ctr-key-2008
+    - ctr-key-2012
+    - ctr-key-2016
+    - mle-tacoma
     - tw-2015-procedure
-  note: "The 2009 Tacoma page that was opened is immobilizer registration.
-    Additional keys on that page use Techstream. jburner wrote, about a 2013,
-    that there is no DIY way to program the key without a computer, and that
-    key fobs are a different job. No blade code was on the pages opened. The
-    remote steps do not program this chip."
+  note: "The remote procedure does not program this chip. Check the stamp on
+    the key head. Car and Truck Remotes' 2008 Tacoma key is TOY44D, Texas 4D
+    67, marked as a Dot chip, test key TR47, and the page lists it for
+    2005-2010 Tacoma with a note that some 2010 trucks use a dot chip and some
+    use a G chip. The 2012 Tacoma key page is a G chip, TOY44G, OE
+    89785-08040, keyway TR47, chip ID Texas 4D 72 G chip, and it lists
+    2010-2015 Tacoma with the same 2010 note. So 2005-2009 reads as the dot
+    chip, 2010 can be either, and 2010-2015 is the G chip on that page. The
+    2016 Tacoma key page is an H chip, TOY44H, for 2016-2018. My Locksmith
+    Express lists a G chip for all of 2005-2015, which does not match the
+    2008 key page. A 2013 owner wrote that the metal key needs a computer and
+    that the fob is a different job."
 sources:
   - id: tw-fob-questions
     title: "Key Fob Questions"
@@ -359,35 +408,96 @@ sources:
     publisher: "Tacoma World"
     accessed: "2026-11-20"
     note: "Post 8, joes06tacoma, 2006: a $20 shipped aftermarket eBay remote
-      from keyless king, 'Programmed no problem using his instructions.' Post
-      5, TRDSport10: GQ43VT20T is self programmable on most 2005-2011 Tacomas.
-      Post 15, Yaozer, 2011: an OEM fob worked."
+      from keyless king, 'Programmed no problem using his instructions.'
+      That is the aftermarket owner report used on this page."
   - id: tw-2015-procedure
     title: "2015 Keyfob Programming"
     url: "https://www.tacomaworld.com/threads/2015-keyfob-programming.361834/"
     publisher: "Tacoma World"
     accessed: "2026-11-20"
-    note: "pheerles posted a rewrite-mode door sequence. Hook78 wrote that it
-      worked on a 2015 TRD Off-Road. hoffengineering wrote that a $30 Amazon
+    note: "Owner reports only. hoffengineering wrote that a $30 Amazon
       two-pack worked on a 2015. 565hunter wrote that an Amazon GQ43VT20T
-      remote worked on a 2015. jburner wrote that the key needs a computer.
-      Chrome wrote that a dealer quote was about $202 and that his truck had
-      no keyless hardware. Defvayne wrote that the sequence needs the factory
-      receiver."
-  - id: tacoma-2015-manual
-    title: "2015-2018 Tacoma wireless door lock registration"
+      remote worked on a 2015. Neither post says the remote was aftermarket.
+      jburner wrote that the metal key needs a computer. Chrome wrote that a
+      dealer quote was about $202 and that his truck had no keyless hardware.
+      Defvayne wrote that the sequence needs the factory receiver.
+      theferalkid wrote that two lock cycles still left a 2015 remote working."
+  - id: charm-2006
+    title: "2006 Tacoma keyless entry registration"
+    url: "https://charm.li/Toyota%20Truck/2006/Tacoma%204WD%20V6-4.0L%20%281GR-FE%29/Repair%20and%20Diagnosis/Accessories%20and%20Optional%20Equipment/Antitheft%20and%20Alarm%20Systems/Keyless%20Entry/Testing%20and%20Inspection/Programming%20and%20Relearning/"
+    publisher: "Operation CHARM, 2006 Tacoma keyless-entry registration"
+    accessed: "2026-11-21"
+    note: "The page is titled Registration and prints the switch sequence.
+      No Techstream step. The folder above it is Antitheft and Alarm Systems,
+      and the page itself is Keyless Entry registration, not immobilizer
+      programming."
+  - id: charm-2009
+    title: "2009 Tacoma keyless entry registration"
+    url: "https://charm.li/Toyota/2009/Tacoma%204WD%20V6-4.0L%20%281GR-FE%29/Repair%20and%20Diagnosis/Body%20and%20Frame/Locks/Keyless%20Entry/Testing%20and%20Inspection/Programming%20and%20Relearning/Registration/"
+    publisher: "Operation CHARM, 2009 Tacoma keyless-entry registration"
+    accessed: "2026-11-21"
+    note: "Switch registration. Lock and Unlock together for 1.0 to 1.5
+      seconds, then either switch for more than 1.0 second. No Techstream."
+  - id: charm-2010
+    title: "2010 Tacoma keyless entry registration"
+    url: "https://charm.li/Toyota/2010/Tacoma%204WD%20V6-4.0L%20%281GR-FE%29/Repair%20and%20Diagnosis/Body%20and%20Frame/Locks/Keyless%20Entry/Testing%20and%20Inspection/Programming%20and%20Relearning/Registration/"
+    publisher: "Operation CHARM, 2010 Tacoma keyless-entry registration"
+    accessed: "2026-11-21"
+    note: "Same switch registration as the 2009 page. No Techstream."
+  - id: charm-2011
+    title: "2011 Tacoma keyless entry registration"
+    url: "https://charm.li/Toyota/2011/Tacoma%204WD%20V6-4.0L%20%281GR-FE%29/Repair%20and%20Diagnosis/Body%20and%20Frame/Locks/Keyless%20Entry/Testing%20and%20Inspection/Programming%20and%20Relearning/Registration/"
+    publisher: "Operation CHARM, 2011 Tacoma keyless-entry registration"
+    accessed: "2026-11-21"
+    note: "The mode chart shows Add once, Rewrite twice, Confirmation three
+      times, and Prohibition five times. Confirmation mode cycles the locks
+      11 times if nothing is registered. Button press is 1.0 to 1.5 seconds
+      on Lock and Unlock together, then either switch for more than 1.0
+      second within 3 seconds."
+  - id: charm-2012
+    title: "2012 Tacoma keyless entry registration"
+    url: "https://charm.li/Toyota/2012/Tacoma%204WD%20V6-4.0L%20%281GR-FE%29/Repair%20and%20Diagnosis/Body%20and%20Frame/Locks/Keyless%20Entry/Testing%20and%20Inspection/Programming%20and%20Relearning/Registration/"
+    publisher: "Operation CHARM, 2012 Tacoma keyless-entry registration"
+    accessed: "2026-11-21"
+    note: "Same switch registration as the 2011 page, including the 11-cycle
+      confirmation when nothing is registered. No Techstream."
+  - id: lemon-2013
+    title: "2013 Tacoma wireless door lock registration"
+    url: "https://lemon-manuals.org.ua/Toyota/2013/Tacoma%20Base%2C%202D%20Pickup%2C%20RWD%2C%20Standard%20Trans/Repair%20and%20Diagnosis/Accessories%20%26%20Equipment/Anti-Theft%20Systems/Wireless%20Door%20Lock%20Control%20System%20%28Diagnostics%20%26%20Symptom%20Tests%29/Wireless%20Door%20Lock%20Control%20System/Registration/Registration/"
+    publisher: "Lemon Manuals, 2013 Tacoma wireless door lock registration"
+    accessed: "2026-11-21"
+    note: "Tool-free registration. Same 1.0 to 1.5 second Lock and Unlock
+      press, and 11 lock cycles in confirmation mode if no code is registered.
+      No Techstream."
+  - id: lemon-2014
+    title: "2014 Tacoma wireless door lock registration"
+    url: "https://lemon-manuals.org.ua/Toyota/2014/Tacoma%20Base%2C%202D%20Pickup%2C%20RWD%2C%20Standard%20Trans/Repair%20and%20Diagnosis/Body%20%26%20Frame/Door%20Locks/Wireless%20Door%20Lock%20Control%20System%20%28Diagnostics%20%26%20Symptom%20Tests%29/Wireless%20Door%20Lock%20Control%20System/Registration%20%5B09%2F2013%20-%20%5D/Registration%20%5B09%2F2013%20-%20%5D/"
+    publisher: "Lemon Manuals, 2014 Tacoma registration dated from September 2013"
+    accessed: "2026-11-21"
+    note: "Same tool-free registration as the 2013 page. No Techstream."
+  - id: lemon-2015
+    title: "2015 Tacoma wireless door lock registration"
+    url: "https://lemon-manuals.org.ua/Toyota/2015/Tacoma%20Base%2C%204D%20Pickup%2C%202.7L%20Eng%20VIN%20X/Repair%20and%20Diagnosis/Body%20%26%20Frame/Door%20Locks/Wireless%20Door%20Lock%20Control%20System%20-%20%28Diagnostics%20%26%20Symptom%20Tests%29/Wireless%20Door%20Lock%20Control%20System/Registration%20%5B08%2F2014%20-%20%5D/Registration%20%5B08%2F2014%20-%20%5D/"
+    publisher: "Lemon Manuals, 2015 Tacoma registration dated from August 2014"
+    accessed: "2026-11-21"
+    note: "Same tool-free registration. Confirmation mode cycles 11 times if
+      nothing is registered. No Techstream. This is the 2.7L truck, not the
+      later 2GR-FKS manual."
+  - id: ttguide-wireless
+    title: "Tacoma wireless registration, manual labeled 2015-2018"
     url: "https://www.ttguide.net/registration-1817.html"
-    publisher: "Toyota Tacoma service-manual reprint, wireless door lock, without smart key"
-    accessed: "2026-11-20"
-    note: "The page prints registration using Techstream only. No switch
-      sequence is on the page. Up to six codes."
-  - id: tacoma-2009-immo
-    title: "2009 Tacoma immobilizer registration"
-    url: "https://charm.li/Toyota/2009/Tacoma%202WD%20V6-4.0L%20%281GR-FE%29/Repair%20and%20Diagnosis/Accessories%20and%20Optional%20Equipment/Antitheft%20and%20Alarm%20Systems/Testing%20and%20Inspection/Programming%20and%20Relearning/"
-    publisher: "Operation CHARM reproduction of a 2009 Tacoma service page"
-    accessed: "2026-11-20"
-    note: "This page is engine-immobilizer key registration, including
-      Techstream for an additional key. It is not the remote switch sequence."
+    publisher: "ttguide reprint titled Toyota Tacoma (2015-2018)"
+    accessed: "2026-11-21"
+    note: "Wireless door lock registration without smart key. The only
+      procedure on the page uses Techstream. It is not the switch sequence."
+  - id: ttguide-2gr
+    title: "Tacoma smart-key start precaution, 2GR-FKS"
+    url: "https://www.ttguide.net/precaution-893.html"
+    publisher: "ttguide, same 2015-2018 Tacoma manual"
+    accessed: "2026-11-21"
+    note: "The page is titled Smart Key System for the start function, 2GR-FKS
+      Starting. That engine is the later Tacoma, so this manual is not used
+      as the 2005-2015 procedure."
   - id: amazon-keylesspros
     title: "KeylessPros 3-button remote, GQ43VT20T"
     url: "https://www.amazon.com/KeylessPros-Replacement-Compatible-2004-2016-Highlander/dp/B0CF6MPKZX"
@@ -437,14 +547,38 @@ sources:
     accessed: "2026-11-20"
     note: "One shop, Charlotte and Lake Norman, North Carolina. 2005-2015
       listed as GQ43VT20T, starting at $150: blank $65, cutting $25,
-      programming $60. That total is a key, not a remote alone. The same page
-      lists 2016-2023 SR as GQ4-52T and 2016-2021 push-button trims as
-      HYQ14FBA."
+      programming $60. That total is a key, not a remote alone. The table
+      calls the 2005-2015 key a G chip. The same page lists 2016-2023 SR as
+      GQ4-52T and 2016-2021 push-button trims as HYQ14FBA."
+  - id: ctr-key-2008
+    title: "2008 Toyota Tacoma transponder key"
+    url: "https://www.carandtruckremotes.com/products/2008-toyota-tacoma-transponder-key-blank-aftermarket"
+    publisher: "Car and Truck Remotes"
+    accessed: "2026-11-21"
+    note: "TOY44D. Chip ID Texas 4D 67, called a Dot chip. Test key TR47.
+      The fitment line is 2005-2010 Tacoma, and it says some 2010 trucks use
+      a dot chip and some use a G chip."
+  - id: ctr-key-2012
+    title: "2012 Toyota Tacoma transponder key"
+    url: "https://www.carandtruckremotes.com/products/2012-toyota-tacoma-transponder-key-blank"
+    publisher: "Car and Truck Remotes"
+    accessed: "2026-11-21"
+    note: "G chip. Cross reference TOY44G. OE 89785-08040. Keyway TR47. Chip
+      ID Texas 4D 72 G chip, 80-bit. Fitment line is 2010-2015 Tacoma, with
+      the same 2010 dot-or-G note."
+  - id: ctr-key-2016
+    title: "2016 Toyota Tacoma transponder key"
+    url: "https://www.carandtruckremotes.com/products/2016-toyota-tacoma-transponder-key-blank"
+    publisher: "Car and Truck Remotes"
+    accessed: "2026-11-21"
+    note: "H chip. Ilco TOY44H. Test key TR47. Chip ID Toyota H-Chip. Fitment
+      line is 2016-2018 Tacoma."
 programmingFacts:
   onboardStatus: yes
   minimumWorkingKeys: 0
   pushButtonProcedure: unknown
   sourceIds:
-    - tw-2015-procedure
-    - tw-fob-questions
+    - charm-2011
+    - charm-2012
+    - lemon-2015
   ignitionKeyInCylinder: required
