@@ -95,9 +95,11 @@ diy:
         - charm-2012
         - lemon-2014
         - lemon-2015
-    - text: "The locks answer the mode. In Confirmation mode they cycle once
-        for each registered code. If nothing is registered, they cycle 11
-        times. Confirmation mode and Prohibition mode end after that answer."
+    - text: "The locks answer the mode. Add mode cycles once. Rewrite mode
+        cycles twice. Prohibition mode cycles five times. In Confirmation mode
+        they cycle once for each registered code, or 11 times if nothing is
+        registered. Confirmation mode and Prohibition mode end after that
+        answer."
       sourceIds:
         - charm-2011
         - charm-2012

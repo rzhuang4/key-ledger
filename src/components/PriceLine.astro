@@ -6,6 +6,7 @@ import { formatRange, formatReviewed } from '../lib/labels';
 interface Props {
   locale: string;
   unverifiedLabel: string;
+  compactService?: boolean;
   row: {
     status: string;
     currency?: string;
@@ -17,7 +18,7 @@ interface Props {
     note?: string | { text: string };
   };
 }
-const { locale, row, unverifiedLabel } = Astro.props;
+const { locale, row, unverifiedLabel, compactService = false } = Astro.props;
 const noteText = typeof row.note === 'string' ? row.note : row.note?.text;
 const copy = features(locale);
 const info = localeInfo(locale);
@@ -28,12 +29,15 @@ const stock =
   row.stock === 'not-listed' ? copy.stockNotListed :
   copy.stockUnknown;
 const retailer = !row.retailer || row.retailer === 'none' ? copy.noRetailer : row.retailer;
-const showUsd = row.status === 'verified' && row.currency === 'USD' && row.stock !== 'service';
+const showUsd =
+  row.status === 'verified' &&
+  row.currency === 'USD' &&
+  (row.stock !== 'service' || compactService);
 ---
 
 <div class:list={['price-fact', { service: row.stock === 'service' }]}>
   {
-    row.stock === 'service' && noteText ? (
+    row.stock === 'service' && noteText && !compactService ? (
       <span class="pack">{noteText}</span>
     ) : (
       <>
@@ -49,6 +53,6 @@ const showUsd = row.status === 'verified' && row.currency === 'USD' && row.stock
     )
   }
   <span>{stock}</span>
-  {row.stock !== 'service' && row.checkedAt && <span class="muted">{copy.checkedOn.replace('{date}', formatReviewed(row.checkedAt, info.dateLocale))}</span>}
+  {(row.stock !== 'service' || compactService) && row.checkedAt && <span class="muted">{copy.checkedOn.replace('{date}', formatReviewed(row.checkedAt, info.dateLocale))}</span>}
   {retailer === 'Standard Auto Part' && showUsd && <span class="pack">{copy.sapPackNote}</span>}
 </div>

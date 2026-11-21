@@ -136,6 +136,8 @@ const buyFcc = fccOf(primary);
 const buyPart = summaryPart(primary) ?? primary.oemPartNumbers[0]?.number ?? 'Unknown';
 const buyButtons = buttonLabel(primary);
 const stockWord = cheapest?.stock === 'in-stock' ? 'in stock' : cheapest?.stock === 'out-of-stock' ? 'out of stock' : 'stock unknown';
+const priceCheckDates = [...new Set(data.priceRanges.map((row) => row.checkedAt).filter(Boolean))].sort();
+const priceCheckLabel = priceCheckDates.map((iso) => formatReviewed(iso, info.dateLocale)).join(' and ');
 function leadSentence(text: string) {
   const end = text.search(/[.!?](\s|$)/);
   const sentence = end === -1 ? text : text.slice(0, end + 1);
@@ -175,7 +177,30 @@ function leadSentence(text: string) {
         ))
       }
       {
+        data.priceVerdict && (
+          <article class="tile">
+            <p class="kicker">Price</p>
+            <p class="detail">{data.priceVerdict}</p>
+          </article>
+        )
+      }
+      {
         splitYears ? (
+          data.priceVerdict ? (
+            splitRows.map((variant) => {
+              const part = summaryPart(variant);
+              const buttons = buttonLabel(variant);
+              return (
+                <article class="tile">
+                  <p class="kicker">{rowLabel(variant)}</p>
+                  <strong>{fccOf(variant)}</strong>
+                  {(part || buttons || variant.fitment) && (
+                    <p class="detail">{[part, buttons, variant.fitment].filter(Boolean).join(' · ')}</p>
+                  )}
+                </article>
+              );
+            })
+          ) : (
           splitRows.map((variant) => {
             const hardware = hardwareFor(variant.id);
             const service = serviceFor(variant.id);
@@ -212,6 +237,7 @@ function leadSentence(text: string) {
               </div>
             );
           })
+          )
         ) : (
           <>
             <article class="tile">
@@ -236,8 +262,13 @@ function leadSentence(text: string) {
           view.priceRanges.map((row, index) => (
             <li>
               <strong>{data.priceRanges[index]?.channelName ?? channelLabel(row.channel)}</strong>
-              <PriceLine locale={locale} row={row} unverifiedLabel={copy.unverifiedChip} />
-              {data.priceRanges[index]?.heroNote && <p class="detail">{data.priceRanges[index].heroNote}</p>}
+              <PriceLine
+                locale={locale}
+                row={row}
+                unverifiedLabel={copy.unverifiedChip}
+                compactService={Boolean(data.priceVerdict)}
+              />
+              {!data.priceVerdict && data.priceRanges[index]?.heroNote && <p class="detail">{data.priceRanges[index].heroNote}</p>}
             </li>
           ))
         }
@@ -578,7 +609,7 @@ function leadSentence(text: string) {
     <details class="fold">
       <summary>How we checked</summary>
       <p>
-        Stock and prices were read from each store's product data on November 19, 2026, not from a Sold out label drawn by the page theme.
+        Stock and prices were read from each store's product data on {priceCheckLabel}, not from a Sold out label drawn by the page theme.
         Only prices marked as US dollars are shown. The source list has the page addresses and the raw checks.
       </p>
     </details>

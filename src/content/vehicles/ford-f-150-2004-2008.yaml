@@ -26,6 +26,7 @@ scope: "New-style Ford F-150, 2004 through 2008, US market, with a separate
   different section, and that section requires two previously programmed coded
   keys."
 reviewed: "2026-11-21"
+priceVerdict: "Program an aftermarket remote yourself: $12.95. Locksmith including programming: $50 (one shop, sold out). Genuine Ford part: $67.50, programming not included."
 diy:
   status: "yes"
   heroAnswer: "Yes, for the separate remote. The ignition-cycle procedure does not require two programmed keys, and it does not program the SecuriLock chip."
@@ -259,14 +260,13 @@ priceRanges:
     status: verified
     lowUsd: 50
     highUsd: 50
-    note: "Puget Sound Locksmith, one shop. Shop record: city Tacoma,
-      Washington, currency USD. Product page opened November 21, 2026, says
-      Sold out. Price $50. The description says all prices include programming
-      and cutting of the keys at one of their service locations, and that
-      mobile service is chosen at checkout. The fitment list includes Ford
-      F-Series 1998-2003 and 2004-2010, plus other Ford models. This is the
-      Tacoma, Washington shop, not the Toyota truck."
-    heroNote: "Posted price $50, and the product page says Sold out. Includes programming and cutting at their locations. Tacoma, WA, not the truck."
+    note: "Puget Sound Locksmith, one shop in Tacoma, Washington. Currency
+      USD. Product page opened November 21, 2026, says Sold out. Price $50.
+      The description says all prices include programming and cutting of the
+      keys at one of their service locations, and that mobile service is
+      chosen at checkout. The fitment list includes Ford F-Series 1998-2003
+      and 2004-2010, plus other Ford models."
+    heroNote: "Posted price $50, and the product page says Sold out. Includes programming and cutting at their locations."
     currency: USD
     retailer: Puget Sound Locksmith
     checkedAt: "2026-11-21"
@@ -371,7 +371,7 @@ sources:
       include programming and cutting at a service location, and mobile service
       is a checkout option. Fitment includes Ford F-Series 2004-2010. FCC IDs
       include CWTWB1U345, CWTWB1U331, CWTWB1U212, GQ43VT11T, and OUCD6000022.
-      OE numbers include 8L3Z-15K601-AA. Shop record: Tacoma, Washington, USD."
+      OE numbers include 8L3Z-15K601-AA. Shop currency USD."
   - id: edmunds-heritage
     title: "2004 Ford F-150 Heritage review"
     url: "https://www.edmunds.com/ford/f-150-heritage/2004/review/"

@@ -171,6 +171,7 @@ const vehicles = defineCollection({
         }),
       )
       .min(1),
+    priceVerdict: z.string().min(1).optional(),
     priceRanges: z
       .array(
         z.object({
