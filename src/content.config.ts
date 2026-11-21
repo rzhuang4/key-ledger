@@ -190,6 +190,15 @@ const vehicles = defineCollection({
         }),
       )
       .min(3),
+    scopeCards: z
+      .array(
+        z.object({
+          label: z.string().min(1),
+          text: z.string().min(1),
+          sourceIds,
+        }),
+      )
+      .optional(),
     shopLinks: z.array(
       z.object({
         retailer: z.string().min(1),

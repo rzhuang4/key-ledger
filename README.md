@@ -8,6 +8,7 @@ The vehicle pages are:
 - [2011–2014 Ford F-150](src/content/vehicles/ford-f-150-2011-2014.yaml)
 - [2012–2016 Honda CR-V](src/content/vehicles/honda-cr-v-2012-2016.yaml)
 - [2007–2011 Toyota Tundra](src/content/vehicles/toyota-tundra-2007-2011.yaml)
+- [2005–2015 Toyota Tacoma](src/content/vehicles/toyota-tacoma-2005-2015.yaml)
 
 ## Requirements
 

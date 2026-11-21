@@ -167,6 +167,14 @@ function leadSentence(text: string) {
         {data.diy.heroNotice && <p class="detail">{data.diy.heroNotice}</p>}
       </article>
       {
+        data.scopeCards?.map((card) => (
+          <article class="tile">
+            <p class="kicker">{card.label}</p>
+            <p class="detail">{card.text}</p>
+          </article>
+        ))
+      }
+      {
         splitYears ? (
           splitRows.map((variant) => {
             const hardware = hardwareFor(variant.id);
@@ -409,7 +417,7 @@ function leadSentence(text: string) {
           );
         })
       }
-      {data.modelSlug !== 'tundra' && (
+      {data.modelSlug !== 'tundra' && data.modelSlug !== 'tacoma' && (
         <>
           <p>{feat.aftermarketNote}</p>
           <p>

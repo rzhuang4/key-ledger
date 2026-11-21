@@ -1,0 +1,450 @@
+# 2005–2015 Toyota Tacoma. Same FCC ID as the 2007–2011 Tundra remote. 2016+ is out of scope.
+make: Toyota
+makeSlug: toyota
+model: Tacoma
+modelSlug: tacoma
+yearStart: 2005
+yearEnd: 2015
+yearSlug: "2005-2015"
+market: US
+title: "2005-2015 Toyota Tacoma keyless remote programming"
+description: "Notes for the 2005-2015 Tacoma 3-button remote, FCC GQ43VT20T
+  and part 89742-AE011, with owner reports and USD prices. 2016+ is not covered."
+summary: "The 2005-2015 Tacoma keyless remote that sellers list is a separate
+  3-button fob, FCC GQ43VT20T, part 89742-AE011. A 2006 owner reported an
+  aftermarket eBay remote programmed from the seller's instructions. A seller
+  says do-it-yourself programming is only for 2004-2010 Tacomas. Some owners
+  of 2011 and 2015 trucks report the door sequence worked. A 2015-2018 Toyota
+  manual page that was opened prints only Techstream registration."
+scope: "Second-generation Tacoma, 2005 through 2015, US market, trucks that
+  left the factory with keyless entry and a separate 3-button remote. This page
+  does not cover 2016 and later. My Locksmith Express lists those trucks with
+  a remote-head key, FCC GQ4-52T, on SR trucks without push-button start, or a
+  smart key, FCC HYQ14FBA, on push-button trims. It does not cover a truck that
+  was not built with the keyless receiver. A 2015 owner wrote that a dealer and
+  later a master mechanic said that truck had no radio hardware for a fob, and
+  another 2015 owner wrote that the door sequence needs the factory receiver.
+  The remote steps do not program the engine-start chip. A 2009 Tacoma service
+  page that was opened is immobilizer registration, and a 2013 owner wrote that
+  the key needs a computer."
+reviewed: "2026-11-20"
+diy:
+  status: "yes"
+  heroAnswer: "2005-2010: a 2006 owner reported an aftermarket remote programmed from the seller's instructions. 2011-2015: the sources conflict."
+  bottomLine: "A 2006 owner reported a $20 aftermarket eBay remote programmed with the seller's instructions. For 2011-2015, KeylessPros says DIY is only for 2004-2010, a Tacoma World member says the fob is self programmable on most 2005-2011 trucks, and some 2011 and 2015 owners report the door sequence worked. A 2015-2018 Toyota manual page prints only Techstream registration."
+  heroNotice: "This page does not apply to 2016 and later trucks, to a truck built without factory keyless entry, or to programming the transponder that starts the engine."
+  priceCaution: "joes06tacoma, a 2006 owner, wrote that a $20 shipped aftermarket eBay remote from keyless king 'Programmed no problem using his instructions.' TRDSport10 wrote that GQ43VT20T is self programmable on most 2005-2011 Tacomas. Yaozer wrote that an OEM fob worked on a 2011. Hook78 wrote that the posted door sequence worked on a 2015 TRD Off-Road. hoffengineering and 565hunter wrote that Amazon remotes worked on 2015 trucks. KeylessPros says DIY self-programming is only available for 2004-2010 Tacoma. A 2015-2018 Toyota manual page prints Techstream registration and no switch sequence. Chrome wrote that a dealer phone quote was about $202 for a fob and programming. That is one person's report of a quote, not a posted price."
+  priceCautionSourceIds:
+    - tw-fob-questions
+    - tw-2015-procedure
+    - amazon-keylesspros
+    - tacoma-2015-manual
+  summary: "Owner reports and a seller's instruction limit do not say the same
+    thing for 2011-2015. The steps below are the sequence a Tacoma World member
+    posted for a 2015, not a Toyota service page. The 2015-2018 Toyota page that
+    was opened uses Techstream."
+  condition: "The posted sequence uses the ignition key. It programs the remote,
+    not the chip that starts the engine. KeylessPros says its remote needs one
+    working original key that starts the vehicle."
+  safetyNote: "A wrong sequence can fail to enter programming mode. Chrome's
+    2015 base truck never got the locks to cycle, and a dealer told him the
+    truck had no keyless receiver. If the locks do not answer, stop and have a
+    locksmith or dealer check whether the truck was built with keyless entry."
+  sourceIds:
+    - tw-2015-procedure
+    - tw-fob-questions
+  notes:
+    - text: "The numbered steps are the rewrite-mode sequence pheerles posted on
+        a 2015 Tacoma World thread. They are not copied from a Toyota manual.
+        The 2015-2018 Toyota Tacoma registration page that was opened has only
+        a Techstream procedure."
+      sourceIds:
+        - tw-2015-procedure
+        - tacoma-2015-manual
+  steps:
+    - text: "Start with the key out of the ignition, the driver door open and
+        unlocked, and the other doors closed. This wording is the forum post,
+        not a Toyota manual."
+      sourceIds:
+        - tw-2015-procedure
+    - text: "Within 5 seconds, insert the key and remove it twice."
+      sourceIds:
+        - tw-2015-procedure
+    - text: "Within 40 seconds, close and open the driver door twice."
+      sourceIds:
+        - tw-2015-procedure
+    - text: "Insert the key and remove it once."
+      sourceIds:
+        - tw-2015-procedure
+    - text: "Within 40 seconds, close and open the driver door twice again."
+      sourceIds:
+        - tw-2015-procedure
+    - text: "Insert the key, close the driver door, and turn the ignition from
+        LOCK to ON and back to LOCK twice, about one second apart, for rewrite
+        mode. Remove the key. The post says the locks cycle twice if rewrite
+        mode was selected."
+      sourceIds:
+        - tw-2015-procedure
+    - text: "Within 40 seconds, press Lock and Unlock together for 1 second,
+        then within 3 seconds press Lock. The post says one lock cycle means
+        the remote was recognized and two cycles means it was not."
+      sourceIds:
+        - tw-2015-procedure
+    - text: "Repeat that button pair for each other remote, up to four. Opening
+        the driver door, inserting the key, waiting 40 seconds, or registering
+        four remotes ends the mode."
+      sourceIds:
+        - tw-2015-procedure
+scopeCards:
+  - label: "2005-2010"
+    text: "KeylessPros says DIY self-programming is available for 2004-2010
+      Tacoma. joes06tacoma, a 2006 owner, wrote that a $20 shipped aftermarket
+      eBay remote 'Programmed no problem using his instructions.'"
+    sourceIds:
+      - amazon-keylesspros
+      - tw-fob-questions
+  - label: "2011-2015"
+    text: "These years conflict. KeylessPros says DIY is only for 2004-2010.
+      TRDSport10 wrote that GQ43VT20T is self programmable on most 2005-2011
+      Tacomas. A 2011 owner wrote that an OEM fob worked. 2015 owners wrote
+      that the posted sequence and Amazon remotes worked. A 2015-2018 Toyota
+      manual page prints only Techstream. This page does not treat DIY as
+      settled for 2011-2015."
+    sourceIds:
+      - amazon-keylesspros
+      - tw-fob-questions
+      - tw-2015-procedure
+      - tacoma-2015-manual
+  - label: "2016 and later"
+    text: "This page does not cover these years. My Locksmith Express lists a
+      remote-head key, FCC GQ4-52T, for 2016-2023 SR trucks without
+      push-button start, and a smart key, FCC HYQ14FBA, for 2016-2021
+      push-button trims. That is the shop's fitment table, not a Toyota fiche."
+    sourceIds:
+      - mle-tacoma
+variants:
+  - id: genuine-oem
+    name: "Genuine Toyota 3-button remote"
+    years: "NorthCoast Keyless lists this remote for 2005-2017 Tacoma. This page stops at 2015."
+    heroLabel: "Genuine Toyota"
+    keyType: separate-remote
+    keyTypeNote: "NorthCoast Keyless calls the listing a High Quality Genuine OEM
+      Toyota Key Fob Remote, with Lock, Unlock, and Panic, and says it is not
+      for push-button start. The same text says a locksmith must program it.
+      ToyotaPartsNow says part 89742-AE011 is discontinued and replaces
+      89742-AE010."
+    keyTypeSourceIds:
+      - nck-tacoma
+      - toyota-parts-ae011
+    fccIds:
+      - id: GQ43VT20T
+        role: oem
+        note: "Printed on the NorthCoast listing. The FCC grant to TRW Inc.,
+          reproduced by FCCID.io, is an automotive remote at 315.0 MHz."
+        sourceIds:
+          - nck-tacoma
+          - fcc-gq43
+    oemPartNumbers:
+      - number: "89742-AE011"
+        summary: true
+        note: "Printed by NorthCoast Keyless. ToyotaPartsNow's part page says
+          Manufacturer's Notes: This part is discontinued. It replaces
+          89742-AE010. Fitment on that page includes 2007-2017 Tundra and the
+          page's Tacoma list is 2005-2015."
+        sourceIds:
+          - nck-tacoma
+          - toyota-parts-ae011
+      - number: "89742-AE010"
+        note: "Also printed by NorthCoast Keyless. ToyotaPartsNow says
+          89742-AE011 replaces it."
+        sourceIds:
+          - nck-tacoma
+          - toyota-parts-ae011
+    battery:
+      status: verified
+      type: CR2032
+      note: "Car and Truck Remotes prints CR2032 on the aftermarket remote that
+        uses this FCC ID. The NorthCoast description that was read did not name
+        the cell. The FCC grant page does not name it."
+      sourceIds:
+        - ctr-gq43
+    frequency:
+      status: verified
+      text: "315 MHz"
+      note: "The grant lists 315.0 MHz. Car and Truck Remotes also prints 315 MHz."
+      sourceIds:
+        - fcc-gq43
+        - ctr-gq43
+    buttons:
+      count: 3
+      sourceIds:
+        - nck-tacoma
+        - ctr-gq43
+  - id: aftermarket-remote
+    name: "Aftermarket 3-button remote"
+    years: "Car and Truck Remotes lists Tacoma 2005-2015 on this remote."
+    heroLabel: "Aftermarket"
+    keyType: separate-remote
+    keyTypeNote: "Car and Truck Remotes sells a 3-button remote with no logo and
+      prints On Board Programming: No. A 2006 Tacoma World post reports an
+      aftermarket eBay remote programmed from the seller's instructions. That
+      report is not this listing."
+    keyTypeSourceIds:
+      - ctr-gq43
+      - tw-fob-questions
+    fccIds:
+      - id: GQ43VT20T
+        role: oem
+        note: "The FCC ID the aftermarket listing says it replaces. The grant is
+          the TRW remote at 315.0 MHz."
+        sourceIds:
+          - ctr-gq43
+          - fcc-gq43
+    oemPartNumbers:
+      - number: "89742-AE010"
+        note: "Car and Truck Remotes lists 89742-AE010 and 89742-AE011 as the
+          Toyota numbers this aftermarket remote replaces."
+        sourceIds:
+          - ctr-gq43
+      - number: "89742-AE011"
+        note: "Listed with 89742-AE010 on the same aftermarket page."
+        sourceIds:
+          - ctr-gq43
+    battery:
+      status: verified
+      type: CR2032
+      note: "Printed on the Car and Truck Remotes listing."
+      sourceIds:
+        - ctr-gq43
+    frequency:
+      status: verified
+      text: "315 MHz"
+      note: "Printed on the Car and Truck Remotes listing and on the FCC grant."
+      sourceIds:
+        - ctr-gq43
+        - fcc-gq43
+    buttons:
+      count: 3
+      sourceIds:
+        - ctr-gq43
+priceRanges:
+  - channel: online-diy
+    status: verified
+    lowUsd: 29.94
+    highUsd: 29.94
+    note: "NorthCoast Keyless, lightly used, $29.94. Store API on November 20,
+      2026: in stock, currency USD. The product name covers Tacoma 2005-2017.
+      The description says High Quality Genuine OEM Toyota Key Fob Remote, says
+      a professional locksmith must program it, and offers a 30 Day Return
+      Period for Full Product Refund. Remote only."
+    heroNote: "Lightly used, in stock. Seller says genuine OEM. Seller also says a locksmith must program it. 30 Day Return Period for Full Product Refund."
+    variantId: genuine-oem
+    sourceIds:
+      - nck-tacoma
+    currency: USD
+    retailer: NorthCoast Keyless
+    checkedAt: "2026-11-20"
+    stock: in-stock
+  - channel: online-diy
+    status: verified
+    lowUsd: 49.94
+    highUsd: 49.94
+    note: "The same NorthCoast Keyless listing, new condition, $49.94. Store API
+      on November 20, 2026: out of stock, currency USD. Same genuine-OEM wording
+      and the same locksmith sentence. Remote only. The page's Dealership $250
+      line is not used."
+    heroNote: "New, out of stock. Same listing. Seller says genuine OEM and that a locksmith must program it."
+    variantId: genuine-oem
+    sourceIds:
+      - nck-tacoma
+    currency: USD
+    retailer: NorthCoast Keyless
+    checkedAt: "2026-11-20"
+    stock: out-of-stock
+  - channel: online-diy
+    status: verified
+    lowUsd: 24.95
+    highUsd: 24.95
+    note: "Car and Truck Remotes, Vernon Hills, Illinois, one online seller.
+      Product JSON on November 20, 2026: available, 2495 cents, shop currency
+      USD. Aftermarket remote only. The seller does not cut or program it.
+      The listing says On Board Programming: No. Fitment includes Tacoma
+      2005-2015."
+    heroNote: "Aftermarket remote only. On-board registration not confirmed for this listing. Seller says On Board Programming: No."
+    channelName: "Buy online + locksmith"
+    variantId: aftermarket-remote
+    sourceIds:
+      - ctr-gq43
+    currency: USD
+    retailer: Car and Truck Remotes
+    checkedAt: "2026-11-20"
+    stock: in-stock
+  - channel: dealer
+    status: unverified
+    note: "ToyotaPartsNow's page for 89742-AE011 says Manufacturer's Notes:
+      This part is discontinued. No price is shown there. Jim Hudson Toyota and
+      Toyota of Fort Worth prices were not opened, so they are not used."
+    currency: USD
+    retailer: none
+    checkedAt: "2026-11-20"
+    stock: unknown
+    sourceIds:
+      - toyota-parts-ae011
+  - channel: locksmith
+    status: verified
+    lowUsd: 150
+    highUsd: 150
+    note: "My Locksmith Express, one shop, Charlotte and Lake Norman, North
+      Carolina. The page says Starting at $150 for a 2005-2015 Tacoma key, FCC
+      GQ43VT20T: key blank $65, cutting $25, and programming $60. That is a
+      transponder key, cut and programmed, not the remote by itself. Mobile
+      service. Posted price. Checked November 20, 2026."
+    heroNote: "Key blank, cutting, and programming. Not the remote alone. Charlotte and Lake Norman, NC."
+    currency: USD
+    retailer: My Locksmith Express
+    checkedAt: "2026-11-20"
+    stock: service
+    sourceIds:
+      - mle-tacoma
+shopLinks:
+  - retailer: northcoastkeyless
+    url: "https://northcoastkeyless.com/product/toyota-tacoma-3-button-key-fob-remote-fcc-gq43vt20t-p-n-89742-ae010-89742-ae011/"
+    label: "NorthCoast Keyless Tacoma remote, FCC GQ43VT20T"
+  - retailer: carandtruckremotes
+    url: "https://www.carandtruckremotes.com/products/aftermarket-remote-for-toyota-pn-89742-ae010-89742-ae011"
+    label: "Car and Truck Remotes aftermarket remote, FCC GQ43VT20T"
+unverified:
+  - "A current dealer price for 89742-AE011. The ToyotaPartsNow page says the
+    part is discontinued and shows no price."
+  - "A Toyota service page for 2005-2014 Tacoma that prints the door sequence.
+    The steps on this page are a forum post. The 2015-2018 manual page that
+    was opened prints Techstream only."
+  - "Whether every 2011-2015 Tacoma will accept the door sequence. Owner
+    reports and the KeylessPros limit do not agree."
+  - "The ignition-key blade code."
+  - "Which trims left the factory without a keyless receiver. The 2015 thread
+    shows that some trucks did."
+troubleshooting:
+  - id: no-cycle
+    title: "The locks never cycle"
+    text: "Chrome wrote that a 2015 base manual truck never entered programming
+      mode. A dealer, and later a master mechanic, told him that truck had no
+      radio hardware for a fob. Defvayne wrote that the door sequence needs the
+      factory receiver."
+    sourceIds:
+      - tw-2015-procedure
+  - id: two-cycles
+    title: "The locks cycle twice"
+    text: "pheerles's posted steps say two lock cycles mean the remote was not
+      recognized. theferalkid wrote that on a 2015 the locks cycled twice and
+      the remote still worked after another Lock press. Those two reports do
+      not say the same thing."
+    sourceIds:
+      - tw-2015-procedure
+ignitionKey:
+  status: verified
+  transponder: present
+  sourceIds:
+    - tacoma-2009-immo
+    - tw-2015-procedure
+  note: "The 2009 Tacoma page that was opened is immobilizer registration.
+    Additional keys on that page use Techstream. jburner wrote, about a 2013,
+    that there is no DIY way to program the key without a computer, and that
+    key fobs are a different job. No blade code was on the pages opened. The
+    remote steps do not program this chip."
+sources:
+  - id: tw-fob-questions
+    title: "Key Fob Questions"
+    url: "https://www.tacomaworld.com/threads/key-fob-questions.271305/"
+    publisher: "Tacoma World"
+    accessed: "2026-11-20"
+    note: "Post 8, joes06tacoma, 2006: a $20 shipped aftermarket eBay remote
+      from keyless king, 'Programmed no problem using his instructions.' Post
+      5, TRDSport10: GQ43VT20T is self programmable on most 2005-2011 Tacomas.
+      Post 15, Yaozer, 2011: an OEM fob worked."
+  - id: tw-2015-procedure
+    title: "2015 Keyfob Programming"
+    url: "https://www.tacomaworld.com/threads/2015-keyfob-programming.361834/"
+    publisher: "Tacoma World"
+    accessed: "2026-11-20"
+    note: "pheerles posted a rewrite-mode door sequence. Hook78 wrote that it
+      worked on a 2015 TRD Off-Road. hoffengineering wrote that a $30 Amazon
+      two-pack worked on a 2015. 565hunter wrote that an Amazon GQ43VT20T
+      remote worked on a 2015. jburner wrote that the key needs a computer.
+      Chrome wrote that a dealer quote was about $202 and that his truck had
+      no keyless hardware. Defvayne wrote that the sequence needs the factory
+      receiver."
+  - id: tacoma-2015-manual
+    title: "2015-2018 Tacoma wireless door lock registration"
+    url: "https://www.ttguide.net/registration-1817.html"
+    publisher: "Toyota Tacoma service-manual reprint, wireless door lock, without smart key"
+    accessed: "2026-11-20"
+    note: "The page prints registration using Techstream only. No switch
+      sequence is on the page. Up to six codes."
+  - id: tacoma-2009-immo
+    title: "2009 Tacoma immobilizer registration"
+    url: "https://charm.li/Toyota/2009/Tacoma%202WD%20V6-4.0L%20%281GR-FE%29/Repair%20and%20Diagnosis/Accessories%20and%20Optional%20Equipment/Antitheft%20and%20Alarm%20Systems/Testing%20and%20Inspection/Programming%20and%20Relearning/"
+    publisher: "Operation CHARM reproduction of a 2009 Tacoma service page"
+    accessed: "2026-11-20"
+    note: "This page is engine-immobilizer key registration, including
+      Techstream for an additional key. It is not the remote switch sequence."
+  - id: amazon-keylesspros
+    title: "KeylessPros 3-button remote, GQ43VT20T"
+    url: "https://www.amazon.com/KeylessPros-Replacement-Compatible-2004-2016-Highlander/dp/B0CF6MPKZX"
+    publisher: "Amazon listing sold under the KeylessPros name"
+    accessed: "2026-11-20"
+    note: "The page says DIY self-programming is only available for 2004-2010
+      Toyota Sienna and Tacoma, and that a dealer or locksmith is required for
+      other models and years. No featured offer was available, so no price is
+      shown. Fitment text includes 2004-2016 Tacoma."
+  - id: nck-tacoma
+    title: "2005-2017 Toyota Tacoma 3-button remote, FCC GQ43VT20T"
+    url: "https://northcoastkeyless.com/product/toyota-tacoma-3-button-key-fob-remote-fcc-gq43vt20t-p-n-89742-ae010-89742-ae011/"
+    publisher: "NorthCoast Keyless"
+    accessed: "2026-11-20"
+    note: "Store API: lightly used variation 2994 cents, USD, in stock. New
+      variation 4994 cents, USD, out of stock. Description says High Quality
+      Genuine OEM Toyota Key Fob Remote, says a locksmith must program it, and
+      says 30 Day Return Period for Full Product Refund. The Dealership $250
+      line is not used."
+  - id: ctr-gq43
+    title: "Aftermarket Toyota remote, parts 89742-AE010 and 89742-AE011"
+    url: "https://www.carandtruckremotes.com/products/aftermarket-remote-for-toyota-pn-89742-ae010-89742-ae011"
+    publisher: "Car and Truck Remotes"
+    accessed: "2026-11-20"
+    note: "Product JSON November 20, 2026: available, 2495 cents. Shop currency
+      USD. City Vernon Hills, Illinois. On Board Programming: No. Battery
+      CR2032. Three buttons. Fitment includes Tacoma 2005-2015. Remote only."
+  - id: fcc-gq43
+    title: "FCC ID GQ43VT20T equipment authorization"
+    url: "https://fccid.io/GQ43VT20T"
+    publisher: "FCCID.io reproduction of the FCC grant to TRW Inc."
+    accessed: "2026-11-20"
+    note: "Automotive remote control. 315.0 MHz. The grant page does not name
+      the battery."
+  - id: toyota-parts-ae011
+    title: "Toyota 89742-AE011 door control transmitter"
+    url: "https://www.toyotapartsnow.com/oem/toyota~transmitter-door-control~89742-ae011"
+    publisher: "ToyotaPartsNow"
+    accessed: "2026-11-20"
+    note: "Manufacturer's Notes: This part is discontinued. Replaces
+      89742-AE010. The compatible-vehicle table includes Tacoma 2005-2015.
+      No price is shown."
+  - id: mle-tacoma
+    title: "Toyota Tacoma key replacement"
+    url: "https://mylocksmithexpress.com/car-keys/toyota/tacoma"
+    publisher: "My Locksmith Express"
+    accessed: "2026-11-20"
+    note: "One shop, Charlotte and Lake Norman, North Carolina. 2005-2015
+      listed as GQ43VT20T, starting at $150: blank $65, cutting $25,
+      programming $60. That total is a key, not a remote alone. The same page
+      lists 2016-2023 SR as GQ4-52T and 2016-2021 push-button trims as
+      HYQ14FBA."
+programmingFacts:
+  onboardStatus: yes
+  minimumWorkingKeys: 0
+  pushButtonProcedure: unknown
+  sourceIds:
+    - tw-2015-procedure
+    - tw-fob-questions
+  ignitionKeyInCylinder: required
